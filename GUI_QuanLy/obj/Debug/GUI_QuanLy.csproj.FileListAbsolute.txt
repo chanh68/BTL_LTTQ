@@ -41,3 +41,11 @@ F:\Test\BTL_LTTQ\GUI_QuanLy\obj\Debug\GUI_QuanLy.pdb
 F:\Test\BTL_LTTQ\GUI_QuanLy\bin\Debug\Bunifu.UI.WinForms.1.5.3.dll
 F:\Test\BTL_LTTQ\GUI_QuanLy\bin\Debug\Bunifu.UI.WinForms.BunifuDatePicker.dll
 F:\Test\BTL_LTTQ\GUI_QuanLy\bin\Debug\Bunifu.UI.WinForms.BunifuPictureBox.dll
+F:\Test\BTL_LTTQ\GUI_QuanLy\obj\Debug\GUI_QuanLy.Signin.resources
+F:\Test\BTL_LTTQ\GUI_QuanLy\bin\Debug\Bunifu.UI.WinForms.BunifuLabel.dll
+F:\Test\BTL_LTTQ\GUI_QuanLy\bin\Debug\Bunifu.UI.WinForms.BunifuTextbox.dll
+F:\Test\BTL_LTTQ\GUI_QuanLy\bin\Debug\Guna.UI2.dll
+F:\Test\BTL_LTTQ\GUI_QuanLy\obj\Debug\GUI_QuanLy.HomePage.resources
+F:\Test\BTL_LTTQ\GUI_QuanLy\obj\Debug\GUI_QuanLy.Information.resources
+F:\Test\BTL_LTTQ\GUI_QuanLy\obj\Debug\GUI_QuanLy.InfoProduct.resources
+F:\Test\BTL_LTTQ\GUI_QuanLy\obj\Debug\GUI_QuanLy.Edit.resources

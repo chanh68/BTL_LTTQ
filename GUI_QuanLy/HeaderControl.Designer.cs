@@ -82,6 +82,7 @@
             this.btnInfo.TabIndex = 2;
             this.btnInfo.TabStop = false;
             this.btnInfo.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
+            this.btnInfo.Click += new System.EventHandler(this.btnInfo_Click);
             // 
             // btnSetting
             // 

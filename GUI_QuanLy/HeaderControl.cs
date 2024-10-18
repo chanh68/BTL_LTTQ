@@ -16,5 +16,11 @@ namespace GUI_QuanLy
         {
             InitializeComponent();
         }
+
+        private void btnInfo_Click(object sender, EventArgs e)
+        {
+            Information information = new Information();
+            information.ShowDialog();
+        }
     }
 }

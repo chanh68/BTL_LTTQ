@@ -165,11 +165,26 @@ namespace GUI_QuanLy
         }
 
         private void btnSanPham_Click(object sender, EventArgs e)
+        {
+            if (!menuSanPhamExpand)
             {
                 timerSanPham.Start();
             }
+            else
+            {
+                // Nếu menu đã mở, không làm gì cả
+            }
+        }
+        private void btnThongTin_Click(object sender, EventArgs e)
+        {
+            timerSanPham.Start();   
+            InfoProduct infoProduct = new InfoProduct();
+            infoProduct.ShowDialog();
+        }
 
-            private void btnHoaDon_Click(object sender, EventArgs e)
+
+
+        private void btnHoaDon_Click(object sender, EventArgs e)
             {
                 timerHoaDon.Start();
             }
@@ -209,6 +224,19 @@ namespace GUI_QuanLy
             picTK.Location = new Point(picTK.Location.X,picTK.Location.Y + offsetY);
             btnThoat.Location = new Point(btnThoat.Location.X, btnThoat.Location.Y + offsetY);
         }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnTrangChu_Click(object sender, EventArgs e)
+        {
+            HomePage homePage = new HomePage();
+            homePage.ShowDialog();
+        }
+
+
     }
     }
 

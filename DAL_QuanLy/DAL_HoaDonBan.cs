@@ -107,6 +107,52 @@ namespace DAL_QuanLy
 
             return false;
         }
+        public DataTable GetTotalRevenue()
+        {
+            string query = "SELECT SUM(TongTien) AS Bang3 FROM HoaDonBan";
+            using (SqlCommand command = new SqlCommand(query, _conn))
+            {
+                DataTable result = new DataTable();
+                try
+                {
+                    _conn.Open();
+                    SqlDataAdapter adapter = new SqlDataAdapter(command);
+                    adapter.Fill(result);
+                }
+                catch (SqlException ex)
+                {
+                    throw new Exception("An error occurred while getting total revenue: " + ex.Message);
+                }
+                finally
+                {
+                    _conn.Close();
+                }
+                return result;
+            }
+        }
+        public DataTable GetTotalDiscount()
+        {
+            string query = "SELECT SUM(GiamGia) AS Bang3 FROM HoaDonBan";
+            using (SqlCommand command = new SqlCommand(query, _conn))
+            {
+                DataTable result = new DataTable();
+                try
+                {
+                    _conn.Open();
+                    SqlDataAdapter adapter = new SqlDataAdapter(command);
+                    adapter.Fill(result);
+                }
+                catch (SqlException ex)
+                {
+                    throw new Exception("An error occurred while getting total discount: " + ex.Message);
+                }
+                finally
+                {
+                    _conn.Close();
+                }
+                return result;
+            }
+        }
     }
 
 }

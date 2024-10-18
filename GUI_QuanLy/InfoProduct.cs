@@ -1,0 +1,117 @@
+﻿using DAL_QuanLy;
+using DTO_QuanLy;
+using System;
+using System.Data;
+using System.Windows.Forms;
+
+namespace GUI_QuanLy
+{
+    public partial class InfoProduct : Form
+    {
+        private readonly DAL_HangHoa dalHangHoa;
+
+        public InfoProduct()
+        {
+            InitializeComponent();
+            dalHangHoa = new DAL_HangHoa(); // Khởi tạo DAL
+        }
+
+        private void InfoProduct_Load(object sender, EventArgs e)
+        {
+            LoadData();
+        }
+
+        private void LoadData()
+        {
+            DataTable dataTable = dalHangHoa.GetHangHoaData();
+            dtDanhSach.DataSource = dataTable;
+
+            // Hiển thị các cột ChiTiet, Sua, Xoa nếu có
+            SetColumnVisibility("ChiTiet");
+            SetColumnVisibility("Sua");
+            SetColumnVisibility("Xoa");
+
+            // Đánh số thứ tự cho hàng
+            for (int i = 0; i < dtDanhSach.Rows.Count; i++)
+            {
+                dtDanhSach.Rows[i].Cells[0].Value = i + 1;
+            }
+
+            dtDanhSach.AllowUserToAddRows = false;
+            ThongKe.Visible = false; // Ẩn điều này nếu không cần thiết
+        }
+
+        private void SetColumnVisibility(string columnName)
+        {
+            if (dtDanhSach.Columns.Contains(columnName))
+            {
+                dtDanhSach.Columns[columnName].Visible = true;
+            }
+        }
+
+        private void btnThemSP_Click(object sender, EventArgs e)
+        {
+            // Tạo đối tượng HangHoa mới
+            DTO_HangHoa hangHoa = new DTO_HangHoa();
+            Edit editForm = new Edit(hangHoa);
+            if (editForm.ShowDialog() == DialogResult.OK)
+            {
+                // Nếu lưu thành công, tải lại dữ liệu
+                LoadData();
+            }
+        }
+
+        private void dtDanhSach_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return; // Kiểm tra nếu hàng là header
+
+            if (e.ColumnIndex == dtDanhSach.Columns["Sua"].Index)
+            {
+                EditProduct(e.RowIndex);
+            }
+            else if (e.ColumnIndex == dtDanhSach.Columns["Xoa"].Index)
+            {
+                DeleteProduct(e.RowIndex);
+            }
+        }
+
+        private void EditProduct(int rowIndex)
+        {
+            this.Close();
+            string tenHang = dtDanhSach.Rows[rowIndex].Cells["TenHang"].Value.ToString();
+            DTO_HangHoa hangHoa = dalHangHoa.GetHangHoaByTenHang(tenHang);
+
+            if (hangHoa != null)
+            {
+                Edit editForm = new Edit(hangHoa);
+                if (editForm.ShowDialog() == DialogResult.OK)
+                {
+                    dalHangHoa.UpdateHangHoa(editForm.HangHoa);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Không tìm thấy thông tin sản phẩm.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+        private void DeleteProduct(int rowIndex)
+        {
+            string tenHang = dtDanhSach.Rows[rowIndex].Cells["TenHang"].Value.ToString();
+            DialogResult dialogResult = MessageBox.Show($"Bạn có chắc chắn muốn xóa sản phẩm '{tenHang}'?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (dialogResult == DialogResult.Yes)
+            {
+                // Gọi phương thức xóa trong DAL
+                if (dalHangHoa.DeleteHangHoa(tenHang)) // Giả định bạn có phương thức DeleteHangHoa trong DAL
+                {
+                    LoadData(); // Tải lại dữ liệu sau khi xóa
+                }
+                else
+                {
+                    MessageBox.Show("Có lỗi xảy ra khi xóa sản phẩm.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+    }
+}
