@@ -36,8 +36,8 @@ namespace GUI_QuanLy
                 {
                     Success.Show();
                     Global.MaNV = maNV;
-                    HomePage homePage = new HomePage();
-                    homePage.Show();
+                    Form1 form1 = new Form1();
+                    form1.Show();
                 }
                 else
                 {

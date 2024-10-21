@@ -58,14 +58,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtTenHang = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnTitle = new Guna.UI2.WinForms.Guna2Button();
             this.txtMaHang = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.picpoc = new Guna.UI2.WinForms.Guna2PictureBox();
             this.Success = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.headerControl1 = new GUI_QuanLy.HeaderControl();
-            this.sidebarControl1 = new GUI_QuanLy.SidebarControl();
             this.guna2Panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picpoc)).BeginInit();
             this.SuspendLayout();
@@ -101,12 +99,12 @@
             this.guna2Panel4.Controls.Add(this.label3);
             this.guna2Panel4.Controls.Add(this.txtTenHang);
             this.guna2Panel4.Controls.Add(this.label2);
-            this.guna2Panel4.Controls.Add(this.guna2Button1);
+            this.guna2Panel4.Controls.Add(this.btnTitle);
             this.guna2Panel4.Controls.Add(this.txtMaHang);
             this.guna2Panel4.Controls.Add(this.label1);
             this.guna2Panel4.Controls.Add(this.picpoc);
             this.guna2Panel4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
-            this.guna2Panel4.Location = new System.Drawing.Point(323, 76);
+            this.guna2Panel4.Location = new System.Drawing.Point(168, 27);
             this.guna2Panel4.Name = "guna2Panel4";
             this.guna2Panel4.Size = new System.Drawing.Size(1056, 589);
             this.guna2Panel4.TabIndex = 6;
@@ -602,24 +600,25 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "Tên hàng";
             // 
-            // guna2Button1
+            // btnTitle
             // 
-            this.guna2Button1.BorderRadius = 20;
-            this.guna2Button1.CustomizableEdges.BottomLeft = false;
-            this.guna2Button1.CustomizableEdges.BottomRight = false;
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(106)))), ((int)(((byte)(236)))));
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(0, 0);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(1056, 45);
-            this.guna2Button1.TabIndex = 5;
-            this.guna2Button1.Text = "Thông tin sản phẩm";
+            this.btnTitle.BorderRadius = 20;
+            this.btnTitle.CustomizableEdges.BottomLeft = false;
+            this.btnTitle.CustomizableEdges.BottomRight = false;
+            this.btnTitle.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnTitle.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnTitle.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnTitle.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnTitle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnTitle.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(106)))), ((int)(((byte)(236)))));
+            this.btnTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTitle.ForeColor = System.Drawing.Color.White;
+            this.btnTitle.Location = new System.Drawing.Point(0, 0);
+            this.btnTitle.Name = "btnTitle";
+            this.btnTitle.Size = new System.Drawing.Size(1056, 45);
+            this.btnTitle.TabIndex = 5;
+            this.btnTitle.Text = "Thông tin sản phẩm";
+            this.btnTitle.Click += new System.EventHandler(this.btnTitle_Click);
             // 
             // txtMaHang
             // 
@@ -661,6 +660,7 @@
             this.picpoc.Location = new System.Drawing.Point(19, 53);
             this.picpoc.Name = "picpoc";
             this.picpoc.Size = new System.Drawing.Size(216, 200);
+            this.picpoc.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picpoc.TabIndex = 0;
             this.picpoc.TabStop = false;
             // 
@@ -677,25 +677,6 @@
             // 
             this.openFileDialog.FileName = "openFileDialog1";
             // 
-            // headerControl1
-            // 
-            this.headerControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.headerControl1.Location = new System.Drawing.Point(306, 0);
-            this.headerControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.headerControl1.Name = "headerControl1";
-            this.headerControl1.Size = new System.Drawing.Size(1134, 60);
-            this.headerControl1.TabIndex = 2;
-            // 
-            // sidebarControl1
-            // 
-            this.sidebarControl1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(64)))), ((int)(((byte)(118)))));
-            this.sidebarControl1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.sidebarControl1.Location = new System.Drawing.Point(0, 0);
-            this.sidebarControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.sidebarControl1.Name = "sidebarControl1";
-            this.sidebarControl1.Size = new System.Drawing.Size(306, 913);
-            this.sidebarControl1.TabIndex = 1;
-            // 
             // Edit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -703,8 +684,6 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(30)))), ((int)(((byte)(53)))));
             this.ClientSize = new System.Drawing.Size(1440, 913);
             this.Controls.Add(this.guna2Panel4);
-            this.Controls.Add(this.headerControl1);
-            this.Controls.Add(this.sidebarControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Edit";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -717,8 +696,6 @@
         }
 
         #endregion
-        private SidebarControl sidebarControl1;
-        private HeaderControl headerControl1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
         private Guna.UI2.WinForms.Guna2Button btnChonAnh;
         private Guna.UI2.WinForms.Guna2Button btnLuu;
@@ -746,7 +723,7 @@
         private System.Windows.Forms.Label label3;
         private Guna.UI2.WinForms.Guna2TextBox txtTenHang;
         private System.Windows.Forms.Label label2;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button btnTitle;
         private Guna.UI2.WinForms.Guna2TextBox txtMaHang;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2PictureBox picpoc;

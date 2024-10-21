@@ -49,3 +49,10 @@ F:\Test\BTL_LTTQ\GUI_QuanLy\obj\Debug\GUI_QuanLy.HomePage.resources
 F:\Test\BTL_LTTQ\GUI_QuanLy\obj\Debug\GUI_QuanLy.Information.resources
 F:\Test\BTL_LTTQ\GUI_QuanLy\obj\Debug\GUI_QuanLy.InfoProduct.resources
 F:\Test\BTL_LTTQ\GUI_QuanLy\obj\Debug\GUI_QuanLy.Edit.resources
+F:\Test\BTL_LTTQ\GUI_QuanLy\bin\Debug\Bunifu.UI.WinForms.BunifuDataGridView.dll
+F:\Test\BTL_LTTQ\GUI_QuanLy\bin\Debug\Bunifu.UI.WinForms.BunifuPanel.dll
+F:\Test\BTL_LTTQ\GUI_QuanLy\obj\Debug\GUI_QuanLy.Lookup.resources
+F:\Test\BTL_LTTQ\GUI_QuanLy\obj\Debug\GUI_QuanLy.Category.resources
+F:\Test\BTL_LTTQ\GUI_QuanLy\bin\Debug\Bunifu.UI.WinForms.BunifuShadowPanel.dll
+F:\Test\BTL_LTTQ\GUI_QuanLy\obj\Debug\GUI_QuanLy.ProductView.resources
+F:\Test\BTL_LTTQ\GUI_QuanLy\obj\Debug\GUI_QuanLy.Sale.resources

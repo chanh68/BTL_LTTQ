@@ -19,8 +19,16 @@ namespace GUI_QuanLy
 
         private void btnInfo_Click(object sender, EventArgs e)
         {
-            Information information = new Information();
-            information.ShowDialog();
+            LoadForm(new Information());
+        }
+
+        private void LoadForm(Form childForm)
+        {
+            Form1 parentForm = (Form1)this.FindForm();
+            if (parentForm != null)
+            {
+                parentForm.LoadFormIntoPanel(childForm);
+            }
         }
     }
 }

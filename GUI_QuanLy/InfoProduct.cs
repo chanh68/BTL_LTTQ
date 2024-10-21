@@ -13,29 +13,25 @@ namespace GUI_QuanLy
         public InfoProduct()
         {
             InitializeComponent();
-            dalHangHoa = new DAL_HangHoa(); // Khởi tạo DAL
-        }
-
-        private void InfoProduct_Load(object sender, EventArgs e)
-        {
+            dalHangHoa = new DAL_HangHoa();
             LoadData();
         }
 
-        private void LoadData()
+        public void LoadData() // Phương thức để tải dữ liệu
         {
             DataTable dataTable = dalHangHoa.GetHangHoaData();
             dtDanhSach.DataSource = dataTable;
 
-            // Hiển thị các cột ChiTiet, Sua, Xoa nếu có
-            SetColumnVisibility("ChiTiet");
-            SetColumnVisibility("Sua");
-            SetColumnVisibility("Xoa");
-
             // Đánh số thứ tự cho hàng
             for (int i = 0; i < dtDanhSach.Rows.Count; i++)
             {
-                dtDanhSach.Rows[i].Cells[0].Value = i + 1;
+                dtDanhSach.Rows[i].Cells[0].Value = i + 1; // Cột thứ tự
             }
+
+            // Hiển thị các cột ChiTiet, Sua, Xoa nếu có
+            SetColumnVisibility("ChiTiet");
+            SetColumnVisibility("Xoa");
+            Sua.Visible = true;
 
             dtDanhSach.AllowUserToAddRows = false;
             ThongKe.Visible = false; // Ẩn điều này nếu không cần thiết
@@ -49,23 +45,15 @@ namespace GUI_QuanLy
             }
         }
 
-        private void btnThemSP_Click(object sender, EventArgs e)
-        {
-            // Tạo đối tượng HangHoa mới
-            DTO_HangHoa hangHoa = new DTO_HangHoa();
-            Edit editForm = new Edit(hangHoa);
-            if (editForm.ShowDialog() == DialogResult.OK)
-            {
-                // Nếu lưu thành công, tải lại dữ liệu
-                LoadData();
-            }
-        }
 
         private void dtDanhSach_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return; // Kiểm tra nếu hàng là header
-
-            if (e.ColumnIndex == dtDanhSach.Columns["Sua"].Index)
+            if (e.ColumnIndex == dtDanhSach.Columns["ChiTiet"].Index)
+            {
+                ShowInfoProduct(e.RowIndex);
+            }
+            else if (e.ColumnIndex == dtDanhSach.Columns["Sua"].Index)
             {
                 EditProduct(e.RowIndex);
             }
@@ -77,16 +65,42 @@ namespace GUI_QuanLy
 
         private void EditProduct(int rowIndex)
         {
-            this.Close();
             string tenHang = dtDanhSach.Rows[rowIndex].Cells["TenHang"].Value.ToString();
             DTO_HangHoa hangHoa = dalHangHoa.GetHangHoaByTenHang(tenHang);
 
             if (hangHoa != null)
             {
-                Edit editForm = new Edit(hangHoa);
+                Edit editForm = new Edit(hangHoa, this, "Sửa");
                 if (editForm.ShowDialog() == DialogResult.OK)
                 {
-                    dalHangHoa.UpdateHangHoa(editForm.HangHoa);
+                    LoadData(); // Tải lại dữ liệu sau khi sửa
+                }
+                else if (editForm.DialogResult == DialogResult.Cancel)
+                {
+                    // Bạn có thể thêm logic ở đây nếu cần
+                }
+            }
+            else
+            {
+                MessageBox.Show("Không tìm thấy thông tin sản phẩm.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void ShowInfoProduct(int rowIndex)
+        {
+            string tenHang = dtDanhSach.Rows[rowIndex].Cells["TenHang"].Value.ToString();
+            DTO_HangHoa hangHoa = dalHangHoa.GetHangHoaByTenHang(tenHang);
+
+            if (hangHoa != null)
+            {
+                // Truyền chế độ "Sửa sản phẩm"
+                Edit showForm = new Edit(hangHoa, this, "Thông tin");
+                if (showForm.ShowDialog() == DialogResult.OK)
+                {
+                    LoadData(); // Tải lại dữ liệu sau khi sửa
+                }
+                else if (showForm.DialogResult == DialogResult.Cancel)
+                {
+                    // Bạn có thể thêm logic ở đây nếu cần
                 }
             }
             else
@@ -95,6 +109,20 @@ namespace GUI_QuanLy
             }
         }
 
+        // Khi thêm sản phẩm
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            
+            Edit addForm = new Edit(null, this, "Thêm");
+            if (addForm.ShowDialog() == DialogResult.OK)
+            {
+                LoadData(); // Tải lại dữ liệu sau khi sửa
+            }
+            else if (addForm.DialogResult == DialogResult.Cancel)
+            {
+               
+            }
+        }
 
         private void DeleteProduct(int rowIndex)
         {
@@ -113,5 +141,11 @@ namespace GUI_QuanLy
                 }
             }
         }
+
+        private void InfoProduct_Load(object sender, EventArgs e)
+        {
+            LoadData();
+        }
+
     }
 }

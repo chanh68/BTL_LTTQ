@@ -45,21 +45,22 @@
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges14 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges15 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.panelSidebar = new System.Windows.Forms.Panel();
+            this.panelNhanSu = new System.Windows.Forms.Panel();
+            this.panelHoaDon = new System.Windows.Forms.Panel();
+            this.panelSP = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnThoat = new System.Windows.Forms.PictureBox();
             this.picTK = new System.Windows.Forms.PictureBox();
             this.btnThongKe = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.panelNhanSu = new System.Windows.Forms.Panel();
             this.btnTaiKhoan = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnLuong = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnDanhSach = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.picNS = new System.Windows.Forms.PictureBox();
             this.btnNhanSu = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.panelHoaDon = new System.Windows.Forms.Panel();
             this.btnHoaDonBan = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnHoaDonNhap = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnHoaDon = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.panelSP = new System.Windows.Forms.Panel();
             this.btnDanhMuc = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnTraCuu = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnThongTin = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
@@ -71,21 +72,20 @@
             this.btnKhachHang = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnTrangChu = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.panelSidebar.SuspendLayout();
+            this.panelNhanSu.SuspendLayout();
+            this.panelHoaDon.SuspendLayout();
+            this.panelSP.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnThoat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTK)).BeginInit();
-            this.panelNhanSu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picNS)).BeginInit();
-            this.panelHoaDon.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.panelSP.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picNCC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picKH)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -110,6 +110,50 @@
             this.panelSidebar.Name = "panelSidebar";
             this.panelSidebar.Size = new System.Drawing.Size(306, 1096);
             this.panelSidebar.TabIndex = 1;
+            // 
+            // panelNhanSu
+            // 
+            this.panelNhanSu.Controls.Add(this.btnTaiKhoan);
+            this.panelNhanSu.Controls.Add(this.btnLuong);
+            this.panelNhanSu.Controls.Add(this.btnDanhSach);
+            this.panelNhanSu.Controls.Add(this.picNS);
+            this.panelNhanSu.Controls.Add(this.btnNhanSu);
+            this.panelNhanSu.Location = new System.Drawing.Point(31, 404);
+            this.panelNhanSu.Name = "panelNhanSu";
+            this.panelNhanSu.Size = new System.Drawing.Size(238, 55);
+            this.panelNhanSu.TabIndex = 32;
+            // 
+            // panelHoaDon
+            // 
+            this.panelHoaDon.Controls.Add(this.btnHoaDonBan);
+            this.panelHoaDon.Controls.Add(this.btnHoaDonNhap);
+            this.panelHoaDon.Controls.Add(this.pictureBox2);
+            this.panelHoaDon.Controls.Add(this.btnHoaDon);
+            this.panelHoaDon.Location = new System.Drawing.Point(31, 262);
+            this.panelHoaDon.Name = "panelHoaDon";
+            this.panelHoaDon.Size = new System.Drawing.Size(238, 55);
+            this.panelHoaDon.TabIndex = 31;
+            // 
+            // panelSP
+            // 
+            this.panelSP.Controls.Add(this.btnDanhMuc);
+            this.panelSP.Controls.Add(this.btnTraCuu);
+            this.panelSP.Controls.Add(this.btnThongTin);
+            this.panelSP.Controls.Add(this.pictureBox7);
+            this.panelSP.Controls.Add(this.btnSanPham);
+            this.panelSP.Location = new System.Drawing.Point(31, 191);
+            this.panelSP.Name = "panelSP";
+            this.panelSP.Size = new System.Drawing.Size(238, 55);
+            this.panelSP.TabIndex = 30;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.pictureBoxLogo);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(299, 88);
+            this.flowLayoutPanel1.TabIndex = 0;
             // 
             // btnThoat
             // 
@@ -222,18 +266,6 @@
             this.btnThongKe.TextMarginLeft = 0;
             this.btnThongKe.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnThongKe.UseDefaultRadiusAndThickness = true;
-            // 
-            // panelNhanSu
-            // 
-            this.panelNhanSu.Controls.Add(this.btnTaiKhoan);
-            this.panelNhanSu.Controls.Add(this.btnLuong);
-            this.panelNhanSu.Controls.Add(this.btnDanhSach);
-            this.panelNhanSu.Controls.Add(this.picNS);
-            this.panelNhanSu.Controls.Add(this.btnNhanSu);
-            this.panelNhanSu.Location = new System.Drawing.Point(31, 404);
-            this.panelNhanSu.Name = "panelNhanSu";
-            this.panelNhanSu.Size = new System.Drawing.Size(238, 55);
-            this.panelNhanSu.TabIndex = 32;
             // 
             // btnTaiKhoan
             // 
@@ -603,17 +635,6 @@
             this.btnNhanSu.UseDefaultRadiusAndThickness = true;
             this.btnNhanSu.Click += new System.EventHandler(this.btnNhanSu_Click);
             // 
-            // panelHoaDon
-            // 
-            this.panelHoaDon.Controls.Add(this.btnHoaDonBan);
-            this.panelHoaDon.Controls.Add(this.btnHoaDonNhap);
-            this.panelHoaDon.Controls.Add(this.pictureBox2);
-            this.panelHoaDon.Controls.Add(this.btnHoaDon);
-            this.panelHoaDon.Location = new System.Drawing.Point(31, 262);
-            this.panelHoaDon.Name = "panelHoaDon";
-            this.panelHoaDon.Size = new System.Drawing.Size(238, 55);
-            this.panelHoaDon.TabIndex = 31;
-            // 
             // btnHoaDonBan
             // 
             this.btnHoaDonBan.AllowAnimations = true;
@@ -893,18 +914,6 @@
             this.btnHoaDon.UseDefaultRadiusAndThickness = true;
             this.btnHoaDon.Click += new System.EventHandler(this.btnHoaDon_Click);
             // 
-            // panelSP
-            // 
-            this.panelSP.Controls.Add(this.btnDanhMuc);
-            this.panelSP.Controls.Add(this.btnTraCuu);
-            this.panelSP.Controls.Add(this.btnThongTin);
-            this.panelSP.Controls.Add(this.pictureBox7);
-            this.panelSP.Controls.Add(this.btnSanPham);
-            this.panelSP.Location = new System.Drawing.Point(31, 191);
-            this.panelSP.Name = "panelSP";
-            this.panelSP.Size = new System.Drawing.Size(238, 55);
-            this.panelSP.TabIndex = 30;
-            // 
             // btnDanhMuc
             // 
             this.btnDanhMuc.AllowAnimations = true;
@@ -993,6 +1002,7 @@
             this.btnDanhMuc.TextMarginLeft = 0;
             this.btnDanhMuc.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnDanhMuc.UseDefaultRadiusAndThickness = true;
+            this.btnDanhMuc.Click += new System.EventHandler(this.btnDanhMuc_Click);
             // 
             // btnTraCuu
             // 
@@ -1082,6 +1092,7 @@
             this.btnTraCuu.TextMarginLeft = 0;
             this.btnTraCuu.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnTraCuu.UseDefaultRadiusAndThickness = true;
+            this.btnTraCuu.Click += new System.EventHandler(this.btnTraCuu_Click);
             // 
             // btnThongTin
             // 
@@ -1575,15 +1586,6 @@
             this.btnTrangChu.UseDefaultRadiusAndThickness = true;
             this.btnTrangChu.Click += new System.EventHandler(this.btnTrangChu_Click);
             // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Controls.Add(this.pictureBoxLogo);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(299, 88);
-            this.flowLayoutPanel1.TabIndex = 0;
-            // 
             // pictureBoxLogo
             // 
             this.pictureBoxLogo.Image = global::GUI_QuanLy.Properties.Resources.logo;
@@ -1607,18 +1609,18 @@
             this.Size = new System.Drawing.Size(306, 1096);
             this.Load += new System.EventHandler(this.SidebarControl_Load);
             this.panelSidebar.ResumeLayout(false);
+            this.panelNhanSu.ResumeLayout(false);
+            this.panelHoaDon.ResumeLayout(false);
+            this.panelSP.ResumeLayout(false);
+            this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnThoat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTK)).EndInit();
-            this.panelNhanSu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picNS)).EndInit();
-            this.panelHoaDon.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.panelSP.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picNCC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picKH)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             this.ResumeLayout(false);
 

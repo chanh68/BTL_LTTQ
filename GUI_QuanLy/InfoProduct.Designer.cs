@@ -31,13 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.sidebarControl1 = new GUI_QuanLy.SidebarControl();
-            this.headerControl1 = new GUI_QuanLy.HeaderControl();
             this.dtDanhSach = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.btnThemSP = new Guna.UI2.WinForms.Guna2Button();
-            this.ThongKe = new Guna.UI2.WinForms.Guna2Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,28 +40,13 @@
             this.ChiTiet = new System.Windows.Forms.DataGridViewImageColumn();
             this.Sua = new System.Windows.Forms.DataGridViewImageColumn();
             this.Xoa = new System.Windows.Forms.DataGridViewImageColumn();
+            this.btnThemSP = new Guna.UI2.WinForms.Guna2Button();
+            this.ThongKe = new Guna.UI2.WinForms.Guna2Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtDanhSach)).BeginInit();
             this.ThongKe.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // sidebarControl1
-            // 
-            this.sidebarControl1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(64)))), ((int)(((byte)(118)))));
-            this.sidebarControl1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.sidebarControl1.Location = new System.Drawing.Point(0, 0);
-            this.sidebarControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.sidebarControl1.Name = "sidebarControl1";
-            this.sidebarControl1.Size = new System.Drawing.Size(306, 913);
-            this.sidebarControl1.TabIndex = 0;
-            // 
-            // headerControl1
-            // 
-            this.headerControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.headerControl1.Location = new System.Drawing.Point(306, 0);
-            this.headerControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.headerControl1.Name = "headerControl1";
-            this.headerControl1.Size = new System.Drawing.Size(1134, 60);
-            this.headerControl1.TabIndex = 1;
             // 
             // dtDanhSach
             // 
@@ -102,7 +81,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dtDanhSach.DefaultCellStyle = dataGridViewCellStyle3;
             this.dtDanhSach.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(53)))), ((int)(((byte)(74)))));
-            this.dtDanhSach.Location = new System.Drawing.Point(333, 309);
+            this.dtDanhSach.Location = new System.Drawing.Point(54, 249);
             this.dtDanhSach.Name = "dtDanhSach";
             this.dtDanhSach.RowHeadersVisible = false;
             this.dtDanhSach.RowHeadersWidth = 62;
@@ -131,55 +110,6 @@
             this.dtDanhSach.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dtDanhSach.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dtDanhSach.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtDanhSach_CellContentClick);
-            // 
-            // btnThemSP
-            // 
-            this.btnThemSP.BorderRadius = 13;
-            this.btnThemSP.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnThemSP.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnThemSP.DisabledState.FillColor = System.Drawing.Color.Red;
-            this.btnThemSP.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnThemSP.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(124)))), ((int)(((byte)(244)))));
-            this.btnThemSP.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnThemSP.ForeColor = System.Drawing.Color.White;
-            this.btnThemSP.HoverState.FillColor = System.Drawing.Color.Red;
-            this.btnThemSP.Location = new System.Drawing.Point(1044, 244);
-            this.btnThemSP.Name = "btnThemSP";
-            this.btnThemSP.Size = new System.Drawing.Size(180, 45);
-            this.btnThemSP.TabIndex = 5;
-            this.btnThemSP.Text = "Thêm sản phẩm";
-            this.btnThemSP.Click += new System.EventHandler(this.btnThemSP_Click);
-            // 
-            // ThongKe
-            // 
-            this.ThongKe.Controls.Add(this.label2);
-            this.ThongKe.Controls.Add(this.label1);
-            this.ThongKe.Location = new System.Drawing.Point(972, 89);
-            this.ThongKe.Name = "ThongKe";
-            this.ThongKe.Size = new System.Drawing.Size(354, 135);
-            this.ThongKe.TabIndex = 4;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(38, 79);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(195, 20);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Số sản phẩm hết hàng:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(29, 24);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(213, 20);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Sản phẩm bán chạy nhất:";
             // 
             // Column1
             // 
@@ -252,6 +182,55 @@
             this.Xoa.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.Xoa.Visible = false;
             // 
+            // btnThemSP
+            // 
+            this.btnThemSP.BorderRadius = 13;
+            this.btnThemSP.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnThemSP.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnThemSP.DisabledState.FillColor = System.Drawing.Color.Red;
+            this.btnThemSP.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnThemSP.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(124)))), ((int)(((byte)(244)))));
+            this.btnThemSP.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnThemSP.ForeColor = System.Drawing.Color.White;
+            this.btnThemSP.HoverState.FillColor = System.Drawing.Color.Red;
+            this.btnThemSP.Location = new System.Drawing.Point(765, 184);
+            this.btnThemSP.Name = "btnThemSP";
+            this.btnThemSP.Size = new System.Drawing.Size(180, 45);
+            this.btnThemSP.TabIndex = 5;
+            this.btnThemSP.Text = "Thêm sản phẩm";
+            this.btnThemSP.Click += new System.EventHandler(this.btnThem_Click);
+            // 
+            // ThongKe
+            // 
+            this.ThongKe.Controls.Add(this.label2);
+            this.ThongKe.Controls.Add(this.label1);
+            this.ThongKe.Location = new System.Drawing.Point(693, 29);
+            this.ThongKe.Name = "ThongKe";
+            this.ThongKe.Size = new System.Drawing.Size(354, 135);
+            this.ThongKe.TabIndex = 4;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(38, 79);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(195, 20);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Số sản phẩm hết hàng:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(29, 24);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(213, 20);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Sản phẩm bán chạy nhất:";
+            // 
             // InfoProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -261,8 +240,6 @@
             this.Controls.Add(this.dtDanhSach);
             this.Controls.Add(this.btnThemSP);
             this.Controls.Add(this.ThongKe);
-            this.Controls.Add(this.headerControl1);
-            this.Controls.Add(this.sidebarControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "InfoProduct";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -276,9 +253,6 @@
         }
 
         #endregion
-
-        private SidebarControl sidebarControl1;
-        private HeaderControl headerControl1;
         private Guna.UI2.WinForms.Guna2DataGridView dtDanhSach;
         private Guna.UI2.WinForms.Guna2Button btnThemSP;
         private Guna.UI2.WinForms.Guna2Panel ThongKe;

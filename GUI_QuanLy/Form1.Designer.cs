@@ -28,20 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            this.panelAll = new Bunifu.UI.WinForms.BunifuPanel();
             this.headerControl1 = new GUI_QuanLy.HeaderControl();
             this.sidebarControl1 = new GUI_QuanLy.SidebarControl();
             this.SuspendLayout();
             // 
-            // button1
+            // panelAll
             // 
-            this.button1.Location = new System.Drawing.Point(424, 184);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.panelAll.BackgroundColor = System.Drawing.Color.Transparent;
+            this.panelAll.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelAll.BackgroundImage")));
+            this.panelAll.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelAll.BorderColor = System.Drawing.Color.Transparent;
+            this.panelAll.BorderRadius = 3;
+            this.panelAll.BorderThickness = 1;
+            this.panelAll.Location = new System.Drawing.Point(306, 60);
+            this.panelAll.Name = "panelAll";
+            this.panelAll.ShowBorders = true;
+            this.panelAll.Size = new System.Drawing.Size(1112, 797);
+            this.panelAll.TabIndex = 2;
             // 
             // headerControl1
             // 
@@ -67,7 +72,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(1418, 857);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.panelAll);
             this.Controls.Add(this.headerControl1);
             this.Controls.Add(this.sidebarControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -83,7 +88,7 @@
 
         private SidebarControl sidebarControl1;
         private HeaderControl headerControl1;
-        private System.Windows.Forms.Button button1;
+        private Bunifu.UI.WinForms.BunifuPanel panelAll;
     }
 }
 

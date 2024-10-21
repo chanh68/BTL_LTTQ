@@ -54,6 +54,7 @@
     <Compile Include="DAL_KichThuoc.cs" />
     <Compile Include="DAL_Loai.cs" />
     <Compile Include="DAL_LoaiMen.cs" />
+    <Compile Include="DAL_MauSac.cs" />
     <Compile Include="DAL_NhaCungCap.cs" />
     <Compile Include="DAL_NhanVien.cs" />
     <Compile Include="DAL_NuocSanXuat.cs" />
