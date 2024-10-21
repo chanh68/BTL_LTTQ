@@ -12,7 +12,8 @@ namespace DAL_QuanLy
     public class DAL_HoaDonBan : DBConnect
     {
         public DAL_HoaDonBan() { }
-        // Phuong thuc tra ve toan bo danh sach hdb tu bang HDB
+
+        // Phương thức trả về toàn bộ danh sách HDB từ bảng HoaDonBan
         public DataTable getHoaDonBan()
         {
             SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM HoaDonBan", _conn);
@@ -27,8 +28,8 @@ namespace DAL_QuanLy
             string maHDB = "";
             try
             {
-                // Kết nối
-                _conn.Open();
+                // Mở kết nối từ DBConnect
+                OpenConnection();
 
                 // Lấy mã hóa đơn bán lớn nhất hiện có
                 SqlCommand cmd = new SqlCommand("SELECT TOP 1 MaHDB FROM HoaDonBan ORDER BY MaHDB DESC", _conn);
@@ -57,26 +58,25 @@ namespace DAL_QuanLy
             }
             finally
             {
-                // Đóng kết nối
-                _conn.Close();
+                // Đóng kết nối từ DBConnect
+                CloseConnection();
             }
 
             return maHDB; // Trả về mã hóa đơn bán mới
         }
 
-        // Phuong thuc Them HDB
+        // Phương thức thêm hóa đơn bán
         public bool themHDB(DTO_HoaDonBan hdb)
         {
             try
             {
-                //Ket noi
-                _conn.Open();
+                // Mở kết nối từ DBConnect
+                OpenConnection();
 
                 // Sinh mã hóa đơn bán
                 hdb.MaHDB = GenerateMaHDB();
 
-
-                // Query string - Chuỗi truy vấn thêm hóa đơn bán
+                // Chuỗi truy vấn thêm hóa đơn bán
                 string SQL = "INSERT INTO HoaDonBan (MaHDB, MaKH, NgayBan, TongTien) VALUES (@MaHDB, @MaKH, @NgayBan, @TongTien)";
 
                 // Tạo command
@@ -98,11 +98,10 @@ namespace DAL_QuanLy
                 // Xử lý lỗi (nếu cần)
                 Console.WriteLine("Lỗi: " + e.Message);
             }
-
             finally
             {
-                // Đóng kết nối
-                _conn.Close();
+                // Đóng kết nối từ DBConnect
+                CloseConnection();
             }
 
             return false;

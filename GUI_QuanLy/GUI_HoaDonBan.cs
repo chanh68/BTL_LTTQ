@@ -10,18 +10,11 @@ using System.Windows.Forms;
 
 namespace GUI_QuanLy
 {
-    public partial class Form1 : Form
+    public partial class GUI_HoaDonBan : Form
     {
-        public Form1()
+        public GUI_HoaDonBan()
         {
             InitializeComponent();
-        }
-
-
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Maximized;
         }
     }
 }
