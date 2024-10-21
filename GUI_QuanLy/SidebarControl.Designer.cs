@@ -45,22 +45,21 @@
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges14 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges15 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.panelSidebar = new System.Windows.Forms.Panel();
-            this.panelNhanSu = new System.Windows.Forms.Panel();
-            this.panelHoaDon = new System.Windows.Forms.Panel();
-            this.panelSP = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnThoat = new System.Windows.Forms.PictureBox();
             this.picTK = new System.Windows.Forms.PictureBox();
             this.btnThongKe = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.panelNhanSu = new System.Windows.Forms.Panel();
             this.btnTaiKhoan = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnLuong = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnDanhSach = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.picNS = new System.Windows.Forms.PictureBox();
             this.btnNhanSu = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.panelHoaDon = new System.Windows.Forms.Panel();
             this.btnHoaDonBan = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnHoaDonNhap = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnHoaDon = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.panelSP = new System.Windows.Forms.Panel();
             this.btnDanhMuc = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnTraCuu = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnThongTin = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
@@ -72,20 +71,21 @@
             this.btnKhachHang = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnTrangChu = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.panelSidebar.SuspendLayout();
-            this.panelNhanSu.SuspendLayout();
-            this.panelHoaDon.SuspendLayout();
-            this.panelSP.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnThoat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTK)).BeginInit();
+            this.panelNhanSu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picNS)).BeginInit();
+            this.panelHoaDon.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panelSP.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picNCC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picKH)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -111,57 +111,13 @@
             this.panelSidebar.Size = new System.Drawing.Size(306, 1096);
             this.panelSidebar.TabIndex = 1;
             // 
-            // panelNhanSu
-            // 
-            this.panelNhanSu.Controls.Add(this.btnTaiKhoan);
-            this.panelNhanSu.Controls.Add(this.btnLuong);
-            this.panelNhanSu.Controls.Add(this.btnDanhSach);
-            this.panelNhanSu.Controls.Add(this.picNS);
-            this.panelNhanSu.Controls.Add(this.btnNhanSu);
-            this.panelNhanSu.Location = new System.Drawing.Point(31, 404);
-            this.panelNhanSu.Name = "panelNhanSu";
-            this.panelNhanSu.Size = new System.Drawing.Size(238, 55);
-            this.panelNhanSu.TabIndex = 32;
-            // 
-            // panelHoaDon
-            // 
-            this.panelHoaDon.Controls.Add(this.btnHoaDonBan);
-            this.panelHoaDon.Controls.Add(this.btnHoaDonNhap);
-            this.panelHoaDon.Controls.Add(this.pictureBox2);
-            this.panelHoaDon.Controls.Add(this.btnHoaDon);
-            this.panelHoaDon.Location = new System.Drawing.Point(31, 262);
-            this.panelHoaDon.Name = "panelHoaDon";
-            this.panelHoaDon.Size = new System.Drawing.Size(238, 55);
-            this.panelHoaDon.TabIndex = 31;
-            // 
-            // panelSP
-            // 
-            this.panelSP.Controls.Add(this.btnDanhMuc);
-            this.panelSP.Controls.Add(this.btnTraCuu);
-            this.panelSP.Controls.Add(this.btnThongTin);
-            this.panelSP.Controls.Add(this.pictureBox7);
-            this.panelSP.Controls.Add(this.btnSanPham);
-            this.panelSP.Location = new System.Drawing.Point(31, 191);
-            this.panelSP.Name = "panelSP";
-            this.panelSP.Size = new System.Drawing.Size(238, 55);
-            this.panelSP.TabIndex = 30;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Controls.Add(this.pictureBoxLogo);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(299, 88);
-            this.flowLayoutPanel1.TabIndex = 0;
-            // 
             // btnThoat
             // 
             this.btnThoat.Image = global::GUI_QuanLy.Properties.Resources.Thoat;
-            this.btnThoat.Location = new System.Drawing.Point(19, 630);
+            this.btnThoat.Location = new System.Drawing.Point(32, 809);
             this.btnThoat.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(30, 30);
+            this.btnThoat.Size = new System.Drawing.Size(40, 39);
             this.btnThoat.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnThoat.TabIndex = 35;
             this.btnThoat.TabStop = false;
@@ -225,7 +181,8 @@
             this.btnThongKe.IdleIconLeftImage = null;
             this.btnThongKe.IdleIconRightImage = null;
             this.btnThongKe.IndicateFocus = false;
-            this.btnThongKe.Location = new System.Drawing.Point(31, 547);
+            this.btnThongKe.Location = new System.Drawing.Point(32, 548);
+            this.btnThongKe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnThongKe.Name = "btnThongKe";
             this.btnThongKe.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnThongKe.OnDisabledState.BorderRadius = 1;
@@ -266,6 +223,19 @@
             this.btnThongKe.TextMarginLeft = 0;
             this.btnThongKe.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnThongKe.UseDefaultRadiusAndThickness = true;
+            // 
+            // panelNhanSu
+            // 
+            this.panelNhanSu.Controls.Add(this.btnTaiKhoan);
+            this.panelNhanSu.Controls.Add(this.btnLuong);
+            this.panelNhanSu.Controls.Add(this.btnDanhSach);
+            this.panelNhanSu.Controls.Add(this.picNS);
+            this.panelNhanSu.Controls.Add(this.btnNhanSu);
+            this.panelNhanSu.Location = new System.Drawing.Point(32, 404);
+            this.panelNhanSu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelNhanSu.Name = "panelNhanSu";
+            this.panelNhanSu.Size = new System.Drawing.Size(238, 55);
+            this.panelNhanSu.TabIndex = 32;
             // 
             // btnTaiKhoan
             // 
@@ -315,6 +285,7 @@
             this.btnTaiKhoan.IdleIconRightImage = null;
             this.btnTaiKhoan.IndicateFocus = false;
             this.btnTaiKhoan.Location = new System.Drawing.Point(0, 180);
+            this.btnTaiKhoan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTaiKhoan.Name = "btnTaiKhoan";
             this.btnTaiKhoan.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnTaiKhoan.OnDisabledState.BorderRadius = 1;
@@ -355,6 +326,7 @@
             this.btnTaiKhoan.TextMarginLeft = 0;
             this.btnTaiKhoan.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnTaiKhoan.UseDefaultRadiusAndThickness = true;
+            this.btnTaiKhoan.Click += new System.EventHandler(this.btnTaiKhoan_Click);
             // 
             // btnLuong
             // 
@@ -404,6 +376,7 @@
             this.btnLuong.IdleIconRightImage = null;
             this.btnLuong.IndicateFocus = false;
             this.btnLuong.Location = new System.Drawing.Point(0, 120);
+            this.btnLuong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLuong.Name = "btnLuong";
             this.btnLuong.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnLuong.OnDisabledState.BorderRadius = 1;
@@ -444,6 +417,7 @@
             this.btnLuong.TextMarginLeft = 0;
             this.btnLuong.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnLuong.UseDefaultRadiusAndThickness = true;
+            this.btnLuong.Click += new System.EventHandler(this.btnLuong_Click);
             // 
             // btnDanhSach
             // 
@@ -493,6 +467,7 @@
             this.btnDanhSach.IdleIconRightImage = null;
             this.btnDanhSach.IndicateFocus = false;
             this.btnDanhSach.Location = new System.Drawing.Point(0, 60);
+            this.btnDanhSach.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDanhSach.Name = "btnDanhSach";
             this.btnDanhSach.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnDanhSach.OnDisabledState.BorderRadius = 1;
@@ -533,6 +508,7 @@
             this.btnDanhSach.TextMarginLeft = 0;
             this.btnDanhSach.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnDanhSach.UseDefaultRadiusAndThickness = true;
+            this.btnDanhSach.Click += new System.EventHandler(this.btnDanhSach_Click);
             // 
             // picNS
             // 
@@ -593,6 +569,7 @@
             this.btnNhanSu.IdleIconRightImage = null;
             this.btnNhanSu.IndicateFocus = false;
             this.btnNhanSu.Location = new System.Drawing.Point(0, 0);
+            this.btnNhanSu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNhanSu.Name = "btnNhanSu";
             this.btnNhanSu.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnNhanSu.OnDisabledState.BorderRadius = 1;
@@ -634,6 +611,18 @@
             this.btnNhanSu.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnNhanSu.UseDefaultRadiusAndThickness = true;
             this.btnNhanSu.Click += new System.EventHandler(this.btnNhanSu_Click);
+            // 
+            // panelHoaDon
+            // 
+            this.panelHoaDon.Controls.Add(this.btnHoaDonBan);
+            this.panelHoaDon.Controls.Add(this.btnHoaDonNhap);
+            this.panelHoaDon.Controls.Add(this.pictureBox2);
+            this.panelHoaDon.Controls.Add(this.btnHoaDon);
+            this.panelHoaDon.Location = new System.Drawing.Point(32, 262);
+            this.panelHoaDon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelHoaDon.Name = "panelHoaDon";
+            this.panelHoaDon.Size = new System.Drawing.Size(238, 55);
+            this.panelHoaDon.TabIndex = 31;
             // 
             // btnHoaDonBan
             // 
@@ -683,6 +672,7 @@
             this.btnHoaDonBan.IdleIconRightImage = null;
             this.btnHoaDonBan.IndicateFocus = false;
             this.btnHoaDonBan.Location = new System.Drawing.Point(0, 120);
+            this.btnHoaDonBan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnHoaDonBan.Name = "btnHoaDonBan";
             this.btnHoaDonBan.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnHoaDonBan.OnDisabledState.BorderRadius = 1;
@@ -772,6 +762,7 @@
             this.btnHoaDonNhap.IdleIconRightImage = null;
             this.btnHoaDonNhap.IndicateFocus = false;
             this.btnHoaDonNhap.Location = new System.Drawing.Point(0, 60);
+            this.btnHoaDonNhap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnHoaDonNhap.Name = "btnHoaDonNhap";
             this.btnHoaDonNhap.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnHoaDonNhap.OnDisabledState.BorderRadius = 1;
@@ -816,7 +807,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::GUI_QuanLy.Properties.Resources.Hoa_Don;
-            this.pictureBox2.Location = new System.Drawing.Point(39, 13);
+            this.pictureBox2.Location = new System.Drawing.Point(39, 12);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(30, 30);
@@ -872,6 +863,7 @@
             this.btnHoaDon.IdleIconRightImage = null;
             this.btnHoaDon.IndicateFocus = false;
             this.btnHoaDon.Location = new System.Drawing.Point(0, 0);
+            this.btnHoaDon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnHoaDon.Name = "btnHoaDon";
             this.btnHoaDon.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnHoaDon.OnDisabledState.BorderRadius = 1;
@@ -913,6 +905,19 @@
             this.btnHoaDon.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnHoaDon.UseDefaultRadiusAndThickness = true;
             this.btnHoaDon.Click += new System.EventHandler(this.btnHoaDon_Click);
+            // 
+            // panelSP
+            // 
+            this.panelSP.Controls.Add(this.btnDanhMuc);
+            this.panelSP.Controls.Add(this.btnTraCuu);
+            this.panelSP.Controls.Add(this.btnThongTin);
+            this.panelSP.Controls.Add(this.pictureBox7);
+            this.panelSP.Controls.Add(this.btnSanPham);
+            this.panelSP.Location = new System.Drawing.Point(32, 191);
+            this.panelSP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelSP.Name = "panelSP";
+            this.panelSP.Size = new System.Drawing.Size(238, 55);
+            this.panelSP.TabIndex = 30;
             // 
             // btnDanhMuc
             // 
@@ -961,7 +966,8 @@
             this.btnDanhMuc.IdleIconLeftImage = null;
             this.btnDanhMuc.IdleIconRightImage = null;
             this.btnDanhMuc.IndicateFocus = false;
-            this.btnDanhMuc.Location = new System.Drawing.Point(0, 173);
+            this.btnDanhMuc.Location = new System.Drawing.Point(0, 172);
+            this.btnDanhMuc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDanhMuc.Name = "btnDanhMuc";
             this.btnDanhMuc.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnDanhMuc.OnDisabledState.BorderRadius = 1;
@@ -1052,6 +1058,7 @@
             this.btnTraCuu.IdleIconRightImage = null;
             this.btnTraCuu.IndicateFocus = false;
             this.btnTraCuu.Location = new System.Drawing.Point(0, 116);
+            this.btnTraCuu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTraCuu.Name = "btnTraCuu";
             this.btnTraCuu.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnTraCuu.OnDisabledState.BorderRadius = 1;
@@ -1142,6 +1149,7 @@
             this.btnThongTin.IdleIconRightImage = null;
             this.btnThongTin.IndicateFocus = false;
             this.btnThongTin.Location = new System.Drawing.Point(0, 58);
+            this.btnThongTin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnThongTin.Name = "btnThongTin";
             this.btnThongTin.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnThongTin.OnDisabledState.BorderRadius = 1;
@@ -1187,7 +1195,7 @@
             // pictureBox7
             // 
             this.pictureBox7.Image = global::GUI_QuanLy.Properties.Resources.San_Pham;
-            this.pictureBox7.Location = new System.Drawing.Point(39, 13);
+            this.pictureBox7.Location = new System.Drawing.Point(39, 12);
             this.pictureBox7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(30, 30);
@@ -1243,6 +1251,7 @@
             this.btnSanPham.IdleIconRightImage = null;
             this.btnSanPham.IndicateFocus = false;
             this.btnSanPham.Location = new System.Drawing.Point(0, 0);
+            this.btnSanPham.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSanPham.Name = "btnSanPham";
             this.btnSanPham.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnSanPham.OnDisabledState.BorderRadius = 1;
@@ -1343,7 +1352,8 @@
             this.btnNhaCungCap.IdleIconLeftImage = null;
             this.btnNhaCungCap.IdleIconRightImage = null;
             this.btnNhaCungCap.IndicateFocus = false;
-            this.btnNhaCungCap.Location = new System.Drawing.Point(31, 475);
+            this.btnNhaCungCap.Location = new System.Drawing.Point(32, 475);
+            this.btnNhaCungCap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNhaCungCap.Name = "btnNhaCungCap";
             this.btnNhaCungCap.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnNhaCungCap.OnDisabledState.BorderRadius = 1;
@@ -1384,6 +1394,7 @@
             this.btnNhaCungCap.TextMarginLeft = 0;
             this.btnNhaCungCap.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnNhaCungCap.UseDefaultRadiusAndThickness = true;
+            this.btnNhaCungCap.Click += new System.EventHandler(this.btnNhaCungCap_Click);
             // 
             // picKH
             // 
@@ -1443,7 +1454,8 @@
             this.btnKhachHang.IdleIconLeftImage = null;
             this.btnKhachHang.IdleIconRightImage = null;
             this.btnKhachHang.IndicateFocus = false;
-            this.btnKhachHang.Location = new System.Drawing.Point(31, 333);
+            this.btnKhachHang.Location = new System.Drawing.Point(32, 332);
+            this.btnKhachHang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnKhachHang.Name = "btnKhachHang";
             this.btnKhachHang.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnKhachHang.OnDisabledState.BorderRadius = 1;
@@ -1484,6 +1496,7 @@
             this.btnKhachHang.TextMarginLeft = 0;
             this.btnKhachHang.TextPadding = new System.Windows.Forms.Padding(0);
             this.btnKhachHang.UseDefaultRadiusAndThickness = true;
+            this.btnKhachHang.Click += new System.EventHandler(this.btnKhachHang_Click);
             // 
             // pictureBox1
             // 
@@ -1543,7 +1556,8 @@
             this.btnTrangChu.IdleIconLeftImage = null;
             this.btnTrangChu.IdleIconRightImage = null;
             this.btnTrangChu.IndicateFocus = false;
-            this.btnTrangChu.Location = new System.Drawing.Point(31, 120);
+            this.btnTrangChu.Location = new System.Drawing.Point(32, 120);
+            this.btnTrangChu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTrangChu.Name = "btnTrangChu";
             this.btnTrangChu.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnTrangChu.OnDisabledState.BorderRadius = 1;
@@ -1586,6 +1600,15 @@
             this.btnTrangChu.UseDefaultRadiusAndThickness = true;
             this.btnTrangChu.Click += new System.EventHandler(this.btnTrangChu_Click);
             // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.pictureBoxLogo);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(299, 88);
+            this.flowLayoutPanel1.TabIndex = 0;
+            // 
             // pictureBoxLogo
             // 
             this.pictureBoxLogo.Image = global::GUI_QuanLy.Properties.Resources.logo;
@@ -1609,18 +1632,18 @@
             this.Size = new System.Drawing.Size(306, 1096);
             this.Load += new System.EventHandler(this.SidebarControl_Load);
             this.panelSidebar.ResumeLayout(false);
-            this.panelNhanSu.ResumeLayout(false);
-            this.panelHoaDon.ResumeLayout(false);
-            this.panelSP.ResumeLayout(false);
-            this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnThoat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTK)).EndInit();
+            this.panelNhanSu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picNS)).EndInit();
+            this.panelHoaDon.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panelSP.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picNCC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picKH)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             this.ResumeLayout(false);
 

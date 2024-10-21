@@ -1,1 +1,10 @@
+# Thư mục .vs chứa các file tạm của Visual Studio
 .vs/
+# File cấu hình dự án của Visual Studio
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+# Các file tạm thời khác
+*.backup.json
+*.tmp

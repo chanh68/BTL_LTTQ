@@ -49,20 +49,20 @@ namespace GUI_QuanLy
 
         private void timerSanPham_Tick(object sender, EventArgs e)
         {
-            ToggleMenu(panelSP, ref menuSanPhamExpand, 160, 38, MoveButtons1, 110);
+            ToggleMenu(timerSanPham, panelSP, ref menuSanPhamExpand, 160, 38, MoveButtons1, 110);
         }
 
         private void timerHoaDon_Tick(object sender, EventArgs e)
         {
-            ToggleMenu(panelHoaDon, ref menuHoaDonExpand, 120, 38, MoveButtons, 80);
+            ToggleMenu(timerHoaDon, panelHoaDon, ref menuHoaDonExpand, 120, 38, MoveButtons, 80);
         }
 
         private void timerNhanSu_Tick(object sender, EventArgs e)
         {
-            ToggleMenu(panelNhanSu, ref menuNhanSuExpand, 160, 38, MoveButtons2, 110);
+            ToggleMenu(timerNhanSu, panelNhanSu, ref menuNhanSuExpand, 160, 38, MoveButtons2, 110);
         }
 
-        private void ToggleMenu(Panel panel, ref bool isExpanded, int expandedHeight, int collapsedHeight, Action<int> moveButtons, int offsetY)
+        private void ToggleMenu(Timer timer, Panel panel, ref bool isExpanded, int expandedHeight, int collapsedHeight, Action<int> moveButtons, int offsetY)
         {
             int expandSpeed = 10;
 
@@ -74,7 +74,7 @@ namespace GUI_QuanLy
                     if (panel.Height >= expandedHeight)
                     {
                         panel.Height = expandedHeight;
-                        timerSanPham.Stop();
+                        timer.Stop();
                         isExpanded = true;
                         moveButtons(offsetY);
                     }
@@ -88,13 +88,14 @@ namespace GUI_QuanLy
                     if (panel.Height <= collapsedHeight)
                     {
                         panel.Height = collapsedHeight;
-                        timerSanPham.Stop();
+                        timer.Stop();
                         isExpanded = false;
                         moveButtons(-offsetY);
                     }
                 }
             }
         }
+
 
         private void btnSanPham_Click(object sender, EventArgs e)
         {
@@ -128,6 +129,27 @@ namespace GUI_QuanLy
         {
             LoadForm(new Category());
         }
+        private void btnKhachHang_Click(object sender, EventArgs e)
+        {
+            LoadForm(new TkKhach());
+        }
+        private void btnDanhSach_Click(object sender, EventArgs e)
+        {
+            LoadForm(new TKNhanVien());
+        }
+        private void btnLuong_Click(object sender, EventArgs e)
+        {
+            LoadForm(new LuongNV());
+        }
+        private void btnTaiKhoan_Click(object sender, EventArgs e)
+        {
+            LoadForm(new TaiKhoan());   
+        }
+
+        private void btnNhaCungCap_Click(object sender, EventArgs e)
+        {
+            LoadForm(new NhaCC());
+        }
         private void LoadForm(Form childForm)
         {
             Form1 parentForm = (Form1)this.FindForm();
@@ -136,6 +158,7 @@ namespace GUI_QuanLy
                 parentForm.LoadFormIntoPanel(childForm);
             }
         }
+
 
         private void MoveButtons(int offsetY)
         {

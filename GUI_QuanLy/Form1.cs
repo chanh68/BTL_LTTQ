@@ -17,12 +17,6 @@ namespace GUI_QuanLy
             HomePage homePage = new HomePage();
             LoadFormIntoPanel(homePage);
         }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Maximized;
-        }
-
         public void LoadFormIntoPanel(Form childForm)
         {
             // Xóa các control hiện tại trong panel

@@ -10,3 +10,9 @@ F:\Test\BTL_LTTQ\DTO_QuanLy\obj\Debug\DTO_QuanLy.csproj.AssemblyReference.cache
 F:\Test\BTL_LTTQ\DTO_QuanLy\obj\Debug\DTO_QuanLy.csproj.CoreCompileInputs.cache
 F:\Test\BTL_LTTQ\DTO_QuanLy\obj\Debug\DTO_QuanLy.dll
 F:\Test\BTL_LTTQ\DTO_QuanLy\obj\Debug\DTO_QuanLy.pdb
+D:\cshasp\BTL_LTTQ\DTO_QuanLy\bin\Debug\DTO_QuanLy.dll
+D:\cshasp\BTL_LTTQ\DTO_QuanLy\bin\Debug\DTO_QuanLy.pdb
+D:\cshasp\BTL_LTTQ\DTO_QuanLy\obj\Debug\DTO_QuanLy.csproj.AssemblyReference.cache
+D:\cshasp\BTL_LTTQ\DTO_QuanLy\obj\Debug\DTO_QuanLy.csproj.CoreCompileInputs.cache
+D:\cshasp\BTL_LTTQ\DTO_QuanLy\obj\Debug\DTO_QuanLy.dll
+D:\cshasp\BTL_LTTQ\DTO_QuanLy\obj\Debug\DTO_QuanLy.pdb
