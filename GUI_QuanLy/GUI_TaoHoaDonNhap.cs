@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace GUI_QuanLy
 {
-    public partial class HeaderControl : UserControl
+    public partial class GUI_TaoHoaDonNhap : Form
     {
-        public HeaderControl()
+        public GUI_TaoHoaDonNhap()
         {
             InitializeComponent();
-        }
-
-        private void btnInfo_Click(object sender, EventArgs e)
-        {
-            Information information = new Information();
-            information.ShowDialog();
         }
     }
 }
