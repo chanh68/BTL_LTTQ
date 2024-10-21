@@ -81,6 +81,7 @@ namespace GUI_QuanLy
 
         private void btnHoaDonNhap_Click(object sender, EventArgs e)
         {
+            openChildFormInPanel(new GUI_HoaDonNhap());
             //hideSubMenu();
         }
 
@@ -114,6 +115,8 @@ namespace GUI_QuanLy
 
         }
 
+
+        //Phuong thuc mo trang
         private Form activeForm = null;
         private void openChildFormInPanel(Form childForm)
         {

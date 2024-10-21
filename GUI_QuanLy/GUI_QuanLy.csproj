@@ -67,11 +67,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GUI_ChiTietHoaDonBan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_ChiTietHoaDonBan.Designer.cs">
+      <DependentUpon>GUI_ChiTietHoaDonBan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_ChiTietHoaDonNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_ChiTietHoaDonNhap.Designer.cs">
+      <DependentUpon>GUI_ChiTietHoaDonNhap.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI_HoaDonBan.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI_HoaDonBan.Designer.cs">
       <DependentUpon>GUI_HoaDonBan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_HoaDonNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_HoaDonNhap.Designer.cs">
+      <DependentUpon>GUI_HoaDonNhap.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI_TaoHoaDonBan.cs">
       <SubType>Form</SubType>
@@ -93,8 +111,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI_ChiTietHoaDonNhap.resx">
+      <DependentUpon>GUI_ChiTietHoaDonNhap.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI_HoaDonBan.resx">
       <DependentUpon>GUI_HoaDonBan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_HoaDonNhap.resx">
+      <DependentUpon>GUI_HoaDonNhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI_TaoHoaDonBan.resx">
       <DependentUpon>GUI_TaoHoaDonBan.cs</DependentUpon>

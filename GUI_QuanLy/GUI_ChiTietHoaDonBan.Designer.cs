@@ -1,6 +1,6 @@
 ﻿namespace GUI_QuanLy
 {
-    partial class GUI_HoaDonNhap
+    partial class GUI_ChiTietHoaDonBan
     {
         /// <summary>
         /// Required designer variable.
@@ -28,18 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
-            // 
-            // GUI_HoaDonNhap
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1150, 830);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "GUI_HoaDonNhap";
-            this.Text = "GUI_HoaDonNhap";
-            this.ResumeLayout(false);
-
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Text = "GUI_ChiTietHoaDonBan";
         }
 
         #endregion
