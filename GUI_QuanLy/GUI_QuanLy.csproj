@@ -134,6 +134,18 @@
     <Compile Include="Lookup.Designer.cs">
       <DependentUpon>Lookup.cs</DependentUpon>
     </Compile>
+    <Compile Include="LuongNV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LuongNV.Designer.cs">
+      <DependentUpon>LuongNV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NhaCC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhaCC.Designer.cs">
+      <DependentUpon>NhaCC.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProductView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -159,6 +171,24 @@
     </Compile>
     <Compile Include="Signin.Designer.cs">
       <DependentUpon>Signin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TaiKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TaiKhoan.Designer.cs">
+      <DependentUpon>TaiKhoan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TKKhach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TKKhach.Designer.cs">
+      <DependentUpon>TKKhach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TKNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TKNhanVien.Designer.cs">
+      <DependentUpon>TKNhanVien.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="category.resx">
       <DependentUpon>category.cs</DependentUpon>
