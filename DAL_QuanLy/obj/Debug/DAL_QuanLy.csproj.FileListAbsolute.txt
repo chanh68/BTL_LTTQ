@@ -16,3 +16,12 @@ F:\Test\BTL_LTTQ\DAL_QuanLy\obj\Debug\DAL_QuanLy.csproj.CoreCompileInputs.cache
 F:\Test\BTL_LTTQ\DAL_QuanLy\obj\Debug\DAL_QuanLy.csproj.Up2Date
 F:\Test\BTL_LTTQ\DAL_QuanLy\obj\Debug\DAL_QuanLy.dll
 F:\Test\BTL_LTTQ\DAL_QuanLy\obj\Debug\DAL_QuanLy.pdb
+F:\Test\BTL_LTTQ1\DAL_QuanLy\bin\Debug\DAL_QuanLy.dll
+F:\Test\BTL_LTTQ1\DAL_QuanLy\bin\Debug\DAL_QuanLy.pdb
+F:\Test\BTL_LTTQ1\DAL_QuanLy\bin\Debug\DTO_QuanLy.dll
+F:\Test\BTL_LTTQ1\DAL_QuanLy\bin\Debug\DTO_QuanLy.pdb
+F:\Test\BTL_LTTQ1\DAL_QuanLy\obj\Debug\DAL_QuanLy.csproj.AssemblyReference.cache
+F:\Test\BTL_LTTQ1\DAL_QuanLy\obj\Debug\DAL_QuanLy.csproj.CoreCompileInputs.cache
+F:\Test\BTL_LTTQ1\DAL_QuanLy\obj\Debug\DAL_QuanLy.csproj.Up2Date
+F:\Test\BTL_LTTQ1\DAL_QuanLy\obj\Debug\DAL_QuanLy.dll
+F:\Test\BTL_LTTQ1\DAL_QuanLy\obj\Debug\DAL_QuanLy.pdb

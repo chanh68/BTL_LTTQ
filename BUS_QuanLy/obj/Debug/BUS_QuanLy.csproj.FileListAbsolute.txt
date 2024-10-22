@@ -20,3 +20,14 @@ F:\Test\BTL_LTTQ\BUS_QuanLy\obj\Debug\BUS_QuanLy.csproj.CoreCompileInputs.cache
 F:\Test\BTL_LTTQ\BUS_QuanLy\obj\Debug\BUS_QuanLy.csproj.Up2Date
 F:\Test\BTL_LTTQ\BUS_QuanLy\obj\Debug\BUS_QuanLy.dll
 F:\Test\BTL_LTTQ\BUS_QuanLy\obj\Debug\BUS_QuanLy.pdb
+F:\Test\BTL_LTTQ1\BUS_QuanLy\bin\Debug\BUS_QuanLy.dll
+F:\Test\BTL_LTTQ1\BUS_QuanLy\bin\Debug\BUS_QuanLy.pdb
+F:\Test\BTL_LTTQ1\BUS_QuanLy\bin\Debug\DAL_QuanLy.dll
+F:\Test\BTL_LTTQ1\BUS_QuanLy\bin\Debug\DTO_QuanLy.dll
+F:\Test\BTL_LTTQ1\BUS_QuanLy\bin\Debug\DAL_QuanLy.pdb
+F:\Test\BTL_LTTQ1\BUS_QuanLy\bin\Debug\DTO_QuanLy.pdb
+F:\Test\BTL_LTTQ1\BUS_QuanLy\obj\Debug\BUS_QuanLy.csproj.AssemblyReference.cache
+F:\Test\BTL_LTTQ1\BUS_QuanLy\obj\Debug\BUS_QuanLy.csproj.CoreCompileInputs.cache
+F:\Test\BTL_LTTQ1\BUS_QuanLy\obj\Debug\BUS_QuanLy.csproj.Up2Date
+F:\Test\BTL_LTTQ1\BUS_QuanLy\obj\Debug\BUS_QuanLy.dll
+F:\Test\BTL_LTTQ1\BUS_QuanLy\obj\Debug\BUS_QuanLy.pdb
