@@ -16,7 +16,7 @@ namespace GUI_QuanLy
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Report_DoanhThu());
+            Application.Run(new Signin());
         }
     }
 }
