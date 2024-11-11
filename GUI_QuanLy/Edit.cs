@@ -63,34 +63,97 @@ namespace GUI_QuanLy
         }
 
 
+        //private void LoadHangHoaData()
+        //{
+        //    if (HangHoa != null)
+        //    {
+        //        txtMaHang.Text = HangHoa.MaHang; // Đã có
+        //        txtTenHang.Text = HangHoa.TenHangHoa; // Đã có
+        //        txtSoLuong.Text = HangHoa.SoLuong.ToString(); // Đã có
+        //        txtDGB.Text = HangHoa.DonGiaBan.ToString(); // Đã có
+        //        txtDGN.Text = HangHoa.DonGiaNhap.ToString();
+        //        txtGhiChu.Text = HangHoa.GhiChu; // Đã có
+
+        //        // Hiển thị ảnh từ byte[]
+        //        if (HangHoa.Anh != null && HangHoa.Anh.Length > 0)
+        //        {
+        //            using (MemoryStream ms = new MemoryStream(HangHoa.Anh))
+        //            {
+        //                picpoc.Image = Image.FromStream(ms);
+        //            }
+        //        }
+
+        //        // Cập nhật thêm các thuộc tính còn lại
+        //        txtMaLoai.Text = HangHoa.MaLoai; // Thêm
+        //        txtMaKT.Text = HangHoa.MaKichThuoc; // Thêm
+        //        txtMaMen.Text = HangHoa.MaLoaiMen; // Thêm
+        //        txtMaMau.Text = HangHoa.MaMau; // Thêm
+        //        txtMaCD.Text = HangHoa.MaCongDung; // Thêm
+        //        txtMaHK.Text = HangHoa.MaHinhKhoi; // Thêm
+        //        txtMaNuocSX.Text = HangHoa.MaNuocSX; // Thêm
+        //    }
+
+        //    // Nếu chế độ là "Thông tin sản phẩm", khóa các trường nhập
+        //    if (mode == "Thông tin")
+        //    {
+        //        txtMaHang.Enabled = false;
+        //        txtTenHang.Enabled = false;
+        //        txtSoLuong.Enabled = false;
+        //        txtDGB.Enabled = false;
+        //        txtGhiChu.Enabled = false;
+        //        txtMaLoai.Enabled = false; // Khóa các trường nhập thêm
+        //        txtMaKT.Enabled = false;
+        //        txtMaMen.Enabled = false;
+        //        txtMaMau.Enabled = false;
+        //        txtMaCD.Enabled = false;
+        //        txtMaHK.Enabled = false;
+        //        txtDGN.Enabled = false;
+        //        txtMaNuocSX.Enabled = false;
+        //        btnChonAnh.Enabled = false; // Khóa nút chọn ảnh
+        //    }
+        //}
         private void LoadHangHoaData()
         {
             if (HangHoa != null)
             {
-                txtMaHang.Text = HangHoa.MaHang; // Đã có
-                txtTenHang.Text = HangHoa.TenHangHoa; // Đã có
-                txtSoLuong.Text = HangHoa.SoLuong.ToString(); // Đã có
-                txtDGB.Text = HangHoa.DonGiaBan.ToString(); // Đã có
+                txtMaHang.Text = HangHoa.MaHang;
+                txtTenHang.Text = HangHoa.TenHangHoa;
+                txtSoLuong.Text = HangHoa.SoLuong.ToString();
+                txtDGB.Text = HangHoa.DonGiaBan.ToString();
                 txtDGN.Text = HangHoa.DonGiaNhap.ToString();
-                txtGhiChu.Text = HangHoa.GhiChu; // Đã có
+                txtGhiChu.Text = HangHoa.GhiChu;
 
-                // Hiển thị ảnh từ byte[]
+                // Kiểm tra ảnh và hiển thị ảnh từ byte[], nếu có ảnh hợp lệ
                 if (HangHoa.Anh != null && HangHoa.Anh.Length > 0)
                 {
-                    using (MemoryStream ms = new MemoryStream(HangHoa.Anh))
+                    try
                     {
-                        picpoc.Image = Image.FromStream(ms);
+                        using (MemoryStream ms = new MemoryStream(HangHoa.Anh))
+                        {
+                            picpoc.Image = Image.FromStream(ms);
+                        }
                     }
+                    catch
+                    {
+                        // Nếu có lỗi khi tải ảnh, sử dụng ảnh mặc định
+                        picpoc.Image = Properties.Resources.logo;
+                        MessageBox.Show("Ảnh sản phẩm không hợp lệ, đang sử dụng ảnh mặc định.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+                else
+                {
+                    // Sử dụng ảnh mặc định nếu không có ảnh
+                    picpoc.Image = Properties.Resources.logo;
                 }
 
                 // Cập nhật thêm các thuộc tính còn lại
-                txtMaLoai.Text = HangHoa.MaLoai; // Thêm
-                txtMaKT.Text = HangHoa.MaKichThuoc; // Thêm
-                txtMaMen.Text = HangHoa.MaLoaiMen; // Thêm
-                txtMaMau.Text = HangHoa.MaMau; // Thêm
-                txtMaCD.Text = HangHoa.MaCongDung; // Thêm
-                txtMaHK.Text = HangHoa.MaHinhKhoi; // Thêm
-                txtMaNuocSX.Text = HangHoa.MaNuocSX; // Thêm
+                txtMaLoai.Text = HangHoa.MaLoai;
+                txtMaKT.Text = HangHoa.MaKichThuoc;
+                txtMaMen.Text = HangHoa.MaLoaiMen;
+                txtMaMau.Text = HangHoa.MaMau;
+                txtMaCD.Text = HangHoa.MaCongDung;
+                txtMaHK.Text = HangHoa.MaHinhKhoi;
+                txtMaNuocSX.Text = HangHoa.MaNuocSX;
             }
 
             // Nếu chế độ là "Thông tin sản phẩm", khóa các trường nhập
@@ -101,7 +164,7 @@ namespace GUI_QuanLy
                 txtSoLuong.Enabled = false;
                 txtDGB.Enabled = false;
                 txtGhiChu.Enabled = false;
-                txtMaLoai.Enabled = false; // Khóa các trường nhập thêm
+                txtMaLoai.Enabled = false;
                 txtMaKT.Enabled = false;
                 txtMaMen.Enabled = false;
                 txtMaMau.Enabled = false;
@@ -109,9 +172,11 @@ namespace GUI_QuanLy
                 txtMaHK.Enabled = false;
                 txtDGN.Enabled = false;
                 txtMaNuocSX.Enabled = false;
-                btnChonAnh.Enabled = false; // Khóa nút chọn ảnh
+                btnChonAnh.Enabled = false;
             }
         }
+
+
 
         private void btnLuu_Click(object sender, EventArgs e)
         {

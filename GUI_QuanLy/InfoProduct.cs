@@ -126,21 +126,35 @@ namespace GUI_QuanLy
 
         private void DeleteProduct(int rowIndex)
         {
+            // Lấy tên hàng từ dòng được chọn
             string tenHang = dtDanhSach.Rows[rowIndex].Cells["TenHang"].Value.ToString();
-            DialogResult dialogResult = MessageBox.Show($"Bạn có chắc chắn muốn xóa sản phẩm '{tenHang}'?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            DialogResult dialogResult = MessageBox.Show($"Bạn có chắc chắn muốn ngừng kinh doanh sản phẩm '{tenHang}'?", "Xác nhận ngừng kinh doanh", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
             if (dialogResult == DialogResult.Yes)
             {
-                // Gọi phương thức xóa trong DAL
-                if (dalHangHoa.DeleteHangHoa(tenHang)) // Giả định bạn có phương thức DeleteHangHoa trong DAL
+                // Lấy mã hàng từ tên hàng
+                string maHang = dalHangHoa.GetMaHangByTenHang(tenHang); // Gọi phương thức đã tạo trước đó
+
+                if (maHang != null) // Nếu mã hàng được tìm thấy
                 {
-                    LoadData(); // Tải lại dữ liệu sau khi xóa
+                    // Gọi phương thức cập nhật trạng thái trong DAL bằng mã hàng
+                    if (dalHangHoa.UpdateHangHoaStatus(maHang, 0)) // Giả định bạn có phương thức UpdateHangHoaStatus trong DAL
+                    {
+                        LoadData(); // Tải lại dữ liệu sau khi cập nhật
+                    }
+                    else
+                    {
+                        MessageBox.Show("Có lỗi xảy ra khi ngừng kinh doanh sản phẩm.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Có lỗi xảy ra khi xóa sản phẩm.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"Không tìm thấy sản phẩm với tên '{tenHang}'.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
+
+
 
         private void InfoProduct_Load(object sender, EventArgs e)
         {

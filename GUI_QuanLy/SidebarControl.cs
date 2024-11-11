@@ -131,7 +131,7 @@ namespace GUI_QuanLy
         }
         private void btnKhachHang_Click(object sender, EventArgs e)
         {
-            LoadForm(new TKKhach());
+            LoadForm(new TkKhach());
         }
         private void btnDanhSach_Click(object sender, EventArgs e)
         {
@@ -148,7 +148,7 @@ namespace GUI_QuanLy
 
         private void btnNhaCungCap_Click(object sender, EventArgs e)
         {
-            LoadForm(new NhaCC());
+            LoadForm(new TKNhaCC());
         }
         private void LoadForm(Form childForm)
         {
@@ -204,6 +204,11 @@ namespace GUI_QuanLy
             btnDanhSach.Refresh();
             btnTaiKhoan.Refresh();
             btnThongKe.Refresh();
+        }
+
+        private void btnThongKe_Click(object sender, EventArgs e)
+        {
+            LoadForm(new Statistics_Report());
         }
     }
 }

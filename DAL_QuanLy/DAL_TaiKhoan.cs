@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DTO_QuanLy;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -6,6 +7,140 @@ namespace DAL_QuanLy
 {
     public class DAL_TaiKhoan : DBConnect
     {
+        public DAL_TaiKhoan() { }
+
+        // Lấy toàn bộ danh sách tài khoản
+        public DataTable getTaiKhoan()
+        {
+            SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM TaiKhoan", _conn);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            return dt;
+        }
+
+        // Thêm tài khoản mới
+        public bool themTaiKhoan(DTO_TaiKhoan tk)
+        {
+            try
+            {
+                _conn.Open();
+                string query = "INSERT INTO TaiKhoan (MaTK, MaNV, TenDangNhap, MatKhau, QuyenHan) VALUES (@MaTK, @MaNV, @TenDangNhap, @MatKhau, @QuyenHan)";
+                SqlCommand cmd = new SqlCommand(query, _conn);
+                cmd.Parameters.AddWithValue("@MaTK", tk.MaTK);
+                cmd.Parameters.AddWithValue("@MaNV", tk.MaNV);
+                cmd.Parameters.AddWithValue("@TenDangNhap", tk.TenDangNhap);
+                cmd.Parameters.AddWithValue("@MatKhau", tk.MatKhau);
+                cmd.Parameters.AddWithValue("@QuyenHan", tk.QuyenHan);
+
+                return cmd.ExecuteNonQuery() > 0;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Lỗi: " + e.Message);
+            }
+            finally
+            {
+                _conn.Close();
+            }
+            return false;
+        }
+
+        // Sửa thông tin tài khoản
+        public bool suaTaiKhoan(DTO_TaiKhoan tk)
+        {
+            try
+            {
+                _conn.Open();
+                string query = "UPDATE TaiKhoan SET MaNV = @MaNV, TenDangNhap = @TenDangNhap, MatKhau = @MatKhau, QuyenHan = @QuyenHan WHERE MaTK = @MaTK";
+                SqlCommand cmd = new SqlCommand(query, _conn);
+                cmd.Parameters.AddWithValue("@MaTK", tk.MaTK);
+                cmd.Parameters.AddWithValue("@MaNV", tk.MaNV);
+                cmd.Parameters.AddWithValue("@TenDangNhap", tk.TenDangNhap);
+                cmd.Parameters.AddWithValue("@MatKhau", tk.MatKhau);
+                cmd.Parameters.AddWithValue("@QuyenHan", tk.QuyenHan);
+
+                return cmd.ExecuteNonQuery() > 0;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Lỗi: " + e.Message);
+            }
+            finally
+            {
+                _conn.Close();
+            }
+            return false;
+        }
+
+        // Xóa tài khoản
+        public bool xoaTaiKhoan(string maTK)
+        {
+            try
+            {
+                _conn.Open();
+                string query = "DELETE FROM TaiKhoan WHERE MaTK = @MaTK";
+                SqlCommand cmd = new SqlCommand(query, _conn);
+                cmd.Parameters.AddWithValue("@MaTK", maTK);
+
+                return cmd.ExecuteNonQuery() > 0;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Lỗi: " + e.Message);
+            }
+            finally
+            {
+                _conn.Close();
+            }
+            return false;
+        }
+
+        // Kiểm tra tài khoản tồn tại
+        public bool KiemTraTaiKhoanTonTai(string maTK)
+        {
+            try
+            {
+                _conn.Open();
+                string query = "SELECT COUNT(*) FROM TaiKhoan WHERE MaTK = @MaTK";
+                SqlCommand cmd = new SqlCommand(query, _conn);
+                cmd.Parameters.AddWithValue("@MaTK", maTK);
+
+                int count = (int)cmd.ExecuteScalar();
+                return count > 0;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Lỗi: " + e.Message);
+                return false;
+            }
+            finally
+            {
+                _conn.Close();
+            }
+        }
+
+        public bool KiemTraMaNVTonTai(string maNV)
+        {
+            try
+            {
+                _conn.Open();
+                string query = "SELECT COUNT(*) FROM TaiKhoan WHERE MaNV = @MaNV";
+                SqlCommand cmd = new SqlCommand(query, _conn);
+                cmd.Parameters.AddWithValue("@MaNV", maNV);
+
+                int count = (int)cmd.ExecuteScalar();
+                return count > 0;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Lỗi: " + e.Message);
+                return false;
+            }
+            finally
+            {
+                _conn.Close();
+            }
+        }
         public string VerifyUser(string username, string password)
         {
             string query = "SELECT MaNV FROM TaiKhoan WHERE TenDangNhap = @username AND MatKhau = @password";

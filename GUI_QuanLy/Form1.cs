@@ -34,5 +34,7 @@ namespace GUI_QuanLy
             panelAll.Controls.Add(childForm);
             childForm.Show();
         }
+
+        
     }
 }

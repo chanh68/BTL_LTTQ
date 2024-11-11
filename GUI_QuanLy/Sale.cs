@@ -67,9 +67,18 @@ namespace GUI_QuanLy
             if (imageData == null || imageData.Length == 0)
                 return null;
 
-            using (MemoryStream ms = new MemoryStream(imageData))
+            try
             {
-                return Image.FromStream(ms);
+                using (MemoryStream ms = new MemoryStream(imageData))
+                {
+                    return Image.FromStream(ms);
+                }
+            }
+            catch (Exception ex)
+            {
+                // In ra thông tin lỗi để biết chi tiết hơn
+                Console.WriteLine($"Lỗi khi tạo hình ảnh từ byte array: {ex.Message}");
+                return null;
             }
         }
 

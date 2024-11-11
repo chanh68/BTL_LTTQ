@@ -46,9 +46,8 @@
             this.panelHeader.Controls.Add(this.btnSetting);
             this.panelHeader.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelHeader.Location = new System.Drawing.Point(0, 0);
-            this.panelHeader.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelHeader.Name = "panelHeader";
-            this.panelHeader.Size = new System.Drawing.Size(1229, 60);
+            this.panelHeader.Size = new System.Drawing.Size(1092, 62);
             this.panelHeader.TabIndex = 0;
             // 
             // btnNoti
@@ -56,12 +55,13 @@
             this.btnNoti.AllowFocused = false;
             this.btnNoti.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnNoti.AutoSizeHeight = true;
-            this.btnNoti.BorderRadius = 17;
+            this.btnNoti.BorderRadius = 21;
             this.btnNoti.Image = global::GUI_QuanLy.Properties.Resources.bell;
             this.btnNoti.IsCircle = true;
-            this.btnNoti.Location = new System.Drawing.Point(1054, 13);
+            this.btnNoti.Location = new System.Drawing.Point(880, 13);
+            this.btnNoti.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNoti.Name = "btnNoti";
-            this.btnNoti.Size = new System.Drawing.Size(35, 35);
+            this.btnNoti.Size = new System.Drawing.Size(42, 42);
             this.btnNoti.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnNoti.TabIndex = 3;
             this.btnNoti.TabStop = false;
@@ -72,12 +72,13 @@
             this.btnInfo.AllowFocused = false;
             this.btnInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnInfo.AutoSizeHeight = true;
-            this.btnInfo.BorderRadius = 20;
+            this.btnInfo.BorderRadius = 22;
             this.btnInfo.Image = global::GUI_QuanLy.Properties.Resources.Screenshot_2024_10_15_082907;
             this.btnInfo.IsCircle = true;
-            this.btnInfo.Location = new System.Drawing.Point(1169, 13);
+            this.btnInfo.Location = new System.Drawing.Point(1026, 10);
+            this.btnInfo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnInfo.Name = "btnInfo";
-            this.btnInfo.Size = new System.Drawing.Size(40, 40);
+            this.btnInfo.Size = new System.Drawing.Size(45, 45);
             this.btnInfo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnInfo.TabIndex = 2;
             this.btnInfo.TabStop = false;
@@ -89,12 +90,13 @@
             this.btnSetting.AllowFocused = false;
             this.btnSetting.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSetting.AutoSizeHeight = true;
-            this.btnSetting.BorderRadius = 17;
+            this.btnSetting.BorderRadius = 23;
             this.btnSetting.Image = global::GUI_QuanLy.Properties.Resources.setting;
             this.btnSetting.IsCircle = true;
-            this.btnSetting.Location = new System.Drawing.Point(1109, 13);
+            this.btnSetting.Location = new System.Drawing.Point(953, 8);
+            this.btnSetting.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSetting.Name = "btnSetting";
-            this.btnSetting.Size = new System.Drawing.Size(35, 35);
+            this.btnSetting.Size = new System.Drawing.Size(47, 47);
             this.btnSetting.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnSetting.TabIndex = 1;
             this.btnSetting.TabStop = false;
@@ -102,12 +104,11 @@
             // 
             // HeaderControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panelHeader);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "HeaderControl";
-            this.Size = new System.Drawing.Size(1229, 60);
+            this.Size = new System.Drawing.Size(1092, 62);
             this.panelHeader.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnNoti)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnInfo)).EndInit();

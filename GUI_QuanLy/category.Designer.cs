@@ -60,13 +60,12 @@
             this.txt2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txt2.ForeColor = System.Drawing.Color.Black;
             this.txt2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt2.Location = new System.Drawing.Point(733, 105);
-            this.txt2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txt2.Location = new System.Drawing.Point(757, 183);
             this.txt2.Name = "txt2";
             this.txt2.PasswordChar = '\0';
             this.txt2.PlaceholderText = "";
             this.txt2.SelectedText = "";
-            this.txt2.Size = new System.Drawing.Size(249, 46);
+            this.txt2.Size = new System.Drawing.Size(216, 31);
             this.txt2.TabIndex = 21;
             this.txt2.Visible = false;
             // 
@@ -83,13 +82,12 @@
             this.txt1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txt1.ForeColor = System.Drawing.Color.Black;
             this.txt1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt1.Location = new System.Drawing.Point(733, 28);
-            this.txt1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txt1.Location = new System.Drawing.Point(757, 132);
             this.txt1.Name = "txt1";
             this.txt1.PasswordChar = '\0';
             this.txt1.PlaceholderText = "";
             this.txt1.SelectedText = "";
-            this.txt1.Size = new System.Drawing.Size(249, 46);
+            this.txt1.Size = new System.Drawing.Size(216, 31);
             this.txt1.TabIndex = 20;
             this.txt1.Visible = false;
             // 
@@ -97,9 +95,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(568, 105);
+            this.label3.Location = new System.Drawing.Point(629, 198);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(51, 20);
+            this.label3.Size = new System.Drawing.Size(44, 16);
             this.label3.TabIndex = 19;
             this.label3.Text = "label3";
             this.label3.Visible = false;
@@ -108,9 +107,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(568, 48);
+            this.label2.Location = new System.Drawing.Point(629, 147);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 20);
+            this.label2.Size = new System.Drawing.Size(44, 16);
             this.label2.TabIndex = 18;
             this.label2.Text = "label2";
             this.label2.Visible = false;
@@ -124,9 +124,10 @@
             this.btnXoa.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnXoa.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnXoa.ForeColor = System.Drawing.Color.White;
-            this.btnXoa.Location = new System.Drawing.Point(755, 405);
+            this.btnXoa.Location = new System.Drawing.Point(971, 695);
+            this.btnXoa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(122, 37);
+            this.btnXoa.Size = new System.Drawing.Size(128, 57);
             this.btnXoa.TabIndex = 17;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
@@ -140,9 +141,10 @@
             this.btnSua.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnSua.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnSua.ForeColor = System.Drawing.Color.White;
-            this.btnSua.Location = new System.Drawing.Point(755, 326);
+            this.btnSua.Location = new System.Drawing.Point(968, 580);
+            this.btnSua.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(122, 37);
+            this.btnSua.Size = new System.Drawing.Size(131, 57);
             this.btnSua.TabIndex = 16;
             this.btnSua.Text = "Sửa";
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
@@ -156,9 +158,10 @@
             this.btnThem.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnThem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnThem.ForeColor = System.Drawing.Color.White;
-            this.btnThem.Location = new System.Drawing.Point(755, 241);
+            this.btnThem.Location = new System.Drawing.Point(968, 463);
+            this.btnThem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(122, 37);
+            this.btnThem.Size = new System.Drawing.Size(131, 57);
             this.btnThem.TabIndex = 15;
             this.btnThem.Text = "Thêm";
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
@@ -186,12 +189,13 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dsDanhMuc.DefaultCellStyle = dataGridViewCellStyle3;
             this.dsDanhMuc.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dsDanhMuc.Location = new System.Drawing.Point(54, 184);
+            this.dsDanhMuc.Location = new System.Drawing.Point(62, 411);
+            this.dsDanhMuc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dsDanhMuc.Name = "dsDanhMuc";
             this.dsDanhMuc.RowHeadersVisible = false;
             this.dsDanhMuc.RowHeadersWidth = 62;
             this.dsDanhMuc.RowTemplate.Height = 28;
-            this.dsDanhMuc.Size = new System.Drawing.Size(645, 304);
+            this.dsDanhMuc.Size = new System.Drawing.Size(831, 381);
             this.dsDanhMuc.TabIndex = 14;
             this.dsDanhMuc.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dsDanhMuc.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -221,18 +225,20 @@
             this.panelTim.Controls.Add(this.label1);
             this.panelTim.Controls.Add(this.cbbDanhMuc);
             this.panelTim.ForeColor = System.Drawing.Color.White;
-            this.panelTim.Location = new System.Drawing.Point(125, 28);
+            this.panelTim.Location = new System.Drawing.Point(77, 122);
+            this.panelTim.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelTim.Name = "panelTim";
-            this.panelTim.Size = new System.Drawing.Size(423, 123);
+            this.panelTim.Size = new System.Drawing.Size(408, 158);
             this.panelTim.TabIndex = 13;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(22, 30);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.Location = new System.Drawing.Point(15, 20);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(166, 26);
+            this.label1.Size = new System.Drawing.Size(146, 24);
             this.label1.TabIndex = 5;
             this.label1.Text = "Chọn danh mục";
             // 
@@ -255,18 +261,19 @@
             "Hình khối",
             "Hoa văn",
             "Men"});
-            this.cbbDanhMuc.Location = new System.Drawing.Point(208, 20);
+            this.cbbDanhMuc.Location = new System.Drawing.Point(208, 15);
+            this.cbbDanhMuc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbbDanhMuc.Name = "cbbDanhMuc";
-            this.cbbDanhMuc.Size = new System.Drawing.Size(188, 36);
+            this.cbbDanhMuc.Size = new System.Drawing.Size(127, 36);
             this.cbbDanhMuc.TabIndex = 4;
             this.cbbDanhMuc.SelectedIndexChanged += new System.EventHandler(this.cbbDanhMuc_SelectedIndexChanged);
             // 
             // Category
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(30)))), ((int)(((byte)(53)))));
-            this.ClientSize = new System.Drawing.Size(1440, 913);
+            this.ClientSize = new System.Drawing.Size(1171, 853);
             this.Controls.Add(this.txt2);
             this.Controls.Add(this.txt1);
             this.Controls.Add(this.label3);
@@ -277,6 +284,7 @@
             this.Controls.Add(this.dsDanhMuc);
             this.Controls.Add(this.panelTim);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Category";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Category";

@@ -81,12 +81,13 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dtDanhSach.DefaultCellStyle = dataGridViewCellStyle3;
             this.dtDanhSach.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(53)))), ((int)(((byte)(74)))));
-            this.dtDanhSach.Location = new System.Drawing.Point(54, 249);
+            this.dtDanhSach.Location = new System.Drawing.Point(55, 329);
+            this.dtDanhSach.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtDanhSach.Name = "dtDanhSach";
             this.dtDanhSach.RowHeadersVisible = false;
             this.dtDanhSach.RowHeadersWidth = 62;
             this.dtDanhSach.RowTemplate.Height = 28;
-            this.dtDanhSach.Size = new System.Drawing.Size(872, 365);
+            this.dtDanhSach.Size = new System.Drawing.Size(1054, 473);
             this.dtDanhSach.TabIndex = 6;
             this.dtDanhSach.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dtDanhSach.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -190,12 +191,13 @@
             this.btnThemSP.DisabledState.FillColor = System.Drawing.Color.Red;
             this.btnThemSP.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnThemSP.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(124)))), ((int)(((byte)(244)))));
-            this.btnThemSP.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnThemSP.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnThemSP.ForeColor = System.Drawing.Color.White;
             this.btnThemSP.HoverState.FillColor = System.Drawing.Color.Red;
-            this.btnThemSP.Location = new System.Drawing.Point(765, 184);
+            this.btnThemSP.Location = new System.Drawing.Point(90, 213);
+            this.btnThemSP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnThemSP.Name = "btnThemSP";
-            this.btnThemSP.Size = new System.Drawing.Size(180, 45);
+            this.btnThemSP.Size = new System.Drawing.Size(285, 65);
             this.btnThemSP.TabIndex = 5;
             this.btnThemSP.Text = "Thêm sản phẩm";
             this.btnThemSP.Click += new System.EventHandler(this.btnThem_Click);
@@ -204,17 +206,18 @@
             // 
             this.ThongKe.Controls.Add(this.label2);
             this.ThongKe.Controls.Add(this.label1);
-            this.ThongKe.Location = new System.Drawing.Point(693, 29);
+            this.ThongKe.Location = new System.Drawing.Point(90, 30);
+            this.ThongKe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ThongKe.Name = "ThongKe";
-            this.ThongKe.Size = new System.Drawing.Size(354, 135);
+            this.ThongKe.Size = new System.Drawing.Size(402, 116);
             this.ThongKe.TabIndex = 4;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(38, 79);
+            this.label2.Location = new System.Drawing.Point(34, 63);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(195, 20);
             this.label2.TabIndex = 2;
@@ -223,9 +226,9 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(29, 24);
+            this.label1.Location = new System.Drawing.Point(26, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(213, 20);
             this.label1.TabIndex = 1;
@@ -233,14 +236,15 @@
             // 
             // InfoProduct
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(30)))), ((int)(((byte)(53)))));
-            this.ClientSize = new System.Drawing.Size(1440, 913);
+            this.ClientSize = new System.Drawing.Size(1171, 853);
             this.Controls.Add(this.dtDanhSach);
             this.Controls.Add(this.btnThemSP);
             this.Controls.Add(this.ThongKe);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "InfoProduct";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "InfoProduct";

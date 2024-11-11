@@ -56,3 +56,346 @@ F:\Test\BTL_LTTQ\GUI_QuanLy\obj\Debug\GUI_QuanLy.Category.resources
 F:\Test\BTL_LTTQ\GUI_QuanLy\bin\Debug\Bunifu.UI.WinForms.BunifuShadowPanel.dll
 F:\Test\BTL_LTTQ\GUI_QuanLy\obj\Debug\GUI_QuanLy.ProductView.resources
 F:\Test\BTL_LTTQ\GUI_QuanLy\obj\Debug\GUI_QuanLy.Sale.resources
+F:\Test\BTL_LTTQ1\GUI_QuanLy\bin\Debug\GUI_QuanLy.exe.config
+F:\Test\BTL_LTTQ1\GUI_QuanLy\bin\Debug\GUI_QuanLy.exe
+F:\Test\BTL_LTTQ1\GUI_QuanLy\bin\Debug\GUI_QuanLy.pdb
+F:\Test\BTL_LTTQ1\GUI_QuanLy\bin\Debug\Bunifu.UI.WinForms.1.5.3.dll
+F:\Test\BTL_LTTQ1\GUI_QuanLy\bin\Debug\Bunifu.UI.WinForms.BunifuButton.dll
+F:\Test\BTL_LTTQ1\GUI_QuanLy\bin\Debug\Bunifu.UI.WinForms.BunifuDataGridView.dll
+F:\Test\BTL_LTTQ1\GUI_QuanLy\bin\Debug\Bunifu.UI.WinForms.BunifuDatePicker.dll
+F:\Test\BTL_LTTQ1\GUI_QuanLy\bin\Debug\Bunifu.UI.WinForms.BunifuImageButton.dll
+F:\Test\BTL_LTTQ1\GUI_QuanLy\bin\Debug\Bunifu.UI.WinForms.BunifuLabel.dll
+F:\Test\BTL_LTTQ1\GUI_QuanLy\bin\Debug\Bunifu.UI.WinForms.BunifuPanel.dll
+F:\Test\BTL_LTTQ1\GUI_QuanLy\bin\Debug\Bunifu.UI.WinForms.BunifuPictureBox.dll
+F:\Test\BTL_LTTQ1\GUI_QuanLy\bin\Debug\Bunifu.UI.WinForms.BunifuShadowPanel.dll
+F:\Test\BTL_LTTQ1\GUI_QuanLy\bin\Debug\Bunifu.UI.WinForms.BunifuTextbox.dll
+F:\Test\BTL_LTTQ1\GUI_QuanLy\bin\Debug\BUS_QuanLy.dll
+F:\Test\BTL_LTTQ1\GUI_QuanLy\bin\Debug\DAL_QuanLy.dll
+F:\Test\BTL_LTTQ1\GUI_QuanLy\bin\Debug\DTO_QuanLy.dll
+F:\Test\BTL_LTTQ1\GUI_QuanLy\bin\Debug\Guna.UI2.dll
+F:\Test\BTL_LTTQ1\GUI_QuanLy\bin\Debug\BUS_QuanLy.pdb
+F:\Test\BTL_LTTQ1\GUI_QuanLy\bin\Debug\DAL_QuanLy.pdb
+F:\Test\BTL_LTTQ1\GUI_QuanLy\bin\Debug\DTO_QuanLy.pdb
+F:\Test\BTL_LTTQ1\GUI_QuanLy\obj\Debug\GUI_QuanLy.csproj.AssemblyReference.cache
+F:\Test\BTL_LTTQ1\GUI_QuanLy\obj\Debug\GUI_QuanLy.Category.resources
+F:\Test\BTL_LTTQ1\GUI_QuanLy\obj\Debug\GUI_QuanLy.Edit.resources
+F:\Test\BTL_LTTQ1\GUI_QuanLy\obj\Debug\GUI_QuanLy.Form1.resources
+F:\Test\BTL_LTTQ1\GUI_QuanLy\obj\Debug\GUI_QuanLy.HeaderControl.resources
+F:\Test\BTL_LTTQ1\GUI_QuanLy\obj\Debug\GUI_QuanLy.HomePage.resources
+F:\Test\BTL_LTTQ1\GUI_QuanLy\obj\Debug\GUI_QuanLy.InfoProduct.resources
+F:\Test\BTL_LTTQ1\GUI_QuanLy\obj\Debug\GUI_QuanLy.Information.resources
+F:\Test\BTL_LTTQ1\GUI_QuanLy\obj\Debug\GUI_QuanLy.Lookup.resources
+F:\Test\BTL_LTTQ1\GUI_QuanLy\obj\Debug\GUI_QuanLy.ProductView.resources
+F:\Test\BTL_LTTQ1\GUI_QuanLy\obj\Debug\GUI_QuanLy.Properties.Resources.resources
+F:\Test\BTL_LTTQ1\GUI_QuanLy\obj\Debug\GUI_QuanLy.Sale.resources
+F:\Test\BTL_LTTQ1\GUI_QuanLy\obj\Debug\GUI_QuanLy.SidebarControl.resources
+F:\Test\BTL_LTTQ1\GUI_QuanLy\obj\Debug\GUI_QuanLy.Signin.resources
+F:\Test\BTL_LTTQ1\GUI_QuanLy\obj\Debug\GUI_QuanLy.csproj.GenerateResource.cache
+F:\Test\BTL_LTTQ1\GUI_QuanLy\obj\Debug\GUI_QuanLy.exe.licenses
+F:\Test\BTL_LTTQ1\GUI_QuanLy\obj\Debug\GUI_QuanLy.csproj.CoreCompileInputs.cache
+F:\Test\BTL_LTTQ1\GUI_QuanLy\obj\Debug\GUI_QuanLy.csproj.Up2Date
+F:\Test\BTL_LTTQ1\GUI_QuanLy\obj\Debug\GUI_QuanLy.exe
+F:\Test\BTL_LTTQ1\GUI_QuanLy\obj\Debug\GUI_QuanLy.pdb
+F:\Test\BTL_LTTQ1\GUI_QuanLy\obj\Debug\GUI_QuanLy.LuongNV.resources
+F:\Test\BTL_LTTQ1\GUI_QuanLy\obj\Debug\GUI_QuanLy.NhaCC.resources
+F:\Test\BTL_LTTQ1\GUI_QuanLy\obj\Debug\GUI_QuanLy.NhanVien.resources
+F:\Test\BTL_LTTQ1\GUI_QuanLy\obj\Debug\GUI_QuanLy.NhanVien_Sua.resources
+F:\Test\BTL_LTTQ1\GUI_QuanLy\obj\Debug\GUI_QuanLy.TkKhach.resources
+F:\Test\BTL_LTTQ1\GUI_QuanLy\obj\Debug\GUI_QuanLy.TKNhaCC.resources
+F:\Test\BTL_LTTQ1\GUI_QuanLy\obj\Debug\GUI_QuanLy.TKNhanVien.resources
+D:\cshasp\BTL_LTTQ1\GUI_QuanLy\bin\Debug\GUI_QuanLy.exe.config
+D:\cshasp\BTL_LTTQ1\GUI_QuanLy\bin\Debug\GUI_QuanLy.exe
+D:\cshasp\BTL_LTTQ1\GUI_QuanLy\bin\Debug\GUI_QuanLy.pdb
+D:\cshasp\BTL_LTTQ1\GUI_QuanLy\bin\Debug\BUS_QuanLy.dll
+D:\cshasp\BTL_LTTQ1\GUI_QuanLy\bin\Debug\DAL_QuanLy.dll
+D:\cshasp\BTL_LTTQ1\GUI_QuanLy\bin\Debug\DTO_QuanLy.dll
+D:\cshasp\BTL_LTTQ1\GUI_QuanLy\bin\Debug\BUS_QuanLy.pdb
+D:\cshasp\BTL_LTTQ1\GUI_QuanLy\bin\Debug\DAL_QuanLy.pdb
+D:\cshasp\BTL_LTTQ1\GUI_QuanLy\bin\Debug\DTO_QuanLy.pdb
+D:\cshasp\BTL_LTTQ1\GUI_QuanLy\obj\Debug\GUI_QuanLy.csproj.AssemblyReference.cache
+D:\cshasp\BTL_LTTQ1\GUI_QuanLy\obj\Debug\GUI_QuanLy.Category.resources
+D:\cshasp\BTL_LTTQ1\GUI_QuanLy\obj\Debug\GUI_QuanLy.Edit.resources
+D:\cshasp\BTL_LTTQ1\GUI_QuanLy\obj\Debug\GUI_QuanLy.Form1.resources
+D:\cshasp\BTL_LTTQ1\GUI_QuanLy\obj\Debug\GUI_QuanLy.HeaderControl.resources
+D:\cshasp\BTL_LTTQ1\GUI_QuanLy\obj\Debug\GUI_QuanLy.HomePage.resources
+D:\cshasp\BTL_LTTQ1\GUI_QuanLy\obj\Debug\GUI_QuanLy.InfoProduct.resources
+D:\cshasp\BTL_LTTQ1\GUI_QuanLy\obj\Debug\GUI_QuanLy.Information.resources
+D:\cshasp\BTL_LTTQ1\GUI_QuanLy\obj\Debug\GUI_QuanLy.Lookup.resources
+D:\cshasp\BTL_LTTQ1\GUI_QuanLy\obj\Debug\GUI_QuanLy.LuongNV.resources
+D:\cshasp\BTL_LTTQ1\GUI_QuanLy\obj\Debug\GUI_QuanLy.NhaCC.resources
+D:\cshasp\BTL_LTTQ1\GUI_QuanLy\obj\Debug\GUI_QuanLy.NhanVien.resources
+D:\cshasp\BTL_LTTQ1\GUI_QuanLy\obj\Debug\GUI_QuanLy.NhanVien_Sua.resources
+D:\cshasp\BTL_LTTQ1\GUI_QuanLy\obj\Debug\GUI_QuanLy.ProductView.resources
+D:\cshasp\BTL_LTTQ1\GUI_QuanLy\obj\Debug\GUI_QuanLy.Properties.Resources.resources
+D:\cshasp\BTL_LTTQ1\GUI_QuanLy\obj\Debug\GUI_QuanLy.Sale.resources
+D:\cshasp\BTL_LTTQ1\GUI_QuanLy\obj\Debug\GUI_QuanLy.SidebarControl.resources
+D:\cshasp\BTL_LTTQ1\GUI_QuanLy\obj\Debug\GUI_QuanLy.Signin.resources
+D:\cshasp\BTL_LTTQ1\GUI_QuanLy\obj\Debug\GUI_QuanLy.TaiKhoan.resources
+D:\cshasp\BTL_LTTQ1\GUI_QuanLy\obj\Debug\GUI_QuanLy.TkKhach.resources
+D:\cshasp\BTL_LTTQ1\GUI_QuanLy\obj\Debug\GUI_QuanLy.TKNhaCC.resources
+D:\cshasp\BTL_LTTQ1\GUI_QuanLy\obj\Debug\GUI_QuanLy.TKNhanVien.resources
+D:\cshasp\BTL_LTTQ1\GUI_QuanLy\obj\Debug\GUI_QuanLy.csproj.GenerateResource.cache
+D:\cshasp\BTL_LTTQ1\GUI_QuanLy\obj\Debug\GUI_QuanLy.exe.licenses
+D:\cshasp\BTL_LTTQ1\GUI_QuanLy\obj\Debug\GUI_QuanLy.csproj.CoreCompileInputs.cache
+D:\cshasp\BTL_LTTQ1\GUI_QuanLy\obj\Debug\GUI_QuanLy.csproj.Up2Date
+D:\cshasp\BTL_LTTQ1\GUI_QuanLy\obj\Debug\GUI_QuanLy.exe
+D:\cshasp\BTL_LTTQ1\GUI_QuanLy\obj\Debug\GUI_QuanLy.pdb
+F:\Test\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\GUI_QuanLy.exe.config
+F:\Test\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\GUI_QuanLy.exe
+F:\Test\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\GUI_QuanLy.pdb
+F:\Test\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\Bunifu.UI.WinForms.1.5.3.dll
+F:\Test\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\Bunifu.UI.WinForms.BunifuButton.dll
+F:\Test\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\Bunifu.UI.WinForms.BunifuDataGridView.dll
+F:\Test\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\Bunifu.UI.WinForms.BunifuDatePicker.dll
+F:\Test\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\Bunifu.UI.WinForms.BunifuImageButton.dll
+F:\Test\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\Bunifu.UI.WinForms.BunifuLabel.dll
+F:\Test\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\Bunifu.UI.WinForms.BunifuPanel.dll
+F:\Test\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\Bunifu.UI.WinForms.BunifuPictureBox.dll
+F:\Test\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\Bunifu.UI.WinForms.BunifuShadowPanel.dll
+F:\Test\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\Bunifu.UI.WinForms.BunifuTextbox.dll
+F:\Test\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\BUS_QuanLy.dll
+F:\Test\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\DAL_QuanLy.dll
+F:\Test\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\DTO_QuanLy.dll
+F:\Test\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\Guna.UI2.dll
+F:\Test\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\BUS_QuanLy.pdb
+F:\Test\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\DAL_QuanLy.pdb
+F:\Test\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\DTO_QuanLy.pdb
+F:\Test\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.csproj.AssemblyReference.cache
+F:\Test\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.Category.resources
+F:\Test\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.Edit.resources
+F:\Test\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.Form1.resources
+F:\Test\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.HeaderControl.resources
+F:\Test\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.HomePage.resources
+F:\Test\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.InfoProduct.resources
+F:\Test\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.Information.resources
+F:\Test\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.Lookup.resources
+F:\Test\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.LuongNV.resources
+F:\Test\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.NhaCC.resources
+F:\Test\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.NhanVien.resources
+F:\Test\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.NhanVien_Sua.resources
+F:\Test\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.ProductView.resources
+F:\Test\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.Properties.Resources.resources
+F:\Test\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.Sale.resources
+F:\Test\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.SidebarControl.resources
+F:\Test\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.Signin.resources
+F:\Test\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.TaiKhoan.resources
+F:\Test\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.TkKhach.resources
+F:\Test\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.TKNhaCC.resources
+F:\Test\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.TKNhanVien.resources
+F:\Test\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.csproj.GenerateResource.cache
+F:\Test\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.exe.licenses
+F:\Test\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.csproj.CoreCompileInputs.cache
+F:\Test\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.csproj.Up2Date
+F:\Test\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.exe
+F:\Test\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.pdb
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.csproj.AssemblyReference.cache
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.Category.resources
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.Edit.resources
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.Form1.resources
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.HeaderControl.resources
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.HomePage.resources
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.InfoProduct.resources
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.Information.resources
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.Lookup.resources
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.LuongNV.resources
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.NhaCC.resources
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.NhanVien.resources
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.NhanVien_Sua.resources
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.ProductView.resources
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.Properties.Resources.resources
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.Sale.resources
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.SidebarControl.resources
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.Signin.resources
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.Statistics_Report.resources
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.TaiKhoan.resources
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.TkKhach.resources
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.TKNhaCC.resources
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.TKNhanVien.resources
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.csproj.GenerateResource.cache
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.exe.licenses
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.csproj.CoreCompileInputs.cache
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.exe
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.pdb
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\GUI_QuanLy.exe.config
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\GUI_QuanLy.exe
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\GUI_QuanLy.pdb
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\Bunifu.UI.WinForms.BunifuGroupBox.dll
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\Bunifu.UI.WinForms.BunifuSlider.dll
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\BUS_QuanLy.dll
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\DAL_QuanLy.dll
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\DTO_QuanLy.dll
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\EPPlus.dll
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\EPPlus.Interfaces.dll
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\EPPlus.System.Drawing.dll
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\Microsoft.ReportViewer.Common.dll
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\Microsoft.ReportViewer.Design.dll
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\System.Buffers.dll
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\System.ComponentModel.Annotations.dll
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\System.Memory.dll
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\System.Numerics.Vectors.dll
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\EnvDTE.dll
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\stdole.dll
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\BUS_QuanLy.pdb
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\DAL_QuanLy.pdb
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\DTO_QuanLy.pdb
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\EPPlus.xml
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\System.Buffers.xml
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\System.Memory.xml
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\System.Numerics.Vectors.xml
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\de\Microsoft.ReportViewer.Common.resources.dll
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\es\Microsoft.ReportViewer.Common.resources.dll
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\fr\Microsoft.ReportViewer.Common.resources.dll
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\it\Microsoft.ReportViewer.Common.resources.dll
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\ja\Microsoft.ReportViewer.Common.resources.dll
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\ko\Microsoft.ReportViewer.Common.resources.dll
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\pt\Microsoft.ReportViewer.Common.resources.dll
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\ru\Microsoft.ReportViewer.Common.resources.dll
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\de\Microsoft.ReportViewer.Design.resources.dll
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\es\Microsoft.ReportViewer.Design.resources.dll
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\fr\Microsoft.ReportViewer.Design.resources.dll
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\it\Microsoft.ReportViewer.Design.resources.dll
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\ja\Microsoft.ReportViewer.Design.resources.dll
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\ko\Microsoft.ReportViewer.Design.resources.dll
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\pt\Microsoft.ReportViewer.Design.resources.dll
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\ru\Microsoft.ReportViewer.Design.resources.dll
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\de\Microsoft.ReportViewer.WinForms.resources.dll
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\fr\Microsoft.ReportViewer.WinForms.resources.dll
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\it\Microsoft.ReportViewer.WinForms.resources.dll
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\ja\Microsoft.ReportViewer.WinForms.resources.dll
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\ko\Microsoft.ReportViewer.WinForms.resources.dll
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\pt\Microsoft.ReportViewer.WinForms.resources.dll
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+F:\LTTQ\TEST\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.csproj.Up2Date
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\GUI_QuanLy.exe.config
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\GUI_QuanLy.exe
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\GUI_QuanLy.pdb
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\Bunifu.UI.WinForms.BunifuGroupBox.dll
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\Bunifu.UI.WinForms.BunifuSlider.dll
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\BUS_QuanLy.dll
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\DAL_QuanLy.dll
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\DTO_QuanLy.dll
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\EPPlus.dll
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\EPPlus.Interfaces.dll
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\EPPlus.System.Drawing.dll
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\Microsoft.ReportViewer.Common.dll
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\Microsoft.ReportViewer.Design.dll
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\System.Buffers.dll
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\System.ComponentModel.Annotations.dll
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\System.Memory.dll
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\System.Numerics.Vectors.dll
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\EnvDTE.dll
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\stdole.dll
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\BUS_QuanLy.pdb
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\DAL_QuanLy.pdb
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\DTO_QuanLy.pdb
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\EPPlus.xml
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\System.Buffers.xml
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\System.Memory.xml
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\System.Numerics.Vectors.xml
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\de\Microsoft.ReportViewer.Common.resources.dll
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\es\Microsoft.ReportViewer.Common.resources.dll
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\fr\Microsoft.ReportViewer.Common.resources.dll
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\it\Microsoft.ReportViewer.Common.resources.dll
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\ja\Microsoft.ReportViewer.Common.resources.dll
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\ko\Microsoft.ReportViewer.Common.resources.dll
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\pt\Microsoft.ReportViewer.Common.resources.dll
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\ru\Microsoft.ReportViewer.Common.resources.dll
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\de\Microsoft.ReportViewer.Design.resources.dll
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\es\Microsoft.ReportViewer.Design.resources.dll
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\fr\Microsoft.ReportViewer.Design.resources.dll
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\it\Microsoft.ReportViewer.Design.resources.dll
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\ja\Microsoft.ReportViewer.Design.resources.dll
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\ko\Microsoft.ReportViewer.Design.resources.dll
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\pt\Microsoft.ReportViewer.Design.resources.dll
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\ru\Microsoft.ReportViewer.Design.resources.dll
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\de\Microsoft.ReportViewer.WinForms.resources.dll
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\fr\Microsoft.ReportViewer.WinForms.resources.dll
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\it\Microsoft.ReportViewer.WinForms.resources.dll
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\ja\Microsoft.ReportViewer.WinForms.resources.dll
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\ko\Microsoft.ReportViewer.WinForms.resources.dll
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\pt\Microsoft.ReportViewer.WinForms.resources.dll
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.csproj.AssemblyReference.cache
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.BaoCaoThongKe.resources
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.Category.resources
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.Edit.resources
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.Form1.resources
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.HeaderControl.resources
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.HomePage.resources
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.InfoProduct.resources
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.Information.resources
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.Lookup.resources
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.LuongNV.resources
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.NhaCC.resources
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.NhanVien.resources
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.NhanVien_Sua.resources
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.ProductView.resources
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.Properties.Resources.resources
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.Sale.resources
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.SidebarControl.resources
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.Signin.resources
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.Statistics_Report.resources
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.TaiKhoan.resources
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.TkKhach.resources
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.TKNhaCC.resources
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.TKNhanVien.resources
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.csproj.GenerateResource.cache
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.exe.licenses
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.csproj.CoreCompileInputs.cache
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.csproj.Up2Date
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.exe
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.pdb
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\SqlServerTypes\x64\msvcr120.dll
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\SqlServerTypes\x86\msvcr120.dll
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\bin\Debug\Microsoft.SqlServer.Types.dll
+F:\LTTQ\Fixes\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.Report_DoanhThu.resources

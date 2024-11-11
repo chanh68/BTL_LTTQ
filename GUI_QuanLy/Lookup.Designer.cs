@@ -81,12 +81,13 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dtDanhSach.DefaultCellStyle = dataGridViewCellStyle3;
             this.dtDanhSach.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(53)))), ((int)(((byte)(74)))));
-            this.dtDanhSach.Location = new System.Drawing.Point(17, 232);
+            this.dtDanhSach.Location = new System.Drawing.Point(67, 373);
+            this.dtDanhSach.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dtDanhSach.Name = "dtDanhSach";
             this.dtDanhSach.RowHeadersVisible = false;
             this.dtDanhSach.RowHeadersWidth = 62;
             this.dtDanhSach.RowTemplate.Height = 28;
-            this.dtDanhSach.Size = new System.Drawing.Size(1082, 365);
+            this.dtDanhSach.Size = new System.Drawing.Size(1060, 425);
             this.dtDanhSach.TabIndex = 9;
             this.dtDanhSach.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dtDanhSach.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -183,16 +184,19 @@
             this.panelTim.Controls.Add(this.label2);
             this.panelTim.Controls.Add(this.btnTim);
             this.panelTim.Controls.Add(this.txtThongTin);
-            this.panelTim.Location = new System.Drawing.Point(138, 12);
+            this.panelTim.Location = new System.Drawing.Point(67, 59);
+            this.panelTim.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelTim.Name = "panelTim";
-            this.panelTim.Size = new System.Drawing.Size(423, 211);
+            this.panelTim.Size = new System.Drawing.Size(420, 243);
             this.panelTim.TabIndex = 8;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(31, 30);
+            this.label2.Location = new System.Drawing.Point(2, 20);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(345, 20);
             this.label2.TabIndex = 4;
@@ -208,9 +212,10 @@
             this.btnTim.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnTim.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnTim.ForeColor = System.Drawing.Color.White;
-            this.btnTim.Location = new System.Drawing.Point(140, 143);
+            this.btnTim.Location = new System.Drawing.Point(122, 147);
+            this.btnTim.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnTim.Name = "btnTim";
-            this.btnTim.Size = new System.Drawing.Size(113, 45);
+            this.btnTim.Size = new System.Drawing.Size(146, 53);
             this.btnTim.TabIndex = 3;
             this.btnTim.Text = "Tìm";
             this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
@@ -228,24 +233,24 @@
             this.txtThongTin.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtThongTin.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtThongTin.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtThongTin.Location = new System.Drawing.Point(51, 76);
-            this.txtThongTin.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtThongTin.Location = new System.Drawing.Point(23, 68);
             this.txtThongTin.Name = "txtThongTin";
             this.txtThongTin.PasswordChar = '\0';
             this.txtThongTin.PlaceholderText = "";
             this.txtThongTin.SelectedText = "";
-            this.txtThongTin.Size = new System.Drawing.Size(299, 43);
+            this.txtThongTin.Size = new System.Drawing.Size(259, 37);
             this.txtThongTin.TabIndex = 2;
             // 
             // Lookup
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(30)))), ((int)(((byte)(53)))));
-            this.ClientSize = new System.Drawing.Size(1440, 913);
+            this.ClientSize = new System.Drawing.Size(1171, 853);
             this.Controls.Add(this.dtDanhSach);
             this.Controls.Add(this.panelTim);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Lookup";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lookup";

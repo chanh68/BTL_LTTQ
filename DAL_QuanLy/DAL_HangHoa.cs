@@ -64,7 +64,7 @@ namespace DAL_QuanLy
         // Lấy dữ liệu hàng hóa
         public DataTable GetHangHoaData()
         {
-            string query = "SELECT TenHang, SoLuong, DonGiaBan, GhiChu FROM HangHoa";
+            string query = "SELECT TenHang, SoLuong, DonGiaBan, GhiChu FROM HangHoa WHERE TrangThai = 1";
             DataTable dataTable = new DataTable();
 
             using (SqlCommand command = new SqlCommand(query, _conn))
@@ -284,19 +284,19 @@ namespace DAL_QuanLy
         }
 
         // Xóa hàng hóa theo tên
-        public bool DeleteHangHoa(string tenHang)
+        public bool DeleteHangHoa(string maHang)
         {
-            string query = "DELETE FROM HangHoa WHERE TenHang = @TenHang";
+            string query = "UPDATE HangHoa SET TrangThai = 0 WHERE MaHang = @MaHang";
 
             using (SqlCommand command = new SqlCommand(query, _conn))
             {
-                command.Parameters.AddWithValue("@TenHang", tenHang);
+                command.Parameters.AddWithValue("@MaHang", maHang);
 
                 try
                 {
                     _conn.Open();
                     int rowsAffected = command.ExecuteNonQuery();
-                    return rowsAffected > 0; // Trả về true nếu xóa thành công
+                    return rowsAffected > 0; // Trả về true nếu cập nhật thành công
                 }
                 catch (SqlException ex)
                 {
@@ -308,6 +308,96 @@ namespace DAL_QuanLy
                 }
             }
         }
+
+        // Phương thức lấy tất cả hàng hóa
+        public string GetMaHangByTenHang(string tenHang)
+        {
+            string query = "SELECT MaHang FROM HangHoa WHERE TenHang = @TenHang";
+            string maHang = null;
+
+            using (SqlCommand command = new SqlCommand(query, _conn))
+            {
+                // Thêm tham số @TenHang để ngăn chặn SQL Injection
+                command.Parameters.AddWithValue("@TenHang", tenHang);
+
+                try
+                {
+                    _conn.Open();
+                    // Sử dụng ExecuteScalar để lấy giá trị đơn lẻ
+                    object result = command.ExecuteScalar();
+                    if (result != null)
+                    {
+                        maHang = result.ToString(); // Lấy mã hàng nếu tìm thấy
+                    }
+                }
+                catch (SqlException ex)
+                {
+                    throw new Exception("An error occurred while fetching MaHang: " + ex.Message);
+                }
+                finally
+                {
+                    _conn.Close();
+                }
+            }
+
+            return maHang; // Trả về mã hàng hoặc null nếu không tìm thấy
+        }
+
+
+        // Phương thức lấy hàng hóa có trạng thái là 1
+        public DataTable GetActiveHangHoaData()
+        {
+            string query = "SELECT TenHang, SoLuong, DonGiaBan, GhiChu FROM HangHoa WHERE TrangThai = 1";
+            DataTable dataTable = new DataTable();
+
+            using (SqlCommand command = new SqlCommand(query, _conn))
+            {
+                try
+                {
+                    _conn.Open();
+                    SqlDataAdapter adapter = new SqlDataAdapter(command);
+                    adapter.Fill(dataTable);
+                }
+                catch (SqlException ex)
+                {
+                    throw new Exception("An error occurred while fetching active HangHoa data: " + ex.Message);
+                }
+                finally
+                {
+                    _conn.Close();
+                }
+            }
+
+            return dataTable;
+        }
+
+        public bool UpdateHangHoaStatus(string maHang, int trangThai)
+        {
+            string query = "UPDATE HangHoa SET TrangThai = @TrangThai WHERE MaHang = @MaHang";
+
+            using (SqlCommand command = new SqlCommand(query, _conn))
+            {
+                command.Parameters.AddWithValue("@TrangThai", trangThai);
+                command.Parameters.AddWithValue("@MaHang", maHang);
+
+                try
+                {
+                    _conn.Open();
+                    int rowsAffected = command.ExecuteNonQuery();
+                    return rowsAffected > 0; // Trả về true nếu cập nhật thành công
+                }
+                catch (SqlException ex)
+                {
+                    throw new Exception("An error occurred while updating product status: " + ex.Message);
+                }
+                finally
+                {
+                    _conn.Close();
+                }
+            }
+        }
+
+
         public DataTable GetInfo()
         {
             string query = "SELECT * FROM HangHoa";
