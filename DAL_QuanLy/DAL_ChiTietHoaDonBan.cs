@@ -79,35 +79,6 @@ namespace DAL_QuanLy
             return chiTietList; // Trả về danh sách chi tiết hóa đơn
         }
 
-        //Phương thức cập nhật chi tiết hóa đơn
-        public bool CapNhatChiTietHoaDon(DTO_ChiTietHoaDonBan chiTiet)
-        {
-            try
-            {
-                string query = "UPDATE ChiTietHoaDonBan SET SoLuong = @SoLuong, DonGiaBan = @DonGiaBan, GiamGia = @GiamGia, ThanhTien = @ThanhTien WHERE SoHDB = @SoHDB AND MaHang = @MaHang";
-
-                SqlCommand cmd = new SqlCommand(query, _conn);
-                cmd.Parameters.AddWithValue("@SoLuong", chiTiet.SoLuong);
-                cmd.Parameters.AddWithValue("@DonGiaBan", chiTiet.DonGiaBan);
-                cmd.Parameters.AddWithValue("@GiamGia", chiTiet.GiamGia);
-                cmd.Parameters.AddWithValue("@ThanhTien", chiTiet.ThanhTien);
-                cmd.Parameters.AddWithValue("@SoHDB", chiTiet.SoHDB);
-                cmd.Parameters.AddWithValue("@MaHang", chiTiet.MaHang);
-
-                OpenConnection();
-                int result = cmd.ExecuteNonQuery();
-                CloseConnection();
-
-                return result > 0; // Trả về true nếu cập nhật thành công
-            }
-            catch (Exception ex)
-            {
-                CloseConnection();
-                return false;
-            }
-        }
-
-
         //Phương thức thêm mới chi tiết hóa đơn bán
         public void ThemChiTietHoaDon(DTO_ChiTietHoaDonBan chiTietHoaDon)
         {

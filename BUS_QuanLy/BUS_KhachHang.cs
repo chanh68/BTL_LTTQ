@@ -22,11 +22,9 @@ namespace BUS_QuanLy
         {
             return dalKH.LayDanhSachKhachHang();
         }
-
-
-        public DTO_KhachHang TimKiemKhachHangTheoSDT(string sdt)
+        public DTO_KhachHang ThongTinKhachHangTheoSoHoaDon(string soHoaDon)
         {
-            return dalKH.TimKiemKhachHangTheoSDT(sdt);
-        }        
+            return dalKH.ThongTinKhachHangTheoSoHoaDon(soHoaDon);
+        }
     }
 }

@@ -3,6 +3,9 @@ using DTO_QuanLy;
 using System.Data;
 using System;
 using System.Collections.Generic;
+using OfficeOpenXml;
+using System.IO;
+
 
 namespace BUS_QuanLy
 {
@@ -40,11 +43,6 @@ namespace BUS_QuanLy
             return dalHDB.TimKiemHoaDon(keyword, month, year);
         }
 
-        public bool CapNhatHoaDon(DTO_HoaDonBan hoaDon)
-        {
-            return dalHDB.CapNhatHoaDon(hoaDon);
-        }
-
         public string TaoMaHoaDon()
         {
             int stt = dalHDB.LaySoThuTuHoaDonTrongNgay();
@@ -62,32 +60,49 @@ namespace BUS_QuanLy
             return dalHDB.LaySoHDBCuoi();
         }
 
-        //public string LayNgayBan(string maHDB)
-        //{
-        //    return dalHDB.LayNgayBan(maHDB);
-        //}
-
-        //public string LayMaNhanVen(string maHDB)
-        //{
-        //    return dalHDB.LayMaNhanVien(maHDB);
-        //}
-
-        //public string LayMaKhach(string maHDB)
-        //{
-        //    return dalHDB.LayMaKhach(maHDB);
-        //}
-
-        //public string LayTongTien(string maHDB)
-        //{
-        //    return dalHDB.LayTongTien(maHDB);
-        //}
-
         // Phương thức lấy thông tin hóa đơn
         public DTO_HoaDonBan LayThongTinHoaDon(string soHDB)
         {
             return dalHDB.LayThongTinHoaDon(soHDB);
         }
 
+        // Phương thức in danh sách hóa đơn ra Excel
 
+        public void InDanhSachHoaDon()
+        {
+            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+            DataTable dtHDB = LayDanhSachHoaDonBan(); // Lấy danh sách hóa đơn
+            using (ExcelPackage excel = new ExcelPackage())
+            {
+                var workSheet = excel.Workbook.Worksheets.Add("Danh Sách Hóa Đơn");
+
+                // Đặt tiêu đề cột
+                workSheet.Cells[1, 1].Value = "Số HDB";
+                workSheet.Cells[1, 2].Value = "Ngày Bán";
+                workSheet.Cells[1, 3].Value = "Mã NV";
+                workSheet.Cells[1, 4].Value = "Mã Khách";
+                workSheet.Cells[1, 5].Value = "Giảm Giá";
+                workSheet.Cells[1, 6].Value = "Tổng Tiền";
+
+                // Ghi dữ liệu vào worksheet
+                for (int i = 0; i < dtHDB.Rows.Count; i++)
+                {
+                    workSheet.Cells[i + 2, 1].Value = dtHDB.Rows[i]["SoHDB"];
+                    workSheet.Cells[i + 2, 2].Value = dtHDB.Rows[i]["NgayBan"];
+                    workSheet.Cells[i + 2, 3].Value = dtHDB.Rows[i]["MaNV"];
+                    workSheet.Cells[i + 2, 4].Value = dtHDB.Rows[i]["MaKhach"];
+                    workSheet.Cells[i + 2, 5].Value = dtHDB.Rows[i]["GiamGia"];
+                    workSheet.Cells[i + 2, 6].Value = dtHDB.Rows[i]["TongTien"];
+                }
+
+                // Lưu file Excel
+                var filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "DanhSachHoaDon.xlsx");
+                FileInfo excelFile = new FileInfo(filePath);
+                excel.SaveAs(excelFile);
+
+                // Thông báo cho người dùng
+                Console.WriteLine("Đã in danh sách hóa đơn ra file Excel tại: " + filePath);
+            }
+        }
     }
 }

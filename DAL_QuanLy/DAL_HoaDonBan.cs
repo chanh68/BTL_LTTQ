@@ -60,8 +60,9 @@ namespace DAL_QuanLy
                                 NgayBan = reader["NgayBan"] != DBNull.Value ? (DateTime)reader["NgayBan"] : default(DateTime),
                                 MaNV = reader["MaNV"].ToString(),
                                 MaKhach = reader["MaKhach"].ToString(),
-                                GiamGia = reader["GiamGia"] != DBNull.Value ? decimal.Parse(reader["GiamGia"].ToString()) : (decimal?)null,
-                                TongTien = reader["TongTien"] != DBNull.Value ? decimal.Parse(reader["TongTien"].ToString()) : (decimal?)null
+                                GiamGia = reader["GiamGia"] != DBNull.Value ? reader.GetDecimal(reader.GetOrdinal("GiamGia")) : 0,
+                                TongTien = reader["TongTien"] != DBNull.Value ? reader.GetDecimal(reader.GetOrdinal("TongTien")) : 0
+
                             };
                         }
                     }
@@ -190,35 +191,6 @@ namespace DAL_QuanLy
             return soThuTu;
         }
 
-        //Phương thức cập nhật hóa đơn bán
-        public bool CapNhatHoaDon(DTO_HoaDonBan hoaDon)
-        {
-            try
-            {
-                string query = "UPDATE HoaDonBan SET NgayBan = @NgayBan, MaNV = @MaNV, MaKhach = @MaKhach, TongTien = @TongTien WHERE SoHDB = @SoHDB";
-
-                SqlCommand cmd = new SqlCommand(query, _conn);
-                cmd.Parameters.AddWithValue("@NgayBan", hoaDon.NgayBan);
-                cmd.Parameters.AddWithValue("@MaNV", hoaDon.MaNV);
-                cmd.Parameters.AddWithValue("@MaKhach", hoaDon.MaKhach);
-                cmd.Parameters.AddWithValue("@TongTien", hoaDon.TongTien);
-                cmd.Parameters.AddWithValue("@SoHDB", hoaDon.SoHDB);
-
-                OpenConnection();
-                int result = cmd.ExecuteNonQuery();
-                CloseConnection();
-
-                return result > 0; // Trả về true nếu cập nhật thành công
-            }
-            catch (Exception ex)
-            {
-                CloseConnection();
-                return false;
-            }
-        }
-
-
-
         //Phương thức thêm hóa đơn bán
         public void ThemHoaDon(DTO_HoaDonBan hdb)
         {
@@ -230,8 +202,7 @@ namespace DAL_QuanLy
             cmd.Parameters.AddWithValue("@NgayBan", hdb.NgayBan);
             cmd.Parameters.AddWithValue("@MaNV", hdb.MaNV);
             cmd.Parameters.AddWithValue("@MaKhach", hdb.MaKhach);
-            // Kiểm tra nếu GiamGia là null thì thay bằng 0
-            cmd.Parameters.AddWithValue("@GiamGia", hdb.GiamGia ?? 0); 
+            cmd.Parameters.AddWithValue("@GiamGia", hdb.GiamGia); 
             cmd.Parameters.AddWithValue("@TongTien", hdb.TongTien);
             try
             {
@@ -276,32 +247,6 @@ namespace DAL_QuanLy
 
             return soHDBCuoi;
         }
-
-
-        //public string LayNgayBan(string maHDBan)
-        //{
-        //    string sql = "SELECT NgayBan FROM HoaDonBan WHERE SoHDB = @SoHDB";
-        //    return ExecuteScalar(sql, maHDBan);
-        //}
-
-        //public string LayMaNhanVien(string maHDBan)
-        //{
-        //    string sql = "SELECT MaNhanVien FROM HoaDonBan WHERE SoHDB = @SoHDBn";
-        //    return ExecuteScalar(sql, maHDBan);
-        //}
-
-        //public string LayMaKhach(string maHDBan)
-        //{
-        //    string sql = "SELECT MaKhach FROM HoaDonBan WHERE SoHDB = @SoHDB";
-        //    return ExecuteScalar(sql, maHDBan);
-        //}
-
-        //public string LayTongTien(string maHDBan)
-        //{
-        //    string sql = "SELECT TongTien FROM HoaDonBan WHERE SoHDB = @SoHDB";
-        //    return ExecuteScalar(sql, maHDBan);
-        //}
-
         private string ExecuteScalar(string sql, string maHDBan)
         {
             string result = string.Empty;

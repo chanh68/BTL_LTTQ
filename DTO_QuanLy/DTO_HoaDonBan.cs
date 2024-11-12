@@ -19,8 +19,8 @@ namespace DTO_QuanLy
         public string MaNV { get; set; }
         public string MaKhach { get; set; }
         public DateTime NgayBan { get; set; }
-        public decimal ? TongTien { get; set; }
-        public decimal ? GiamGia { get; set; }
+        public decimal TongTien { get; set; }
+        public decimal GiamGia { get; set; }
 
         public DTO_HoaDonBan() { }
 
