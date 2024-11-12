@@ -226,6 +226,12 @@
     <Compile Include="GUI_TaoHoaDonNhap.Designer.cs">
       <DependentUpon>GUI_TaoHoaDonNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI_TatCaSanPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_TatCaSanPham.Designer.cs">
+      <DependentUpon>GUI_TatCaSanPham.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI_TrangChu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -354,6 +360,12 @@
     </Compile>
     <Compile Include="TKNhanVien.Designer.cs">
       <DependentUpon>TKNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="urSanPham.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="urSanPham.Designer.cs">
+      <DependentUpon>urSanPham.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="BaoCaoThongKe.resx">
       <DependentUpon>BaoCaoThongKe.cs</DependentUpon>

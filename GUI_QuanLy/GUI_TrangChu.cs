@@ -162,7 +162,7 @@ namespace GUI_QuanLy
 
         private void btnBaoCaoThongKe_Click(object sender, EventArgs e)
         {
-            openChildFormInPanel(new Statistics_Report());
+            openChildFormInPanel(new BaoCaoThongKe());
         }
 
         private void btnKhachHang_Click(object sender, EventArgs e)
