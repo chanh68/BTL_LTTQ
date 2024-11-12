@@ -42,7 +42,6 @@ namespace GUI_QuanLy
 
         private void LoadForm()
         {
-            btnThem.Enabled = true;
             btnLuu.Enabled = true;
             btnXoa.Enabled = false;
             btnIn.Enabled = false;
@@ -63,7 +62,8 @@ namespace GUI_QuanLy
             if (string.IsNullOrEmpty(txtMaHD.Text))
             {
                 txtMaHD.Text = busHDB.TaoMaHoaDon();
-                txtTenNV.Text = busTK.GetEmployeeNameByAccount(cbMaMV.Text);
+                cbMaMV.Text = Global.MaNV;
+                txtTenNV.Text = busTK.GetEmployeeNameByAccount(Global.MaNV);
             }
         }
 
@@ -86,7 +86,6 @@ namespace GUI_QuanLy
         private void LoadHoaDon(string maHDB)
         {
             // Điều chỉnh trạng thái các nút và trường dữ liệu cho chế độ chỉnh sửa
-            btnThem.Enabled = false;
             btnLuu.Enabled = true;
             //btnXoa.Enabled = false;    
             //btnIn.Enabled = false;      
@@ -251,21 +250,14 @@ namespace GUI_QuanLy
                 }
             }
         }
-
-        private void btnThem_Click(object sender, EventArgs e)
+        private Action updateDanhSachHoaDon; // Biến callback
+        public GUI_TaoHoaDonBan(Action updateDanhSachHoaDon)
         {
-            btnThem.Enabled = false;
-            btnLuu.Enabled = true;
-            btnXoa.Enabled = true;
-            btnIn.Enabled = false;
-            txtMaHD.Text = busHDB.TaoMaHoaDon();
-            chiTietHoaDonBanList.Clear();
-            bindingSource.ResetBindings(false);  // Cập nhật BindingSource
+            InitializeComponent();
+            this.updateDanhSachHoaDon = updateDanhSachHoaDon;
         }
-
         private void btnLuu_Click(object sender, EventArgs e)
         {
-
             DTO_HoaDonBan hoaDon = new DTO_HoaDonBan
             {
                 SoHDB = txtMaHD.Text,
@@ -275,16 +267,21 @@ namespace GUI_QuanLy
                 TongTien = decimal.Parse(txtTongTien.Text)
             };
 
-            // Kiểm tra nếu là hóa đơn mới hay cập nhật hóa đơn cũ
             if (string.IsNullOrEmpty(txtMaHD.Text) || txtMaHD.Text == busHDB.TaoMaHoaDon()) // Hóa đơn mới
             {
+                // Thêm hóa đơn
                 busHDB.ThemHoaDon(hoaDon);
+
+                // Lấy lại SoHDB vừa thêm (nếu mã tự động sinh ra)
+                hoaDon.SoHDB = busHDB.LaySoHDBCuoi();
+
                 // Thêm chi tiết hóa đơn
                 foreach (var chiTiet in chiTietHoaDonBanList)
                 {
-                    chiTiet.SoHDB = txtMaHD.Text; // Gán mã hóa đơn cho chi tiết hóa đơn
+                    chiTiet.SoHDB = hoaDon.SoHDB; 
                     busCT.ThemChiTietHoaDon(chiTiet);
                 }
+
                 MessageBox.Show("Hóa đơn đã được thêm thành công!");
             }
             else // Cập nhật hóa đơn cũ
@@ -297,6 +294,11 @@ namespace GUI_QuanLy
                 }
                 MessageBox.Show("Hóa đơn đã được cập nhật thành công!");
             }
+            
+            bindingSource.ResetBindings(false);
+            // Sau khi thêm hoặc sửa hóa đơn thành công, gọi callback
+            updateDanhSachHoaDon?.Invoke(); // Thông báo form chính cập nhật
+
         }
 
         private void btnXoa_Click(object sender, EventArgs e)

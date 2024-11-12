@@ -57,25 +57,30 @@ namespace BUS_QuanLy
             dalHDB.ThemHoaDon(hd);
         }
 
-        public string LayNgayBan(string maHDB)
+        public string LaySoHDBCuoi()
         {
-            return dalHDB.LayNgayBan(maHDB);
+            return dalHDB.LaySoHDBCuoi();
         }
 
-        public string LayMaNhanVen(string maHDB)
-        {
-            return dalHDB.LayMaNhanVien(maHDB);
-        }
+        //public string LayNgayBan(string maHDB)
+        //{
+        //    return dalHDB.LayNgayBan(maHDB);
+        //}
 
-        public string LayMaKhach(string maHDB)
-        {
-            return dalHDB.LayMaKhach(maHDB);
-        }
+        //public string LayMaNhanVen(string maHDB)
+        //{
+        //    return dalHDB.LayMaNhanVien(maHDB);
+        //}
 
-        public string LayTongTien(string maHDB)
-        {
-            return dalHDB.LayTongTien(maHDB);
-        }
+        //public string LayMaKhach(string maHDB)
+        //{
+        //    return dalHDB.LayMaKhach(maHDB);
+        //}
+
+        //public string LayTongTien(string maHDB)
+        //{
+        //    return dalHDB.LayTongTien(maHDB);
+        //}
 
         // Phương thức lấy thông tin hóa đơn
         public DTO_HoaDonBan LayThongTinHoaDon(string soHDB)

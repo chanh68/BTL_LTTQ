@@ -230,7 +230,8 @@ namespace DAL_QuanLy
             cmd.Parameters.AddWithValue("@NgayBan", hdb.NgayBan);
             cmd.Parameters.AddWithValue("@MaNV", hdb.MaNV);
             cmd.Parameters.AddWithValue("@MaKhach", hdb.MaKhach);
-            cmd.Parameters.AddWithValue("@GiamGia", hdb.GiamGia);
+            // Kiểm tra nếu GiamGia là null thì thay bằng 0
+            cmd.Parameters.AddWithValue("@GiamGia", hdb.GiamGia ?? 0); 
             cmd.Parameters.AddWithValue("@TongTien", hdb.TongTien);
             try
             {
@@ -247,32 +248,59 @@ namespace DAL_QuanLy
             }
         }
 
-
-
-
-        public string LayNgayBan(string maHDBan)
+        // Phương thức lấy mã hóa đơn gần nhất
+        public string LaySoHDBCuoi()
         {
-            string sql = "SELECT NgayBan FROM HoaDonBan WHERE SoHDB = @SoHDB";
-            return ExecuteScalar(sql, maHDBan);
+            string soHDBCuoi = string.Empty;
+            string query = "SELECT TOP 1 SoHDB FROM HoaDonBan ORDER BY SoHDB DESC";
+
+            try
+            {
+                OpenConnection(); // Mở kết nối
+                SqlCommand cmd = new SqlCommand(query, _conn);
+                var result = cmd.ExecuteScalar();
+
+                if (result != null)
+                {
+                    soHDBCuoi = result.ToString(); // Lấy giá trị của SoHDB
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Lỗi khi lấy mã hóa đơn gần nhất: " + ex.Message);
+            }
+            finally
+            {
+                CloseConnection(); // Đảm bảo đóng kết nối
+            }
+
+            return soHDBCuoi;
         }
 
-        public string LayMaNhanVien(string maHDBan)
-        {
-            string sql = "SELECT MaNhanVien FROM HoaDonBan WHERE SoHDB = @SoHDBn";
-            return ExecuteScalar(sql, maHDBan);
-        }
 
-        public string LayMaKhach(string maHDBan)
-        {
-            string sql = "SELECT MaKhach FROM HoaDonBan WHERE SoHDB = @SoHDB";
-            return ExecuteScalar(sql, maHDBan);
-        }
+        //public string LayNgayBan(string maHDBan)
+        //{
+        //    string sql = "SELECT NgayBan FROM HoaDonBan WHERE SoHDB = @SoHDB";
+        //    return ExecuteScalar(sql, maHDBan);
+        //}
 
-        public string LayTongTien(string maHDBan)
-        {
-            string sql = "SELECT TongTien FROM HoaDonBan WHERE SoHDB = @SoHDB";
-            return ExecuteScalar(sql, maHDBan);
-        }
+        //public string LayMaNhanVien(string maHDBan)
+        //{
+        //    string sql = "SELECT MaNhanVien FROM HoaDonBan WHERE SoHDB = @SoHDBn";
+        //    return ExecuteScalar(sql, maHDBan);
+        //}
+
+        //public string LayMaKhach(string maHDBan)
+        //{
+        //    string sql = "SELECT MaKhach FROM HoaDonBan WHERE SoHDB = @SoHDB";
+        //    return ExecuteScalar(sql, maHDBan);
+        //}
+
+        //public string LayTongTien(string maHDBan)
+        //{
+        //    string sql = "SELECT TongTien FROM HoaDonBan WHERE SoHDB = @SoHDB";
+        //    return ExecuteScalar(sql, maHDBan);
+        //}
 
         private string ExecuteScalar(string sql, string maHDBan)
         {

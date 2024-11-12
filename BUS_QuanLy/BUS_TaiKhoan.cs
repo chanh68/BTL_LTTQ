@@ -51,5 +51,11 @@ namespace BUS_QuanLy
         {
             return dalTaiKhoan.GetEmployeeNameByAccount(maNV); // Gọi DAL để lấy tên nhân viên
         }
+
+        // Phương thức lấy mã nhân viên từ tài khoản
+        public string GetEmployeeIdByLogin(string username, string password)
+        {
+            return dalTaiKhoan.GetEmployeeIdByLogin(username, password);
+        }
     }
 }

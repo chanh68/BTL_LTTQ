@@ -144,10 +144,10 @@ namespace GUI_QuanLy
         private void btnThemHoaDon_Click(object sender, EventArgs e)
         {
             GUI_TaoHoaDonBan taoHoaDon = new GUI_TaoHoaDonBan();
-            taoHoaDon.Owner = this; // Thiết lập Owner
+            taoHoaDon.Owner = this;
             taoHoaDon.ShowDialog();
         }
 
-        // Tìm kiếm hóa đơn theo các tiêu chí (mã, tháng, năm)
+
     }
 }
