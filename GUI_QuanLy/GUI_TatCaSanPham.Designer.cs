@@ -38,6 +38,7 @@
             this.txtSearch = new Bunifu.UI.WinForms.BunifuTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnTim = new Guna.UI2.WinForms.Guna2GradientButton();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,7 +72,7 @@
             this.txtSearch.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
             this.txtSearch.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
             this.txtSearch.BackColor = System.Drawing.Color.Transparent;
-            //this.txtSearch.BackgroundImage = global::GUI_QuanLy.Properties.Resources._7;
+            this.txtSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txtSearch.BackgroundImage")));
             this.txtSearch.BorderColorActive = System.Drawing.Color.DodgerBlue;
             this.txtSearch.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.txtSearch.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
@@ -159,12 +160,31 @@
             this.panel1.Size = new System.Drawing.Size(380, 169);
             this.panel1.TabIndex = 10;
             // 
+            // btnTim
+            // 
+            this.btnTim.BorderRadius = 15;
+            this.btnTim.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnTim.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnTim.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnTim.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnTim.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnTim.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnTim.ForeColor = System.Drawing.Color.White;
+            this.btnTim.Location = new System.Drawing.Point(479, 67);
+            this.btnTim.Margin = new System.Windows.Forms.Padding(2);
+            this.btnTim.Name = "btnTim";
+            this.btnTim.Size = new System.Drawing.Size(146, 53);
+            this.btnTim.TabIndex = 11;
+            this.btnTim.Text = "Tìm";
+            //this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
+            // 
             // GUI_TatCaSanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(30)))), ((int)(((byte)(53)))));
             this.ClientSize = new System.Drawing.Size(926, 640);
+            this.Controls.Add(this.btnTim);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -184,5 +204,6 @@
         private Bunifu.UI.WinForms.BunifuTextBox txtSearch;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
+        private Guna.UI2.WinForms.Guna2GradientButton btnTim;
     }
 }

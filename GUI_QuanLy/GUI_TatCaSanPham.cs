@@ -134,5 +134,38 @@ namespace GUI_QuanLy
                 }
             }
         }
+
+        //private void btnTim_Click(object sender, EventArgs e)
+        //{
+        //    string searchColumn = "";
+        //    string searchText = txtSearch.Text.Trim();
+
+        //    if (string.IsNullOrEmpty(searchText))
+        //    {
+        //        MessageBox.Show("Vui lòng nhập nội dung cần tìm.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        //        return;
+        //    }
+
+        //    // Xác định cột tìm kiếm dựa trên lựa chọn trong ComboBox
+        //    if (cbSearch.SelectedItem?.ToString() == "Mã hàng")
+        //    {
+        //        searchColumn = "MaHang";
+        //    }
+        //    else if (cbSearch.SelectedItem?.ToString() == "Tên hàng")
+        //    {
+        //        searchColumn = "TenHang";
+        //    }
+
+        //    if (!string.IsNullOrEmpty(searchColumn))
+        //    {
+        //        // Gọi hàm để tải dữ liệu sản phẩm từ cơ sở dữ liệu với cột và từ khóa tìm kiếm
+        //        LoadSanPhamFromDatabase(searchColumn, searchText);
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("Vui lòng chọn một loại tìm kiếm.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //    }
+        //}
+
     }
 }

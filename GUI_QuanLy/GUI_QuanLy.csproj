@@ -379,6 +379,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI_TatCaSanPham.resx">
+      <DependentUpon>GUI_TatCaSanPham.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI_TrangChu.resx">
       <DependentUpon>GUI_TrangChu.cs</DependentUpon>
     </EmbeddedResource>
