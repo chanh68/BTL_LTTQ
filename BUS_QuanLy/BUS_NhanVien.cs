@@ -12,6 +12,13 @@ namespace BUS_QuanLy
     public class BUS_NhanVien
     {
         DAL_NhanVien dalNhanVien = new DAL_NhanVien();
+        private DAL_NhanVien dalNV = new DAL_NhanVien();
+
+        // Phương thức lấy tên nhân viên từ mã nhân viên
+        public string LayTenNhanVien(string maNV)
+        {
+            return dalNV.LayTenNhanVien(maNV);
+        }
 
         // Lấy danh sách nhân viên
         public DataTable getNhanVien()

@@ -1,5 +1,6 @@
 ﻿using DTO_QuanLy;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -457,6 +458,61 @@ namespace DAL_QuanLy
 
             return result;
         }
+        public DTO_HangHoa LayThongTinHangHoa(string maHang)
+        {
+            DTO_HangHoa hangHoa = null;
+            string query = "SELECT * FROM HangHoa WHERE MaHang = @MaHang";
 
+            SqlCommand cmd = new SqlCommand(query, _conn);
+            cmd.Parameters.AddWithValue("@MaHang", maHang);
+
+            try
+            {
+                OpenConnection();
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    hangHoa = new DTO_HangHoa
+                    {
+                        MaHang = reader["MaHang"].ToString(),
+                        TenHangHoa = reader["TenHang"].ToString(),
+                        DonGiaBan = decimal.Parse(reader["DonGiaBan"].ToString())
+                    };
+                }
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Lỗi khi lấy thông tin hàng hóa: " + ex.Message);
+            }
+            finally
+            {
+                CloseConnection();
+            }
+
+            return hangHoa;
+        }
+
+        public List<DTO_HangHoa> LayDanhSachHangHoa()
+        {
+            List<DTO_HangHoa> danhSachHangHoa = new List<DTO_HangHoa>();
+            string query = "SELECT MaHang, TenHang, DonGiaBan FROM HangHoa";
+
+            SqlCommand cmd = new SqlCommand(query, _conn);
+            OpenConnection();
+            SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                DTO_HangHoa hangHoa = new DTO_HangHoa
+                {
+                    MaHang = reader["MaHang"].ToString(),
+                    TenHangHoa = reader["TenHang"].ToString(),
+                    DonGiaBan = Convert.ToDecimal(reader["DonGiaBan"])
+                };
+                danhSachHangHoa.Add(hangHoa);
+            }
+            CloseConnection();
+            return danhSachHangHoa;
+        }
     }
 }

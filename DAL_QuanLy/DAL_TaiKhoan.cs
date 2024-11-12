@@ -293,5 +293,34 @@ namespace DAL_QuanLy
                 return result;
             }
         }
+        public string GetEmployeeNameByAccount(string maNV)
+        {
+            string query = "SELECT TenNV FROM NhanVien WHERE MaNV = @maNV";
+
+            using (SqlCommand command = new SqlCommand(query, _conn))
+            {
+                command.Parameters.Add("@maNV", SqlDbType.NVarChar).Value = maNV; // Sử dụng mã nhân viên làm tham số
+
+                try
+                {
+                    _conn.Open();
+                    object result = command.ExecuteScalar(); // Lấy một giá trị (TenNV)
+                    if (result != null)
+                    {
+                        return result.ToString(); // Trả về tên nhân viên
+                    }
+                }
+                catch (SqlException ex)
+                {
+                    throw new Exception("Lỗi trong quá trình tìm tên nhân viên: " + ex.Message);
+                }
+                finally
+                {
+                    _conn.Close();
+                }
+
+                return null; // Trả về null nếu không tìm thấy
+            }
+        }
     }
 }

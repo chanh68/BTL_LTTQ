@@ -202,6 +202,12 @@
       <DependentUpon>FormReport.cs</DependentUpon>
     </Compile>
     <Compile Include="Global.cs" />
+    <Compile Include="GUI_ChiTietHDB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_ChiTietHDB.Designer.cs">
+      <DependentUpon>GUI_ChiTietHDB.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI_HoaDonBan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -607,6 +613,9 @@
     <None Include="Resources\Search.png" />
     <None Include="Resources\X.png" />
     <None Include="Resources\Save1.png" />
+    <None Include="Resources\Edit1.png" />
+    <None Include="Resources\View Details.png" />
+    <None Include="Resources\Delete1.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
