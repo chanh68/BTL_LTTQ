@@ -147,6 +147,21 @@ namespace GUI_QuanLy
             DialogResult result = suaForm.ShowDialog();
 
         }
-    }
+
+		private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void dgvTK_CellContentClick(object sender, DataGridViewCellEventArgs e)
+		{
+
+		}
+
+		private void TKNhaCC_Load(object sender, EventArgs e)
+		{
+
+		}
+	}
 }
 

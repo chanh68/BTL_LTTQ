@@ -115,7 +115,7 @@
             this.btnSignIn.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnSignIn.ForeColor = System.Drawing.Color.White;
             this.btnSignIn.Location = new System.Drawing.Point(710, 439);
-            this.btnSignIn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSignIn.Margin = new System.Windows.Forms.Padding(2);
             this.btnSignIn.Name = "btnSignIn";
             this.btnSignIn.Size = new System.Drawing.Size(140, 47);
             this.btnSignIn.TabIndex = 7;
@@ -168,7 +168,7 @@
             this.txtUser.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtUser.Lines = new string[0];
             this.txtUser.Location = new System.Drawing.Point(689, 271);
-            this.txtUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtUser.Margin = new System.Windows.Forms.Padding(2);
             this.txtUser.MaxLength = 32767;
             this.txtUser.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtUser.Modified = false;
@@ -194,7 +194,7 @@
             stateProperties4.ForeColor = System.Drawing.Color.Empty;
             stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.txtUser.OnIdleState = stateProperties4;
-            this.txtUser.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtUser.Padding = new System.Windows.Forms.Padding(2);
             this.txtUser.PasswordChar = '\0';
             this.txtUser.PlaceholderForeColor = System.Drawing.Color.White;
             this.txtUser.PlaceholderText = "";
@@ -230,6 +230,7 @@
             this.txtPassword.BorderColorIdle = System.Drawing.Color.Silver;
             this.txtPassword.BorderRadius = 20;
             this.txtPassword.BorderThickness = 1;
+            this.txtPassword.CausesValidation = false;
             this.txtPassword.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPassword.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
@@ -243,7 +244,7 @@
             this.txtPassword.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPassword.Lines = new string[0];
             this.txtPassword.Location = new System.Drawing.Point(689, 366);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtPassword.MaxLength = 32767;
             this.txtPassword.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtPassword.Modified = false;
@@ -269,7 +270,7 @@
             stateProperties8.ForeColor = System.Drawing.Color.Empty;
             stateProperties8.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.txtPassword.OnIdleState = stateProperties8;
-            this.txtPassword.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPassword.Padding = new System.Windows.Forms.Padding(2);
             this.txtPassword.PasswordChar = '\0';
             this.txtPassword.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.txtPassword.PlaceholderText = "";
@@ -296,7 +297,7 @@
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = global::GUI_QuanLy.Properties.Resources.Nen;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(960, 609);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -308,7 +309,7 @@
             this.btnHide.BackColor = System.Drawing.Color.White;
             this.btnHide.Image = global::GUI_QuanLy.Properties.Resources.close_eye;
             this.btnHide.Location = new System.Drawing.Point(833, 378);
-            this.btnHide.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnHide.Margin = new System.Windows.Forms.Padding(2);
             this.btnHide.Name = "btnHide";
             this.btnHide.Size = new System.Drawing.Size(21, 18);
             this.btnHide.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -321,7 +322,7 @@
             this.btnShow.BackColor = System.Drawing.Color.White;
             this.btnShow.Image = global::GUI_QuanLy.Properties.Resources.view;
             this.btnShow.Location = new System.Drawing.Point(833, 378);
-            this.btnShow.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnShow.Margin = new System.Windows.Forms.Padding(2);
             this.btnShow.Name = "btnShow";
             this.btnShow.Size = new System.Drawing.Size(21, 18);
             this.btnShow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -345,7 +346,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Signin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Signin";

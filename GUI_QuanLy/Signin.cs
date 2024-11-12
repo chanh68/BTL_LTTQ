@@ -14,6 +14,12 @@ namespace GUI_QuanLy
         {
             InitializeComponent();
             dalTaiKhoan = new DAL_TaiKhoan();
+            this.Shown += new System.EventHandler(this.Signin_Shown);
+
+        }
+        private void Signin_Shown(object sender, EventArgs e)
+        {
+            txtUser.Focus();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)

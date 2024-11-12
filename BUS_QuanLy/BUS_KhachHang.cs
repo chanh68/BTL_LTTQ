@@ -24,8 +24,10 @@ namespace BUS_QuanLy
         {
             return dalKH.LayDanhSachKhachHang();
         }
-
-
+        public DTO_KhachHang ThongTinKhachHangTheoSoHoaDon(string soHoaDon)
+        {
+            return dalKH.ThongTinKhachHangTheoSoHoaDon(soHoaDon);
+        }
         public DTO_KhachHang TimKiemKhachHangTheoSDT(string sdt)
         {
             return dalKH.TimKiemKhachHangTheoSDT(sdt);

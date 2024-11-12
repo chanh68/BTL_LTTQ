@@ -322,5 +322,35 @@ namespace DAL_QuanLy
                 return null; // Trả về null nếu không tìm thấy
             }
         }
+        public string GetEmployeeIdByLogin(string username, string password)
+        {
+            string query = "SELECT MaNV FROM TaiKhoan WHERE TenDangNhap = @username AND MatKhau = @password";
+
+            using (SqlCommand command = new SqlCommand(query, _conn))
+            {
+                command.Parameters.AddWithValue("@username", username);
+                command.Parameters.AddWithValue("@password", password);
+
+                try
+                {
+                    _conn.Open();
+                    object result = command.ExecuteScalar();
+                    if (result != null)
+                    {
+                        return result.ToString(); // Trả về mã nhân viên
+                    }
+                }
+                catch (SqlException ex)
+                {
+                    throw new Exception("Lỗi trong quá trình lấy mã nhân viên: " + ex.Message);
+                }
+                finally
+                {
+                    _conn.Close();
+                }
+            }
+
+            return null; // Trả về null nếu không tìm thấy
+        }
     }
 }

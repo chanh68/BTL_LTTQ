@@ -15,38 +15,77 @@ namespace DAL_QuanLy
             DTO_KhachHang kh = null;
             string query = "SELECT * FROM KhachHang WHERE MaKhach = @MaKhach";
 
-            using (SqlCommand cmd = new SqlCommand(query, _conn))
-            {
-                cmd.Parameters.AddWithValue("@MaKhach", maKH);
+            SqlCommand cmd = new SqlCommand(query, _conn);
+            cmd.Parameters.AddWithValue("@MaKhach", maKH);
 
-                try
+            try
+            {
+                OpenConnection();
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
                 {
-                    OpenConnection(); // Mở kết nối
-                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    kh = new DTO_KhachHang
                     {
-                        if (reader.Read())
-                        {
-                            kh = new DTO_KhachHang
-                            {
-                                MaKhach = reader["MaKhach"].ToString(),
-                                TenKhach = reader["TenKhach"].ToString(),
-                                DiaChi = reader["DiaChi"].ToString(),
-                                DienThoai = reader["DienThoai"].ToString()
-                            };
-                        }
-                    }
+                        MaKhach = reader["MaKhach"].ToString(),
+                        TenKhach = reader["TenKhach"].ToString(),
+                        DiaChi = reader["DiaChi"].ToString(),
+                        DienThoai = reader["DienThoai"].ToString()
+                    };
                 }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Lỗi khi lấy thông tin khách hàng: " + ex.Message);
-                }
-                finally
-                {
-                    CloseConnection(); // Đảm bảo đóng kết nối
-                }
-                return kh;
+                reader.Close();
             }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Lỗi khi lấy thông tin khách hàng: " + ex.Message);
+            }
+            finally
+            {
+                CloseConnection();
+            }
+
+            return kh;
         }
+
+        public DTO_KhachHang ThongTinKhachHangTheoSoHoaDon(string soHoaDon)
+        {
+            DTO_KhachHang kh = null;
+            string query = @"
+                SELECT kh.MaKhach, kh.TenKhach, kh.DiaChi, kh.DienThoai
+                    FROM KhachHang kh
+                    INNER JOIN HoaDonBan dh ON kh.MaKhach = dh.MaKhach
+                    WHERE dh.SoHDB = @SoHDB";
+
+            SqlCommand cmd = new SqlCommand(query, _conn);
+            cmd.Parameters.AddWithValue("@SoHDB", soHoaDon);
+
+            try
+            {
+                OpenConnection(); // Mở kết nối
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read()) // Nếu có kết quả
+                {
+                    kh = new DTO_KhachHang
+                    {
+                        MaKhach = reader["MaKhach"].ToString(),
+                        TenKhach = reader["TenKhach"].ToString(),
+                        DiaChi = reader["DiaChi"].ToString(),
+                        DienThoai = reader["DienThoai"].ToString()
+                    };
+                }
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Lỗi khi lấy thông tin khách hàng qua số hóa đơn: " + ex.Message);
+            }
+            finally
+            {
+                CloseConnection(); // Đảm bảo đóng kết nối
+            }
+
+            return kh;
+        }
+
 
         public List<DTO_KhachHang> LayDanhSachKhachHang()
         {

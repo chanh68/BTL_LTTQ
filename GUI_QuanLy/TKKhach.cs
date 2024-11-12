@@ -155,5 +155,10 @@ namespace GUI_QuanLy
             DialogResult result = suaForm.ShowDialog();
 
         }
-    }
+
+		private void TkKhach_Load(object sender, EventArgs e)
+		{
+
+		}
+	}
 }

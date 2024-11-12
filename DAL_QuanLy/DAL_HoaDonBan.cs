@@ -12,7 +12,8 @@ namespace DAL_QuanLy
     public class DAL_HoaDonBan : DBConnect
     {
         public DAL_HoaDonBan() { }
-        // Phuong thuc tra ve toan bo danh sach hdb tu bang HDB
+
+        // Phương thức trả về toàn bộ danh sách hóa đơn bán 
         public DataTable LayDanhSachHoaDonBan()
         {
             DataTable dtHDB = new DataTable();
@@ -57,10 +58,11 @@ namespace DAL_QuanLy
                             {
                                 SoHDB = reader["SoHDB"].ToString(),
                                 NgayBan = reader["NgayBan"] != DBNull.Value ? (DateTime)reader["NgayBan"] : default(DateTime),
-                                
+                                MaNV = reader["MaNV"].ToString(),
                                 MaKhach = reader["MaKhach"].ToString(),
-                                GiamGia = reader["GiamGia"] != DBNull.Value ? decimal.Parse(reader["GiamGia"].ToString()) : (decimal?)null,
-                                TongTien = reader["TongTien"] != DBNull.Value ? decimal.Parse(reader["TongTien"].ToString()) : (decimal?)null
+                                GiamGia = reader["GiamGia"] != DBNull.Value ? reader.GetDecimal(reader.GetOrdinal("GiamGia")) : 0,
+                                TongTien = reader["TongTien"] != DBNull.Value ? reader.GetDecimal(reader.GetOrdinal("TongTien")) : 0
+
                             };
                         }
                     }
@@ -189,35 +191,6 @@ namespace DAL_QuanLy
             return soThuTu;
         }
 
-        //Phương thức cập nhật hóa đơn bán
-        public bool CapNhatHoaDon(DTO_HoaDonBan hoaDon)
-        {
-            try
-            {
-                string query = "UPDATE HoaDonBan SET NgayBan = @NgayBan, MaNV = @MaNV, MaKhach = @MaKhach, TongTien = @TongTien WHERE SoHDB = @SoHDB";
-
-                SqlCommand cmd = new SqlCommand(query, _conn);
-                cmd.Parameters.AddWithValue("@NgayBan", hoaDon.NgayBan);
-                cmd.Parameters.AddWithValue("@MaNV", hoaDon.MaNV);
-                cmd.Parameters.AddWithValue("@MaKhach", hoaDon.MaKhach);
-                cmd.Parameters.AddWithValue("@TongTien", hoaDon.TongTien);
-                cmd.Parameters.AddWithValue("@SoHDB", hoaDon.SoHDB);
-
-                OpenConnection();
-                int result = cmd.ExecuteNonQuery();
-                CloseConnection();
-
-                return result > 0; // Trả về true nếu cập nhật thành công
-            }
-            catch (Exception ex)
-            {
-                CloseConnection();
-                return false;
-            }
-        }
-
-
-
         //Phương thức thêm hóa đơn bán
         public void ThemHoaDon(DTO_HoaDonBan hdb)
         {
@@ -246,33 +219,34 @@ namespace DAL_QuanLy
             }
         }
 
-
-
-
-        public string LayNgayBan(string maHDBan)
+        // Phương thức lấy mã hóa đơn gần nhất
+        public string LaySoHDBCuoi()
         {
-            string sql = "SELECT NgayBan FROM HoaDonBan WHERE SoHDB = @SoHDB";
-            return ExecuteScalar(sql, maHDBan);
-        }
+            string soHDBCuoi = string.Empty;
+            string query = "SELECT TOP 1 SoHDB FROM HoaDonBan ORDER BY SoHDB DESC";
 
-        public string LayMaNhanVien(string maHDBan)
-        {
-            string sql = "SELECT MaNhanVien FROM HoaDonBan WHERE SoHDB = @SoHDBn";
-            return ExecuteScalar(sql, maHDBan);
-        }
+            try
+            {
+                OpenConnection(); // Mở kết nối
+                SqlCommand cmd = new SqlCommand(query, _conn);
+                var result = cmd.ExecuteScalar();
 
-        public string LayMaKhach(string maHDBan)
-        {
-            string sql = "SELECT MaKhach FROM HoaDonBan WHERE SoHDB = @SoHDB";
-            return ExecuteScalar(sql, maHDBan);
-        }
+                if (result != null)
+                {
+                    soHDBCuoi = result.ToString(); // Lấy giá trị của SoHDB
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Lỗi khi lấy mã hóa đơn gần nhất: " + ex.Message);
+            }
+            finally
+            {
+                CloseConnection(); // Đảm bảo đóng kết nối
+            }
 
-        public string LayTongTien(string maHDBan)
-        {
-            string sql = "SELECT TongTien FROM HoaDonBan WHERE SoHDB = @SoHDB";
-            return ExecuteScalar(sql, maHDBan);
+            return soHDBCuoi;
         }
-
         private string ExecuteScalar(string sql, string maHDBan)
         {
             string result = string.Empty;
@@ -298,100 +272,6 @@ namespace DAL_QuanLy
             return result;
         }
 
-        public DataTable getHoaDonBan()
-        {
-            SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM HoaDonBan", _conn);
-            DataTable dtHDB = new DataTable();
-            da.Fill(dtHDB);
-            return dtHDB;
-        }
-
-        // Phương thức sinh mã hóa đơn bán
-        public string GenerateMaHDB()
-        {
-            string maHDB = "";
-            try
-            {
-                // Kết nối
-                _conn.Open();
-
-                // Lấy mã hóa đơn bán lớn nhất hiện có
-                SqlCommand cmd = new SqlCommand("SELECT TOP 1 MaHDB FROM HoaDonBan ORDER BY MaHDB DESC", _conn);
-                object result = cmd.ExecuteScalar(); // Trả về giá trị lớn nhất
-
-                if (result != null)
-                {
-                    // Tách phần số của mã hóa đơn
-                    string lastMaHDB = result.ToString();
-                    int lastNumber = int.Parse(lastMaHDB.Substring(3)); // Lấy số sau 'HDB'
-                    int newNumber = lastNumber + 1; // Tăng số lên 1
-
-                    // Định dạng lại mã hóa đơn mới
-                    maHDB = "HDB" + newNumber.ToString("D2"); // Định dạng với 2 chữ số
-                }
-                else
-                {
-                    // Nếu chưa có hóa đơn nào, khởi tạo mã đầu tiên
-                    maHDB = "HDB01";
-                }
-            }
-            catch (Exception e)
-            {
-                // Xử lý lỗi (nếu cần)
-                Console.WriteLine("Lỗi: " + e.Message);
-            }
-            finally
-            {
-                // Đóng kết nối
-                _conn.Close();
-            }
-
-            return maHDB; // Trả về mã hóa đơn bán mới
-        }
-
-        // Phuong thuc Them HDB
-        public bool themHDB(DTO_HoaDonBan hdb)
-        {
-            try
-            {
-                //Ket noi
-                _conn.Open();
-
-                // Sinh mã hóa đơn bán
-                hdb.SoHDB = GenerateMaHDB();
-
-
-                // Query string - Chuỗi truy vấn thêm hóa đơn bán
-                string SQL = "INSERT INTO HoaDonBan (MaHDB, MaKH, NgayBan, TongTien) VALUES (@MaHDB, @MaKH, @NgayBan, @TongTien)";
-
-                // Tạo command
-                SqlCommand cmd = new SqlCommand(SQL, _conn);
-
-                // Thêm tham số vào command
-                cmd.Parameters.AddWithValue("@MaHDB", hdb.SoHDB);
-                cmd.Parameters.AddWithValue("@MaKH", hdb.MaKhach);
-                cmd.Parameters.AddWithValue("@NgayBan", hdb.NgayBan);
-                cmd.Parameters.AddWithValue("@TongTien", hdb.TongTien);
-
-                // Thực hiện truy vấn
-                int result = cmd.ExecuteNonQuery(); // Số lượng bản ghi bị ảnh hưởng
-
-                return result > 0; // Trả về true nếu thêm thành công
-            }
-            catch (Exception e)
-            {
-                // Xử lý lỗi (nếu cần)
-                Console.WriteLine("Lỗi: " + e.Message);
-            }
-
-            finally
-            {
-                // Đóng kết nối
-                _conn.Close();
-            }
-
-            return false;
-        }
         public DataTable GetTotalRevenue()
         {
             string query = "SELECT SUM(TongTien) AS Bang3 FROM HoaDonBan";
@@ -434,6 +314,7 @@ namespace DAL_QuanLy
                 finally
                 {
                     _conn.Close();
+                    _conn.Dispose();
                 }
                 return result;
             }

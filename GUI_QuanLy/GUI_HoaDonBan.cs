@@ -1,4 +1,5 @@
 ﻿using BUS_QuanLy;
+using OfficeOpenXml;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -57,15 +58,6 @@ namespace GUI_QuanLy
                 string soHDB = (string)dgvDSHDB.Rows[e.RowIndex].Cells["SoHDB"].Value;
                 GUI_ChiTietHDB chiTietForm = new GUI_ChiTietHDB(soHDB);
                 chiTietForm.ShowDialog();
-            }
-            // Sửa
-            else if (e.ColumnIndex == dgvDSHDB.Columns["Sua"].Index)
-            {
-                string soHDB = (string)dgvDSHDB.Rows[e.RowIndex].Cells["SoHDB"].Value;
-                GUI_TaoHoaDonBan suaForm = new GUI_TaoHoaDonBan(soHDB);
-                suaForm.Owner = this; // Thiết lập Owner
-                suaForm.ShowDialog();
-                LoadDanhSachHoaDon(); // Cập nhật lại danh sách sau khi sửa
             }
             // Xóa
             else if (e.ColumnIndex == dgvDSHDB.Columns["Xoa"].Index)
@@ -148,6 +140,10 @@ namespace GUI_QuanLy
             taoHoaDon.ShowDialog();
         }
 
-        // Tìm kiếm hóa đơn theo các tiêu chí (mã, tháng, năm)
+        private void btnXuatFileExcel_Click(object sender, EventArgs e)
+        {
+
+            busHDB.InDanhSachHoaDon();
+        }
     }
 }
