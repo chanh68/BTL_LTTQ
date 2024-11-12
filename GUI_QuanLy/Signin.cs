@@ -1,70 +1,91 @@
 ﻿using System;
 using System.Windows.Forms;
-using DAL_QuanLy;
+using BUS_QuanLy;
 using DTO_QuanLy;
 
 namespace GUI_QuanLy
 {
     public partial class Signin : Form
     {
-        private DAL_TaiKhoan dalTaiKhoan;
-        private bool isPasswordVisible = false; 
+        private BUS_TaiKhoan busTaiKhoan; // Sử dụng lớp BUS thay vì DAL
+        private bool isPasswordVisible = false;
 
         public Signin()
         {
             InitializeComponent();
-            dalTaiKhoan = new DAL_TaiKhoan();
+            busTaiKhoan = new BUS_TaiKhoan(); // Khởi tạo lớp BUS
         }
 
+        // Xử lý sự kiện khi nhấn nút Đăng nhập
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string Uname = txtUser.Text;
-            string pass = txtPassword.Text;
+            string Uname = txtUser.Text.Trim();
+            string pass = txtPassword.Text.Trim();
 
-            if (Uname.Trim() == "")
+            // Kiểm tra tên đăng nhập và mật khẩu đã được nhập hay chưa
+            if (string.IsNullOrEmpty(Uname))
             {
-                MessageBox.Show("Required enter username!", "Announce", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Yêu cầu nhập tên đăng nhập!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
-            else if (pass.Trim() == "")
+
+            if (string.IsNullOrEmpty(pass))
             {
-                MessageBox.Show("Required enter password!", "Announce", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Yêu cầu nhập mật khẩu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Gọi tầng BUS để xác thực người dùng
+            string maNV = busTaiKhoan.VerifyUser(Uname, pass);
+            if (maNV != null)
+            {
+                MessageBox.Show("Đăng nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Lưu mã nhân viên vào biến toàn cục hoặc chuyển tiếp thông tin
+                Global.MaNV = maNV;
+
+                // Chuyển sang giao diện chính sau khi đăng nhập thành công
+                GUI_TrangChu gUI_TrangChu = new GUI_TrangChu(Global.MaNV);
+                gUI_TrangChu.Show();
+                this.Hide(); // Ẩn form đăng nhập
             }
             else
             {
-                string maNV = dalTaiKhoan.VerifyUser(Uname, pass);
-                if (maNV != null)
-                {
-                    Success.Show();
-                    Global.MaNV = maNV;
-                    HomePage homePage = new HomePage();
-                    homePage.Show();
-                }
-                else
-                {
-                    Failed.Show();
-                }
+                MessageBox.Show("Tên đăng nhập hoặc mật khẩu không chính xác!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
+        // Sự kiện tải form
         private void Signin_Load(object sender, EventArgs e)
         {
-            txtPassword.PasswordChar = '•'; 
+            txtPassword.PasswordChar = '•'; // Đặt ký tự ẩn cho mật khẩu
         }
 
+        // Hiển thị mật khẩu
         private void btnShow_Click(object sender, EventArgs e)
         {
-            isPasswordVisible = true;
-            txtPassword.PasswordChar = '\0'; 
-            btnShow.Visible = false; 
-            btnHide.Visible = true; 
+            txtPassword.PasswordChar = '\0'; // Hiển thị mật khẩu
+            btnShow.Visible = false;
+            btnHide.Visible = true;
         }
 
+        // Ẩn mật khẩu
         private void btnHide_Click(object sender, EventArgs e)
         {
-            isPasswordVisible = false;
-            txtPassword.PasswordChar = '•'; 
-            btnHide.Visible = false; 
-            btnShow.Visible = true; 
+            txtPassword.PasswordChar = '•'; // Ẩn mật khẩu
+            btnHide.Visible = false;
+            btnShow.Visible = true;
         }
+
+        private void btnDong_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+        private void txtUser_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }

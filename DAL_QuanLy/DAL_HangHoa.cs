@@ -1,5 +1,6 @@
 ﻿using DTO_QuanLy;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -7,6 +8,63 @@ namespace DAL_QuanLy
 {
     public class DAL_HangHoa : DBConnect
     {
+        public DTO_HangHoa LayThongTinHangHoa(string maHang)
+        {
+            DTO_HangHoa hangHoa = null;
+            string query = "SELECT * FROM HangHoa WHERE MaHang = @MaHang";
+
+            SqlCommand cmd = new SqlCommand(query, _conn);
+            cmd.Parameters.AddWithValue("@MaHang", maHang);
+
+            try
+            {
+                OpenConnection();
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    hangHoa = new DTO_HangHoa
+                    {
+                        MaHang = reader["MaHang"].ToString(),
+                        TenHang = reader["TenHang"].ToString(),
+                        DonGiaBan = decimal.Parse(reader["DonGiaBan"].ToString())
+                    };
+                }
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Lỗi khi lấy thông tin hàng hóa: " + ex.Message);
+            }
+            finally
+            {
+                CloseConnection();
+            }
+
+            return hangHoa;
+        }
+
+        public List<DTO_HangHoa> LayDanhSachHangHoa()
+        {
+            List<DTO_HangHoa> danhSachHangHoa = new List<DTO_HangHoa>();
+            string query = "SELECT MaHang, TenHang, DonGiaBan FROM HangHoa";
+
+            SqlCommand cmd = new SqlCommand(query, _conn);
+            OpenConnection();
+            SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                DTO_HangHoa hangHoa = new DTO_HangHoa
+                {
+                    MaHang = reader["MaHang"].ToString(),
+                    TenHang = reader["TenHang"].ToString(),
+                    DonGiaBan = Convert.ToDecimal(reader["DonGiaBan"])
+                };
+                danhSachHangHoa.Add(hangHoa);
+            }
+            CloseConnection();
+            return danhSachHangHoa;
+        }
+
         // Lấy số lượng sản phẩm trong kho
         public DataTable GetTotalProductsCount()
         {
@@ -92,7 +150,7 @@ namespace DAL_QuanLy
                 command.Parameters.AddWithValue("@DonGiaBan", hangHoa.DonGiaBan);
                 command.Parameters.AddWithValue("@GhiChu", hangHoa.GhiChu);
                 command.Parameters.AddWithValue("@Anh", hangHoa.Anh);
-                command.Parameters.AddWithValue("@TenHang", hangHoa.TenHangHoa);
+                command.Parameters.AddWithValue("@TenHang", hangHoa.TenHang);
 
                 try
                 {
@@ -192,7 +250,7 @@ namespace DAL_QuanLy
                             hangHoa = new DTO_HangHoa
                             {
                                 MaHang = reader["MaHang"].ToString(),
-                                TenHangHoa = reader["TenHang"].ToString(),
+                                TenHang = reader["TenHang"].ToString(),
                                 SoLuong = Convert.ToInt32(reader["SoLuong"]),
                                 DonGiaBan = Convert.ToDecimal(reader["DonGiaBan"]),
                                 GhiChu = reader["GhiChu"].ToString(),

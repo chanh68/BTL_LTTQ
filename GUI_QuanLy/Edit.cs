@@ -24,7 +24,7 @@ namespace GUI_QuanLy
             if (HangHoa != null) // Kiểm tra nếu có dữ liệu hàng hóa để load
             {
                 txtMaHang.Text = HangHoa.MaHang;
-                txtTenHang.Text = HangHoa.TenHangHoa;
+                txtTenHang.Text = HangHoa.TenHang;
                 txtSoLuong.Text = HangHoa.SoLuong.ToString();
                 txtDGB.Text = HangHoa.DonGiaBan.ToString();
                 txtGhiChu.Text = HangHoa.GhiChu;
@@ -145,7 +145,7 @@ namespace GUI_QuanLy
 
         private void UpdateHangHoa()
         {
-            HangHoa.TenHangHoa = txtTenHang.Text;
+            HangHoa.TenHang = txtTenHang.Text;
             HangHoa.SoLuong = int.Parse(txtSoLuong.Text);
             HangHoa.DonGiaBan = decimal.Parse(txtDGB.Text);
             HangHoa.GhiChu = txtGhiChu.Text;

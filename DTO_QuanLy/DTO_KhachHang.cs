@@ -8,21 +8,21 @@ namespace DTO_QuanLy
 {
     public class DTO_KhachHang
     {
-        private string _MaKH;
-        private string _TenKH;
+        private string _MaKhach;
+        private string _TenKhach;
         private string _DienThoai;
         private string _DiaChi;
 
-        public string MaKH
+        public string MaKhach
         {
-            get { return _MaKH; }
-            set { _MaKH = value; }
+            get { return _MaKhach; }
+            set { _MaKhach = value; }
         }
 
-        public string TenKH
+        public string TenKhach
         {
-            get { return _TenKH; }
-            set { _TenKH = value; }
+            get { return _TenKhach; }
+            set { _TenKhach = value; }
         }
 
         public string DienThoai
@@ -41,8 +41,8 @@ namespace DTO_QuanLy
 
         public DTO_KhachHang(string maKH, string tenKH, string dienThoai, string diaChi)
         {
-            this.MaKH = maKH;
-            this.TenKH = tenKH;
+            this.MaKhach = maKH;
+            this.TenKhach = tenKH;
             this.DienThoai = dienThoai;
             this.DiaChi = diaChi;
         }

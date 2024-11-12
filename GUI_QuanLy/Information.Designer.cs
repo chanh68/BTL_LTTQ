@@ -46,10 +46,10 @@
             this.lblDiaChi.BackColor = System.Drawing.Color.Transparent;
             this.lblDiaChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDiaChi.ForeColor = System.Drawing.Color.White;
-            this.lblDiaChi.Location = new System.Drawing.Point(478, 432);
-            this.lblDiaChi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lblDiaChi.Location = new System.Drawing.Point(382, 346);
+            this.lblDiaChi.Margin = new System.Windows.Forms.Padding(2);
             this.lblDiaChi.Name = "lblDiaChi";
-            this.lblDiaChi.Size = new System.Drawing.Size(63, 24);
+            this.lblDiaChi.Size = new System.Drawing.Size(52, 20);
             this.lblDiaChi.TabIndex = 17;
             this.lblDiaChi.Text = "Địa chỉ:";
             // 
@@ -58,10 +58,10 @@
             this.lblSdt.BackColor = System.Drawing.Color.Transparent;
             this.lblSdt.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSdt.ForeColor = System.Drawing.Color.White;
-            this.lblSdt.Location = new System.Drawing.Point(478, 387);
-            this.lblSdt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lblSdt.Location = new System.Drawing.Point(382, 310);
+            this.lblSdt.Margin = new System.Windows.Forms.Padding(2);
             this.lblSdt.Name = "lblSdt";
-            this.lblSdt.Size = new System.Drawing.Size(113, 24);
+            this.lblSdt.Size = new System.Drawing.Size(93, 20);
             this.lblSdt.TabIndex = 16;
             this.lblSdt.Text = "Số điện thoại:";
             // 
@@ -70,10 +70,10 @@
             this.lblNgaySinh.BackColor = System.Drawing.Color.Transparent;
             this.lblNgaySinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNgaySinh.ForeColor = System.Drawing.Color.White;
-            this.lblNgaySinh.Location = new System.Drawing.Point(478, 341);
-            this.lblNgaySinh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lblNgaySinh.Location = new System.Drawing.Point(382, 273);
+            this.lblNgaySinh.Margin = new System.Windows.Forms.Padding(2);
             this.lblNgaySinh.Name = "lblNgaySinh";
-            this.lblNgaySinh.Size = new System.Drawing.Size(88, 24);
+            this.lblNgaySinh.Size = new System.Drawing.Size(72, 20);
             this.lblNgaySinh.TabIndex = 15;
             this.lblNgaySinh.Text = "Ngày sinh:";
             // 
@@ -82,10 +82,10 @@
             this.lblCa.BackColor = System.Drawing.Color.Transparent;
             this.lblCa.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCa.ForeColor = System.Drawing.Color.White;
-            this.lblCa.Location = new System.Drawing.Point(478, 295);
-            this.lblCa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lblCa.Location = new System.Drawing.Point(382, 236);
+            this.lblCa.Margin = new System.Windows.Forms.Padding(2);
             this.lblCa.Name = "lblCa";
-            this.lblCa.Size = new System.Drawing.Size(99, 24);
+            this.lblCa.Size = new System.Drawing.Size(80, 20);
             this.lblCa.TabIndex = 14;
             this.lblCa.Text = "Ngày tuyển:";
             // 
@@ -94,10 +94,10 @@
             this.lblCV.BackColor = System.Drawing.Color.Transparent;
             this.lblCV.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCV.ForeColor = System.Drawing.Color.White;
-            this.lblCV.Location = new System.Drawing.Point(478, 249);
-            this.lblCV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lblCV.Location = new System.Drawing.Point(382, 199);
+            this.lblCV.Margin = new System.Windows.Forms.Padding(2);
             this.lblCV.Name = "lblCV";
-            this.lblCV.Size = new System.Drawing.Size(88, 24);
+            this.lblCV.Size = new System.Drawing.Size(73, 20);
             this.lblCV.TabIndex = 13;
             this.lblCV.Text = "Công việc:";
             // 
@@ -106,10 +106,10 @@
             this.lblMa.BackColor = System.Drawing.Color.Transparent;
             this.lblMa.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMa.ForeColor = System.Drawing.Color.White;
-            this.lblMa.Location = new System.Drawing.Point(478, 203);
-            this.lblMa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lblMa.Location = new System.Drawing.Point(382, 162);
+            this.lblMa.Margin = new System.Windows.Forms.Padding(2);
             this.lblMa.Name = "lblMa";
-            this.lblMa.Size = new System.Drawing.Size(115, 24);
+            this.lblMa.Size = new System.Drawing.Size(94, 20);
             this.lblMa.TabIndex = 12;
             this.lblMa.Text = "Mã nhân viên:";
             // 
@@ -118,10 +118,10 @@
             this.lblHoten.BackColor = System.Drawing.Color.Transparent;
             this.lblHoten.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHoten.ForeColor = System.Drawing.Color.White;
-            this.lblHoten.Location = new System.Drawing.Point(478, 157);
-            this.lblHoten.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lblHoten.Location = new System.Drawing.Point(382, 126);
+            this.lblHoten.Margin = new System.Windows.Forms.Padding(2);
             this.lblHoten.Name = "lblHoten";
-            this.lblHoten.Size = new System.Drawing.Size(85, 24);
+            this.lblHoten.Size = new System.Drawing.Size(70, 20);
             this.lblHoten.TabIndex = 11;
             this.lblHoten.Text = "Họ và tên:";
             // 
@@ -131,10 +131,10 @@
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.White;
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(552, 100);
-            this.guna2HtmlLabel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(442, 80);
+            this.guna2HtmlLabel1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(257, 43);
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(206, 34);
             this.guna2HtmlLabel1.TabIndex = 10;
             this.guna2HtmlLabel1.Text = "Tài khoản của tôi";
             // 
@@ -143,20 +143,20 @@
             this.guna2PictureBox11.BorderRadius = 20;
             this.guna2PictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox11.Image")));
             this.guna2PictureBox11.ImageRotate = 0F;
-            this.guna2PictureBox11.Location = new System.Drawing.Point(162, 130);
-            this.guna2PictureBox11.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2PictureBox11.Location = new System.Drawing.Point(130, 104);
+            this.guna2PictureBox11.Margin = new System.Windows.Forms.Padding(2);
             this.guna2PictureBox11.Name = "guna2PictureBox11";
-            this.guna2PictureBox11.Size = new System.Drawing.Size(250, 188);
+            this.guna2PictureBox11.Size = new System.Drawing.Size(200, 150);
             this.guna2PictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2PictureBox11.TabIndex = 9;
             this.guna2PictureBox11.TabStop = false;
             // 
             // Information
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(30)))), ((int)(((byte)(53)))));
-            this.ClientSize = new System.Drawing.Size(1150, 800);
+            this.ClientSize = new System.Drawing.Size(920, 664);
             this.Controls.Add(this.lblDiaChi);
             this.Controls.Add(this.lblSdt);
             this.Controls.Add(this.lblNgaySinh);
@@ -167,7 +167,7 @@
             this.Controls.Add(this.guna2HtmlLabel1);
             this.Controls.Add(this.guna2PictureBox11);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Information";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Information";

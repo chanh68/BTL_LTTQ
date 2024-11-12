@@ -4,18 +4,46 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BUS_QuanLy;
+using DTO_QuanLy;
 
 namespace GUI_QuanLy
 {
     public partial class GUI_TrangChu : Form
     {
+        private BUS_TaiKhoan bus_TaiKhoan;
+        private string tenNV;
         public GUI_TrangChu()
         {
             InitializeComponent();
             customizeDesing();
+        }
+        public GUI_TrangChu(string tenNguoiDung)
+        {
+            InitializeComponent();
+            //subMenu
+            customizeDesing();
+            //Tên người dùng
+            bus_TaiKhoan = new BUS_TaiKhoan();
+            tenNV = tenNguoiDung;
+            LoadEmployeeName();
+        }
+        //PHƯƠNG THỨC TRẢ VỀ TÊN NGƯỜI DÙNG
+        private void LoadEmployeeName()
+        {
+            string tenNV = bus_TaiKhoan.GetEmployeeNameByAccount(Global.MaNV);
+            if (!string.IsNullOrEmpty(tenNV))
+            {
+                txtNguoiDung.Text = "Xin chào: " + tenNV;
+            }
+            else
+            {
+                MessageBox.Show("Không tìm thấy tên nhân viên!");
+            }
         }
 
         //sideBar
@@ -53,6 +81,7 @@ namespace GUI_QuanLy
         }
         private void btnThongTinSanPham_Click(object sender, EventArgs e)
         {
+            openChildFormInPanel(new InfoProduct());
             hideSubMenu();
         }
 
@@ -70,8 +99,6 @@ namespace GUI_QuanLy
         {
             showSubMenu(panelHDSubmenu);
         }
-
-
 
         private void btnHoaDonBan_Click(object sender, EventArgs e)
         {
@@ -105,18 +132,22 @@ namespace GUI_QuanLy
             hideSubMenu();
         }
 
+        private void btnTrangChu_Click(object sender, EventArgs e)
+        {
+            openChildFormInPanel(new HomePage());
+        }
+        private void btnAvatar_Click(object sender, EventArgs e)
+        {
+            openChildFormInPanel(new Information());
+        }
+
         private void button1_Click_1(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
         }
 
-        private void GUI_TrangChu_Load(object sender, EventArgs e)
-        {
 
-        }
-
-
-        //Phuong thuc mo trang
+        //Phuong thuc chuyen trang
         private Form activeForm = null;
         private void openChildFormInPanel(Form childForm)
         {
@@ -132,19 +163,42 @@ namespace GUI_QuanLy
             childForm.Show();
         }
 
-        private void btnTrangChu_Click(object sender, EventArgs e)
-        {
-            openChildFormInPanel(new HomePage());
-        }
+
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            DialogResult check = MessageBox.Show("Bạn có chắc chắn muốn đăng xuất?", "Đăng xuất", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (check == DialogResult.Yes)
+            {
+                Signin loginForm = new Signin();
+                loginForm.Show();
+                this.Hide();
+            }
+        }
+        private void GUI_TrangChu_Load(object sender, EventArgs e)
+        {
+
+        }
         private void pictureBoxAvatar_Click(object sender, EventArgs e)
         {
-            openChildFormInPanel(new Information());
         }
+
+        private void btnMaximize_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblTenNguoiDung_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }

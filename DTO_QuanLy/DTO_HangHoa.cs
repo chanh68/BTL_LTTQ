@@ -9,7 +9,7 @@ namespace DTO_QuanLy
     public class DTO_HangHoa
     {
         private string _MaHang;
-        private string _TenHangHoa;
+        private string _TenHang;
         private string _MaLoai;
         private string _MaKichThuoc;
         private string _MaCongDung;
@@ -24,7 +24,7 @@ namespace DTO_QuanLy
         private string _GhiChu;
 
         public string MaHang { get; set; }
-        public string TenHangHoa { get; set; }
+        public string TenHang { get; set; }
         public string MaLoai { get; set; }
         public string MaKichThuoc { get; set; }
         public string MaCongDung { get; set; }
@@ -43,7 +43,7 @@ namespace DTO_QuanLy
         public DTO_HangHoa(string maHang, string tenHangHoa, string maLoai, string maKichThuoc, string maCongDung, string maLoaiMen, string maHinhKhoi, string maMau, string maNuocSX, int soLuong, decimal donGiaNhap, decimal donGiaBan, string anh, string ghiChu)
         {
             this.MaHang = maHang;
-            this.TenHangHoa = tenHangHoa;
+            this.TenHang = tenHangHoa;
             this.MaLoai = maLoai;
             this.MaKichThuoc = maKichThuoc;
             this.MaCongDung = maCongDung;
