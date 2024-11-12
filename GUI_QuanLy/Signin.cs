@@ -33,11 +33,13 @@ namespace GUI_QuanLy
             {
                 string maNV = dalTaiKhoan.VerifyUser(Uname, pass);
                 string tenNV = dalTaiKhoan.VerifyUser1(Uname, pass);
+                string quyenHan = dalTaiKhoan.VerifyUser2(Uname, pass);
                 if (maNV != null)
                 {
                     Success.Show();
                     Global.MaNV = maNV;
                     Global.TenNV = tenNV;
+                    Global.QuyenHan = quyenHan;
                     GUI_TrangChu a = new GUI_TrangChu();
                     a.Show();
                 }

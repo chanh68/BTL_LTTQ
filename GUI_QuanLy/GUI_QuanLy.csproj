@@ -226,9 +226,7 @@
     <Compile Include="GUI_TaoHoaDonNhap.Designer.cs">
       <DependentUpon>GUI_TaoHoaDonNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI_TatCaSanPham.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="GUI_TatCaSanPham.cs" />
     <Compile Include="GUI_TatCaSanPham.Designer.cs">
       <DependentUpon>GUI_TatCaSanPham.cs</DependentUpon>
     </Compile>

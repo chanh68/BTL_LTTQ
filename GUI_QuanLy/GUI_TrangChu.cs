@@ -120,8 +120,17 @@ namespace GUI_QuanLy
 
         private void GUI_TrangChu_Load(object sender, EventArgs e)
         {
+            Cursor.Current = Cursors.Default;
             label1.Text = Global.TenNV;
+
+            // Kiểm tra quyền hạn và ẩn nút btnTaiKhoan nếu người dùng là Nhân viên
+            if (Global.QuyenHan == "NhanVien")
+            {
+                btnTaiKhoan.Enabled = false;
+                btnTaiKhoan.BackColor = Color.Aqua;
+            }
         }
+
 
 
         //Phuong thuc mo trang

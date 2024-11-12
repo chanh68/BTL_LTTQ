@@ -10,5 +10,6 @@ namespace GUI_QuanLy
     {
        public static string MaNV { get; set; }
         public static string TenNV { get; set; }
+        public static string QuyenHan { get; set; }
     }
 }

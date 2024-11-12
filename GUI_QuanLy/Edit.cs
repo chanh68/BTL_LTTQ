@@ -61,57 +61,6 @@ namespace GUI_QuanLy
                 btnThem.Visible = false; // Ẩn nút Thêm
             }
         }
-
-
-        //private void LoadHangHoaData()
-        //{
-        //    if (HangHoa != null)
-        //    {
-        //        txtMaHang.Text = HangHoa.MaHang; // Đã có
-        //        txtTenHang.Text = HangHoa.TenHangHoa; // Đã có
-        //        txtSoLuong.Text = HangHoa.SoLuong.ToString(); // Đã có
-        //        txtDGB.Text = HangHoa.DonGiaBan.ToString(); // Đã có
-        //        txtDGN.Text = HangHoa.DonGiaNhap.ToString();
-        //        txtGhiChu.Text = HangHoa.GhiChu; // Đã có
-
-        //        // Hiển thị ảnh từ byte[]
-        //        if (HangHoa.Anh != null && HangHoa.Anh.Length > 0)
-        //        {
-        //            using (MemoryStream ms = new MemoryStream(HangHoa.Anh))
-        //            {
-        //                picpoc.Image = Image.FromStream(ms);
-        //            }
-        //        }
-
-        //        // Cập nhật thêm các thuộc tính còn lại
-        //        txtMaLoai.Text = HangHoa.MaLoai; // Thêm
-        //        txtMaKT.Text = HangHoa.MaKichThuoc; // Thêm
-        //        txtMaMen.Text = HangHoa.MaLoaiMen; // Thêm
-        //        txtMaMau.Text = HangHoa.MaMau; // Thêm
-        //        txtMaCD.Text = HangHoa.MaCongDung; // Thêm
-        //        txtMaHK.Text = HangHoa.MaHinhKhoi; // Thêm
-        //        txtMaNuocSX.Text = HangHoa.MaNuocSX; // Thêm
-        //    }
-
-        //    // Nếu chế độ là "Thông tin sản phẩm", khóa các trường nhập
-        //    if (mode == "Thông tin")
-        //    {
-        //        txtMaHang.Enabled = false;
-        //        txtTenHang.Enabled = false;
-        //        txtSoLuong.Enabled = false;
-        //        txtDGB.Enabled = false;
-        //        txtGhiChu.Enabled = false;
-        //        txtMaLoai.Enabled = false; // Khóa các trường nhập thêm
-        //        txtMaKT.Enabled = false;
-        //        txtMaMen.Enabled = false;
-        //        txtMaMau.Enabled = false;
-        //        txtMaCD.Enabled = false;
-        //        txtMaHK.Enabled = false;
-        //        txtDGN.Enabled = false;
-        //        txtMaNuocSX.Enabled = false;
-        //        btnChonAnh.Enabled = false; // Khóa nút chọn ảnh
-        //    }
-        //}
         private void LoadHangHoaData()
         {
             if (HangHoa != null)
@@ -236,19 +185,40 @@ namespace GUI_QuanLy
 
         private bool ValidateInputs()
         {
+            // Kiểm tra các trường bắt buộc phải có dữ liệu
             if (string.IsNullOrWhiteSpace(txtMaHang.Text) ||
                 string.IsNullOrWhiteSpace(txtTenHang.Text) ||
                 string.IsNullOrWhiteSpace(txtSoLuong.Text) ||
-                string.IsNullOrWhiteSpace(txtDGB.Text))
+                string.IsNullOrWhiteSpace(txtDGB.Text) ||
+                string.IsNullOrWhiteSpace(txtDGN.Text) ||
+                string.IsNullOrWhiteSpace(txtMaLoai.Text) ||
+                string.IsNullOrWhiteSpace(txtMaKT.Text) ||
+                string.IsNullOrWhiteSpace(txtMaMen.Text) ||
+                string.IsNullOrWhiteSpace(txtMaMau.Text) ||
+                string.IsNullOrWhiteSpace(txtMaCD.Text) ||
+                string.IsNullOrWhiteSpace(txtMaHK.Text) ||
+                string.IsNullOrWhiteSpace(txtMaNuocSX.Text))
             {
-                MessageBox.Show("Vui lòng nhập đầy đủ thông tin.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin cho tất cả các trường bắt buộc.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 
-            if (!int.TryParse(txtSoLuong.Text, out _) ||
-                !decimal.TryParse(txtDGB.Text, out _))
+            // Kiểm tra các trường số lượng và đơn giá phải là số hợp lệ
+            if (!int.TryParse(txtSoLuong.Text, out _) || int.Parse(txtSoLuong.Text) <= 0)
             {
-                MessageBox.Show("Số lượng và đơn giá phải là số hợp lệ.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Số lượng phải là một số nguyên dương.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            if (!decimal.TryParse(txtDGB.Text, out _) || decimal.Parse(txtDGB.Text) <= 0)
+            {
+                MessageBox.Show("Đơn giá bán phải là một số dương.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            if (!decimal.TryParse(txtDGN.Text, out _) || decimal.Parse(txtDGN.Text) <= 0)
+            {
+                MessageBox.Show("Đơn giá nhập phải là một số dương.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 
