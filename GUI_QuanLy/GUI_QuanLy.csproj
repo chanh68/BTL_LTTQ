@@ -359,9 +359,7 @@
     <Compile Include="TKNhanVien.Designer.cs">
       <DependentUpon>TKNhanVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="urSanPham.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="urSanPham.cs" />
     <Compile Include="urSanPham.Designer.cs">
       <DependentUpon>urSanPham.cs</DependentUpon>
     </Compile>

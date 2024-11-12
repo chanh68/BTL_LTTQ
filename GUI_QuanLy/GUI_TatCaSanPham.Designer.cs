@@ -61,7 +61,7 @@
 //            this.cbSearch.Size = new System.Drawing.Size(122, 28);
 //            this.cbSearch.TabIndex = 5;
 //            this.cbSearch.Text = "Tra cứu theo";
-//            this.cbSearch.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+//            //this.cbSearch.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
 //            // 
 //            // txtSearch
 //            // 
