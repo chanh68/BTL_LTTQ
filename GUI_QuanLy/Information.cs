@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Data;
+using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 using DAL_QuanLy; 
 
@@ -30,11 +32,29 @@ namespace GUI_QuanLy
                 lblNgaySinh.Text = $"Ngày sinh: {Convert.ToDateTime(result.Rows[0]["NgaySinh"]).ToShortDateString()}";
                 lblSdt.Text = $"Số điện thoại: {result.Rows[0]["DienThoai"]}";
                 lblDiaChi.Text = $"Địa chỉ: {result.Rows[0]["DiaChi"]}";
+
+                // Chuyển đổi byte[] thành ảnh và hiển thị
+                if (result.Rows[0]["HinhAnh"] != DBNull.Value)
+                {
+                    byte[] imgData = (byte[])result.Rows[0]["HinhAnh"];
+                    Pic.Image = ConvertByteArrayToImage(imgData);
+                    Pic.SizeMode = PictureBoxSizeMode.StretchImage; // Điều chỉnh kích thước ảnh cho phù hợp
+                }
             }
             else
             {
                 MessageBox.Show("Không tìm thấy thông tin nhân viên.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+        // Phương thức chuyển đổi byte[] thành Image
+        private Image ConvertByteArrayToImage(byte[] imageData)
+        {
+            using (MemoryStream ms = new MemoryStream(imageData))
+            {
+                return Image.FromStream(ms);
+            }
+        }
+
     }
 }

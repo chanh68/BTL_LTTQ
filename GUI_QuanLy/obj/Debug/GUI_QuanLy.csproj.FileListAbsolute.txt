@@ -506,3 +506,4 @@ F:\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.csproj.CoreCompileInputs.cache
 F:\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.csproj.Up2Date
 F:\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.exe
 F:\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.pdb
+F:\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.GUI_TrangChu.resources

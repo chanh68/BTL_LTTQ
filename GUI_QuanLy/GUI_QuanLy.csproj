@@ -202,6 +202,36 @@
       <DependentUpon>FormReport.cs</DependentUpon>
     </Compile>
     <Compile Include="Global.cs" />
+    <Compile Include="GUI_HoaDonBan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_HoaDonBan.Designer.cs">
+      <DependentUpon>GUI_HoaDonBan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_HoaDonNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_HoaDonNhap.Designer.cs">
+      <DependentUpon>GUI_HoaDonNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_TaoHoaDonBan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_TaoHoaDonBan.Designer.cs">
+      <DependentUpon>GUI_TaoHoaDonBan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_TaoHoaDonNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_TaoHoaDonNhap.Designer.cs">
+      <DependentUpon>GUI_TaoHoaDonNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_TrangChu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_TrangChu.Designer.cs">
+      <DependentUpon>GUI_TrangChu.cs</DependentUpon>
+    </Compile>
     <Compile Include="HeaderControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -336,6 +366,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_TrangChu.resx">
+      <DependentUpon>GUI_TrangChu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HeaderControl.resx">
       <DependentUpon>HeaderControl.cs</DependentUpon>
@@ -540,6 +573,25 @@
     <None Include="Resources\angela.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Image1.bmp" />
+    <None Include="Resources\1.png" />
+    <None Include="Resources\2.png" />
+    <None Include="Resources\3.png" />
+    <None Include="Resources\4.png" />
+    <None Include="Resources\5.png" />
+    <None Include="Resources\6.png" />
+    <None Include="Resources\7.png" />
+    <None Include="Resources\61.png" />
+    <None Include="Resources\Male User1.png" />
+    <None Include="Resources\Logout.png" />
+    <None Include="Resources\Monzo.png" />
+    <None Include="Resources\Add New.png" />
+    <None Include="Resources\Add New1.png" />
+    <None Include="Resources\Close.png" />
+    <None Include="Resources\Printer.png" />
+    <None Include="Resources\Search.png" />
+    <None Include="Resources\X.png" />
+    <None Include="Resources\Save1.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

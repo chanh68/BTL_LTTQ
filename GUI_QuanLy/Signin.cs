@@ -36,8 +36,8 @@ namespace GUI_QuanLy
                 {
                     Success.Show();
                     Global.MaNV = maNV;
-                    Form1 form1 = new Form1();
-                    form1.Show();
+                    GUI_TrangChu a = new GUI_TrangChu();
+                    a.Show();
                 }
                 else
                 {
