@@ -32,10 +32,12 @@ namespace GUI_QuanLy
             else
             {
                 string maNV = dalTaiKhoan.VerifyUser(Uname, pass);
+                string tenNV = dalTaiKhoan.VerifyUser1(Uname, pass);
                 if (maNV != null)
                 {
                     Success.Show();
                     Global.MaNV = maNV;
+                    Global.TenNV = tenNV;
                     GUI_TrangChu a = new GUI_TrangChu();
                     a.Show();
                 }

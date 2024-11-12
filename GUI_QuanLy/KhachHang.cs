@@ -190,6 +190,7 @@ namespace GUI_QuanLy
                 MessageBox.Show("Thêm khách hàng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadKhachHang();
                 reset();
+                this.Close();
             }
             else
             {
@@ -266,6 +267,7 @@ namespace GUI_QuanLy
                 MessageBox.Show("Sửa khách hàng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadKhachHang(); // Cập nhật lại danh sách khách hàng
                 reset(); // Gọi phương thức reset để làm sạch các trường
+                this.Close();
             }
             else
             {
@@ -291,6 +293,7 @@ namespace GUI_QuanLy
                     MessageBox.Show("Xóa khách hàng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadKhachHang(); // Cập nhật lại danh sách khách hàng
                     reset(); // Gọi phương thức reset để làm sạch các trường
+                    this.Close();
                 }
                 else
                 {
@@ -321,17 +324,9 @@ namespace GUI_QuanLy
             }
         }
 
-        private void btnHuy_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            reset();
-            TkKhach suaForm = new TkKhach();
-            this.Hide(); // Ẩn form hiện tại trước khi gọi ShowDialog()
-            DialogResult result = suaForm.ShowDialog();
-            // Kiểm tra nếu form cha vẫn còn tồn tại và chưa bị dispose
-            if (!this.IsDisposed)
-            {
-                this.Show(); // Hiện lại form hiện tại sau khi form sửa đóng
-            }
+            this.Close();
         }
     }
 }

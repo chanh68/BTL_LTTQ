@@ -40,10 +40,10 @@ namespace GUI_QuanLy
             // Đăng ký sự kiện TextChanged cho txtMaCV
             txtMaCV.TextChanged += txtMaCV_TextChanged;
 
-           
+
         }
-      
-       
+
+
         private byte[] ConvertImageToByteArray(string filePath)
         {
             using (FileStream fs = new FileStream(filePath, FileMode.Open, FileAccess.Read))
@@ -66,6 +66,10 @@ namespace GUI_QuanLy
                     imageData = ConvertImageToByteArray(ofd.FileName);
                     // Bạn có thể lưu trữ imageData vào đối tượng DTO_NhanVien tại đây
                     pictureBox1.Image = Image.FromStream(new MemoryStream(imageData));
+                }
+                else
+                {
+                    imageData = null; // Không có ảnh nào được chọn
                 }
             }
         }
@@ -148,12 +152,12 @@ namespace GUI_QuanLy
         {
             if (string.IsNullOrEmpty(txtMaNV.Text) ||
                 string.IsNullOrEmpty(txtTenNV.Text) ||
-                string.IsNullOrEmpty(txtGT.Text) ||
-                string.IsNullOrEmpty(txtDiaChi.Text) ||
+                // string.IsNullOrEmpty(txtGT.Text) ||
+                //  string.IsNullOrEmpty(txtDiaChi.Text) ||
                 string.IsNullOrEmpty(txtMaCV.Text) ||
                 string.IsNullOrEmpty(txtCCCD.Text))
             {
-                MessageBox.Show("Vui lòng điền đầy đủ thông tin!");
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin chính!");
                 return;
             }
 
@@ -230,44 +234,24 @@ namespace GUI_QuanLy
             if (busNhanVien.themNhanVien(nv))
             {
                 MessageBox.Show("Thêm nhân viên thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-
-        }
-
-        private void btnHuy_Click(object sender, EventArgs e)
-        {
-            // Kiểm tra xem tất cả các trường nhập có trống hay không
-            if (string.IsNullOrEmpty(txtMaNV.Text) &&
-                string.IsNullOrEmpty(txtTenNV.Text) &&
-                string.IsNullOrEmpty(txtGT.Text) &&
-                string.IsNullOrEmpty(txtDiaChi.Text) &&
-                string.IsNullOrEmpty(txtMaCV.Text) &&
-                string.IsNullOrEmpty(txtCCCD.Text) &&
-                string.IsNullOrEmpty(txtSDT.Text) &&
-                string.IsNullOrEmpty(txtVaiTro.Text))
-            {
-                MessageBox.Show("Chưa có dữ liệu nào để hủy!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
             }
             else
             {
-                reset(); // Thực hiện reset nếu có dữ liệu đã nhập
+                MessageBox.Show("Thêm nhân viên thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
         }
 
-        private void btnTK_Click(object sender, EventArgs e)
+
+        private void NhanVien_Load(object sender, EventArgs e)
         {
-            TKNhanVien suaForm = new TKNhanVien();
-            this.Hide(); // Ẩn form hiện tại trước khi gọi ShowDialog()
-            DialogResult result = suaForm.ShowDialog();
-            // Kiểm tra nếu form cha vẫn còn tồn tại và chưa bị dispose
-            if (!this.IsDisposed)
-            {
-                this.Show(); // Hiện lại form hiện tại sau khi form sửa đóng
-            }
-
 
         }
 
-       
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

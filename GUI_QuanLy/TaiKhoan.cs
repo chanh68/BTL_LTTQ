@@ -306,10 +306,7 @@ namespace GUI_QuanLy
             }
         }
 
-        private void btnHuy_Click(object sender, EventArgs e)
-        {
-            reset();
-        }
+
 
         private void dgvTaiKhoan_CellClick(object sender, DataGridViewCellEventArgs e)
         {

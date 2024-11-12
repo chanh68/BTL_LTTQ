@@ -9,5 +9,6 @@ namespace GUI_QuanLy
     public class Global
     {
        public static string MaNV { get; set; }
+        public static string TenNV { get; set; }
     }
 }

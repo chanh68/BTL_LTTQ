@@ -192,6 +192,7 @@ namespace GUI_QuanLy
                 MessageBox.Show("Thêm nhà cung cấp thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadNhaCungCap();
                 reset();
+                this.Close();
             }
             else
             {
@@ -256,6 +257,7 @@ namespace GUI_QuanLy
                 MessageBox.Show("Sửa nhà cung cấp thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadNhaCungCap();
                 reset();
+                this.Close();
             }
             else
             {
@@ -275,6 +277,7 @@ namespace GUI_QuanLy
                     MessageBox.Show("Xóa nhà cung cấp thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadNhaCungCap();
                     reset();
+                    this.Close();
                 }
                 else
                 {
@@ -283,18 +286,6 @@ namespace GUI_QuanLy
             }
         }
 
-        private void btnHuy_Click(object sender, EventArgs e)
-        {
-            reset();
-            TKNhaCC suaForm = new TKNhaCC();
-            this.Hide(); // Ẩn form hiện tại trước khi gọi ShowDialog()
-            DialogResult result = suaForm.ShowDialog();
-            // Kiểm tra nếu form cha vẫn còn tồn tại và chưa bị dispose
-            if (!this.IsDisposed)
-            {
-                this.Show(); // Hiện lại form hiện tại sau khi form sửa đóng
-            }
-        }
 
         private void dgvNCC_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -316,6 +307,11 @@ namespace GUI_QuanLy
                 TextBox_Enter(txtDiaChi, EventArgs.Empty);
                 TextBox_Enter(txtDienThoai, EventArgs.Empty);
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

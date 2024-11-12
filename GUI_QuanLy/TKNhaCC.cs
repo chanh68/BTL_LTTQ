@@ -143,13 +143,9 @@ namespace GUI_QuanLy
         private void btnThem_Click(object sender, EventArgs e)
         {
             NhaCC suaForm = new NhaCC();
-            this.Hide(); // Ẩn form hiện tại trước khi gọi ShowDialog()
+
             DialogResult result = suaForm.ShowDialog();
-            // Kiểm tra nếu form cha vẫn còn tồn tại và chưa bị dispose
-            if (!this.IsDisposed)
-            {
-                this.Show(); // Hiện lại form hiện tại sau khi form sửa đóng
-            }
+
         }
     }
 }

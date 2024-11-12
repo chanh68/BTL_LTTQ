@@ -2,6 +2,7 @@
 using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Collections.Generic;
 
 namespace DAL_QuanLy
 {
@@ -34,14 +35,22 @@ namespace DAL_QuanLy
                 cmd.Parameters.AddWithValue("@SoNgayNghi", nv.SoNgayNghi);
                 cmd.Parameters.AddWithValue("@NgayTuyen", nv.NgayTuyen);
                 cmd.Parameters.AddWithValue("@CCCD", nv.CCCD);
-                cmd.Parameters.AddWithValue("@HinhAnh", nv.HinhAnh); 
-
+                // cmd.Parameters.AddWithValue("@HinhAnh", nv.HinhAnh);
+                cmd.Parameters.AddWithValue("@HinhAnh", (object)nv.HinhAnh ?? DBNull.Value);
+                //if (nv.HinhAnh == null || nv.HinhAnh.Length == 0)
+                //{
+                //    cmd.Parameters.Add("@HinhAnh", SqlDbType.VarBinary).Value = new byte[0]; // Truyền một mảng byte trống
+                //}
+                //else
+                //{
+                //    cmd.Parameters.Add("@HinhAnh", SqlDbType.VarBinary).Value = nv.HinhAnh;
+                //}
                 return cmd.ExecuteNonQuery() > 0;
             }
             catch (SqlException sqlEx)
             {
                 Console.WriteLine("SQL Error: " + sqlEx.Message);
-                throw new Exception("Có lỗi khi thêm nhân viên: " + sqlEx.Message);
+                //  throw new Exception("Có lỗi khi thêm nhân viên: " + sqlEx.Message);
                 return false;
             }
             catch (Exception e)
@@ -73,7 +82,8 @@ namespace DAL_QuanLy
                 cmd.Parameters.AddWithValue("@SoNgayNghi", nv.SoNgayNghi);
                 cmd.Parameters.AddWithValue("@NgayTuyen", nv.NgayTuyen);
                 cmd.Parameters.AddWithValue("@CCCD", nv.CCCD);
-                cmd.Parameters.AddWithValue("@HinhAnh", nv.HinhAnh); 
+                //    cmd.Parameters.AddWithValue("@HinhAnh", nv.HinhAnh);
+                cmd.Parameters.AddWithValue("@HinhAnh", (object)nv.HinhAnh ?? DBNull.Value);
 
                 return cmd.ExecuteNonQuery() > 0;
             }
@@ -92,6 +102,66 @@ namespace DAL_QuanLy
             try
             {
                 _conn.Open();
+
+                string query1 = "DELETE FROM TaiKhoan WHERE MaNV = @MaNV";
+                SqlCommand cmd1 = new SqlCommand(query1, _conn);
+                cmd1.Parameters.AddWithValue("@MaNV", maNV);
+                cmd1.ExecuteNonQuery();
+
+                string selectHoaDonBanQuery = "SELECT SoHDB FROM HoaDonBan WHERE MaNV = @MaNV";
+                SqlCommand selectHoaDonBanCmd = new SqlCommand(selectHoaDonBanQuery, _conn);
+                selectHoaDonBanCmd.Parameters.AddWithValue("@MaNV", maNV);
+
+                List<string> soHDBs = new List<string>();
+                using (SqlDataReader reader = selectHoaDonBanCmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        soHDBs.Add(reader["SoHDB"].ToString());
+                    }
+                }
+
+                // Bước 3: Xóa các chi tiết hóa đơn bán liên quan đến SoHDB
+                foreach (string soHDB in soHDBs)
+                {
+                    string deleteChiTietHoaDonBanQuery = "DELETE FROM ChiTietHoaDonBan WHERE SoHDB = @SoHDB";
+                    SqlCommand deleteChiTietHoaDonBanCmd = new SqlCommand(deleteChiTietHoaDonBanQuery, _conn);
+                    deleteChiTietHoaDonBanCmd.Parameters.AddWithValue("@SoHDB", soHDB);
+                    deleteChiTietHoaDonBanCmd.ExecuteNonQuery();
+                }
+
+                string deleteHoaDonBanQuery = "DELETE FROM HoaDonBan WHERE MaNV = @MaNV";
+                SqlCommand deleteHoaDonBanCmd = new SqlCommand(deleteHoaDonBanQuery, _conn);
+                deleteHoaDonBanCmd.Parameters.AddWithValue("@MaNV", maNV);
+                deleteHoaDonBanCmd.ExecuteNonQuery();
+
+                string selectHoaDonQuery = "SELECT SoHDN FROM HoaDonNhap WHERE MaNV = @MaNV";
+                SqlCommand selectHoaDonCmd = new SqlCommand(selectHoaDonQuery, _conn);
+                selectHoaDonCmd.Parameters.AddWithValue("@MaNV", maNV);
+
+
+                List<string> soHDNs = new List<string>();
+                using (SqlDataReader reader = selectHoaDonCmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        soHDNs.Add(reader["SoHDN"].ToString());
+                    }
+                }
+
+                foreach (string soHDN in soHDNs)
+                {
+                    string deleteChiTietQuery = "DELETE FROM ChiTietHoaDonNhap WHERE SoHDN = @SoHDN";
+                    SqlCommand deleteChiTietCmd = new SqlCommand(deleteChiTietQuery, _conn);
+                    deleteChiTietCmd.Parameters.AddWithValue("@SoHDN", soHDN);
+                    deleteChiTietCmd.ExecuteNonQuery();
+                }
+
+                string query2 = "DELETE FROM HoaDonNhap WHERE MaNV = @MaNV";
+                SqlCommand cmd2 = new SqlCommand(query2, _conn);
+                cmd2.Parameters.AddWithValue("@MaNV", maNV);
+                cmd2.ExecuteNonQuery();
+
                 string query = "DELETE FROM NhanVien WHERE MaNV = @MaNV";
                 SqlCommand cmd = new SqlCommand(query, _conn);
                 cmd.Parameters.AddWithValue("@MaNV", maNV);

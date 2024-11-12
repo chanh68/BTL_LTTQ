@@ -215,31 +215,6 @@ namespace GUI_QuanLy
             }
         }
 
-        //private Form currentForm;
-        //private void openForm(Form form)
-        //{
-        //    // Đóng form hiện tại nếu có
-        //    if (currentForm != null)
-        //    {
-        //        currentForm.Close();
-        //    }
-
-        //    // Thiết lập form mới
-        //    currentForm = form;
-        //    form.TopLevel = false; // Thiết lập form không phải là form chính
-        //    form.Dock = DockStyle.Fill; // Đổ đầy panel
-
-        //    // Xóa các điều khiển cũ trong panel_Body
-        //    panel_body.Controls.Clear();
-
-        //    // Thêm form vào panel
-        //    panel_body.Controls.Add(form);
-        //    panel_body.Tag = form; // Gắn tag cho panel để dễ quản lý
-
-        //    form.BringToFront(); // Đưa form ra phía trước
-        //    form.Show(); // Hiển thị form
-        //}
-
 
         private void btnSua_Click(object sender, EventArgs e)
         {
@@ -262,17 +237,9 @@ namespace GUI_QuanLy
                     Console.WriteLine("Sửa MaNV: " + maNV);
 
                     NhanVien_Sua suaForm = new NhanVien_Sua(maNV);
-                    this.Hide(); // Ẩn form hiện tại trước khi gọi ShowDialog()
-                    DialogResult result = suaForm.ShowDialog();
-                    if (!this.IsDisposed)
-                    {
-                        this.Show(); // Hiện lại form hiện tại sau khi form sửa đóng
-                    }
 
-                    if (result == DialogResult.OK)
-                    {
-                        LoadNhanVien(); // Tải lại danh sách nhân viên
-                    }
+                    DialogResult result = suaForm.ShowDialog();
+
                 }
                 else
                 {
@@ -286,20 +253,10 @@ namespace GUI_QuanLy
         private void btnThem_Click(object sender, EventArgs e)
         {
             NhanVien suaForm = new NhanVien();
-            this.Hide(); // Ẩn form hiện tại trước khi gọi ShowDialog()
-            DialogResult result = suaForm.ShowDialog();
-            // Kiểm tra nếu form cha vẫn còn tồn tại và chưa bị dispose
-            if (!this.IsDisposed)
-            {
-                this.Show(); // Hiện lại form hiện tại sau khi form sửa đóng
-            }
 
-            if (result == DialogResult.OK)
-            {
-                LoadNhanVien(); // Tải lại danh sách nhân viên
-            }
+            DialogResult result = suaForm.ShowDialog();
         }
 
-       
+
     }
 }

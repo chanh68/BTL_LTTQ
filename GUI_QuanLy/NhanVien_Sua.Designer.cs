@@ -59,9 +59,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel_body1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnTK = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnChon = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel_body1.SuspendLayout();
@@ -416,8 +416,8 @@
             // 
             // panel_body1
             // 
+            this.panel_body1.Controls.Add(this.button1);
             this.panel_body1.Controls.Add(this.pictureBox1);
-            this.panel_body1.Controls.Add(this.btnTK);
             this.panel_body1.Controls.Add(this.btnSua);
             this.panel_body1.Controls.Add(this.btnChon);
             this.panel_body1.Controls.Add(this.panel1);
@@ -439,20 +439,6 @@
             this.pictureBox1.TabIndex = 16;
             this.pictureBox1.TabStop = false;
             // 
-            // btnTK
-            // 
-            this.btnTK.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(127)))), ((int)(((byte)(245)))));
-            this.btnTK.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnTK.ForeColor = System.Drawing.Color.White;
-            this.btnTK.Location = new System.Drawing.Point(706, 540);
-            this.btnTK.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.btnTK.Name = "btnTK";
-            this.btnTK.Size = new System.Drawing.Size(110, 36);
-            this.btnTK.TabIndex = 14;
-            this.btnTK.Text = "Tìm NV";
-            this.btnTK.UseVisualStyleBackColor = false;
-            this.btnTK.Click += new System.EventHandler(this.btnTK_Click);
-            // 
             // btnSua
             // 
             this.btnSua.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(127)))), ((int)(((byte)(245)))));
@@ -461,7 +447,7 @@
             this.btnSua.Location = new System.Drawing.Point(706, 469);
             this.btnSua.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(110, 36);
+            this.btnSua.Size = new System.Drawing.Size(110, 52);
             this.btnSua.TabIndex = 15;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = false;
@@ -475,11 +461,25 @@
             this.btnChon.Location = new System.Drawing.Point(706, 268);
             this.btnChon.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnChon.Name = "btnChon";
-            this.btnChon.Size = new System.Drawing.Size(110, 36);
+            this.btnChon.Size = new System.Drawing.Size(110, 47);
             this.btnChon.TabIndex = 13;
             this.btnChon.Text = "Chọn Ảnh";
             this.btnChon.UseVisualStyleBackColor = false;
             this.btnChon.Click += new System.EventHandler(this.btnChon_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(127)))), ((int)(((byte)(245)))));
+            this.button1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(706, 553);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(110, 52);
+            this.button1.TabIndex = 17;
+            this.button1.Text = "Đóng";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // NhanVien_Sua
             // 
@@ -507,7 +507,6 @@
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private System.Windows.Forms.Panel panel_body1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btnTK;
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnChon;
         private System.Windows.Forms.Panel panel1;
@@ -537,5 +536,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button1;
     }
 }

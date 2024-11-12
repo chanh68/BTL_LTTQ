@@ -175,6 +175,43 @@ namespace DAL_QuanLy
                 return null; 
             }
         }
+        public string VerifyUser1(string username, string password)
+        {
+            string query = "SELECT NhanVien.TenNV FROM TaiKhoan " +
+                           "JOIN NhanVien ON TaiKhoan.MaNV = NhanVien.MaNV " +
+                           "WHERE TaiKhoan.TenDangNhap = @username AND TaiKhoan.MatKhau = @password";
+
+            using (SqlCommand command = new SqlCommand(query, _conn))
+            {
+                command.Parameters.AddWithValue("@username", username);
+                command.Parameters.AddWithValue("@password", password);
+
+                DataTable result = new DataTable();
+
+                try
+                {
+                    _conn.Open();
+                    SqlDataAdapter adapter = new SqlDataAdapter(command);
+                    adapter.Fill(result);
+                }
+                catch (SqlException ex)
+                {
+                    throw new Exception("An error occurred while verifying user: " + ex.Message);
+                }
+                finally
+                {
+                    _conn.Close();
+                }
+
+                if (result.Rows.Count > 0)
+                {
+                    return result.Rows[0]["TenNV"].ToString();
+                }
+
+                return null;
+            }
+        }
+
         public DataTable GetEmployeeCount()
         {
             string query = "SELECT COUNT(*) AS Bang1 FROM TaiKhoan";

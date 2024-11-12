@@ -65,6 +65,7 @@ namespace GUI_QuanLy
                 if (row["MaNV"].ToString() == maNV)
                 {
                     txtMaNV.Text = row["MaNV"].ToString();
+                    txtMaNV.ReadOnly = true;
                     txtTenNV.Text = row["TenNV"].ToString();
                     txtGT.Text = row["GioiTinh"].ToString();
                     dtpNgaySinh.Value = Convert.ToDateTime(row["NgaySinh"]);
@@ -89,6 +90,13 @@ namespace GUI_QuanLy
                         {
                             pictureBox1.Image = Image.FromStream(ms);
                         }
+                        this.imageData = imageData;
+                    }
+                    else
+                    {
+                        // Nếu không có hình ảnh, gán imageData thành null
+                        this.imageData = null; // Hoặc bạn có thể gán thành DBNull.Value nếu cần
+                        pictureBox1.Image = null; // Xóa hình ảnh trong PictureBox
                     }
 
                     break;
@@ -117,7 +125,7 @@ namespace GUI_QuanLy
                 {
                     imageData = ConvertImageToByteArray(ofd.FileName);
                     pictureBox1.Image = Image.FromStream(new MemoryStream(imageData));
-                    
+
                 }
             }
         }
@@ -154,18 +162,9 @@ namespace GUI_QuanLy
             }
         }
 
-        private void btnTK_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            TKNhanVien suaForm = new TKNhanVien();
-            this.Hide(); // Ẩn form hiện tại trước khi gọi ShowDialog()
-            DialogResult result = suaForm.ShowDialog();
-            // Kiểm tra nếu form cha vẫn còn tồn tại và chưa bị dispose
-            if (!this.IsDisposed)
-            {
-                this.Show(); // Hiện lại form hiện tại sau khi form sửa đóng
-            }
+            this.Close();
         }
-
-        
     }
 }

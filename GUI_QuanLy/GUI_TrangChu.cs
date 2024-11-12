@@ -120,7 +120,7 @@ namespace GUI_QuanLy
 
         private void GUI_TrangChu_Load(object sender, EventArgs e)
         {
-
+            label1.Text = Global.TenNV;
         }
 
 
@@ -174,5 +174,6 @@ namespace GUI_QuanLy
         {
             Application.Exit();
         }
+
     }
 }
