@@ -16,3 +16,12 @@ C:\Users\dundun\source\repos\BTL_LTTQ\DAL_QuanLy\obj\Debug\DAL_QuanLy.csproj.Cor
 C:\Users\dundun\source\repos\BTL_LTTQ\DAL_QuanLy\obj\Debug\DAL_QuanLy.csproj.Up2Date
 C:\Users\dundun\source\repos\BTL_LTTQ\DAL_QuanLy\obj\Debug\DAL_QuanLy.dll
 C:\Users\dundun\source\repos\BTL_LTTQ\DAL_QuanLy\obj\Debug\DAL_QuanLy.pdb
+C:\Users\dundun\Downloads\BTL_LTTQ\DAL_QuanLy\bin\Debug\DAL_QuanLy.dll
+C:\Users\dundun\Downloads\BTL_LTTQ\DAL_QuanLy\bin\Debug\DAL_QuanLy.pdb
+C:\Users\dundun\Downloads\BTL_LTTQ\DAL_QuanLy\bin\Debug\DTO_QuanLy.dll
+C:\Users\dundun\Downloads\BTL_LTTQ\DAL_QuanLy\bin\Debug\DTO_QuanLy.pdb
+C:\Users\dundun\Downloads\BTL_LTTQ\DAL_QuanLy\obj\Debug\DAL_QuanLy.csproj.AssemblyReference.cache
+C:\Users\dundun\Downloads\BTL_LTTQ\DAL_QuanLy\obj\Debug\DAL_QuanLy.csproj.CoreCompileInputs.cache
+C:\Users\dundun\Downloads\BTL_LTTQ\DAL_QuanLy\obj\Debug\DAL_QuanLy.csproj.Up2Date
+C:\Users\dundun\Downloads\BTL_LTTQ\DAL_QuanLy\obj\Debug\DAL_QuanLy.dll
+C:\Users\dundun\Downloads\BTL_LTTQ\DAL_QuanLy\obj\Debug\DAL_QuanLy.pdb

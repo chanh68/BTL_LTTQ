@@ -354,6 +354,7 @@ namespace GUI_QuanLy
         {
             string soHDB = txtMaHD.Text;
             busCT.InChiTietHoaDon(soHDB); // In chi tiết hóa đơn
+            MessageBox.Show("In hóa đơn thành công!");
         }
     }
 }

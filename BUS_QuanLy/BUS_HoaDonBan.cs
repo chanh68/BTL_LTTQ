@@ -96,7 +96,7 @@ namespace BUS_QuanLy
                 }
 
                 // Lưu file Excel
-                var filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "DanhSachHoaDon.xlsx");
+                var filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), $"DanhSachHoaDonBan_{DateTime.Now}.xlsx");
                 FileInfo excelFile = new FileInfo(filePath);
                 excel.SaveAs(excelFile);
 

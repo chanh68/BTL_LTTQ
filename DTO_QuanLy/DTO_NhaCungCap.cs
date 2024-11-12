@@ -13,29 +13,10 @@ namespace DTO_QuanLy
         private string _DiaChi;
         private string _DienThoai;
 
-        public string MaNCC
-        {
-            get { return _MaNCC; }
-            set { _MaNCC = value; }
-        }
-
-        public string TenNCC
-        {
-            get { return _TenNCC; }
-            set { _TenNCC = value; }
-        }
-
-        public string DiaChi
-        {
-            get { return _DiaChi; }
-            set { _DiaChi = value; }
-        }
-
-        public string DienThoai
-        {
-            get { return _DienThoai; }
-            set { _DienThoai = value; }
-        }
+        public string MaNCC { get; set; }
+        public string TenNCC { get; set; }
+        public string DiaChi { get; set; }
+        public string DienThoai { get; set; }
 
         public DTO_NhaCungCap() { }
 

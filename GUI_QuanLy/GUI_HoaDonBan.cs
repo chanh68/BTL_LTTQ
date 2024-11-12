@@ -144,6 +144,7 @@ namespace GUI_QuanLy
         {
 
             busHDB.InDanhSachHoaDon();
+            MessageBox.Show("In danh sách hóa đơn thành công!");
         }
     }
 }

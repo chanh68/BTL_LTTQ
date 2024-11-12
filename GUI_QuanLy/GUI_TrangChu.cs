@@ -199,6 +199,84 @@ namespace GUI_QuanLy
 
         }
 
+        private void panelSidebar_Paint(object sender, PaintEventArgs e)
+        {
 
+        }
+
+        private void btnBaoCaoThongKe_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnNhaCungCap_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelNSSubmenu_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnKhachHang_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelHDSubmenu_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panelSPSubmenu_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panelChildForm_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnLogo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panelHeaderBottom_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void txtNguoiDung_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelHeaderTop_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnClose_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblHeader_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

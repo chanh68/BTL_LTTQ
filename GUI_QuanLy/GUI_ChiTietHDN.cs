@@ -8,70 +8,67 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Media;
 
 namespace GUI_QuanLy
 {
-    public partial class GUI_ChiTietHDB : Form
+    public partial class GUI_ChiTietHDN : Form
     {
-        private string soHDB;
-        //BindingSource bindingSource = new BindingSource();
-        BUS_HoaDonBan busHDB = new BUS_HoaDonBan();
+        private string soHDN;
         BUS_NhanVien busNV = new BUS_NhanVien();
-        BUS_KhachHang busKH = new BUS_KhachHang();
-        BUS_ChiTietHoaDonBan busCT = new BUS_ChiTietHoaDonBan();
-        
-        public GUI_ChiTietHDB(string soHDB)
+        BUS_HoaDonNhap busHDN  = new BUS_HoaDonNhap();
+        BUS_ChiTietHoaDonNhap busCT = new BUS_ChiTietHoaDonNhap();
+        BUS_NhaCungCap busNCC = new BUS_NhaCungCap();
+        public GUI_ChiTietHDN(string soHDN)
         {
             InitializeComponent();
-            this.soHDB = soHDB;
+            this.soHDN = soHDN;
             LoadChiTietHoaDon();
         }
-        
+
         private void LoadChiTietHoaDon()
         {
             //Lấy thông tin hóa đơn
-            var hoaDon = busHDB.LayThongTinHoaDon(soHDB);
-            txtMaHD.Text = hoaDon.SoHDB;
-            dtpNgayBan.Value = hoaDon.NgayBan;
-            dtpNgayBan.Enabled = false;
+            var hoaDon = busHDN.LayThongTinHoaDon(soHDN);
+            txtMaHD.Text = hoaDon.SoHDN;
+            dtpNgayNhap.Value = hoaDon.NgayNhap;
+            dtpNgayNhap.Enabled = false;
             txtMaNV.Text = hoaDon.MaNV;
             txtTenNV.Text = busNV.LayTenNhanVien(hoaDon.MaNV);
 
-            //Lấy thông tin khách hàng
-            var khachHang = busKH.LayThongTinKhachHang(hoaDon.MaKhach);
-            txtMaKH.Text = khachHang.MaKhach;
-            txtTenKH.Text = khachHang.TenKhach;
-            txtDiaChi.Text = khachHang.DiaChi;
-            txtSDT.Text = khachHang.DienThoai;
+            //Lấy thông tin nhaCC
+            var nhaCC = busNCC.LayThongTinNhaCungCap(hoaDon.MaNCC);
+            txtMaNCC.Text = nhaCC.MaNCC;
+            txtTenNCC.Text = nhaCC.TenNCC;
+            txtDiaChi.Text = nhaCC.DiaChi;
+            txtSDT.Text = nhaCC.DienThoai;
 
             // Tải thông tin chi tiết hóa đơn từ database
-            var chiTietHoaDonBan = busCT.LayChiTietHoaDon(soHDB);
+            var chiTietHoaDonNhap = busCT.LayChiTietHoaDon(soHDN);
 
-            if (chiTietHoaDonBan != null)
+            if (chiTietHoaDonNhap != null)
             {
-                dgvDSMatHang.DataSource = chiTietHoaDonBan;
+                dgvDSMatHang.DataSource = chiTietHoaDonNhap;
             }
             else
             {
                 MessageBox.Show("Không tìm thấy chi tiết hóa đơn này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             // Ẩn cột SoHDB nếu cần thiết
-            dgvDSMatHang.Columns["SoHDB"].Visible = false; // Nếu cột này vẫn còn
+            dgvDSMatHang.Columns["SoHDN"].Visible = false; 
 
             dgvDSMatHang.Columns["MaHang"].HeaderText = "Mã Hàng";
             dgvDSMatHang.Columns["TenHang"].HeaderText = "Tên Hàng";
             dgvDSMatHang.Columns["TenHang"].DisplayIndex = 2;
             dgvDSMatHang.Columns["SoLuong"].HeaderText = "Số Lượng";
-            dgvDSMatHang.Columns["GiamGia"].HeaderText = "Giảm Giá (%)";
-            dgvDSMatHang.Columns["DonGiaBan"].HeaderText = "Đơn Giá";
+            dgvDSMatHang.Columns["DonGia"].HeaderText = "Đơn Giá";
             dgvDSMatHang.Columns["ThanhTien"].HeaderText = "Thành Tiền";
 
 
             //Tính tổng tiền
-            decimal tongTien = chiTietHoaDonBan.Sum(item => item.ThanhTien);
+            decimal tongTien = chiTietHoaDonNhap.Sum(item => item.ThanhTien);
             txtTongTien.Text = tongTien.ToString();
         }
-
         private void btnQuayVe_Click(object sender, EventArgs e)
         {
             this.Close();

@@ -8,26 +8,29 @@ namespace DTO_QuanLy
 {
     public class DTO_ChiTietHoaDonNhap
     {
-        private string _MaHDN;
+        private string _SoHDN;
         private string _MaHang;
+        private string _TenHang;
         private int _SoLuong;
-        private decimal _DonGiaNhap;
+        private decimal _DonGia;
         private decimal _ThanhTien;
 
-        public string MaHDN { get; set; }
+        public string SoHDN { get; set; }
         public string MaHang { get; set; }
+        public string TenHang { get; set; }
         public int SoLuong { get; set; }
-        public decimal DonGiaNhap { get; set; }
+        public decimal DonGia { get; set; }
         public decimal ThanhTien { get; set; }
 
         public DTO_ChiTietHoaDonNhap() { }
 
-        public DTO_ChiTietHoaDonNhap(string maHDN, string maHang, int soLuong, decimal donGiaNhap, decimal thanhTien)
+        public DTO_ChiTietHoaDonNhap(string maHDN, string maHang, string tenHang, int soLuong, decimal donGia, decimal thanhTien)
         {
-            this.MaHDN = maHDN;
+            this.SoHDN = maHDN;
             this.MaHang = maHang;
+            this.TenHang = tenHang;
             this.SoLuong = soLuong;
-            this.DonGiaNhap = donGiaNhap;
+            this.DonGia = donGia;
             this.ThanhTien = thanhTien;
         }
     }
