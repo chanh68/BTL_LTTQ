@@ -1,114 +1,138 @@
-﻿//using System;
-//using System.Data;
-//using System.Data.SqlClient;
-//using System.Drawing;
-//using System.IO;
-//using System.Windows.Forms;
-//using DAL_QuanLy;
+﻿using System;
+using System.Data;
+using System.Data.SqlClient;
+using System.Drawing;
+using System.IO;
+using System.Windows.Forms;
+using DAL_QuanLy;
 
-//namespace GUI_QuanLy
-//{
-//    public partial class GUI_TatCaSanPham : Form
-//    {
-//        private readonly DAL_HangHoa db = new DAL_HangHoa();
+namespace GUI_QuanLy
+{
+    public partial class GUI_TatCaSanPham : Form
+    {
+        private DAL_HangHoa db = new DAL_HangHoa();
 
-//        public GUI_TatCaSanPham()
-//        {
-//            InitializeComponent();
-//        }
+        public GUI_TatCaSanPham()
+        {
+            InitializeComponent();
+        }
 
-//        private void GUI_TatCaSanPham_Load(object sender, EventArgs e)
-//        {
-//            LoadSanPhamFromDatabase();
-//        }
+        private void GUI_TatCaSanPham_Load(object sender, EventArgs e)
+        {
+            LoadSanPhamFromDatabase();
+        }
 
-//        private Image ConvertByteArrayToImage(byte[] imageData)
-//        {
-//            if (imageData == null || imageData.Length == 0)
-//                return null;
+        public void AddItems(string id, string name, string price, Image image)
+        {
+            var productControl = new urSanPham()
+            {
+                Pname = name,
+                Price = price,
+                PImage = image,
+                id = id,
+                Margin = new Padding(10)
+            };
 
-//            try
-//            {
-//                using (MemoryStream ms = new MemoryStream(imageData))
-//                {
-//                    return Image.FromStream(ms);
-//                }
-//            }
-//            catch (Exception ex)
-//            {
-//                Console.WriteLine($"Lỗi khi tạo hình ảnh từ byte array: {ex.Message}");
-//                return null;
-//            }
-//        }
+            flowLayoutPanel1.Controls.Add(productControl);
+        }
 
-//        public void AddItems(string id, string name, string price, byte[] imageBytes)
-//        {
-//            var productImage = ConvertByteArrayToImage(imageBytes);
+        private void LoadSanPhamFromDatabase(string searchColumn = "", string searchText = "")
+        {
+            flowLayoutPanel1.Controls.Clear();
 
-//            var ur = new urSanPham()
-//            {
-//                Pname = name,
-//                Price = price,
-//                Pimage = productImage,
-//                id = id
-//            };
+            try
+            {
+                DataTable dt = db.GetHangHoa(searchColumn, searchText);
 
-//            productView.Margin = new Padding(10);
-//            flowLayoutPanel1.Controls.Add(productView);
+                if (dt.Rows.Count > 0)
+                {
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        string id = row["MaHang"].ToString();
+                        string name = row["TenHang"].ToString();
+                        string price = row["DonGiaBan"].ToString();
 
-//            productView.onSelect += (ss, ee) =>
-//            {
-//                // Logic xử lý khi chọn sản phẩm giống như trong lớp Sale
-//                // Bạn có thể tùy chỉnh để thêm vào `DataGridView` nếu cần
-//                var selectedProduct = (ProductView)ss;
-//                MessageBox.Show($"Sản phẩm {selectedProduct.Pname} đã được chọn!");
-//            };
-//        }
+                        Image productImage = null;
+                        if (row["Anh"] != DBNull.Value)
+                        {
+                            byte[] imgData = (byte[])row["Anh"];
+                            productImage = ConvertByteArrayToImage(imgData);
+                        }
+                        else
+                        {
+                            // Đặt ảnh mặc định nếu không có ảnh
+                            //productImage = Image.FromFile(@"C:\Users\ninhc\OneDrive\Hình ảnh\Mat.jpg");
+                        }
 
-//        private void LoadSanPhamFromDatabase()
-//        {
-//            flowLayoutPanel1.Controls.Clear();
+                        AddItems(id, name, price, productImage);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Không tìm thấy sản phẩm nào.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
-//            DataTable dt = db.GetInfo(); // Hàm này trả về tất cả thông tin sản phẩm từ DAL_HangHoa
+        // Phương thức chuyển đổi byte[] thành Image
+        private Image ConvertByteArrayToImage(byte[] imageData)
+        {
+            using (MemoryStream ms = new MemoryStream(imageData))
+            {
+                return Image.FromStream(ms);
+            }
+        }
 
-//            if (dt.Rows.Count > 0)
-//            {
-//                foreach (DataRow row in dt.Rows)
-//                {
-//                    string id = row["MaHang"].ToString();
-//                    string name = row["TenHang"].ToString();
-//                    string price = row["DonGiaBan"].ToString();
-//                    byte[] imageBytes = (byte[])row["Anh"];
 
-//                    AddItems(id, name, price, imageBytes);
-//                }
-//            }
-//            else
-//            {
-//                MessageBox.Show("Không tìm thấy sản phẩm nào.");
-//            }
-//        }
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            string searchColumn = "";
+            string searchText = txtSearch.Text.Trim();
 
-//        private void txtSearch_TextChanged_1(object sender, EventArgs e)
-//        {
-//            foreach (var item in flowLayoutPanel1.Controls)
-//            {
-//                if (item is ProductView productView)
-//                {
-//                    if (cbSearch.SelectedItem?.ToString() == "Mã hàng")
-//                    {
-//                        productView.Visible = productView.id.ToLower().Contains(txtSearch.Text.Trim().ToLower());
-//                    }
-//                    else if (cbSearch.SelectedItem?.ToString() == "Tên hàng")
-//                    {
-//                        productView.Visible = productView.Pname.ToLower().Contains(txtSearch.Text.Trim().ToLower());
-//                    }
-//                    else
-//                    {
-//                        MessageBox.Show("Sản phẩm không tồn tại");
-//                    }
-//                }
-//            }
-//        }
-//    }
-//}
+            if (cbSearch.SelectedItem?.ToString() == "Mã hàng")
+            {
+                searchColumn = "MaHang";
+            }
+            else if (cbSearch.SelectedItem?.ToString() == "Tên hàng")
+            {
+                searchColumn = "TenHang";
+            }
+
+            if (!string.IsNullOrEmpty(searchColumn))
+            {
+                LoadSanPhamFromDatabase(searchColumn, searchText);
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn một loại tìm kiếm.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtSearch.Clear();
+        }
+
+        private void txtSearch_TextChanged_1(object sender, EventArgs e)
+        {
+            foreach (Control item in flowLayoutPanel1.Controls)
+            {
+                if (item is urSanPham pro)
+                {
+                    if (cbSearch.SelectedItem?.ToString() == "Mã hàng")
+                    {
+                        pro.Visible = pro.id.ToLower().Contains(txtSearch.Text.Trim().ToLower());
+                    }
+                    else if (cbSearch.SelectedItem?.ToString() == "Tên hàng")
+                    {
+                        pro.Visible = pro.Pname.ToLower().Contains(txtSearch.Text.Trim().ToLower());
+                    }
+                }
+            }
+        }
+    }
+}

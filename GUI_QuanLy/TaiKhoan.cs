@@ -21,6 +21,7 @@ namespace GUI_QuanLy
             LoadTaiKhoan();
             btnSua.Enabled = false;
             btnXoa.Enabled = false;
+            button1.Enabled = false;
 
             // Thêm sự kiện cho các TextBox
             txtMaTK.Enter += TextBox_Enter;
@@ -118,7 +119,10 @@ namespace GUI_QuanLy
             txtQuyenHan.Clear();
             btnSua.Enabled = false;
             btnXoa.Enabled = false;
+            button1.Enabled = false;
 
+            txtMaTK.ReadOnly = false;
+            txtMaNV.ReadOnly = false;
             // Đặt lại màu nền cho các TextBox về màu RGB(120, 120, 120)
             Color customColor = Color.FromArgb(120, 120, 120);
             txtMaTK.BackColor = customColor;
@@ -202,6 +206,13 @@ namespace GUI_QuanLy
                 return;
             }
 
+            string quyenHan = txtQuyenHan.Text.Trim();
+            if (quyenHan != "Admin" && quyenHan != "NhanVien")
+            {
+                MessageBox.Show("Quyền hạn chỉ được phép là 'Admin' hoặc 'NhanVien'!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtQuyenHan.Focus();
+                return;
+            }
 
             // Tạo đối tượng DTO_TaiKhoan với dữ liệu hợp lệ
             DTO_TaiKhoan tk = new DTO_TaiKhoan(txtMaTK.Text.Trim(), txtMaNV.Text.Trim(), txtTenDangNhap.Text.Trim(), txtMatKhau.Text.Trim(), txtQuyenHan.Text.Trim());
@@ -215,7 +226,7 @@ namespace GUI_QuanLy
             }
             else
             {
-                MessageBox.Show("Thêm tài khoản thất bại! Vui lòng kiểm tra lại thông tin.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Thêm tài khoản thất bại! Không có mã nhân viên này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
@@ -269,7 +280,6 @@ namespace GUI_QuanLy
 
             // Tạo đối tượng DTO_TaiKhoan với dữ liệu hợp lệ
             DTO_TaiKhoan tk = new DTO_TaiKhoan(txtMaTK.Text.Trim(), txtMaNV.Text.Trim(), txtTenDangNhap.Text.Trim(), txtMatKhau.Text.Trim(), txtQuyenHan.Text.Trim());
-
             // Gọi phương thức sửa tài khoản từ lớp BUS
             if (busTaiKhoan.suaTaiKhoan(tk))
             {
@@ -319,11 +329,14 @@ namespace GUI_QuanLy
                 // Lấy giá trị từ các cột và hiển thị lên các TextBox
                 txtMaTK.Text = row.Cells["MaTK"].Value.ToString();
                 txtMaNV.Text = row.Cells["MaNV"].Value.ToString();
+                txtMaTK.ReadOnly = true;
+                txtMaNV.ReadOnly = true;
                 txtTenDangNhap.Text = row.Cells["TenDangNhap"].Value.ToString();
                 txtMatKhau.Text = row.Cells["MatKhau"].Value.ToString();
                 txtQuyenHan.Text = row.Cells["QuyenHan"].Value.ToString();
                 btnSua.Enabled = true;
                 btnXoa.Enabled = true;
+                button1.Enabled = true;
 
                 // Gọi sự kiện Enter cho các TextBox để thay đổi màu nền
                 TextBox_Enter(txtMaTK, EventArgs.Empty);
@@ -334,5 +347,9 @@ namespace GUI_QuanLy
             }
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            reset();
+        }
     }
 }

@@ -106,6 +106,51 @@ namespace GUI_QuanLy
                 btnThem.Visible = false; // Ẩn nút Thêm
             }
         }
+        public Edit(DTO_HangHoa hangHoa, urSanPham sanPham, string mode)
+        {
+            InitializeComponent();
+            dalHangHoa = new DAL_HangHoa();
+            HangHoa = hangHoa;
+            sanPham = sanPham;
+            this.mode = mode; // Lưu chế độ
+
+            // Cập nhật tiêu đề form dựa trên chế độ
+            if (mode == "Thêm")
+            {
+                btnTitle.Text = "Thêm Sản Phẩm";
+            }
+            else if (mode == "Sửa")
+            {
+                btnTitle.Text = "Sửa Sản Phẩm";
+            }
+            else if (mode == "Thông tin")
+            {
+                btnTitle.Text = "Thông Tin Sản Phẩm";
+            }
+            else
+            {
+                this.Text = "Edit";
+            }
+
+            LoadHangHoaData();
+
+            // Kiểm tra chế độ để hiển thị nút tương ứng
+            if (mode == "Thêm")
+            {
+                btnLuu.Visible = false; // Ẩn nút Lưu
+                btnThem.Visible = true;  // Hiện nút Thêm
+            }
+            else if (mode == "Sửa")
+            {
+                btnLuu.Visible = true;   // Hiện nút Lưu
+                btnThem.Visible = false;  // Ẩn nút Thêm
+            }
+            else // Thông tin sản phẩm
+            {
+                btnLuu.Visible = false; // Ẩn nút Lưu
+                btnThem.Visible = false; // Ẩn nút Thêm
+            }
+        }
         private void LoadHangHoaData()
         {
             if (HangHoa != null)

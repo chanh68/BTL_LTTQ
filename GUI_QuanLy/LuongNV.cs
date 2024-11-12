@@ -22,6 +22,7 @@ namespace GUI_QuanLy
             LoadCongViec();
             btnSua.Enabled = false;
             btnXoa.Enabled = false;
+            button1.Enabled = false;
 
             // Thêm sự kiện cho các TextBox
             txtMaCV.Enter += TextBox_Enter;
@@ -109,6 +110,8 @@ namespace GUI_QuanLy
             txtLuong.Clear();
             btnSua.Enabled = false;
             btnXoa.Enabled = false;
+            button1.Enabled = false;
+            txtMaCV.ReadOnly = false;
 
             // Đặt lại màu nền cho các TextBox về màu RGB(120, 120, 120)
             Color customColor = Color.FromArgb(120, 120, 120);
@@ -303,10 +306,12 @@ namespace GUI_QuanLy
 
                 // Lấy giá trị từ các cột và hiển thị lên các TextBox
                 txtMaCV.Text = row.Cells["MaCV"].Value.ToString();
+                txtMaCV.ReadOnly = true;
                 txtTenCV.Text = row.Cells["TenCV"].Value.ToString();
                 txtLuong.Text = row.Cells["MucLuong"].Value.ToString();
                 btnSua.Enabled = true;
                 btnXoa.Enabled = true;
+                button1.Enabled = true;
 
                 // Gọi sự kiện Enter cho các TextBox để thay đổi màu nền
                 TextBox_Enter(txtMaCV, EventArgs.Empty);
@@ -315,5 +320,9 @@ namespace GUI_QuanLy
             }
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            reset();
+        }
     }
 }

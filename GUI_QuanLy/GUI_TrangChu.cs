@@ -60,7 +60,7 @@ namespace GUI_QuanLy
 
         private void btnTraCuuTinhTrang_Click(object sender, EventArgs e)
         {
-            openChildFormInPanel(new Sale());
+            openChildFormInPanel(new GUI_TatCaSanPham());
             hideSubMenu();
         }
 

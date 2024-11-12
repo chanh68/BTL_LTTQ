@@ -480,6 +480,7 @@ F:\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.BaoCaoThongKe.resources
 F:\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.Category.resources
 F:\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.Edit.resources
 F:\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.Form1.resources
+F:\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.GUI_TrangChu.resources
 F:\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.HeaderControl.resources
 F:\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.HomePage.resources
 F:\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.InfoProduct.resources
@@ -506,4 +507,3 @@ F:\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.csproj.CoreCompileInputs.cache
 F:\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.csproj.Up2Date
 F:\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.exe
 F:\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.pdb
-F:\BTL_LTTQ1 (1)\GUI_QuanLy\obj\Debug\GUI_QuanLy.GUI_TrangChu.resources

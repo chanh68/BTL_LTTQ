@@ -422,5 +422,41 @@ namespace DAL_QuanLy
             }
             return result;
         }
+        public DataTable GetHangHoa(string searchColumn = "", string searchText = "")
+        {
+            string query = "SELECT * FROM HangHoa";
+            DataTable result = new DataTable();
+
+            if (!string.IsNullOrEmpty(searchColumn) && !string.IsNullOrEmpty(searchText))
+            {
+                query += $" WHERE {searchColumn} LIKE @searchText";
+            }
+
+            using (SqlCommand command = new SqlCommand(query, _conn))
+            {
+                if (!string.IsNullOrEmpty(searchText))
+                {
+                    command.Parameters.AddWithValue("@searchText", $"%{searchText}%");
+                }
+
+                try
+                {
+                    _conn.Open();
+                    SqlDataAdapter adapter = new SqlDataAdapter(command);
+                    adapter.Fill(result);
+                }
+                catch (SqlException ex)
+                {
+                    throw new Exception("An error occurred while retrieving products: " + ex.Message);
+                }
+                finally
+                {
+                    _conn.Close();
+                }
+            }
+
+            return result;
+        }
+
     }
 }
