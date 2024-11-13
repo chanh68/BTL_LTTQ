@@ -729,3 +729,8 @@ F:\WebProgram\BTL_LTTQ\BTL_LTTQ\GUI_QuanLy\bin\Debug\Reports\ReportHoaDon.rdlc
 F:\WebProgram\BTL_LTTQ\BTL_LTTQ\GUI_QuanLy\bin\Debug\Reports\ReportNhanVien.rdlc
 F:\WebProgram\BTL_LTTQ\BTL_LTTQ\GUI_QuanLy\bin\Debug\Reports\Report_DoanhThu.rdlc
 F:\WebProgram\BTL_LTTQ\BTL_LTTQ\GUI_QuanLy\bin\Debug\Reports\Report_SanPham.rdlc
+F:\WebProgram\BTL_LTTQ\BTL_LTTQ\GUI_QuanLy\bin\Debug\GUI_QuanLy.exe.manifest
+F:\WebProgram\BTL_LTTQ\BTL_LTTQ\GUI_QuanLy\bin\Debug\GUI_QuanLy.application
+F:\WebProgram\BTL_LTTQ\BTL_LTTQ\GUI_QuanLy\obj\Debug\GUI_QuanLy.TrustInfo.xml
+F:\WebProgram\BTL_LTTQ\BTL_LTTQ\GUI_QuanLy\obj\Debug\GUI_QuanLy.exe.manifest
+F:\WebProgram\BTL_LTTQ\BTL_LTTQ\GUI_QuanLy\obj\Debug\GUI_QuanLy.application

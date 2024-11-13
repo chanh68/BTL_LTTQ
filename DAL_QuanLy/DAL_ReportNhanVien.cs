@@ -11,7 +11,7 @@ namespace DAL_QuanLy
 {
     public class DAL_ReportNhanVien
     {
-        private string connectionString = "Data Source=DESKTOP-S8N7JNH\\SQLEXPRESS;Initial Catalog=BTL_TQ6;Integrated Security=True;TrustServerCertificate=True";
+        private string connectionString = "Data Source=DESKTOP-S8N7JNH\\SQLEXPRESS;Initial Catalog=BTL_TQ3;Integrated Security=True;TrustServerCertificate=True";
 
         public List<DTO_NhanVien> GetNhanVienData()
         {

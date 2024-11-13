@@ -77,7 +77,7 @@
             this.bunifuPanel1.BorderThickness = 1;
             this.bunifuPanel1.Controls.Add(this.Dvg_Products);
             this.bunifuPanel1.Controls.Add(this.bunifuPanel2);
-            this.bunifuPanel1.Location = new System.Drawing.Point(230, 260);
+            this.bunifuPanel1.Location = new System.Drawing.Point(129, 227);
             this.bunifuPanel1.Name = "bunifuPanel1";
             this.bunifuPanel1.ShowBorders = true;
             this.bunifuPanel1.Size = new System.Drawing.Size(941, 563);
@@ -382,7 +382,7 @@
             this.bunifuPanel_Header.Controls.Add(this.btnHoaDon);
             this.bunifuPanel_Header.Controls.Add(this.btnSanPham);
             this.bunifuPanel_Header.Controls.Add(this.btnDoanhThu);
-            this.bunifuPanel_Header.Location = new System.Drawing.Point(230, 150);
+            this.bunifuPanel_Header.Location = new System.Drawing.Point(129, 117);
             this.bunifuPanel_Header.Name = "bunifuPanel_Header";
             this.bunifuPanel_Header.ShowBorders = true;
             this.bunifuPanel_Header.Size = new System.Drawing.Size(938, 84);
@@ -827,7 +827,7 @@
             this.bunifuPanel_Title.BorderRadius = 3;
             this.bunifuPanel_Title.BorderThickness = 1;
             this.bunifuPanel_Title.Controls.Add(this.Tilte);
-            this.bunifuPanel_Title.Location = new System.Drawing.Point(560, 75);
+            this.bunifuPanel_Title.Location = new System.Drawing.Point(459, 42);
             this.bunifuPanel_Title.Name = "bunifuPanel_Title";
             this.bunifuPanel_Title.ShowBorders = true;
             this.bunifuPanel_Title.Size = new System.Drawing.Size(246, 49);

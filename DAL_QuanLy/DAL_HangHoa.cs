@@ -461,7 +461,7 @@ namespace DAL_QuanLy
         public DTO_HangHoa LayThongTinHangHoa(string maHang)
         {
             DTO_HangHoa hangHoa = null;
-            string query = "SELECT * FROM HangHoa WHERE MaHang = @MaHang";
+            string query = "SELECT * FROM HangHoa WHERE MaHang = @MaHang and TrangThai = 1";
 
             SqlCommand cmd = new SqlCommand(query, _conn);
             cmd.Parameters.AddWithValue("@MaHang", maHang);
@@ -496,7 +496,7 @@ namespace DAL_QuanLy
         public List<DTO_HangHoa> LayDanhSachHangHoa()
         {
             List<DTO_HangHoa> danhSachHangHoa = new List<DTO_HangHoa>();
-            string query = "SELECT MaHang, TenHang, DonGiaBan FROM HangHoa";
+            string query = "SELECT MaHang, TenHang, DonGiaBan FROM HangHoa where TrangThai = 1";
 
             SqlCommand cmd = new SqlCommand(query, _conn);
             OpenConnection();

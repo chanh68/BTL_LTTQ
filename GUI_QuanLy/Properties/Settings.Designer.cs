@@ -8,34 +8,40 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GUI_QuanLy.Properties
-{
-
-
+namespace GUI_QuanLy.Properties {
+    
+    
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.11.0.0")]
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase
-    {
-
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
-
-        public static Settings Default
-        {
-            get
-            {
+        
+        public static Settings Default {
+            get {
                 return defaultInstance;
             }
         }
-
+        
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-S8N7JNH\\SQLEXPRESS;Initial Catalog=DB_LTTQ;Integrated Security=True;TrustServerCertificate=True")]
-        public string DB_LTTQConnectionString
-        {
-            get
-            {
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=Chanh\\SQLEXPRESS;Initial Catalog=DB_LTTQ;Integrated Security=True;Enc" +
+            "rypt=True;TrustServerCertificate=True")]
+        public string DB_LTTQConnectionString {
+            get {
                 return ((string)(this["DB_LTTQConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-R4RPQKD;Initial Catalog=BTL_6;Integrated Security=True;Encryp" +
+            "t=True;TrustServerCertificate=True")]
+        public string BTL_6ConnectionString {
+            get {
+                return ((string)(this["BTL_6ConnectionString"]));
             }
         }
     }
