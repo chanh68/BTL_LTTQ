@@ -52,7 +52,7 @@
             // bunifuPanel1
             // 
             this.bunifuPanel1.BackgroundColor = System.Drawing.Color.White;
-            this.bunifuPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuPanel1.BackgroundImage")));
+          //  this.bunifuPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuPanel1.BackgroundImage")));
             this.bunifuPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bunifuPanel1.BorderColor = System.Drawing.Color.White;
             this.bunifuPanel1.BorderRadius = 3;
@@ -100,7 +100,7 @@
             this.bunifuButton1.AutoSizeRightIcon = true;
             this.bunifuButton1.BackColor = System.Drawing.Color.Transparent;
             this.bunifuButton1.BackColor1 = System.Drawing.Color.DodgerBlue;
-            this.bunifuButton1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuButton1.BackgroundImage")));
+          //  this.bunifuButton1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuButton1.BackgroundImage")));
             this.bunifuButton1.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
             this.bunifuButton1.ButtonText = "Lọc";
             this.bunifuButton1.ButtonTextMarginLeft = 0;
@@ -210,7 +210,7 @@
             this.dateTimePickerStart.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dateTimePickerStart.ForeColor = System.Drawing.Color.Black;
             this.dateTimePickerStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerStart.Icon = ((System.Drawing.Image)(resources.GetObject("dateTimePickerStart.Icon")));
+           // this.dateTimePickerStart.Icon = ((System.Drawing.Image)(resources.GetObject("dateTimePickerStart.Icon")));
             this.dateTimePickerStart.IconColor = System.Drawing.Color.Gray;
             this.dateTimePickerStart.IconLocation = Bunifu.UI.WinForms.BunifuDatePicker.Indicator.Right;
             this.dateTimePickerStart.LeftTextMargin = 5;
@@ -236,7 +236,7 @@
             this.dateTimePickerEnd.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dateTimePickerEnd.ForeColor = System.Drawing.Color.Black;
             this.dateTimePickerEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerEnd.Icon = ((System.Drawing.Image)(resources.GetObject("dateTimePickerEnd.Icon")));
+           // this.dateTimePickerEnd.Icon = ((System.Drawing.Image)(resources.GetObject("dateTimePickerEnd.Icon")));
             this.dateTimePickerEnd.IconColor = System.Drawing.Color.Gray;
             this.dateTimePickerEnd.IconLocation = Bunifu.UI.WinForms.BunifuDatePicker.Indicator.Right;
             this.dateTimePickerEnd.LeftTextMargin = 5;

@@ -54,7 +54,7 @@
             // bunifuPanel1
             // 
             this.bunifuPanel1.BackgroundColor = System.Drawing.Color.White;
-            this.bunifuPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuPanel1.BackgroundImage")));
+           // this.bunifuPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuPanel1.BackgroundImage")));
             this.bunifuPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bunifuPanel1.BorderColor = System.Drawing.Color.White;
             this.bunifuPanel1.BorderRadius = 3;
@@ -94,7 +94,7 @@
             this.txtMaSanPham.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
             this.txtMaSanPham.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
             this.txtMaSanPham.BackColor = System.Drawing.Color.Transparent;
-            this.txtMaSanPham.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txtMaSanPham.BackgroundImage")));
+           // this.txtMaSanPham.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txtMaSanPham.BackgroundImage")));
             this.txtMaSanPham.BorderColorActive = System.Drawing.Color.DodgerBlue;
             this.txtMaSanPham.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.txtMaSanPham.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
@@ -172,7 +172,7 @@
             this.bunifuButton1.AutoSizeRightIcon = true;
             this.bunifuButton1.BackColor = System.Drawing.Color.Transparent;
             this.bunifuButton1.BackColor1 = System.Drawing.Color.DodgerBlue;
-            this.bunifuButton1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuButton1.BackgroundImage")));
+           // this.bunifuButton1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuButton1.BackgroundImage")));
             this.bunifuButton1.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
             this.bunifuButton1.ButtonText = "Tìm Kiếm";
             this.bunifuButton1.ButtonTextMarginLeft = 0;

@@ -122,6 +122,7 @@ namespace GUI_QuanLy
 
         private void btnThem_Click(object sender, EventArgs e)
         {
+
             // Kiểm tra các trường đầu vào có rỗng hay không
             if (string.IsNullOrWhiteSpace(txtMaCV.Text))
             {
@@ -201,6 +202,7 @@ namespace GUI_QuanLy
 
         private void btnSua_Click(object sender, EventArgs e)
         {
+
             // Kiểm tra các trường đầu vào có rỗng hay không
             if (string.IsNullOrWhiteSpace(txtMaCV.Text))
             {
@@ -309,9 +311,14 @@ namespace GUI_QuanLy
                 txtMaCV.ReadOnly = true;
                 txtTenCV.Text = row.Cells["TenCV"].Value.ToString();
                 txtLuong.Text = row.Cells["MucLuong"].Value.ToString();
-                btnSua.Enabled = true;
-                btnXoa.Enabled = true;
-                button1.Enabled = true;
+
+                // Kiểm tra quyền hạn trước khi bật các nút
+                if (Global.QuyenHan != "NhanVien")
+                {
+                    btnSua.Enabled = true;
+                    btnXoa.Enabled = true;
+                    button1.Enabled = true;
+                }
 
                 // Gọi sự kiện Enter cho các TextBox để thay đổi màu nền
                 TextBox_Enter(txtMaCV, EventArgs.Empty);
@@ -320,9 +327,39 @@ namespace GUI_QuanLy
             }
         }
 
+
         private void button1_Click(object sender, EventArgs e)
         {
             reset();
+        }
+        private void KiemTraQuyen()
+        {
+            if (Global.QuyenHan == "NhanVien")
+            {
+                btnXoa.Enabled = false;
+                btnSua.Enabled = false;
+                btnThem.Enabled = false;
+
+                Color disabledColor = Color.Aqua;
+                btnXoa.BackColor = disabledColor;
+                btnSua.BackColor = disabledColor;
+                btnThem.BackColor = disabledColor;
+            }
+            else
+            {
+                btnXoa.Enabled = true;
+                btnSua.Enabled = true;
+                btnThem.Enabled = true;
+
+                // Đặt lại màu nền gốc nếu cần
+                btnXoa.BackColor = SystemColors.Control;
+                btnSua.BackColor = SystemColors.Control;
+                btnThem.BackColor = SystemColors.Control;
+            }
+        }
+        private void LuongNV_Load(object sender, EventArgs e)
+        {
+            KiemTraQuyen();
         }
     }
 }
