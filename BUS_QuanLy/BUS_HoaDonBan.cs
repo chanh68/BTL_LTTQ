@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using OfficeOpenXml;
 using System.IO;
 
-
 namespace BUS_QuanLy
 {
     public class BUS_HoaDonBan
@@ -47,7 +46,7 @@ namespace BUS_QuanLy
         {
             int stt = dalHDB.LaySoThuTuHoaDonTrongNgay();
             string ngayHienTai = DateTime.Now.ToString("ddMMyyyy");
-            return $"HDB{stt:D5}{ngayHienTai}";
+            return $"HDB{stt:D5}{ngayHienTai}"; // Tạo mã hóa đơn với định dạng HDBxxxxxDDMMYYYY
         }
 
         public void ThemHoaDon(DTO_HoaDonBan hd)
@@ -96,7 +95,7 @@ namespace BUS_QuanLy
                 }
 
                 // Lưu file Excel
-                var filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "DanhSachHoaDon.xlsx");
+                var filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), $"DanhSachHoaDon_{DateTime.Now:yyyyMMdd_HHmmss}.xlsx");
                 FileInfo excelFile = new FileInfo(filePath);
                 excel.SaveAs(excelFile);
 
@@ -104,5 +103,7 @@ namespace BUS_QuanLy
                 Console.WriteLine("Đã in danh sách hóa đơn ra file Excel tại: " + filePath);
             }
         }
+
+
     }
 }

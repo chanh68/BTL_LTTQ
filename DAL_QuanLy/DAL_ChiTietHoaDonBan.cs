@@ -55,6 +55,7 @@ namespace DAL_QuanLy
                 return result;
             }
         }
+        // Phương thức xóa chi tiết hóa đơn theo SoHDB (DONE)
         public bool XoaChiTietHoaDonTheoSoHDB(string soHDB)
         {
             try
@@ -153,5 +154,7 @@ namespace DAL_QuanLy
                 CloseConnection(); // Đảm bảo đóng kết nối
             }
         }
+
+
     }
 }

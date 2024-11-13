@@ -8,7 +8,7 @@ namespace DAL_QuanLy
 {
     public class DAL_ReportSanPham
     {
-        private readonly string connectionString = "Data Source=DESKTOP-R4RPQKD;Initial Catalog=BTL_6;Integrated Security=True;Encrypt=False";
+        private readonly string connectionString = "Data Source=DESKTOP-S8N7JNH\\SQLEXPRESS;Initial Catalog=BTL_TQ6;Integrated Security=True;TrustServerCertificate=True";
 
         // Lấy dữ liệu của tất cả sản phẩm
         public List<DTO_ReportSanPham> GetAllReportSanPhamData()

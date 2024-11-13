@@ -11,7 +11,7 @@ namespace DAL_QuanLy
 {
     public class DAL_ReportHoaDon
     {
-        private string connectionString = "Data Source=DESKTOP-R4RPQKD;Initial Catalog=BTL_6;Integrated Security=True;Encrypt=True";
+        private string connectionString = "Data Source=DESKTOP-S8N7JNH\\SQLEXPRESS;Initial Catalog=BTL_TQ6;Integrated Security=True;TrustServerCertificate=True";
 
         // Phương thức lấy dữ liệu gộp Hóa đơn bán và Hóa đơn nhập, bao gồm Tên đối tác
         public List<DTO_ReportHoaDon> GetHoaDonGopData(DateTime startDate, DateTime endDate)
@@ -24,7 +24,7 @@ namespace DAL_QuanLy
                 string query = @"
                     SELECT 'Bán' AS LoaiHoaDon, hb.SoHDB AS SoHD, hb.NgayBan AS Ngay, hb.MaKhach AS MaDoiTac, 
                            kh.TenKhach AS TenDoiTac, hh.TenHang, 
-                           SUM(ct.SoLuong * ct.DonGiaBan * (1 - ISNULL(ct.GiamGia, 0))) AS TongTien, 
+                           SUM(ct.SoLuong * ct.DonGiaBan * 0.01* (100 - ISNULL(ct.GiamGia, 0))) AS TongTien, 
                            ct.MaHang, ct.SoLuong, ct.DonGiaBan AS DonGia, ct.GiamGia
                     FROM HoaDonBan hb
                     JOIN ChiTietHoaDonBan ct ON hb.SoHDB = ct.SoHDB

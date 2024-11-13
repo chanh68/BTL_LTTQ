@@ -113,6 +113,7 @@
     <Compile Include="DAL_NhanVien.cs" />
     <Compile Include="DAL_NuocSanXuat.cs" />
     <Compile Include="DAL_ReportHoaDon.cs" />
+    <Compile Include="DAL_ReportNhanVien.cs" />
     <Compile Include="DAL_ReportSanPham.cs" />
     <Compile Include="DAL_SalesData.cs" />
     <Compile Include="DAL_TaiKhoan.cs" />

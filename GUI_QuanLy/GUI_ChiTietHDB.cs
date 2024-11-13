@@ -14,7 +14,7 @@ namespace GUI_QuanLy
     public partial class GUI_ChiTietHDB : Form
     {
         private string soHDB;
-        BindingSource bindingSource = new BindingSource();
+        //BindingSource bindingSource = new BindingSource();
         BUS_HoaDonBan busHDB = new BUS_HoaDonBan();
         BUS_NhanVien busNV = new BUS_NhanVien();
         BUS_KhachHang busKH = new BUS_KhachHang();

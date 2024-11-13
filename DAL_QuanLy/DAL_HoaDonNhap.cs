@@ -191,37 +191,46 @@ namespace DAL_QuanLy
         }
 
         //Phương thức thêm hóa đơn 
-        public void ThemHoaDon(DTO_HoaDonNhap hdn)
+        public bool ThemHoaDon(DTO_HoaDonNhap hdn)
         {
-            string query = "INSERT INTO HoaDonNhap(SoHDN, NgayNhap, MaNV, MaNCC, TongTien)" +
-                             "VALUES (@SoHDN, @NgayNhap, @MaNNV, @MaNCC, @TongTien)";
-            SqlCommand cmd = new SqlCommand(query, _conn);
+            string query = "INSERT INTO HoaDonNhap(SoHDN, NgayNhap, MaNV, MaNCC, TongTien) " +
+                           "VALUES (@SoHDN, @NgayNhap, @MaNV, @MaNCC, @TongTien)";
 
-            cmd.Parameters.AddWithValue("@SoHDN", hdn.SoHDN);
-            cmd.Parameters.AddWithValue("@NgayNhap", hdn.NgayNhap);
-            cmd.Parameters.AddWithValue("@MaNV", hdn.MaNV);
-            cmd.Parameters.AddWithValue("@MaNCC", hdn.MaNCC);
-            cmd.Parameters.AddWithValue("@TongTien", hdn.TongTien);
-            try
+            using (SqlCommand cmd = new SqlCommand(query, _conn))
             {
-                OpenConnection();
-                cmd.ExecuteNonQuery();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Lỗi khi thêm hóa đơn: " + ex.Message);
-            }
-            finally
-            {
-                CloseConnection(); // Đảm bảo đóng kết nối
+                cmd.Parameters.AddWithValue("@SoHDN", hdn.SoHDN);
+                cmd.Parameters.AddWithValue("@NgayNhap", hdn.NgayNhap);
+                cmd.Parameters.AddWithValue("@MaNV", hdn.MaNV);
+                cmd.Parameters.AddWithValue("@MaNCC", hdn.MaNCC);
+                cmd.Parameters.AddWithValue("@TongTien", hdn.TongTien);
+
+                try
+                {
+                    OpenConnection();
+                    int result = cmd.ExecuteNonQuery();
+                    return result > 0; // Trả về true nếu có ít nhất một dòng được thêm
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Lỗi khi thêm hóa đơn: " + ex.Message);
+                    return false; // Trả về false nếu có lỗi xảy ra
+                }
+                finally
+                {
+                    CloseConnection(); // Đảm bảo đóng kết nối
+                }
             }
         }
 
-        // Phương thức lấy mã hóa đơn gần nhất
+
         public string LaySoHDNCuoi()
         {
             string soHDNCuoi = string.Empty;
-            string query = "SELECT TOP 1 SoHDN FROM HoaDonNhap ORDER BY SoHDN DESC";
+            string query = @"
+                SELECT TOP 1 SoHDN 
+                FROM HoaDonNhap 
+                WHERE CONVERT(DATE, NgayNhap) = CONVERT(DATE, GETDATE()) 
+                ORDER BY NgayNhap DESC, SoHDN DESC";
 
             try
             {
@@ -232,6 +241,10 @@ namespace DAL_QuanLy
                 if (result != null)
                 {
                     soHDNCuoi = result.ToString(); // Lấy giá trị của SoHDN
+                }
+                else
+                {
+                    Console.WriteLine("Không có hóa đơn nào trong ngày hôm nay.");
                 }
             }
             catch (Exception ex)
@@ -245,6 +258,8 @@ namespace DAL_QuanLy
 
             return soHDNCuoi;
         }
+
+
         private string ExecuteScalar(string sql, string maHDN)
         {
             string result = string.Empty;

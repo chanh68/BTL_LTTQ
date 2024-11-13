@@ -15,14 +15,14 @@ namespace DAL_QuanLy
         {
             decimal doanhThu = 0;
             int soSanPham = 0;
-            string connectionString = "Data Source=DESKTOP-R4RPQKD;Initial Catalog=BTL_6;Integrated Security=True;Encrypt=True";
+            string connectionString = "Data Source=DESKTOP-S8N7JNH\\SQLEXPRESS;Initial Catalog=BTL_TQ6;Integrated Security=True;TrustServerCertificate=True";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
                 string query = @"
                     SELECT 
-                        SUM(ct.SoLuong * ct.DonGiaBan * (1 - ISNULL(ct.GiamGia, 0))) AS TotalSales,   -- Tính doanh thu có giảm giá
+                        SUM(ct.SoLuong * ct.DonGiaBan * 0.01*(100 - ISNULL(ct.GiamGia, 0))) AS TotalSales,   -- Tính doanh thu có giảm giá
                         SUM(ct.SoLuong) AS TotalProducts  
                     FROM HoaDonBan hb
                     JOIN ChiTietHoaDonBan ct ON hb.SoHDB = ct.SoHDB
@@ -50,7 +50,7 @@ namespace DAL_QuanLy
         {
             List<DTO_Product> productList = new List<DTO_Product>();
 
-            string connectionString = "Data Source=DESKTOP-R4RPQKD;Initial Catalog=BTL_6;Integrated Security=True;Encrypt=True";
+            string connectionString = "Data Source=DESKTOP-S8N7JNH\\SQLEXPRESS;Initial Catalog=BTL_TQ6;Integrated Security=True;TrustServerCertificate=True";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -59,7 +59,7 @@ namespace DAL_QuanLy
                     SELECT 
                         ROW_NUMBER() OVER (ORDER BY SUM(ct.SoLuong) DESC) AS Rank,
                         hh.TenHang AS ProductInfo,
-                        SUM(ct.SoLuong * ct.DonGiaBan * (1 - ISNULL(ct.GiamGia, 0))) AS Revenue,
+                        SUM(ct.SoLuong * ct.DonGiaBan * 0.01*(100 - ISNULL(ct.GiamGia, 0))) AS Revenue,
                         SUM(ct.SoLuong) AS Quantity
                     FROM ChiTietHoaDonBan ct
                     JOIN HoaDonBan hb ON ct.SoHDB = hb.SoHDB
@@ -96,7 +96,7 @@ namespace DAL_QuanLy
         {
             List<(string WeekLabel, decimal DoanhThu, int SoSanPham)> salesDataList = new List<(string WeekLabel, decimal DoanhThu, int SoSanPham)>();
 
-            string connectionString = "Data Source=DESKTOP-R4RPQKD;Initial Catalog=BTL_6;Integrated Security=True;Encrypt=True";
+            string connectionString = "Data Source=DESKTOP-S8N7JNH\\SQLEXPRESS;Initial Catalog=BTL_TQ6;Integrated Security=True;TrustServerCertificate=True";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -138,7 +138,7 @@ namespace DAL_QuanLy
         public int GetEmployeeCountForPeriod(DateTime startDate, DateTime endDate)
         {
             int employeeCount = 0;
-            string connectionString = "Data Source=DESKTOP-R4RPQKD;Initial Catalog=BTL_6;Integrated Security=True;Encrypt=True";
+            string connectionString = "Data Source=DESKTOP-S8N7JNH\\SQLEXPRESS;Initial Catalog=BTL_TQ6;Integrated Security=True;TrustServerCertificate=True";
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
@@ -167,7 +167,7 @@ namespace DAL_QuanLy
         public int GetOrderCountForPeriod(DateTime startDate, DateTime endDate)
         {
             int orderCount = 0;
-            string connectionString = "Data Source=DESKTOP-R4RPQKD;Initial Catalog=BTL_6;Integrated Security=True;Encrypt=True";
+            string connectionString = "Data Source=DESKTOP-S8N7JNH\\SQLEXPRESS;Initial Catalog=BTL_TQ6;Integrated Security=True;TrustServerCertificate=True";
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
@@ -203,14 +203,14 @@ namespace DAL_QuanLy
             int soSanPhamTonKho = 0;
             int soDonHang = 0;
             int soNhanVien = 0;
-            string connectionString = "Data Source=DESKTOP-R4RPQKD;Initial Catalog=BTL_6;Integrated Security=True;Encrypt=True";
+            string connectionString = "Data Source=DESKTOP-S8N7JNH\\SQLEXPRESS;Initial Catalog=BTL_TQ6;Integrated Security=True;TrustServerCertificate=True";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
                 string query = @"
             SELECT 
-                SUM(ct.SoLuong * ct.DonGiaBan * (1 - ISNULL(ct.GiamGia, 0))) AS TotalSales,
+                SUM(ct.SoLuong * ct.DonGiaBan * 0.01*(100 - ISNULL(ct.GiamGia, 0))) AS TotalSales,
                 (SELECT SUM(ctn.SoLuong) FROM ChiTietHoaDonNhap ctn) - 
                 (SELECT SUM(ct.SoLuong) FROM ChiTietHoaDonBan ct) AS TotalProductsInStock,
                 (SELECT COUNT(DISTINCT SoHDB) FROM HoaDonBan) + 

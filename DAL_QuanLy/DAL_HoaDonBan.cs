@@ -12,7 +12,6 @@ namespace DAL_QuanLy
     public class DAL_HoaDonBan : DBConnect
     {
         public DAL_HoaDonBan() { }
-
         // Phương thức trả về toàn bộ danh sách hóa đơn bán 
         public DataTable LayDanhSachHoaDonBan()
         {
@@ -177,7 +176,7 @@ namespace DAL_QuanLy
             try
             {
                 OpenConnection();
-                soThuTu += (int)cmd.ExecuteScalar();
+                soThuTu += (int)cmd.ExecuteScalar(); // Lấy số hóa đơn đã tạo trong ngày
             }
             catch (Exception ex)
             {
@@ -190,6 +189,8 @@ namespace DAL_QuanLy
 
             return soThuTu;
         }
+
+
 
         //Phương thức thêm hóa đơn bán
         public void ThemHoaDon(DTO_HoaDonBan hdb)
@@ -223,7 +224,11 @@ namespace DAL_QuanLy
         public string LaySoHDBCuoi()
         {
             string soHDBCuoi = string.Empty;
-            string query = "SELECT TOP 1 SoHDB FROM HoaDonBan ORDER BY SoHDB DESC";
+            string query = @"
+        SELECT TOP 1 SoHDB 
+        FROM HoaDonBan 
+        WHERE CONVERT(DATE, NgayBan) = CONVERT(DATE, GETDATE()) 
+        ORDER BY NgayBan DESC, SoHDB DESC"; // Lấy mã hóa đơn gần nhất trong ngày hôm nay
 
             try
             {
@@ -247,6 +252,7 @@ namespace DAL_QuanLy
 
             return soHDBCuoi;
         }
+
         private string ExecuteScalar(string sql, string maHDBan)
         {
             string result = string.Empty;
@@ -271,7 +277,6 @@ namespace DAL_QuanLy
             }
             return result;
         }
-
         public DataTable GetTotalRevenue()
         {
             string query = "SELECT SUM(TongTien) AS Bang3 FROM HoaDonBan";
@@ -314,7 +319,6 @@ namespace DAL_QuanLy
                 finally
                 {
                     _conn.Close();
-                    _conn.Dispose();
                 }
                 return result;
             }

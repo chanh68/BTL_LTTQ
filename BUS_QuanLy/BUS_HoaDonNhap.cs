@@ -53,9 +53,9 @@ namespace BUS_QuanLy
             return $"HDN{stt:D5}{ngayHienTai}";
         }
 
-        public void ThemHoaDon(DTO_HoaDonNhap hd)
+        public bool ThemHoaDon(DTO_HoaDonNhap hd)
         {
-            dalHDN.ThemHoaDon(hd);
+            return dalHDN.ThemHoaDon(hd);
         }
 
         public string LaySoHDNCuoi()
@@ -97,7 +97,8 @@ namespace BUS_QuanLy
                 }
 
                 // Lưu file Excel
-                var filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "DanhSachHoaDon.xlsx");
+                var filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), $"DanhSachHoaDonNhap_{DateTime.Now:yyyyMMdd_HHmmss}.xlsx"
+);
                 FileInfo excelFile = new FileInfo(filePath);
                 excel.SaveAs(excelFile);
 

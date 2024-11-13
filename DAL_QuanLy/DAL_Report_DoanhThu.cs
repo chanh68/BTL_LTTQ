@@ -9,7 +9,7 @@ namespace DAL_QuanLy
 {
     public class DAL_Report_DoanhThu
     {
-        private readonly string connectionString = "Data Source=DESKTOP-R4RPQKD;Initial Catalog=BTL_6;Integrated Security=True;Encrypt=False";
+        private readonly string connectionString = "Data Source=DESKTOP-S8N7JNH\\SQLEXPRESS;Initial Catalog=BTL_TQ6;Integrated Security=True;TrustServerCertificate=True";
 
         public List<DTO_ReportDoanhThu> GetReportData(DateTime startDate, DateTime endDate)
         {
@@ -18,7 +18,7 @@ namespace DAL_QuanLy
             using (var connection = new SqlConnection(connectionString))
             using (var command = new SqlCommand(@"
                 SELECT hb.SoHDB AS InvoiceNumber,
-                       SUM(ct.SoLuong * ct.DonGiaBan * (1 - ISNULL(ct.GiamGia, 0))) AS Revenue,
+                       SUM(ct.SoLuong * ct.DonGiaBan * 0.01*(100 - ISNULL(ct.GiamGia, 0))) AS Revenue,
                        hb.NgayBan AS SaleDate,
                        SUM(ct.SoLuong) AS ProductCount,
                        hh.MaHang AS ProductCode,

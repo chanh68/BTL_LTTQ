@@ -8,7 +8,7 @@ namespace GUI_QuanLy
     public partial class Signin : Form
     {
         private DAL_TaiKhoan dalTaiKhoan;
-        private bool isPasswordVisible = false; 
+        private bool isPasswordVisible = false;
 
         public Signin()
         {
@@ -58,23 +58,28 @@ namespace GUI_QuanLy
 
         private void Signin_Load(object sender, EventArgs e)
         {
-            txtPassword.PasswordChar = '•'; 
+            txtPassword.PasswordChar = '•';
         }
 
         private void btnShow_Click(object sender, EventArgs e)
         {
             isPasswordVisible = true;
-            txtPassword.PasswordChar = '\0'; 
-            btnShow.Visible = false; 
-            btnHide.Visible = true; 
+            txtPassword.PasswordChar = '\0';
+            btnShow.Visible = false;
+            btnHide.Visible = true;
         }
 
         private void btnHide_Click(object sender, EventArgs e)
         {
             isPasswordVisible = false;
-            txtPassword.PasswordChar = '•'; 
-            btnHide.Visible = false; 
-            btnShow.Visible = true; 
+            txtPassword.PasswordChar = '•';
+            btnHide.Visible = false;
+            btnShow.Visible = true;
+        }
+        private void btnDong_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
+

@@ -391,3 +391,7 @@ F:\WebProgram\BTL_LTTQ\BTL_LTTQ\BUS_QuanLy\obj\Debug\BUS_QuanLy.csproj.CoreCompi
 F:\WebProgram\BTL_LTTQ\BTL_LTTQ\BUS_QuanLy\obj\Debug\BUS_QuanLy.csproj.Up2Date
 F:\WebProgram\BTL_LTTQ\BTL_LTTQ\BUS_QuanLy\obj\Debug\BUS_QuanLy.dll
 F:\WebProgram\BTL_LTTQ\BTL_LTTQ\BUS_QuanLy\obj\Debug\BUS_QuanLy.pdb
+F:\WebProgram\BTL_LTTQ\BTL_LTTQ\BUS_QuanLy\bin\Debug\Reports\ReportHoaDon.rdlc
+F:\WebProgram\BTL_LTTQ\BTL_LTTQ\BUS_QuanLy\bin\Debug\Reports\ReportNhanVien.rdlc
+F:\WebProgram\BTL_LTTQ\BTL_LTTQ\BUS_QuanLy\bin\Debug\Reports\Report_DoanhThu.rdlc
+F:\WebProgram\BTL_LTTQ\BTL_LTTQ\BUS_QuanLy\bin\Debug\Reports\Report_SanPham.rdlc

@@ -95,7 +95,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DAL_ReportNhanVien.cs" />
     <Compile Include="DTO_ChiTietHoaDonBan.cs" />
     <Compile Include="DTO_ChiTietHoaDonNhap.cs" />
     <Compile Include="DTO_CongDung.cs" />
@@ -161,10 +160,18 @@
     <None Include="Reports\DataSet_SanPham.xss">
       <DependentUpon>DataSet_SanPham.xsd</DependentUpon>
     </None>
-    <None Include="Reports\ReportHoaDon.rdlc" />
-    <None Include="Reports\ReportNhanVien.rdlc" />
-    <None Include="Reports\Report_DoanhThu.rdlc" />
-    <None Include="Reports\Report_SanPham.rdlc" />
+    <None Include="Reports\ReportHoaDon.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\ReportNhanVien.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\Report_DoanhThu.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\Report_SanPham.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="SqlServerTypes\readme.htm" />

@@ -11,7 +11,6 @@ namespace DAL_QuanLy
 {
     public class DAL_ChiTietHoaDonNhap : DBConnect
     {
-
         // Phương thức xóa chi tiết hóa đơn theo SoHDN
         public bool XoaChiTietHoaDonTheoSoHDN(string soHDN)
         {
@@ -110,6 +109,7 @@ namespace DAL_QuanLy
                 CloseConnection(); // Đảm bảo đóng kết nối
             }
         }
+
         public DataTable GetTotalImportedQuantity()
         {
             string query = "SELECT SUM(SoLuong) AS Bang4 FROM ChiTietHoaDonNhap";
@@ -133,6 +133,5 @@ namespace DAL_QuanLy
                 return result;
             }
         }
-
     }
 }

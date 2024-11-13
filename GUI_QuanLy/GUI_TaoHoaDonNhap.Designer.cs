@@ -104,7 +104,7 @@
             this.dgvDSMatHang.RowTemplate.Height = 24;
             this.dgvDSMatHang.Size = new System.Drawing.Size(1019, 264);
             this.dgvDSMatHang.TabIndex = 3;
-            this.dgvDSMatHang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSMatHang_CellClick);
+            //this.dgvDSMatHang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSMatHang_CellClick);
             // 
             // txtTenHang
             // 
@@ -122,7 +122,7 @@
             this.txtSoLuong.Name = "txtSoLuong";
             this.txtSoLuong.Size = new System.Drawing.Size(191, 29);
             this.txtSoLuong.TabIndex = 8;
-            this.txtSoLuong.TextChanged += new System.EventHandler(this.txtSoLuong_TextChanged);
+            //this.txtSoLuong.TextChanged += new System.EventHandler(this.txtSoLuong_TextChanged);
             this.txtSoLuong.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSoLuong_KeyDown);
             // 
             // cbMaHang

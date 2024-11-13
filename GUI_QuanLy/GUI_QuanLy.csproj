@@ -197,6 +197,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DB_LTTQDataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="dsHDBDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsHDBDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Edit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -548,6 +553,17 @@
     </None>
     <None Include="DB_LTTQDataSet2.xss">
       <DependentUpon>DB_LTTQDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="dsHDBDataSet.xsc">
+      <DependentUpon>dsHDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="dsHDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsHDBDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsHDBDataSet.xss">
+      <DependentUpon>dsHDBDataSet.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\BUS_QuanLy.BUS_Report_DoanhThu1.datasource" />
