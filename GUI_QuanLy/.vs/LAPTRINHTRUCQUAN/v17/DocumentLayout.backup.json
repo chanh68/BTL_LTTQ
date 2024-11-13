@@ -3,6 +3,9 @@
   "WorkspaceRootPath": "F:\\WebProgram\\BTL_LTTQ\\BTL_LTTQ\\GUI_QuanLy\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{C903AD16-2FD9-434E-852C-6D87EE645889}|..\\BUS_QuanLy\\BUS_QuanLy.csproj|f:\\webprogram\\btl_lttq\\btl_lttq\\bus_quanly\\bus_report_doanhthu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{5782BF1D-BD9C-4178-ABED-3FD460C371B0}|GUI_QuanLy.csproj|f:\\webprogram\\btl_lttq\\btl_lttq\\gui_quanly\\baocaothongke.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5782BF1D-BD9C-4178-ABED-3FD460C371B0}|GUI_QuanLy.csproj|solutionrelative:baocaothongke.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -49,9 +52,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{5782BF1D-BD9C-4178-ABED-3FD460C371B0}|GUI_QuanLy.csproj|f:\\webprogram\\btl_lttq\\btl_lttq\\gui_quanly\\report_hoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{5782BF1D-BD9C-4178-ABED-3FD460C371B0}|GUI_QuanLy.csproj|solutionrelative:report_hoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C903AD16-2FD9-434E-852C-6D87EE645889}|..\\BUS_QuanLy\\BUS_QuanLy.csproj|f:\\webprogram\\btl_lttq\\btl_lttq\\bus_quanly\\bus_report_doanhthu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5782BF1D-BD9C-4178-ABED-3FD460C371B0}|GUI_QuanLy.csproj|f:\\webprogram\\btl_lttq\\btl_lttq\\gui_quanly\\formreport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -402,7 +402,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 14,
           "Children": [
             {
               "$type": "Bookmark",
@@ -434,12 +434,12 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "BaoCaoThongKe.Designer.cs",
               "DocumentMoniker": "F:\\WebProgram\\BTL_LTTQ\\BTL_LTTQ\\GUI_QuanLy\\BaoCaoThongKe.Designer.cs",
               "RelativeDocumentMoniker": "BaoCaoThongKe.Designer.cs",
-              "ToolTip": "F:\\WebProgram\\BTL_LTTQ\\BTL_LTTQ\\GUI_QuanLy\\BaoCaoThongKe.Designer.cs*",
-              "RelativeToolTip": "BaoCaoThongKe.Designer.cs*",
+              "ToolTip": "F:\\WebProgram\\BTL_LTTQ\\BTL_LTTQ\\GUI_QuanLy\\BaoCaoThongKe.Designer.cs",
+              "RelativeToolTip": "BaoCaoThongKe.Designer.cs",
               "ViewState": "AgIAAF8DAAAAAAAAAAAQwIYDAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-13T01:00:40.786Z",
@@ -447,12 +447,12 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "BaoCaoThongKe.cs",
               "DocumentMoniker": "F:\\WebProgram\\BTL_LTTQ\\BTL_LTTQ\\GUI_QuanLy\\BaoCaoThongKe.cs",
               "RelativeDocumentMoniker": "BaoCaoThongKe.cs",
-              "ToolTip": "F:\\WebProgram\\BTL_LTTQ\\BTL_LTTQ\\GUI_QuanLy\\BaoCaoThongKe.cs*",
-              "RelativeToolTip": "BaoCaoThongKe.cs*",
+              "ToolTip": "F:\\WebProgram\\BTL_LTTQ\\BTL_LTTQ\\GUI_QuanLy\\BaoCaoThongKe.cs",
+              "RelativeToolTip": "BaoCaoThongKe.cs",
               "ViewState": "AgIAAF4AAAAAAAAAAAAQwIUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-13T01:00:29.693Z",
@@ -460,12 +460,12 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Report_SanPham.Designer.cs",
               "DocumentMoniker": "F:\\WebProgram\\BTL_LTTQ\\BTL_LTTQ\\GUI_QuanLy\\Report_SanPham.Designer.cs",
               "RelativeDocumentMoniker": "Report_SanPham.Designer.cs",
-              "ToolTip": "F:\\WebProgram\\BTL_LTTQ\\BTL_LTTQ\\GUI_QuanLy\\Report_SanPham.Designer.cs*",
-              "RelativeToolTip": "Report_SanPham.Designer.cs*",
+              "ToolTip": "F:\\WebProgram\\BTL_LTTQ\\BTL_LTTQ\\GUI_QuanLy\\Report_SanPham.Designer.cs",
+              "RelativeToolTip": "Report_SanPham.Designer.cs",
               "ViewState": "AgIAAOwAAAAAAAAAAAAQwBMBAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-13T01:00:06.761Z",
@@ -473,12 +473,12 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Report_SanPham.cs",
               "DocumentMoniker": "F:\\WebProgram\\BTL_LTTQ\\BTL_LTTQ\\GUI_QuanLy\\Report_SanPham.cs",
               "RelativeDocumentMoniker": "Report_SanPham.cs",
-              "ToolTip": "F:\\WebProgram\\BTL_LTTQ\\BTL_LTTQ\\GUI_QuanLy\\Report_SanPham.cs*",
-              "RelativeToolTip": "Report_SanPham.cs*",
+              "ToolTip": "F:\\WebProgram\\BTL_LTTQ\\BTL_LTTQ\\GUI_QuanLy\\Report_SanPham.cs",
+              "RelativeToolTip": "Report_SanPham.cs",
               "ViewState": "AgIAAB8AAAAAAAAAAAAQwEYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-13T00:59:27.624Z",
@@ -486,37 +486,54 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Report_SanPham.cs [Design]",
               "DocumentMoniker": "F:\\WebProgram\\BTL_LTTQ\\BTL_LTTQ\\GUI_QuanLy\\Report_SanPham.cs",
               "RelativeDocumentMoniker": "Report_SanPham.cs",
-              "ToolTip": "F:\\WebProgram\\BTL_LTTQ\\BTL_LTTQ\\GUI_QuanLy\\Report_SanPham.cs [Design]*",
-              "RelativeToolTip": "Report_SanPham.cs [Design]*",
+              "ToolTip": "F:\\WebProgram\\BTL_LTTQ\\BTL_LTTQ\\GUI_QuanLy\\Report_SanPham.cs [Design]",
+              "RelativeToolTip": "Report_SanPham.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-13T00:59:25.405Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "Report_NhanVien.Designer.cs",
               "DocumentMoniker": "F:\\WebProgram\\BTL_LTTQ\\BTL_LTTQ\\GUI_QuanLy\\Report_NhanVien.Designer.cs",
               "RelativeDocumentMoniker": "Report_NhanVien.Designer.cs",
-              "ToolTip": "F:\\WebProgram\\BTL_LTTQ\\BTL_LTTQ\\GUI_QuanLy\\Report_NhanVien.Designer.cs*",
-              "RelativeToolTip": "Report_NhanVien.Designer.cs*",
+              "ToolTip": "F:\\WebProgram\\BTL_LTTQ\\BTL_LTTQ\\GUI_QuanLy\\Report_NhanVien.Designer.cs",
+              "RelativeToolTip": "Report_NhanVien.Designer.cs",
               "ViewState": "AgIAABUAAAAAAAAAAAAQwDwAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-13T00:59:03.961Z",
               "EditorCaption": ""
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 0,
+              "Title": "BUS_Report_DoanhThu.cs",
+              "DocumentMoniker": "F:\\WebProgram\\BTL_LTTQ\\BTL_LTTQ\\BUS_QuanLy\\BUS_Report_DoanhThu.cs",
+              "RelativeDocumentMoniker": "..\\BUS_QuanLy\\BUS_Report_DoanhThu.cs",
+              "ToolTip": "F:\\WebProgram\\BTL_LTTQ\\BTL_LTTQ\\BUS_QuanLy\\BUS_Report_DoanhThu.cs*",
+              "RelativeToolTip": "..\\BUS_QuanLy\\BUS_Report_DoanhThu.cs*",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAcwBYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-13T00:52:25.148Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "Report_NhanVien.cs",
               "DocumentMoniker": "F:\\WebProgram\\BTL_LTTQ\\BTL_LTTQ\\GUI_QuanLy\\Report_NhanVien.cs",
               "RelativeDocumentMoniker": "Report_NhanVien.cs",
-              "ToolTip": "F:\\WebProgram\\BTL_LTTQ\\BTL_LTTQ\\GUI_QuanLy\\Report_NhanVien.cs*",
-              "RelativeToolTip": "Report_NhanVien.cs*",
+              "ToolTip": "F:\\WebProgram\\BTL_LTTQ\\BTL_LTTQ\\GUI_QuanLy\\Report_NhanVien.cs",
+              "RelativeToolTip": "Report_NhanVien.cs",
               "ViewState": "AgIAAAcAAAAAAAAAAAAQwC4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-13T00:58:51.437Z",
@@ -524,36 +541,36 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "Report_NhanVien.cs [Design]",
               "DocumentMoniker": "F:\\WebProgram\\BTL_LTTQ\\BTL_LTTQ\\GUI_QuanLy\\Report_NhanVien.cs",
               "RelativeDocumentMoniker": "Report_NhanVien.cs",
-              "ToolTip": "F:\\WebProgram\\BTL_LTTQ\\BTL_LTTQ\\GUI_QuanLy\\Report_NhanVien.cs [Design]*",
-              "RelativeToolTip": "Report_NhanVien.cs [Design]*",
+              "ToolTip": "F:\\WebProgram\\BTL_LTTQ\\BTL_LTTQ\\GUI_QuanLy\\Report_NhanVien.cs [Design]",
+              "RelativeToolTip": "Report_NhanVien.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-13T00:58:49.662Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "BaoCaoThongKe.cs [Design]",
               "DocumentMoniker": "F:\\WebProgram\\BTL_LTTQ\\BTL_LTTQ\\GUI_QuanLy\\BaoCaoThongKe.cs",
               "RelativeDocumentMoniker": "BaoCaoThongKe.cs",
-              "ToolTip": "F:\\WebProgram\\BTL_LTTQ\\BTL_LTTQ\\GUI_QuanLy\\BaoCaoThongKe.cs [Design]*",
-              "RelativeToolTip": "BaoCaoThongKe.cs [Design]*",
+              "ToolTip": "F:\\WebProgram\\BTL_LTTQ\\BTL_LTTQ\\GUI_QuanLy\\BaoCaoThongKe.cs [Design]",
+              "RelativeToolTip": "BaoCaoThongKe.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-12T20:37:17.478Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "Report_HoaDon.Designer.cs",
               "DocumentMoniker": "F:\\WebProgram\\BTL_LTTQ\\BTL_LTTQ\\GUI_QuanLy\\Report_HoaDon.Designer.cs",
               "RelativeDocumentMoniker": "Report_HoaDon.Designer.cs",
-              "ToolTip": "F:\\WebProgram\\BTL_LTTQ\\BTL_LTTQ\\GUI_QuanLy\\Report_HoaDon.Designer.cs*",
-              "RelativeToolTip": "Report_HoaDon.Designer.cs*",
+              "ToolTip": "F:\\WebProgram\\BTL_LTTQ\\BTL_LTTQ\\GUI_QuanLy\\Report_HoaDon.Designer.cs",
+              "RelativeToolTip": "Report_HoaDon.Designer.cs",
               "ViewState": "AgIAAOgAAAAAAAAAAAAQwA8BAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-13T00:58:06.954Z",
@@ -561,12 +578,12 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "Report_HoaDon.cs",
               "DocumentMoniker": "F:\\WebProgram\\BTL_LTTQ\\BTL_LTTQ\\GUI_QuanLy\\Report_HoaDon.cs",
               "RelativeDocumentMoniker": "Report_HoaDon.cs",
-              "ToolTip": "F:\\WebProgram\\BTL_LTTQ\\BTL_LTTQ\\GUI_QuanLy\\Report_HoaDon.cs*",
-              "RelativeToolTip": "Report_HoaDon.cs*",
+              "ToolTip": "F:\\WebProgram\\BTL_LTTQ\\BTL_LTTQ\\GUI_QuanLy\\Report_HoaDon.cs",
+              "RelativeToolTip": "Report_HoaDon.cs",
               "ViewState": "AgIAABkAAAAAAAAAAAAQwEAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-13T00:57:51.062Z",
@@ -574,12 +591,12 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "Report_HoaDon.cs [Design]",
               "DocumentMoniker": "F:\\WebProgram\\BTL_LTTQ\\BTL_LTTQ\\GUI_QuanLy\\Report_HoaDon.cs",
               "RelativeDocumentMoniker": "Report_HoaDon.cs",
-              "ToolTip": "F:\\WebProgram\\BTL_LTTQ\\BTL_LTTQ\\GUI_QuanLy\\Report_HoaDon.cs [Design]*",
-              "RelativeToolTip": "Report_HoaDon.cs [Design]*",
+              "ToolTip": "F:\\WebProgram\\BTL_LTTQ\\BTL_LTTQ\\GUI_QuanLy\\Report_HoaDon.cs [Design]",
+              "RelativeToolTip": "Report_HoaDon.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-13T00:57:41.427Z",
               "EditorCaption": " [Design]"
@@ -647,23 +664,6 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-13T00:54:26.265Z",
               "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "BUS_Report_DoanhThu.cs",
-              "DocumentMoniker": "F:\\WebProgram\\BTL_LTTQ\\BTL_LTTQ\\BUS_QuanLy\\BUS_Report_DoanhThu.cs",
-              "RelativeDocumentMoniker": "..\\BUS_QuanLy\\BUS_Report_DoanhThu.cs",
-              "ToolTip": "F:\\WebProgram\\BTL_LTTQ\\BTL_LTTQ\\BUS_QuanLy\\BUS_Report_DoanhThu.cs",
-              "RelativeToolTip": "..\\BUS_QuanLy\\BUS_Report_DoanhThu.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAcwBQAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-13T00:52:25.148Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
             },
             {
               "$type": "Document",

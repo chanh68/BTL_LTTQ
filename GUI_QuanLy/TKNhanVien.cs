@@ -238,7 +238,11 @@ namespace GUI_QuanLy
 
                     NhanVien_Sua suaForm = new NhanVien_Sua(maNV);
 
-                    DialogResult result = suaForm.ShowDialog();
+                    suaForm.FormClosed += (s, args) => {
+                        LoadNhanVien(); // Gọi lại phương thức Load để làm mới dữ liệu
+                    };
+
+                    suaForm.ShowDialog();
 
                 }
                 else
@@ -254,7 +258,11 @@ namespace GUI_QuanLy
         {
             NhanVien suaForm = new NhanVien();
 
-            DialogResult result = suaForm.ShowDialog();
+            suaForm.FormClosed += (s, args) => {
+                LoadNhanVien(); // Gọi lại phương thức Load để làm mới dữ liệu
+            };
+
+            suaForm.ShowDialog();
         }
 
 

@@ -152,7 +152,11 @@ namespace GUI_QuanLy
         {
             KhachHang suaForm = new KhachHang();
 
-            DialogResult result = suaForm.ShowDialog();
+            suaForm.FormClosed += (s, args) => {
+                LoadKhachHang(); // Gọi lại phương thức Load để làm mới dữ liệu
+            };
+
+            suaForm.ShowDialog();
 
         }
 

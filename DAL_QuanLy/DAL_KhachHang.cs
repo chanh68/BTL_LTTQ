@@ -260,6 +260,16 @@ namespace DAL_QuanLy
             try
             {
                 _conn.Open();
+                string deleteInvoiceDetailsQuery = @"DELETE FROM ChiTietHoaDonBan WHERE SoHDB IN (SELECT SoHDB FROM HoaDonBan WHERE MaKhach = @MaKhach)";
+                SqlCommand deleteInvoiceDetailsCmd = new SqlCommand(deleteInvoiceDetailsQuery, _conn);
+                deleteInvoiceDetailsCmd.Parameters.AddWithValue("@MaKhach", maKhach);
+                deleteInvoiceDetailsCmd.ExecuteNonQuery();
+
+                // Xóa tất cả các hóa đơn bán liên quan đến khách hàng
+                string deleteInvoicesQuery = "DELETE FROM HoaDonBan WHERE MaKhach = @MaKhach";
+                SqlCommand deleteInvoicesCmd = new SqlCommand(deleteInvoicesQuery, _conn);
+                deleteInvoicesCmd.Parameters.AddWithValue("@MaKhach", maKhach);
+                deleteInvoicesCmd.ExecuteNonQuery();
                 string query = "DELETE FROM KhachHang WHERE MaKhach = @MaKhach";
                 SqlCommand cmd = new SqlCommand(query, _conn);
                 cmd.Parameters.AddWithValue("@MaKhach", maKhach);

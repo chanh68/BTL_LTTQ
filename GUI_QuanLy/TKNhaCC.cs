@@ -144,7 +144,11 @@ namespace GUI_QuanLy
         {
             NhaCC suaForm = new NhaCC();
 
-            DialogResult result = suaForm.ShowDialog();
+            suaForm.FormClosed += (s, args) => {
+                LoadNhaCungCap(); // Gọi lại phương thức Load để làm mới dữ liệu
+            };
+
+            suaForm.ShowDialog();
 
         }
 

@@ -181,6 +181,15 @@ namespace DAL_QuanLy
             try
             {
                 _conn.Open();
+                string deleteInvoiceDetailsQuery = @"DELETE FROM ChiTietHoaDonNhap WHERE SoHDN IN (SELECT SoHDN FROM HoaDonNhap WHERE MaNCC = @MaNCC)";
+                SqlCommand deleteInvoiceDetailsCmd = new SqlCommand(deleteInvoiceDetailsQuery, _conn);
+                deleteInvoiceDetailsCmd.Parameters.AddWithValue("@MaNCC", maNCC);
+                deleteInvoiceDetailsCmd.ExecuteNonQuery();
+
+                string deleteInvoicesQuery = "DELETE FROM HoaDonNhap WHERE MaNCC = @MaNCC";
+                SqlCommand deleteInvoicesCmd = new SqlCommand(deleteInvoicesQuery, _conn);
+                deleteInvoicesCmd.Parameters.AddWithValue("@MaNCC", maNCC);
+                deleteInvoicesCmd.ExecuteNonQuery();
                 string query = "DELETE FROM NhaCungCap WHERE MaNCC = @MaNCC";
                 SqlCommand cmd = new SqlCommand(query, _conn);
                 cmd.Parameters.AddWithValue("@MaNCC", maNCC);
@@ -238,5 +247,6 @@ namespace DAL_QuanLy
             return dt;
 
         }
+
     }
 }
