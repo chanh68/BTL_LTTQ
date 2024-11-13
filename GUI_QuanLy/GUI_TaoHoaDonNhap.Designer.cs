@@ -39,20 +39,18 @@
             this.lblMaHang = new System.Windows.Forms.Label();
             this.panelTongTien = new System.Windows.Forms.Panel();
             this.txtTongTien = new System.Windows.Forms.TextBox();
-            this.lblBangChu = new System.Windows.Forms.Label();
             this.lblTongTien = new System.Windows.Forms.Label();
-            this.lblHuongDan = new System.Windows.Forms.Label();
             this.cbMaNCC = new System.Windows.Forms.ComboBox();
             this.txtThanhTien = new System.Windows.Forms.TextBox();
             this.btnThoat = new System.Windows.Forms.Button();
-            this.btnInHoaDon = new System.Windows.Forms.Button();
-            this.btnHuyHoaDon = new System.Windows.Forms.Button();
-            this.btnLuuHoaDon = new System.Windows.Forms.Button();
+            this.btnIn = new System.Windows.Forms.Button();
+            this.btnXoa = new System.Windows.Forms.Button();
+            this.btnLuu = new System.Windows.Forms.Button();
             this.txtDonGia = new System.Windows.Forms.TextBox();
             this.panelThongTinMatHang = new System.Windows.Forms.Panel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.grbThongTinChung = new System.Windows.Forms.GroupBox();
-            this.maskedTextBoxSDT = new System.Windows.Forms.MaskedTextBox();
+            this.txtSDT = new System.Windows.Forms.MaskedTextBox();
             this.txtDiaChi = new System.Windows.Forms.TextBox();
             this.txtTenNCC = new System.Windows.Forms.TextBox();
             this.txtTenNV = new System.Windows.Forms.TextBox();
@@ -106,6 +104,7 @@
             this.dgvDSMatHang.RowTemplate.Height = 24;
             this.dgvDSMatHang.Size = new System.Drawing.Size(1019, 264);
             this.dgvDSMatHang.TabIndex = 3;
+            this.dgvDSMatHang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSMatHang_CellClick);
             // 
             // txtTenHang
             // 
@@ -123,6 +122,8 @@
             this.txtSoLuong.Name = "txtSoLuong";
             this.txtSoLuong.Size = new System.Drawing.Size(191, 29);
             this.txtSoLuong.TabIndex = 8;
+            this.txtSoLuong.TextChanged += new System.EventHandler(this.txtSoLuong_TextChanged);
+            this.txtSoLuong.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSoLuong_KeyDown);
             // 
             // cbMaHang
             // 
@@ -132,6 +133,7 @@
             this.cbMaHang.Name = "cbMaHang";
             this.cbMaHang.Size = new System.Drawing.Size(191, 29);
             this.cbMaHang.TabIndex = 7;
+            this.cbMaHang.SelectedIndexChanged += new System.EventHandler(this.cbMaHang_SelectedIndexChanged);
             // 
             // lblThanhTien
             // 
@@ -180,9 +182,7 @@
             // panelTongTien
             // 
             this.panelTongTien.Controls.Add(this.txtTongTien);
-            this.panelTongTien.Controls.Add(this.lblBangChu);
             this.panelTongTien.Controls.Add(this.lblTongTien);
-            this.panelTongTien.Controls.Add(this.lblHuongDan);
             this.panelTongTien.Location = new System.Drawing.Point(4, 382);
             this.panelTongTien.Margin = new System.Windows.Forms.Padding(2);
             this.panelTongTien.Name = "panelTongTien";
@@ -198,17 +198,6 @@
             this.txtTongTien.Size = new System.Drawing.Size(191, 29);
             this.txtTongTien.TabIndex = 11;
             // 
-            // lblBangChu
-            // 
-            this.lblBangChu.AutoSize = true;
-            this.lblBangChu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(69)))), ((int)(((byte)(136)))));
-            this.lblBangChu.Location = new System.Drawing.Point(25, 25);
-            this.lblBangChu.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblBangChu.Name = "lblBangChu";
-            this.lblBangChu.Size = new System.Drawing.Size(86, 21);
-            this.lblBangChu.TabIndex = 2;
-            this.lblBangChu.Text = "Bằng chữ:";
-            // 
             // lblTongTien
             // 
             this.lblTongTien.AutoSize = true;
@@ -221,18 +210,6 @@
             this.lblTongTien.TabIndex = 1;
             this.lblTongTien.Text = "Tổng tiền";
             // 
-            // lblHuongDan
-            // 
-            this.lblHuongDan.AutoSize = true;
-            this.lblHuongDan.Font = new System.Drawing.Font("Segoe UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHuongDan.ForeColor = System.Drawing.Color.Brown;
-            this.lblHuongDan.Location = new System.Drawing.Point(25, 2);
-            this.lblHuongDan.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblHuongDan.Name = "lblHuongDan";
-            this.lblHuongDan.Size = new System.Drawing.Size(210, 21);
-            this.lblHuongDan.TabIndex = 0;
-            this.lblHuongDan.Text = "Nháy đúp một dòng để xóa";
-            // 
             // cbMaNCC
             // 
             this.cbMaNCC.FormattingEnabled = true;
@@ -241,6 +218,7 @@
             this.cbMaNCC.Name = "cbMaNCC";
             this.cbMaNCC.Size = new System.Drawing.Size(241, 29);
             this.cbMaNCC.TabIndex = 15;
+            this.cbMaNCC.SelectedIndexChanged += new System.EventHandler(this.cbMaNCC_SelectedIndexChanged);
             // 
             // txtThanhTien
             // 
@@ -269,63 +247,67 @@
             this.btnThoat.Text = "      Thoát";
             this.btnThoat.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnThoat.UseVisualStyleBackColor = false;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
-            // btnInHoaDon
+            // btnIn
             // 
-            this.btnInHoaDon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(41)))), ((int)(((byte)(102)))));
-            this.btnInHoaDon.FlatAppearance.BorderSize = 2;
-            this.btnInHoaDon.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnInHoaDon.Font = new System.Drawing.Font("Segoe UI", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInHoaDon.ForeColor = System.Drawing.Color.White;
-            this.btnInHoaDon.Image = global::GUI_QuanLy.Properties.Resources.Printer;
-            this.btnInHoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInHoaDon.Location = new System.Drawing.Point(562, 4);
-            this.btnInHoaDon.Margin = new System.Windows.Forms.Padding(2);
-            this.btnInHoaDon.Name = "btnInHoaDon";
-            this.btnInHoaDon.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
-            this.btnInHoaDon.Size = new System.Drawing.Size(172, 43);
-            this.btnInHoaDon.TabIndex = 6;
-            this.btnInHoaDon.Text = "     In hóa đơn";
-            this.btnInHoaDon.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInHoaDon.UseVisualStyleBackColor = false;
+            this.btnIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(41)))), ((int)(((byte)(102)))));
+            this.btnIn.FlatAppearance.BorderSize = 2;
+            this.btnIn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnIn.Font = new System.Drawing.Font("Segoe UI", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIn.ForeColor = System.Drawing.Color.White;
+            this.btnIn.Image = global::GUI_QuanLy.Properties.Resources.Printer;
+            this.btnIn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnIn.Location = new System.Drawing.Point(562, 4);
+            this.btnIn.Margin = new System.Windows.Forms.Padding(2);
+            this.btnIn.Name = "btnIn";
+            this.btnIn.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
+            this.btnIn.Size = new System.Drawing.Size(172, 43);
+            this.btnIn.TabIndex = 6;
+            this.btnIn.Text = "     In hóa đơn";
+            this.btnIn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnIn.UseVisualStyleBackColor = false;
+            this.btnIn.Click += new System.EventHandler(this.btnIn_Click);
             // 
-            // btnHuyHoaDon
+            // btnXoa
             // 
-            this.btnHuyHoaDon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(41)))), ((int)(((byte)(102)))));
-            this.btnHuyHoaDon.FlatAppearance.BorderSize = 2;
-            this.btnHuyHoaDon.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnHuyHoaDon.Font = new System.Drawing.Font("Segoe UI", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHuyHoaDon.ForeColor = System.Drawing.Color.White;
-            this.btnHuyHoaDon.Image = global::GUI_QuanLy.Properties.Resources.X;
-            this.btnHuyHoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHuyHoaDon.Location = new System.Drawing.Point(312, 3);
-            this.btnHuyHoaDon.Margin = new System.Windows.Forms.Padding(2);
-            this.btnHuyHoaDon.Name = "btnHuyHoaDon";
-            this.btnHuyHoaDon.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
-            this.btnHuyHoaDon.Size = new System.Drawing.Size(172, 43);
-            this.btnHuyHoaDon.TabIndex = 5;
-            this.btnHuyHoaDon.Text = "     Hủy hóa đơn";
-            this.btnHuyHoaDon.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHuyHoaDon.UseVisualStyleBackColor = false;
+            this.btnXoa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(41)))), ((int)(((byte)(102)))));
+            this.btnXoa.FlatAppearance.BorderSize = 2;
+            this.btnXoa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnXoa.Font = new System.Drawing.Font("Segoe UI", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoa.ForeColor = System.Drawing.Color.White;
+            this.btnXoa.Image = global::GUI_QuanLy.Properties.Resources.X;
+            this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXoa.Location = new System.Drawing.Point(312, 3);
+            this.btnXoa.Margin = new System.Windows.Forms.Padding(2);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
+            this.btnXoa.Size = new System.Drawing.Size(172, 43);
+            this.btnXoa.TabIndex = 5;
+            this.btnXoa.Text = "     Xóa hóa đơn";
+            this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
-            // btnLuuHoaDon
+            // btnLuu
             // 
-            this.btnLuuHoaDon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(41)))), ((int)(((byte)(102)))));
-            this.btnLuuHoaDon.FlatAppearance.BorderSize = 2;
-            this.btnLuuHoaDon.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnLuuHoaDon.Font = new System.Drawing.Font("Segoe UI", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLuuHoaDon.ForeColor = System.Drawing.Color.White;
-            this.btnLuuHoaDon.Image = global::GUI_QuanLy.Properties.Resources.Save1;
-            this.btnLuuHoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLuuHoaDon.Location = new System.Drawing.Point(63, 4);
-            this.btnLuuHoaDon.Margin = new System.Windows.Forms.Padding(2);
-            this.btnLuuHoaDon.Name = "btnLuuHoaDon";
-            this.btnLuuHoaDon.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
-            this.btnLuuHoaDon.Size = new System.Drawing.Size(172, 43);
-            this.btnLuuHoaDon.TabIndex = 4;
-            this.btnLuuHoaDon.Text = "     Lưu hóa đơn";
-            this.btnLuuHoaDon.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLuuHoaDon.UseVisualStyleBackColor = false;
+            this.btnLuu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(41)))), ((int)(((byte)(102)))));
+            this.btnLuu.FlatAppearance.BorderSize = 2;
+            this.btnLuu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnLuu.Font = new System.Drawing.Font("Segoe UI", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLuu.ForeColor = System.Drawing.Color.White;
+            this.btnLuu.Image = global::GUI_QuanLy.Properties.Resources.Save1;
+            this.btnLuu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLuu.Location = new System.Drawing.Point(63, 4);
+            this.btnLuu.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
+            this.btnLuu.Size = new System.Drawing.Size(172, 43);
+            this.btnLuu.TabIndex = 4;
+            this.btnLuu.Text = "     Lưu hóa đơn";
+            this.btnLuu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLuu.UseVisualStyleBackColor = false;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // txtDonGia
             // 
@@ -379,7 +361,7 @@
             // 
             this.grbThongTinChung.BackColor = System.Drawing.SystemColors.Control;
             this.grbThongTinChung.Controls.Add(this.cbMaNCC);
-            this.grbThongTinChung.Controls.Add(this.maskedTextBoxSDT);
+            this.grbThongTinChung.Controls.Add(this.txtSDT);
             this.grbThongTinChung.Controls.Add(this.txtDiaChi);
             this.grbThongTinChung.Controls.Add(this.txtTenNCC);
             this.grbThongTinChung.Controls.Add(this.txtTenNV);
@@ -405,14 +387,14 @@
             this.grbThongTinChung.TabStop = false;
             this.grbThongTinChung.Text = "   Thông tin chung   ";
             // 
-            // maskedTextBoxSDT
+            // txtSDT
             // 
-            this.maskedTextBoxSDT.Location = new System.Drawing.Point(695, 139);
-            this.maskedTextBoxSDT.Margin = new System.Windows.Forms.Padding(2);
-            this.maskedTextBoxSDT.Mask = "(999) 000-0000";
-            this.maskedTextBoxSDT.Name = "maskedTextBoxSDT";
-            this.maskedTextBoxSDT.Size = new System.Drawing.Size(241, 29);
-            this.maskedTextBoxSDT.TabIndex = 14;
+            this.txtSDT.Location = new System.Drawing.Point(695, 139);
+            this.txtSDT.Margin = new System.Windows.Forms.Padding(2);
+            this.txtSDT.Mask = "(999) 000-0000";
+            this.txtSDT.Name = "txtSDT";
+            this.txtSDT.Size = new System.Drawing.Size(241, 29);
+            this.txtSDT.TabIndex = 14;
             // 
             // txtDiaChi
             // 
@@ -585,9 +567,9 @@
             // panelChucNang
             // 
             this.panelChucNang.Controls.Add(this.btnThoat);
-            this.panelChucNang.Controls.Add(this.btnInHoaDon);
-            this.panelChucNang.Controls.Add(this.btnHuyHoaDon);
-            this.panelChucNang.Controls.Add(this.btnLuuHoaDon);
+            this.panelChucNang.Controls.Add(this.btnIn);
+            this.panelChucNang.Controls.Add(this.btnXoa);
+            this.panelChucNang.Controls.Add(this.btnLuu);
             this.panelChucNang.Location = new System.Drawing.Point(4, 442);
             this.panelChucNang.Margin = new System.Windows.Forms.Padding(2);
             this.panelChucNang.Name = "panelChucNang";
@@ -637,20 +619,18 @@
         private System.Windows.Forms.Label lblMaHang;
         private System.Windows.Forms.Panel panelTongTien;
         private System.Windows.Forms.TextBox txtTongTien;
-        private System.Windows.Forms.Label lblBangChu;
         private System.Windows.Forms.Label lblTongTien;
-        private System.Windows.Forms.Label lblHuongDan;
         private System.Windows.Forms.ComboBox cbMaNCC;
         private System.Windows.Forms.TextBox txtThanhTien;
         private System.Windows.Forms.Button btnThoat;
-        private System.Windows.Forms.Button btnInHoaDon;
-        private System.Windows.Forms.Button btnHuyHoaDon;
-        private System.Windows.Forms.Button btnLuuHoaDon;
+        private System.Windows.Forms.Button btnIn;
+        private System.Windows.Forms.Button btnXoa;
+        private System.Windows.Forms.Button btnLuu;
         private System.Windows.Forms.TextBox txtDonGia;
         private System.Windows.Forms.Panel panelThongTinMatHang;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.GroupBox grbThongTinChung;
-        private System.Windows.Forms.MaskedTextBox maskedTextBoxSDT;
+        private System.Windows.Forms.MaskedTextBox txtSDT;
         private System.Windows.Forms.TextBox txtDiaChi;
         private System.Windows.Forms.TextBox txtTenNCC;
         private System.Windows.Forms.TextBox txtTenNV;

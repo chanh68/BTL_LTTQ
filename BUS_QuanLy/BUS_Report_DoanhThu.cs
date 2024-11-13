@@ -16,10 +16,10 @@ namespace BUS_QuanLy
         {
             dAL_Report = new DAL_Report_DoanhThu();
         }  
-        public List<DTO_ReportDoanhThu> GetReportData()
-        {
-            return dAL_Report.GetReportData();
-        }
+        //public List<DTO_ReportDoanhThu> GetReportData()
+        //{
+        //    return dAL_Report.GetReportData();
+        //}
 
 
     }

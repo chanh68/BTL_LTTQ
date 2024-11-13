@@ -95,6 +95,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL_ReportNhanVien.cs" />
     <Compile Include="DTO_ChiTietHoaDonBan.cs" />
     <Compile Include="DTO_ChiTietHoaDonNhap.cs" />
     <Compile Include="DTO_CongDung.cs" />
@@ -115,12 +116,55 @@
     <Compile Include="DTO_Product.cs" />
     <Compile Include="DTO_ReportDoanhThu.cs" />
     <Compile Include="DTO_ReportHD.cs" />
+    <Compile Include="DTO_ReportHoaDon.cs" />
+    <Compile Include="DTO_ReportSanPham.cs" />
     <Compile Include="DTO_TaiKhoan.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports\DataSet_DoanhThu.Designer.cs" />
+    <Compile Include="Reports\DataSet_HoaDon.Designer.cs" />
+    <Compile Include="Reports\DataSet_NhanVien.cs">
+      <DependentUpon>DataSet_NhanVien.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\DataSet_NhanVien.Designer.cs">
+      <DependentUpon>DataSet_NhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\DataSet_SanPham.Designer.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="Reports\DataSet_DoanhThu.xsc">
+      <DependentUpon>DataSet_DoanhThu.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\DataSet_DoanhThu.xsd" />
+    <None Include="Reports\DataSet_DoanhThu.xss">
+      <DependentUpon>DataSet_DoanhThu.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\DataSet_HoaDon.xsc">
+      <DependentUpon>DataSet_HoaDon.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\DataSet_HoaDon.xsd" />
+    <None Include="Reports\DataSet_HoaDon.xss">
+      <DependentUpon>DataSet_HoaDon.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\DataSet_NhanVien.xsc">
+      <DependentUpon>DataSet_NhanVien.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\DataSet_NhanVien.xsd" />
+    <None Include="Reports\DataSet_NhanVien.xss">
+      <DependentUpon>DataSet_NhanVien.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\DataSet_SanPham.xsc">
+      <DependentUpon>DataSet_SanPham.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\DataSet_SanPham.xsd" />
+    <None Include="Reports\DataSet_SanPham.xss">
+      <DependentUpon>DataSet_SanPham.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\ReportHoaDon.rdlc" />
+    <None Include="Reports\ReportNhanVien.rdlc" />
+    <None Include="Reports\Report_DoanhThu.rdlc" />
+    <None Include="Reports\Report_SanPham.rdlc" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="SqlServerTypes\readme.htm" />

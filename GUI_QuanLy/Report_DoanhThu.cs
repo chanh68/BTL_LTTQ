@@ -27,7 +27,7 @@ namespace GUI_QuanLy
         {
 
             this.reportViewer_DoanhThu.RefreshReport();
-            
+
         }
         private void LoadRevenueReport()
         {

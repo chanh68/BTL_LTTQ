@@ -187,6 +187,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DB_dsHDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DB_dsHDB.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DB_LTTQDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DB_LTTQDataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Edit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -211,6 +221,12 @@
     </Compile>
     <Compile Include="GUI_ChiTietHDB.Designer.cs">
       <DependentUpon>GUI_ChiTietHDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_ChiTietHDN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_ChiTietHDN.Designer.cs">
+      <DependentUpon>GUI_ChiTietHDN.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI_HoaDonBan.cs">
       <SubType>Form</SubType>
@@ -321,6 +337,24 @@
     </Compile>
     <Compile Include="Report_DoanhThu.Designer.cs">
       <DependentUpon>Report_DoanhThu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report_HoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report_HoaDon.Designer.cs">
+      <DependentUpon>Report_HoaDon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report_NhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report_NhanVien.Designer.cs">
+      <DependentUpon>Report_NhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report_SanPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report_SanPham.Designer.cs">
+      <DependentUpon>Report_SanPham.cs</DependentUpon>
     </Compile>
     <Compile Include="Sale.cs">
       <SubType>Form</SubType>
@@ -436,10 +470,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Reports\Report_DoanhThu.rdlc" />
-    <EmbeddedResource Include="Report_DoanhThu.resx">
-      <DependentUpon>Report_DoanhThu.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Sale.resx">
       <DependentUpon>Sale.cs</DependentUpon>
     </EmbeddedResource>
@@ -496,6 +526,28 @@
     </None>
     <None Include="DataSet1.xss">
       <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DB_dsHDB.xsc">
+      <DependentUpon>DB_dsHDB.xsd</DependentUpon>
+    </None>
+    <None Include="DB_dsHDB.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DB_dsHDB.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DB_dsHDB.xss">
+      <DependentUpon>DB_dsHDB.xsd</DependentUpon>
+    </None>
+    <None Include="DB_LTTQDataSet2.xsc">
+      <DependentUpon>DB_LTTQDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="DB_LTTQDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DB_LTTQDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DB_LTTQDataSet2.xss">
+      <DependentUpon>DB_LTTQDataSet2.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\BUS_QuanLy.BUS_Report_DoanhThu1.datasource" />

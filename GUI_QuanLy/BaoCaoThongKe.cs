@@ -59,7 +59,7 @@ namespace GUI_QuanLy
             txtDoanhThu.Text = data.DoanhThu.ToString("N0") + " VNĐ";
             txtSanPham.Text = data.SoSanPham.ToString();
             //txtDonHang.Text = data.SoDonHang.ToString();
-           // txtNhanVien.Text = data.SoNhanVien.ToString();
+            // txtNhanVien.Text = data.SoNhanVien.ToString();
         }
 
         private void btnThongKe_Click(object sender, EventArgs e)
@@ -104,6 +104,30 @@ namespace GUI_QuanLy
         private void bunifuPanel2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnDoanhThu_Click(object sender, EventArgs e)
+        {
+            FormReport formReport = new FormReport();
+            formReport.ShowDialog();
+        }
+
+        private void btnSanPham_Click(object sender, EventArgs e)
+        {
+            ReportSanPham reportSanPham = new ReportSanPham();
+            reportSanPham.ShowDialog();
+        }
+
+        private void btnHoaDon_Click(object sender, EventArgs e)
+        {
+            Report_HoaDon report_HoaDon = new Report_HoaDon();
+            report_HoaDon.ShowDialog();
+        }
+
+        private void btnNhanVien_Click(object sender, EventArgs e)
+        {
+            Report_NhanVien report_NhanVien = new Report_NhanVien();
+            report_NhanVien.ShowDialog();
         }
     }
 }

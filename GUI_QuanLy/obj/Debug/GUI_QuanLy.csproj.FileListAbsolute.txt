@@ -711,7 +711,6 @@ F:\WebProgram\BTL_LTTQ\BTL_LTTQ\GUI_QuanLy\obj\Debug\GUI_QuanLy.NhanVien.resourc
 F:\WebProgram\BTL_LTTQ\BTL_LTTQ\GUI_QuanLy\obj\Debug\GUI_QuanLy.NhanVien_Sua.resources
 F:\WebProgram\BTL_LTTQ\BTL_LTTQ\GUI_QuanLy\obj\Debug\GUI_QuanLy.ProductView.resources
 F:\WebProgram\BTL_LTTQ\BTL_LTTQ\GUI_QuanLy\obj\Debug\GUI_QuanLy.Properties.Resources.resources
-F:\WebProgram\BTL_LTTQ\BTL_LTTQ\GUI_QuanLy\obj\Debug\GUI_QuanLy.Report_DoanhThu.resources
 F:\WebProgram\BTL_LTTQ\BTL_LTTQ\GUI_QuanLy\obj\Debug\GUI_QuanLy.Sale.resources
 F:\WebProgram\BTL_LTTQ\BTL_LTTQ\GUI_QuanLy\obj\Debug\GUI_QuanLy.SidebarControl.resources
 F:\WebProgram\BTL_LTTQ\BTL_LTTQ\GUI_QuanLy\obj\Debug\GUI_QuanLy.Signin.resources

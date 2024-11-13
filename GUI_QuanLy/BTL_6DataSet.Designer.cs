@@ -9472,7 +9472,7 @@ SELECT SoHDB, MaHang, SoLuong, GiamGia, DonGiaBan, ThanhTien FROM ChiTietHoaDonB
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::GUI_QuanLy.Properties.Settings.Default.BTL_6ConnectionString;
+            this._connection.ConnectionString = global::GUI_QuanLy.Properties.Settings.Default.DB_LTTQConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9880,7 +9880,7 @@ SELECT SoHDN, MaHang, SoLuong, DonGia, ThanhTien FROM ChiTietHoaDonNhap WHERE (M
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::GUI_QuanLy.Properties.Settings.Default.BTL_6ConnectionString;
+            this._connection.ConnectionString = global::GUI_QuanLy.Properties.Settings.Default.DB_LTTQConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10246,7 +10246,7 @@ SELECT SoHDN, MaHang, SoLuong, DonGia, ThanhTien FROM ChiTietHoaDonNhap WHERE (M
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::GUI_QuanLy.Properties.Settings.Default.BTL_6ConnectionString;
+            this._connection.ConnectionString = global::GUI_QuanLy.Properties.Settings.Default.DB_LTTQConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10593,7 +10593,7 @@ SELECT MaCV, TenCV, MucLuong FROM CongViec WHERE (MaCV = @MaCV)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::GUI_QuanLy.Properties.Settings.Default.BTL_6ConnectionString;
+            this._connection.ConnectionString = global::GUI_QuanLy.Properties.Settings.Default.DB_LTTQConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11067,7 +11067,7 @@ SELECT MaHang, TenHang, MaLoai, MaKichThuoc, MaCongDung, MaLoaiMen, MaHinhKhoi, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::GUI_QuanLy.Properties.Settings.Default.BTL_6ConnectionString;
+            this._connection.ConnectionString = global::GUI_QuanLy.Properties.Settings.Default.DB_LTTQConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11792,7 +11792,7 @@ SELECT MaHang, TenHang, MaLoai, MaKichThuoc, MaCongDung, MaLoaiMen, MaHinhKhoi, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::GUI_QuanLy.Properties.Settings.Default.BTL_6ConnectionString;
+            this._connection.ConnectionString = global::GUI_QuanLy.Properties.Settings.Default.DB_LTTQConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -12158,7 +12158,7 @@ SELECT SoHDB, MaNV, NgayBan, MaKhach, TongTien, GiamGia FROM HoaDonBan WHERE (So
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::GUI_QuanLy.Properties.Settings.Default.BTL_6ConnectionString;
+            this._connection.ConnectionString = global::GUI_QuanLy.Properties.Settings.Default.DB_LTTQConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -12584,7 +12584,7 @@ SELECT SoHDN, MaNV, NgayNhap, MaNCC, TongTien FROM HoaDonNhap WHERE (SoHDN = @So
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::GUI_QuanLy.Properties.Settings.Default.BTL_6ConnectionString;
+            this._connection.ConnectionString = global::GUI_QuanLy.Properties.Settings.Default.DB_LTTQConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -12964,7 +12964,7 @@ SELECT SoHDN, MaNV, NgayNhap, MaNCC, TongTien FROM HoaDonNhap WHERE (SoHDN = @So
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::GUI_QuanLy.Properties.Settings.Default.BTL_6ConnectionString;
+            this._connection.ConnectionString = global::GUI_QuanLy.Properties.Settings.Default.DB_LTTQConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -13315,7 +13315,7 @@ SELECT MaKhach, TenKhach, DiaChi, DienThoai FROM KhachHang WHERE (MaKhach = @MaK
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::GUI_QuanLy.Properties.Settings.Default.BTL_6ConnectionString;
+            this._connection.ConnectionString = global::GUI_QuanLy.Properties.Settings.Default.DB_LTTQConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -13703,7 +13703,7 @@ SELECT MaKichThuoc, TenKichThuoc FROM KichThuoc WHERE (MaKichThuoc = @MaKichThuo
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::GUI_QuanLy.Properties.Settings.Default.BTL_6ConnectionString;
+            this._connection.ConnectionString = global::GUI_QuanLy.Properties.Settings.Default.DB_LTTQConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -14043,7 +14043,7 @@ SELECT MaKichThuoc, TenKichThuoc FROM KichThuoc WHERE (MaKichThuoc = @MaKichThuo
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::GUI_QuanLy.Properties.Settings.Default.BTL_6ConnectionString;
+            this._connection.ConnectionString = global::GUI_QuanLy.Properties.Settings.Default.DB_LTTQConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -14384,7 +14384,7 @@ SELECT MaKichThuoc, TenKichThuoc FROM KichThuoc WHERE (MaKichThuoc = @MaKichThuo
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::GUI_QuanLy.Properties.Settings.Default.BTL_6ConnectionString;
+            this._connection.ConnectionString = global::GUI_QuanLy.Properties.Settings.Default.DB_LTTQConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -14724,7 +14724,7 @@ SELECT MaKichThuoc, TenKichThuoc FROM KichThuoc WHERE (MaKichThuoc = @MaKichThuo
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::GUI_QuanLy.Properties.Settings.Default.BTL_6ConnectionString;
+            this._connection.ConnectionString = global::GUI_QuanLy.Properties.Settings.Default.DB_LTTQConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -15075,7 +15075,7 @@ SELECT MaNCC, TenNCC, DiaChi, DienThoai FROM NhaCungCap WHERE (MaNCC = @MaNCC)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::GUI_QuanLy.Properties.Settings.Default.BTL_6ConnectionString;
+            this._connection.ConnectionString = global::GUI_QuanLy.Properties.Settings.Default.DB_LTTQConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -15513,7 +15513,7 @@ SELECT MaNV, TenNV, MaCV, CCCD, HinhAnh, GioiTinh, NgaySinh, DienThoai, DiaChi, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::GUI_QuanLy.Properties.Settings.Default.BTL_6ConnectionString;
+            this._connection.ConnectionString = global::GUI_QuanLy.Properties.Settings.Default.DB_LTTQConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -16056,7 +16056,7 @@ SELECT MaNV, TenNV, MaCV, CCCD, HinhAnh, GioiTinh, NgaySinh, DienThoai, DiaChi, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::GUI_QuanLy.Properties.Settings.Default.BTL_6ConnectionString;
+            this._connection.ConnectionString = global::GUI_QuanLy.Properties.Settings.Default.DB_LTTQConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -16415,7 +16415,7 @@ SELECT MaTK, MaNV, TenDangNhap, MatKhau, QuyenHan FROM TaiKhoan WHERE (MaTK = @M
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::GUI_QuanLy.Properties.Settings.Default.BTL_6ConnectionString;
+            this._connection.ConnectionString = global::GUI_QuanLy.Properties.Settings.Default.DB_LTTQConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
