@@ -205,19 +205,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>9kgpRVROu0OhqDCifk6jTj1RUVV/y7hBRYvPxroTqYk=</dsig:DigestValue>
+        <dsig:DigestValue>kpnjsElJI6YfwQIiGEl1flcSCBqfuV+9txYbFOjuEMU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DAL_QuanLy.dll" size="111616">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DAL_QuanLy.dll" size="109568">
       <assemblyIdentity name="DAL_QuanLy" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>+U1T8cL35ibVdKwH7cPDS4kFaYLPhVF/WOheGZxcoTw=</dsig:DigestValue>
+        <dsig:DigestValue>Omm7L4D+IMkIGfKOyIiox8/iJ1zzSNh/RW24BtsEwEs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -229,7 +229,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>5FSncTvEV+l+uEsAbXMqKKbAPvB8WTikrbM1O3P8VZo=</dsig:DigestValue>
+        <dsig:DigestValue>yM2VleB1x13XONfFtS7VTjsw+XsasFV8RTx6wql0MlE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -289,7 +289,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>DgrB1P+RUg9uz4gL2hd/bnmvdGUMQ7MWdA5dglFHJxY=</dsig:DigestValue>
+        <dsig:DigestValue>K03khxnXQIPgerecI6TuYxqmGkXTgTW5JV/AYJiItY4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -870,14 +870,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="stdole.dll" size="23208">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="stdole.dll" size="16384">
       <assemblyIdentity name="stdole" version="7.0.3300.0" publicKeyToken="B03F5F7F11D50A3A" language="neutral" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>dPA3HhGVwBs3Y6RyHP1ffqi96e1yrBlUEvdebnM438Q=</dsig:DigestValue>
+        <dsig:DigestValue>1s35YcbScS/hlYgV5Rowlg15//Hpd4i3dBYn26ly6Pc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

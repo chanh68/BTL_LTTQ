@@ -196,7 +196,7 @@ namespace DAL_QuanLy
         // Lấy toàn bộ danh sách khách hàng
         public DataTable getKhachHang()
         {
-            SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM KhachHang", _conn);
+            SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM KhachHang WHERE TrangThai = 1", _conn);
             DataTable dt = new DataTable();
             da.Fill(dt);
             return dt;
@@ -260,17 +260,17 @@ namespace DAL_QuanLy
             try
             {
                 _conn.Open();
-                string deleteInvoiceDetailsQuery = @"DELETE FROM ChiTietHoaDonBan WHERE SoHDB IN (SELECT SoHDB FROM HoaDonBan WHERE MaKhach = @MaKhach)";
-                SqlCommand deleteInvoiceDetailsCmd = new SqlCommand(deleteInvoiceDetailsQuery, _conn);
-                deleteInvoiceDetailsCmd.Parameters.AddWithValue("@MaKhach", maKhach);
-                deleteInvoiceDetailsCmd.ExecuteNonQuery();
+                //string deleteInvoiceDetailsQuery = @"DELETE FROM ChiTietHoaDonBan WHERE SoHDB IN (SELECT SoHDB FROM HoaDonBan WHERE MaKhach = @MaKhach)";
+                //SqlCommand deleteInvoiceDetailsCmd = new SqlCommand(deleteInvoiceDetailsQuery, _conn);
+                //deleteInvoiceDetailsCmd.Parameters.AddWithValue("@MaKhach", maKhach);
+                //deleteInvoiceDetailsCmd.ExecuteNonQuery();
 
-                // Xóa tất cả các hóa đơn bán liên quan đến khách hàng
-                string deleteInvoicesQuery = "DELETE FROM HoaDonBan WHERE MaKhach = @MaKhach";
-                SqlCommand deleteInvoicesCmd = new SqlCommand(deleteInvoicesQuery, _conn);
-                deleteInvoicesCmd.Parameters.AddWithValue("@MaKhach", maKhach);
-                deleteInvoicesCmd.ExecuteNonQuery();
-                string query = "DELETE FROM KhachHang WHERE MaKhach = @MaKhach";
+                //// Xóa tất cả các hóa đơn bán liên quan đến khách hàng
+                //string deleteInvoicesQuery = "DELETE FROM HoaDonBan WHERE MaKhach = @MaKhach";
+                //SqlCommand deleteInvoicesCmd = new SqlCommand(deleteInvoicesQuery, _conn);
+                //deleteInvoicesCmd.Parameters.AddWithValue("@MaKhach", maKhach);
+                //deleteInvoicesCmd.ExecuteNonQuery();DELETE FROM KhachHang WHERE MaKhach = @MaKhach
+                string query = "UPDATE KhachHang SET TrangThai = 0 WHERE MaKhach = @MaKhach";
                 SqlCommand cmd = new SqlCommand(query, _conn);
                 cmd.Parameters.AddWithValue("@MaKhach", maKhach);
 

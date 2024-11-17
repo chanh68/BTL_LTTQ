@@ -163,6 +163,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1080, 148);
             this.panel2.TabIndex = 3;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // button1
             // 
@@ -233,6 +234,7 @@
             this.dgvLuong.Size = new System.Drawing.Size(1080, 325);
             this.dgvLuong.TabIndex = 4;
             this.dgvLuong.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLuong_CellClick);
+            this.dgvLuong.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLuong_CellContentClick);
             // 
             // btL_6DataSet1
             // 

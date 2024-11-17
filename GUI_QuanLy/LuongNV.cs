@@ -352,14 +352,24 @@ namespace GUI_QuanLy
                 btnThem.Enabled = true;
 
                 // Đặt lại màu nền gốc nếu cần
-                btnXoa.BackColor = SystemColors.Control;
-                btnSua.BackColor = SystemColors.Control;
-                btnThem.BackColor = SystemColors.Control;
+                btnXoa.BackColor = Color.IndianRed;
+                btnSua.BackColor = Color.IndianRed;
+                btnThem.BackColor = Color.IndianRed;
             }
         }
         private void LuongNV_Load(object sender, EventArgs e)
         {
             KiemTraQuyen();
+        }
+
+        private void dgvLuong_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -11,7 +11,7 @@ namespace DAL_QuanLy
 {
     public class DAL_ReportHoaDon
     {
-        private string connectionString = "Data Source=DESKTOP-S8N7JNH\\SQLEXPRESS;Initial Catalog=BTL_TQ3;Integrated Security=True;TrustServerCertificate=True";
+        private string connectionString = "Data Source=LAPTOP-L4E28I51\\SQLEXPRESS;Initial Catalog=BTL_TQ3;Integrated Security=True;TrustServerCertificate=True";
 
         // Phương thức lấy dữ liệu gộp Hóa đơn bán và Hóa đơn nhập, bao gồm Tên đối tác
         public List<DTO_ReportHoaDon> GetHoaDonGopData(DateTime startDate, DateTime endDate)

@@ -117,7 +117,7 @@ namespace DAL_QuanLy
         }
         public DataTable getNhaCungCap()
         {
-            SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM NhaCungCap", _conn);
+            SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM NhaCungCap WHERE TrangThai = 1", _conn);
             DataTable dt = new DataTable();
             da.Fill(dt);
             return dt;
@@ -181,16 +181,16 @@ namespace DAL_QuanLy
             try
             {
                 _conn.Open();
-                string deleteInvoiceDetailsQuery = @"DELETE FROM ChiTietHoaDonNhap WHERE SoHDN IN (SELECT SoHDN FROM HoaDonNhap WHERE MaNCC = @MaNCC)";
-                SqlCommand deleteInvoiceDetailsCmd = new SqlCommand(deleteInvoiceDetailsQuery, _conn);
-                deleteInvoiceDetailsCmd.Parameters.AddWithValue("@MaNCC", maNCC);
-                deleteInvoiceDetailsCmd.ExecuteNonQuery();
+                //string deleteInvoiceDetailsQuery = @"DELETE FROM ChiTietHoaDonNhap WHERE SoHDN IN (SELECT SoHDN FROM HoaDonNhap WHERE MaNCC = @MaNCC)";
+                //SqlCommand deleteInvoiceDetailsCmd = new SqlCommand(deleteInvoiceDetailsQuery, _conn);
+                //deleteInvoiceDetailsCmd.Parameters.AddWithValue("@MaNCC", maNCC);
+                //deleteInvoiceDetailsCmd.ExecuteNonQuery();
 
-                string deleteInvoicesQuery = "DELETE FROM HoaDonNhap WHERE MaNCC = @MaNCC";
-                SqlCommand deleteInvoicesCmd = new SqlCommand(deleteInvoicesQuery, _conn);
-                deleteInvoicesCmd.Parameters.AddWithValue("@MaNCC", maNCC);
-                deleteInvoicesCmd.ExecuteNonQuery();
-                string query = "DELETE FROM NhaCungCap WHERE MaNCC = @MaNCC";
+                //string deleteInvoicesQuery = "DELETE FROM HoaDonNhap WHERE MaNCC = @MaNCC";
+                //SqlCommand deleteInvoicesCmd = new SqlCommand(deleteInvoicesQuery, _conn);
+                //deleteInvoicesCmd.Parameters.AddWithValue("@MaNCC", maNCC);
+                //deleteInvoicesCmd.ExecuteNonQuery();
+                string query = "UPDATE NhaCungCap SET TrangThai = 0 WHERE MaNCC = @MaNCC";
                 SqlCommand cmd = new SqlCommand(query, _conn);
                 cmd.Parameters.AddWithValue("@MaNCC", maNCC);
 

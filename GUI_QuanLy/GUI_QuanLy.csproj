@@ -455,6 +455,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI_HoaDonBan.resx">
+      <DependentUpon>GUI_HoaDonBan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI_TatCaSanPham.resx">
       <DependentUpon>GUI_TatCaSanPham.cs</DependentUpon>
     </EmbeddedResource>
@@ -472,6 +475,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Information.resx">
       <DependentUpon>Information.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KhachHang.resx">
+      <DependentUpon>KhachHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Lookup.resx">
       <DependentUpon>Lookup.cs</DependentUpon>

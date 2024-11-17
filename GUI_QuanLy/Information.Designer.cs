@@ -156,7 +156,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(30)))), ((int)(((byte)(53)))));
-            this.ClientSize = new System.Drawing.Size(1171, 853);
+            this.ClientSize = new System.Drawing.Size(1175, 830);
             this.Controls.Add(this.lblDiaChi);
             this.Controls.Add(this.lblSdt);
             this.Controls.Add(this.lblNgaySinh);

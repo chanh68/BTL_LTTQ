@@ -237,7 +237,7 @@ namespace DAL_QuanLy
         // Lấy thông tin hàng hóa theo tên
         public DTO_HangHoa GetHangHoaByTenHang(string tenHang)
         {
-            string query = "SELECT * FROM HangHoa WHERE TenHang = @TenHang";
+            string query = "SELECT * FROM HangHoa WHERE TenHang = @TenHang and TrangThai = 1";
             DTO_HangHoa hangHoa = null;
 
             using (SqlCommand command = new SqlCommand(query, _conn))
@@ -313,7 +313,7 @@ namespace DAL_QuanLy
         // Phương thức lấy tất cả hàng hóa
         public string GetMaHangByTenHang(string tenHang)
         {
-            string query = "SELECT MaHang FROM HangHoa WHERE TenHang = @TenHang";
+            string query = "SELECT MaHang FROM HangHoa WHERE TenHang = @TenHang where TrangThai = 1";
             string maHang = null;
 
             using (SqlCommand command = new SqlCommand(query, _conn))
@@ -425,7 +425,7 @@ namespace DAL_QuanLy
         }
         public DataTable GetHangHoa(string searchColumn = "", string searchText = "")
         {
-            string query = "SELECT * FROM HangHoa";
+            string query = "SELECT * FROM HangHoa where TrangThai = 1";
             DataTable result = new DataTable();
 
             if (!string.IsNullOrEmpty(searchColumn) && !string.IsNullOrEmpty(searchText))

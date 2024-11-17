@@ -65,7 +65,7 @@ namespace DAL_QuanLy
         }
         public DataTable getNhanVien()
         {
-            SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM NhanVien", _conn);
+            SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM NhanVien where TrangThai = 1", _conn);
             DataTable dt = new DataTable();
             da.Fill(dt);
             return dt;
@@ -157,67 +157,66 @@ namespace DAL_QuanLy
             try
             {
                 _conn.Open();
+                //string query1 = "DELETE FROM TaiKhoan WHERE MaNV = @MaNV";
+                //SqlCommand cmd1 = new SqlCommand(query1, _conn);
+                //cmd1.Parameters.AddWithValue("@MaNV", maNV);
+                //cmd1.ExecuteNonQuery();
 
-                string query1 = "DELETE FROM TaiKhoan WHERE MaNV = @MaNV";
-                SqlCommand cmd1 = new SqlCommand(query1, _conn);
-                cmd1.Parameters.AddWithValue("@MaNV", maNV);
-                cmd1.ExecuteNonQuery();
+                //string selectHoaDonBanQuery = "SELECT SoHDB FROM HoaDonBan WHERE MaNV = @MaNV";
+                //SqlCommand selectHoaDonBanCmd = new SqlCommand(selectHoaDonBanQuery, _conn);
+                //selectHoaDonBanCmd.Parameters.AddWithValue("@MaNV", maNV);
 
-                string selectHoaDonBanQuery = "SELECT SoHDB FROM HoaDonBan WHERE MaNV = @MaNV";
-                SqlCommand selectHoaDonBanCmd = new SqlCommand(selectHoaDonBanQuery, _conn);
-                selectHoaDonBanCmd.Parameters.AddWithValue("@MaNV", maNV);
+                //List<string> soHDBs = new List<string>();
+                //using (SqlDataReader reader = selectHoaDonBanCmd.ExecuteReader())
+                //{
+                //    while (reader.Read())
+                //    {
+                //        soHDBs.Add(reader["SoHDB"].ToString());
+                //    }
+                //}
 
-                List<string> soHDBs = new List<string>();
-                using (SqlDataReader reader = selectHoaDonBanCmd.ExecuteReader())
-                {
-                    while (reader.Read())
-                    {
-                        soHDBs.Add(reader["SoHDB"].ToString());
-                    }
-                }
+                //// Bước 3: Xóa các chi tiết hóa đơn bán liên quan đến SoHDB
+                //foreach (string soHDB in soHDBs)
+                //{
+                //    string deleteChiTietHoaDonBanQuery = "DELETE FROM ChiTietHoaDonBan WHERE SoHDB = @SoHDB";
+                //    SqlCommand deleteChiTietHoaDonBanCmd = new SqlCommand(deleteChiTietHoaDonBanQuery, _conn);
+                //    deleteChiTietHoaDonBanCmd.Parameters.AddWithValue("@SoHDB", soHDB);
+                //    deleteChiTietHoaDonBanCmd.ExecuteNonQuery();
+                //}
 
-                // Bước 3: Xóa các chi tiết hóa đơn bán liên quan đến SoHDB
-                foreach (string soHDB in soHDBs)
-                {
-                    string deleteChiTietHoaDonBanQuery = "DELETE FROM ChiTietHoaDonBan WHERE SoHDB = @SoHDB";
-                    SqlCommand deleteChiTietHoaDonBanCmd = new SqlCommand(deleteChiTietHoaDonBanQuery, _conn);
-                    deleteChiTietHoaDonBanCmd.Parameters.AddWithValue("@SoHDB", soHDB);
-                    deleteChiTietHoaDonBanCmd.ExecuteNonQuery();
-                }
+                //string deleteHoaDonBanQuery = "DELETE FROM HoaDonBan WHERE MaNV = @MaNV";
+                //SqlCommand deleteHoaDonBanCmd = new SqlCommand(deleteHoaDonBanQuery, _conn);
+                //deleteHoaDonBanCmd.Parameters.AddWithValue("@MaNV", maNV);
+                //deleteHoaDonBanCmd.ExecuteNonQuery();
 
-                string deleteHoaDonBanQuery = "DELETE FROM HoaDonBan WHERE MaNV = @MaNV";
-                SqlCommand deleteHoaDonBanCmd = new SqlCommand(deleteHoaDonBanQuery, _conn);
-                deleteHoaDonBanCmd.Parameters.AddWithValue("@MaNV", maNV);
-                deleteHoaDonBanCmd.ExecuteNonQuery();
-
-                string selectHoaDonQuery = "SELECT SoHDN FROM HoaDonNhap WHERE MaNV = @MaNV";
-                SqlCommand selectHoaDonCmd = new SqlCommand(selectHoaDonQuery, _conn);
-                selectHoaDonCmd.Parameters.AddWithValue("@MaNV", maNV);
+                //string selectHoaDonQuery = "SELECT SoHDN FROM HoaDonNhap WHERE MaNV = @MaNV";
+                //SqlCommand selectHoaDonCmd = new SqlCommand(selectHoaDonQuery, _conn);
+                //selectHoaDonCmd.Parameters.AddWithValue("@MaNV", maNV);
 
 
-                List<string> soHDNs = new List<string>();
-                using (SqlDataReader reader = selectHoaDonCmd.ExecuteReader())
-                {
-                    while (reader.Read())
-                    {
-                        soHDNs.Add(reader["SoHDN"].ToString());
-                    }
-                }
+                //List<string> soHDNs = new List<string>();
+                //using (SqlDataReader reader = selectHoaDonCmd.ExecuteReader())
+                //{
+                //    while (reader.Read())
+                //    {
+                //        soHDNs.Add(reader["SoHDN"].ToString());
+                //    }
+                //}
 
-                foreach (string soHDN in soHDNs)
-                {
-                    string deleteChiTietQuery = "DELETE FROM ChiTietHoaDonNhap WHERE SoHDN = @SoHDN";
-                    SqlCommand deleteChiTietCmd = new SqlCommand(deleteChiTietQuery, _conn);
-                    deleteChiTietCmd.Parameters.AddWithValue("@SoHDN", soHDN);
-                    deleteChiTietCmd.ExecuteNonQuery();
-                }
+                //foreach (string soHDN in soHDNs)
+                //{
+                //    string deleteChiTietQuery = "DELETE FROM ChiTietHoaDonNhap WHERE SoHDN = @SoHDN";
+                //    SqlCommand deleteChiTietCmd = new SqlCommand(deleteChiTietQuery, _conn);
+                //    deleteChiTietCmd.Parameters.AddWithValue("@SoHDN", soHDN);
+                //    deleteChiTietCmd.ExecuteNonQuery();
+                //}
 
-                string query2 = "DELETE FROM HoaDonNhap WHERE MaNV = @MaNV";
-                SqlCommand cmd2 = new SqlCommand(query2, _conn);
-                cmd2.Parameters.AddWithValue("@MaNV", maNV);
-                cmd2.ExecuteNonQuery();
+                //string query2 = "DELETE FROM HoaDonNhap WHERE MaNV = @MaNV";
+                //SqlCommand cmd2 = new SqlCommand(query2, _conn);
+                //cmd2.Parameters.AddWithValue("@MaNV", maNV);
+                //cmd2.ExecuteNonQuery();
 
-                string query = "DELETE FROM NhanVien WHERE MaNV = @MaNV";
+                string query = "UPDATE NhanVien SET TrangThai = 0 WHERE MaNV = @MaNV";
                 SqlCommand cmd = new SqlCommand(query, _conn);
                 cmd.Parameters.AddWithValue("@MaNV", maNV);
 

@@ -61,9 +61,9 @@
             this.btnTitle = new Guna.UI2.WinForms.Guna2Button();
             this.txtMaHang = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.picpoc = new Guna.UI2.WinForms.Guna2PictureBox();
             this.Success = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.picpoc = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picpoc)).BeginInit();
             this.SuspendLayout();
@@ -105,7 +105,7 @@
             this.guna2Panel4.Controls.Add(this.picpoc);
             this.guna2Panel4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(188)))), ((int)(((byte)(255)))));
             this.guna2Panel4.Location = new System.Drawing.Point(112, 81);
-            this.guna2Panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2Panel4.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Panel4.Name = "guna2Panel4";
             this.guna2Panel4.Size = new System.Drawing.Size(953, 709);
             this.guna2Panel4.TabIndex = 6;
@@ -121,7 +121,7 @@
             this.btnThem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnThem.ForeColor = System.Drawing.Color.White;
             this.btnThem.Location = new System.Drawing.Point(659, 566);
-            this.btnThem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnThem.Margin = new System.Windows.Forms.Padding(2);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(120, 30);
             this.btnThem.TabIndex = 36;
@@ -172,7 +172,7 @@
             this.btnChonAnh.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnChonAnh.ForeColor = System.Drawing.Color.White;
             this.btnChonAnh.Location = new System.Drawing.Point(63, 363);
-            this.btnChonAnh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnChonAnh.Margin = new System.Windows.Forms.Padding(2);
             this.btnChonAnh.Name = "btnChonAnh";
             this.btnChonAnh.Size = new System.Drawing.Size(143, 51);
             this.btnChonAnh.TabIndex = 33;
@@ -190,7 +190,7 @@
             this.btnLuu.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnLuu.ForeColor = System.Drawing.Color.White;
             this.btnLuu.Location = new System.Drawing.Point(798, 566);
-            this.btnLuu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLuu.Margin = new System.Windows.Forms.Padding(2);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(120, 30);
             this.btnLuu.TabIndex = 32;
@@ -631,7 +631,7 @@
             this.btnTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTitle.ForeColor = System.Drawing.Color.White;
             this.btnTitle.Location = new System.Drawing.Point(0, 0);
-            this.btnTitle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnTitle.Margin = new System.Windows.Forms.Padding(2);
             this.btnTitle.Name = "btnTitle";
             this.btnTitle.Size = new System.Drawing.Size(953, 30);
             this.btnTitle.TabIndex = 5;
@@ -673,17 +673,6 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Mã hàng";
             // 
-            // picpoc
-            // 
-            this.picpoc.ImageRotate = 0F;
-            this.picpoc.Location = new System.Drawing.Point(13, 35);
-            this.picpoc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.picpoc.Name = "picpoc";
-            this.picpoc.Size = new System.Drawing.Size(238, 281);
-            this.picpoc.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picpoc.TabIndex = 0;
-            this.picpoc.TabStop = false;
-            // 
             // Success
             // 
             this.Success.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
@@ -697,6 +686,17 @@
             // 
             this.openFileDialog.FileName = "openFileDialog1";
             // 
+            // picpoc
+            // 
+            this.picpoc.ImageRotate = 0F;
+            this.picpoc.Location = new System.Drawing.Point(13, 35);
+            this.picpoc.Margin = new System.Windows.Forms.Padding(2);
+            this.picpoc.Name = "picpoc";
+            this.picpoc.Size = new System.Drawing.Size(238, 281);
+            this.picpoc.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picpoc.TabIndex = 0;
+            this.picpoc.TabStop = false;
+            // 
             // Edit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -705,7 +705,7 @@
             this.ClientSize = new System.Drawing.Size(1171, 853);
             this.Controls.Add(this.guna2Panel4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Edit";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Edit";
