@@ -59,7 +59,7 @@ namespace GUI_QuanLy
             dgvTK.Columns["MaNCC"].Width = 120;
             dgvTK.Columns["TenNCC"].Width = 170;
             dgvTK.Columns["DiaChi"].Width = 170;
-            dgvTK.Columns["DienThoai"].Width = 500;
+            dgvTK.Columns["DienThoai"].Width = 550;
             dgvTK.RowTemplate.Height = 35;
         }
 
@@ -157,10 +157,6 @@ namespace GUI_QuanLy
 
 		}
 
-		private void dgvTK_CellContentClick(object sender, DataGridViewCellEventArgs e)
-		{
-
-		}
 
 		private void TKNhaCC_Load(object sender, EventArgs e)
 		{

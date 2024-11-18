@@ -66,7 +66,7 @@
 			this.dgvTK.RowTemplate.Height = 24;
 			this.dgvTK.Size = new System.Drawing.Size(1022, 391);
 			this.dgvTK.TabIndex = 1;
-			this.dgvTK.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTK_CellContentClick);
+//			this.dgvTK.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTK_CellContentClick);
 			// 
 			// label1
 			// 
