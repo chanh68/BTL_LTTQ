@@ -1,1 +1,11 @@
-.vs/
+# Ignore temporary and cache files
+*.cache
+*.pdb
+*.obj
+*.log
+*.tmp
+*.user
+*.suo
+*.vs/
+bin/
+obj/
