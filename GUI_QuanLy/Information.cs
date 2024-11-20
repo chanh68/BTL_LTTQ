@@ -56,5 +56,44 @@ namespace GUI_QuanLy
             }
         }
 
+        private void Information_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblMa_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblCV_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblHoten_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblCa_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblNgaySinh_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblSdt_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblDiaChi_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

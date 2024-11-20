@@ -55,19 +55,19 @@ namespace GUI_QuanLy
         private void btnThongTinSanPham_Click(object sender, EventArgs e)
         {
             openChildFormInPanel(new InfoProduct());
-            hideSubMenu();
+            //hideSubMenu();
         }
 
         private void btnTraCuuTinhTrang_Click(object sender, EventArgs e)
         {
             openChildFormInPanel(new GUI_TatCaSanPham());
-            hideSubMenu();
+            //hideSubMenu();
         }
 
         private void btnDanhMuc_Click(object sender, EventArgs e)
         {
             openChildFormInPanel(new Category());
-            hideSubMenu();
+            //hideSubMenu();
         }
 
         private void btnHoaDon_Click(object sender, EventArgs e)
@@ -98,19 +98,19 @@ namespace GUI_QuanLy
         private void btnDanhSach_Click(object sender, EventArgs e)
         {
             openChildFormInPanel(new TKNhanVien());
-            hideSubMenu();
+            //hideSubMenu();
         }
 
         private void btnLuong_Click(object sender, EventArgs e)
         {
             openChildFormInPanel(new LuongNV());
-            hideSubMenu();
+            //hideSubMenu();
         }
 
         private void btnTaiKhoan_Click(object sender, EventArgs e)
         {
             openChildFormInPanel(new TaiKhoan());
-            hideSubMenu();
+            //hideSubMenu();
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -167,22 +167,47 @@ namespace GUI_QuanLy
         private void btnNhaCungCap_Click(object sender, EventArgs e)
         {
             openChildFormInPanel(new TKNhaCC());
+            hideSubMenu();
         }
 
         private void btnBaoCaoThongKe_Click(object sender, EventArgs e)
         {
             openChildFormInPanel(new BaoCaoThongKe());
+            hideSubMenu();
         }
 
         private void btnKhachHang_Click(object sender, EventArgs e)
         {
             openChildFormInPanel(new TkKhach());
+            hideSubMenu();
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            // Hiển thị hộp thoại xác nhận
+            DialogResult result = MessageBox.Show(
+                "Bạn có chắc chắn muốn đăng xuất không?",
+                "Xác nhận đăng xuất",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+
+            // Kiểm tra lựa chọn của người dùng
+            if (result == DialogResult.Yes)
+            {
+                // Ẩn form hiện tại
+                this.Hide();
+
+                // Hiển thị lại form đăng nhập
+                Signin frmSignIn = new Signin();
+                frmSignIn.Show();
+            }
+            // Nếu người dùng chọn No, không thực hiện gì
         }
 
+        private void btnDong_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

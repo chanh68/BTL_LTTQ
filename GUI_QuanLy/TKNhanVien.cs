@@ -54,7 +54,7 @@ namespace GUI_QuanLy
                     ReadOnly = true
                 };
                 dgvTK.Columns.Insert(0, sttColumn); // Thêm vào vị trí đầu tiên
-                sttColumn.Width = 50;
+                sttColumn.Width = 25;
             }
 
             UpdateSoThuTu();
@@ -65,14 +65,19 @@ namespace GUI_QuanLy
             dgvTK.Columns["TenNV"].Width = 130;
             dgvTK.Columns["MaCV"].Width = 60;
             dgvTK.Columns["GioiTinh"].Width = 100;
+            dgvTK.Columns["GioiTinh"].Visible = false;
             dgvTK.Columns["NgaySinh"].Width = 100;
+            dgvTK.Columns["NgaySinh"].Visible = false ;
             dgvTK.Columns["DienThoai"].Width = 100;
             dgvTK.Columns["DiaChi"].Width = 150;
             dgvTK.Columns["SoNgayPhep"].Width = 80;
+            dgvTK.Columns["SoNgayPhep"].Visible=false;
             dgvTK.Columns["SoNgayNghi"].Width = 80;
+            dgvTK.Columns["SoNgayNghi"].Visible = false;
             dgvTK.Columns["NgayTuyen"].Width = 100;
+            dgvTK.Columns["NgayTuyen"].Visible=false ;
             dgvTK.Columns["CCCD"].Width = 120;
-            dgvTK.RowTemplate.Height = 80;
+            dgvTK.RowTemplate.Height = 135;
 
             if (dgvTK.Columns["HinhAnh"] is DataGridViewImageColumn imgCol)
             {

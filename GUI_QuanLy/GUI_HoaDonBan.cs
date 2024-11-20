@@ -55,14 +55,14 @@ namespace GUI_QuanLy
             // Chi tiết
             if (e.ColumnIndex == dgvDSHDB.Columns["ChiTiet"].Index)
             {
-                string soHDB = (string)dgvDSHDB.Rows[e.RowIndex].Cells["SoHDB"].Value;
+                string soHDB = (string)dgvDSHDB.Rows[e.RowIndex].Cells["soHDBDataGridViewTextBoxColumn"].Value;
                 GUI_ChiTietHDB chiTietForm = new GUI_ChiTietHDB(soHDB);
                 chiTietForm.ShowDialog();
             }
             // Xóa
             else if (e.ColumnIndex == dgvDSHDB.Columns["Xoa"].Index)
             {
-                string soHDB = (string)dgvDSHDB.Rows[e.RowIndex].Cells["SoHDB"].Value;
+                string soHDB = (string)dgvDSHDB.Rows[e.RowIndex].Cells["soHDBDataGridViewTextBoxColumn"].Value;
 
                 // Hỏi người dùng xác nhận xóa
                 if (MessageBox.Show($"Bạn có chắc chắn muốn xóa hóa đơn số {soHDB}?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)

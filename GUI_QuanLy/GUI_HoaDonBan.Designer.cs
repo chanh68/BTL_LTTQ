@@ -41,24 +41,35 @@
             this.lblTimKiem = new System.Windows.Forms.Label();
             this.panelTimKiem = new System.Windows.Forms.Panel();
             this.dgvDSHDB = new System.Windows.Forms.DataGridView();
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelSLHoaDon = new System.Windows.Forms.Panel();
             this.txtSLHDB = new System.Windows.Forms.TextBox();
             this.lblLHDB = new System.Windows.Forms.Label();
             this.btnXuatFileExcel = new System.Windows.Forms.Button();
             this.btnThemHoaDon = new System.Windows.Forms.Button();
             this.lblTieuDe = new System.Windows.Forms.Label();
+            this.hoaDon = new GUI_QuanLy.HoaDon();
+            this.hoaDonBanBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.hoaDonBanTableAdapter = new GUI_QuanLy.HoaDonTableAdapters.HoaDonBanTableAdapter();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.ChiTiet = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Xoa = new System.Windows.Forms.DataGridViewImageColumn();
             this.hoaDonBanBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dBdsHDBBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dBLTTQDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.soHDBDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maNVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ngayBanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maKhachDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tongTienDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.giamGiaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ChiTiet = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Xoa = new System.Windows.Forms.DataGridViewImageColumn();
             this.panelTimKiem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSHDB)).BeginInit();
             this.panelSLHoaDon.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.hoaDon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hoaDonBanBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hoaDonBanBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dBdsHDBBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dBLTTQDataSetBindingSource)).BeginInit();
@@ -95,7 +106,7 @@
             // 
             // btnTimKiem
             // 
-            this.btnTimKiem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(96)))), ((int)(((byte)(64)))));
+            this.btnTimKiem.BackColor = System.Drawing.Color.Black;
             this.btnTimKiem.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTimKiem.ForeColor = System.Drawing.Color.White;
             this.btnTimKiem.Location = new System.Drawing.Point(127, 151);
@@ -140,7 +151,7 @@
             // 
             // panelTimKiem
             // 
-            this.panelTimKiem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(229)))), ((int)(((byte)(191)))));
+            this.panelTimKiem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panelTimKiem.Controls.Add(this.txtNam);
             this.panelTimKiem.Controls.Add(this.txtThang);
             this.panelTimKiem.Controls.Add(this.lblDenNgay);
@@ -164,7 +175,8 @@
             this.dgvDSHDB.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDSHDB.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
             this.dgvDSHDB.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.dgvDSHDB.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
@@ -176,9 +188,15 @@
             this.dgvDSHDB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvDSHDB.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.STT,
+            this.soHDBDataGridViewTextBoxColumn,
+            this.maNVDataGridViewTextBoxColumn,
+            this.ngayBanDataGridViewTextBoxColumn,
+            this.maKhachDataGridViewTextBoxColumn,
+            this.tongTienDataGridViewTextBoxColumn,
+            this.giamGiaDataGridViewTextBoxColumn,
             this.ChiTiet,
             this.Xoa});
-            this.dgvDSHDB.DataSource = this.hoaDonBanBindingSource;
+            this.dgvDSHDB.DataSource = this.hoaDonBanBindingSource1;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -190,7 +208,7 @@
             this.dgvDSHDB.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvDSHDB.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvDSHDB.GridColor = System.Drawing.Color.Black;
-            this.dgvDSHDB.Location = new System.Drawing.Point(0, 343);
+            this.dgvDSHDB.Location = new System.Drawing.Point(0, 307);
             this.dgvDSHDB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvDSHDB.Name = "dgvDSHDB";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -202,26 +220,19 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvDSHDB.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvDSHDB.RowHeadersWidth = 51;
+            this.dgvDSHDB.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvDSHDB.RowTemplate.Height = 24;
             this.dgvDSHDB.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDSHDB.Size = new System.Drawing.Size(1175, 487);
+            this.dgvDSHDB.Size = new System.Drawing.Size(1175, 523);
             this.dgvDSHDB.TabIndex = 14;
             this.dgvDSHDB.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSHDB_CellContentClick);
-            // 
-            // STT
-            // 
-            this.STT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.STT.HeaderText = "STT";
-            this.STT.Name = "STT";
-            this.STT.ReadOnly = true;
-            this.STT.Width = 200;
             // 
             // panelSLHoaDon
             // 
             this.panelSLHoaDon.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelSLHoaDon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(229)))), ((int)(((byte)(191)))));
+            this.panelSLHoaDon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panelSLHoaDon.Controls.Add(this.txtSLHDB);
             this.panelSLHoaDon.Controls.Add(this.lblLHDB);
             this.panelSLHoaDon.Location = new System.Drawing.Point(740, 9);
@@ -232,10 +243,10 @@
             // 
             // txtSLHDB
             // 
-            this.txtSLHDB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(229)))), ((int)(((byte)(191)))));
+            this.txtSLHDB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtSLHDB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSLHDB.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSLHDB.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtSLHDB.ForeColor = System.Drawing.Color.Black;
             this.txtSLHDB.Location = new System.Drawing.Point(71, 61);
             this.txtSLHDB.Margin = new System.Windows.Forms.Padding(4);
             this.txtSLHDB.Name = "txtSLHDB";
@@ -256,9 +267,9 @@
             // 
             // btnXuatFileExcel
             // 
-            this.btnXuatFileExcel.BackColor = System.Drawing.Color.White;
+            this.btnXuatFileExcel.BackColor = System.Drawing.Color.Black;
             this.btnXuatFileExcel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXuatFileExcel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(30)))), ((int)(((byte)(53)))));
+            this.btnXuatFileExcel.ForeColor = System.Drawing.Color.White;
             this.btnXuatFileExcel.Location = new System.Drawing.Point(931, 177);
             this.btnXuatFileExcel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnXuatFileExcel.Name = "btnXuatFileExcel";
@@ -270,9 +281,9 @@
             // 
             // btnThemHoaDon
             // 
-            this.btnThemHoaDon.BackColor = System.Drawing.Color.White;
+            this.btnThemHoaDon.BackColor = System.Drawing.Color.Black;
             this.btnThemHoaDon.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThemHoaDon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(30)))), ((int)(((byte)(53)))));
+            this.btnThemHoaDon.ForeColor = System.Drawing.Color.White;
             this.btnThemHoaDon.Location = new System.Drawing.Point(740, 177);
             this.btnThemHoaDon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnThemHoaDon.Name = "btnThemHoaDon";
@@ -288,15 +299,29 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTieuDe.AutoSize = true;
-            this.lblTieuDe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(113)))), ((int)(((byte)(128)))));
+            this.lblTieuDe.BackColor = System.Drawing.Color.White;
             this.lblTieuDe.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTieuDe.ForeColor = System.Drawing.Color.White;
+            this.lblTieuDe.ForeColor = System.Drawing.Color.Black;
             this.lblTieuDe.Location = new System.Drawing.Point(386, 249);
             this.lblTieuDe.Name = "lblTieuDe";
             this.lblTieuDe.Size = new System.Drawing.Size(454, 45);
             this.lblTieuDe.TabIndex = 18;
             this.lblTieuDe.Text = "DANH SÁCH HÓA ĐƠN BÁN";
             this.lblTieuDe.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // hoaDon
+            // 
+            this.hoaDon.DataSetName = "HoaDon";
+            this.hoaDon.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // hoaDonBanBindingSource1
+            // 
+            this.hoaDonBanBindingSource1.DataMember = "HoaDonBan";
+            this.hoaDonBanBindingSource1.DataSource = this.hoaDon;
+            // 
+            // hoaDonBanTableAdapter
+            // 
+            this.hoaDonBanTableAdapter.ClearBeforeFill = true;
             // 
             // dataGridViewImageColumn1
             // 
@@ -319,6 +344,78 @@
             this.dataGridViewImageColumn2.ReadOnly = true;
             this.dataGridViewImageColumn2.Width = 5;
             // 
+            // hoaDonBanBindingSource
+            // 
+            this.hoaDonBanBindingSource.DataMember = "HoaDonBan";
+            // 
+            // dataGridViewImageColumn3
+            // 
+            this.dataGridViewImageColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewImageColumn3.FillWeight = 3.214872F;
+            this.dataGridViewImageColumn3.HeaderText = "Xóa";
+            this.dataGridViewImageColumn3.Image = global::GUI_QuanLy.Properties.Resources.Delete1;
+            this.dataGridViewImageColumn3.Name = "dataGridViewImageColumn3";
+            this.dataGridViewImageColumn3.ReadOnly = true;
+            this.dataGridViewImageColumn3.Width = 5;
+            // 
+            // STT
+            // 
+            this.STT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.STT.HeaderText = "STT";
+            this.STT.Name = "STT";
+            this.STT.ReadOnly = true;
+            this.STT.Width = 50;
+            // 
+            // soHDBDataGridViewTextBoxColumn
+            // 
+            this.soHDBDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.soHDBDataGridViewTextBoxColumn.DataPropertyName = "SoHDB";
+            this.soHDBDataGridViewTextBoxColumn.HeaderText = "Số HĐB";
+            this.soHDBDataGridViewTextBoxColumn.Name = "soHDBDataGridViewTextBoxColumn";
+            this.soHDBDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // maNVDataGridViewTextBoxColumn
+            // 
+            this.maNVDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.maNVDataGridViewTextBoxColumn.DataPropertyName = "MaNV";
+            this.maNVDataGridViewTextBoxColumn.HeaderText = "Mã Nhân Viên";
+            this.maNVDataGridViewTextBoxColumn.Name = "maNVDataGridViewTextBoxColumn";
+            this.maNVDataGridViewTextBoxColumn.Visible = false;
+            this.maNVDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // ngayBanDataGridViewTextBoxColumn
+            // 
+            this.ngayBanDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.ngayBanDataGridViewTextBoxColumn.DataPropertyName = "NgayBan";
+            this.ngayBanDataGridViewTextBoxColumn.HeaderText = "Ngày Bán";
+            this.ngayBanDataGridViewTextBoxColumn.Name = "ngayBanDataGridViewTextBoxColumn";
+            this.ngayBanDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // maKhachDataGridViewTextBoxColumn
+            // 
+            this.maKhachDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.maKhachDataGridViewTextBoxColumn.DataPropertyName = "MaKhach";
+            this.maKhachDataGridViewTextBoxColumn.HeaderText = "Mã Khách Hàng";
+            this.maKhachDataGridViewTextBoxColumn.Name = "maKhachDataGridViewTextBoxColumn";
+            this.maKhachDataGridViewTextBoxColumn.Visible = false;
+            this.maKhachDataGridViewTextBoxColumn.Width = 120;
+            // 
+            // tongTienDataGridViewTextBoxColumn
+            // 
+            this.tongTienDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.tongTienDataGridViewTextBoxColumn.DataPropertyName = "TongTien";
+            this.tongTienDataGridViewTextBoxColumn.HeaderText = "Tổng Tiền";
+            this.tongTienDataGridViewTextBoxColumn.Name = "tongTienDataGridViewTextBoxColumn";
+            this.tongTienDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // giamGiaDataGridViewTextBoxColumn
+            // 
+            this.giamGiaDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.giamGiaDataGridViewTextBoxColumn.DataPropertyName = "GiamGia";
+            this.giamGiaDataGridViewTextBoxColumn.HeaderText = "Giảm Giá";
+            this.giamGiaDataGridViewTextBoxColumn.Name = "giamGiaDataGridViewTextBoxColumn";
+            this.giamGiaDataGridViewTextBoxColumn.Width = 200;
+            // 
             // ChiTiet
             // 
             this.ChiTiet.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
@@ -338,25 +435,11 @@
             this.Xoa.Name = "Xoa";
             this.Xoa.Width = 90;
             // 
-            // hoaDonBanBindingSource
-            // 
-            this.hoaDonBanBindingSource.DataMember = "HoaDonBan";
-            // 
-            // dataGridViewImageColumn3
-            // 
-            this.dataGridViewImageColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dataGridViewImageColumn3.FillWeight = 3.214872F;
-            this.dataGridViewImageColumn3.HeaderText = "Xóa";
-            this.dataGridViewImageColumn3.Image = global::GUI_QuanLy.Properties.Resources.Delete1;
-            this.dataGridViewImageColumn3.Name = "dataGridViewImageColumn3";
-            this.dataGridViewImageColumn3.ReadOnly = true;
-            this.dataGridViewImageColumn3.Width = 5;
-            // 
             // GUI_HoaDonBan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(113)))), ((int)(((byte)(128)))));
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1175, 830);
             this.Controls.Add(this.panelTimKiem);
             this.Controls.Add(this.dgvDSHDB);
@@ -373,6 +456,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSHDB)).EndInit();
             this.panelSLHoaDon.ResumeLayout(false);
             this.panelSLHoaDon.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.hoaDon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hoaDonBanBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hoaDonBanBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dBdsHDBBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dBLTTQDataSetBindingSource)).EndInit();
@@ -404,13 +489,22 @@
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn3;
         private System.Windows.Forms.BindingSource dBLTTQDataSetBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn STT;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoHDB;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayBan;
         private System.Windows.Forms.DataGridViewTextBoxColumn TongTien;
         private System.Windows.Forms.DataGridViewTextBoxColumn GiamGia;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaKhach;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaNV;
+        private HoaDon hoaDon;
+        private System.Windows.Forms.BindingSource hoaDonBanBindingSource1;
+        private HoaDonTableAdapters.HoaDonBanTableAdapter hoaDonBanTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn STT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn soHDBDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maNVDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ngayBanDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maKhachDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tongTienDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn giamGiaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewImageColumn ChiTiet;
         private System.Windows.Forms.DataGridViewImageColumn Xoa;
     }

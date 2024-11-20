@@ -67,7 +67,7 @@ namespace GUI_QuanLy
                 sttColumn.HeaderText = "STT";
                 sttColumn.ReadOnly = true; // Chỉ hiển thị, không chỉnh sửa
                 dgvLuong.Columns.Insert(0, sttColumn); // Thêm vào vị trí đầu tiên
-                sttColumn.Width = 80;
+                sttColumn.Width = 50;
 
             }
 
@@ -77,9 +77,9 @@ namespace GUI_QuanLy
             dgvLuong.DataSource = busCongViec.getCongViec();
             //dvg1.DataSource = busCongViec.getCongViec();
             dgvLuong.Columns["MaCV"].Width = 170;
-            dgvLuong.Columns["TenCV"].Width = 200;
-            dgvLuong.Columns["MucLuong"].Width = 800;
-            dgvLuong.RowTemplate.Height = 35;
+            dgvLuong.Columns["TenCV"].Width = 300;
+            dgvLuong.Columns["MucLuong"].Width = 300;
+            dgvLuong.RowTemplate.Height = 135;
 
         }
         // Phương thức cập nhật số thứ tự cho DataGridView

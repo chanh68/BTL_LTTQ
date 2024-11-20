@@ -66,5 +66,10 @@ namespace GUI_QuanLy
             }
 
         }
+
+        private void btnDong_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

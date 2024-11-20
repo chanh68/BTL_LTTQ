@@ -132,5 +132,10 @@ namespace GUI_QuanLy
             LoadCustomer();
             LoadEmployeeData();
         }
+
+        private void btnXemThemNS_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

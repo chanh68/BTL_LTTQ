@@ -129,5 +129,10 @@ namespace GUI_QuanLy
             Report_NhanVien report_NhanVien = new Report_NhanVien();
             report_NhanVien.ShowDialog();
         }
+
+        private void bunifuLabel2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

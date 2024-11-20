@@ -74,16 +74,16 @@ namespace GUI_QuanLy
                 sttColumn.HeaderText = "STT";
                 sttColumn.ReadOnly = true; // Chỉ hiển thị, không chỉnh sửa
                 dgvTaiKhoan.Columns.Insert(0, sttColumn); // Thêm vào vị trí đầu tiên
-                sttColumn.Width = 80;
+                sttColumn.Width = 50;
             }
 
             dgvTaiKhoan.DataSource = busTaiKhoan.getTaiKhoan();
             dgvTaiKhoan.Columns["MaTK"].Width = 100;
-            dgvTaiKhoan.Columns["MaNV"].Width = 150;
-            dgvTaiKhoan.Columns["TenDangNhap"].Width = 180;
-            dgvTaiKhoan.Columns["MatKhau"].Width = 180;
-            dgvTaiKhoan.Columns["QuyenHan"].Width = 600;
-            dgvTaiKhoan.RowTemplate.Height = 35;
+            dgvTaiKhoan.Columns["MaNV"].Width = 100;
+            dgvTaiKhoan.Columns["TenDangNhap"].Width = 200;
+            dgvTaiKhoan.Columns["MatKhau"].Width = 200;
+            dgvTaiKhoan.Columns["QuyenHan"].Width = 300;
+            dgvTaiKhoan.RowTemplate.Height = 135;
 
             UpdateSoThuTu();
             dgvTaiKhoan.RowHeadersVisible = false; // Ẩn tiêu đề hàng

@@ -302,6 +302,11 @@
     <Compile Include="HeaderControl.Designer.cs">
       <DependentUpon>HeaderControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="HoaDon.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HoaDon.xsd</DependentUpon>
+    </Compile>
     <Compile Include="HomePage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -455,8 +460,20 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormReport.resx">
+      <DependentUpon>FormReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI_HoaDonBan.resx">
       <DependentUpon>GUI_HoaDonBan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_HoaDonNhap.resx">
+      <DependentUpon>GUI_HoaDonNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_TaoHoaDonBan.resx">
+      <DependentUpon>GUI_TaoHoaDonBan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_TaoHoaDonNhap.resx">
+      <DependentUpon>GUI_TaoHoaDonNhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI_TatCaSanPham.resx">
       <DependentUpon>GUI_TatCaSanPham.cs</DependentUpon>
@@ -508,6 +525,15 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Report_DoanhThu.resx">
+      <DependentUpon>Report_DoanhThu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report_HoaDon.resx">
+      <DependentUpon>Report_HoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report_SanPham.resx">
+      <DependentUpon>Report_SanPham.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Sale.resx">
       <DependentUpon>Sale.cs</DependentUpon>
     </EmbeddedResource>
@@ -531,6 +557,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TKNhanVien.resx">
       <DependentUpon>TKNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="urSanPham.resx">
+      <DependentUpon>urSanPham.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="BTL_6DataSet.xsc">
       <DependentUpon>BTL_6DataSet.xsd</DependentUpon>
@@ -597,6 +626,17 @@
     </None>
     <None Include="dsHDBDataSet.xss">
       <DependentUpon>dsHDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="HoaDon.xsc">
+      <DependentUpon>HoaDon.xsd</DependentUpon>
+    </None>
+    <None Include="HoaDon.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HoaDon.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HoaDon.xss">
+      <DependentUpon>HoaDon.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\app.manifest" />

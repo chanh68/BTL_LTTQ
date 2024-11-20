@@ -190,8 +190,6 @@ namespace DAL_QuanLy
             return soThuTu;
         }
 
-
-
         //Phương thức thêm hóa đơn bán
         public void ThemHoaDon(DTO_HoaDonBan hdb)
         {

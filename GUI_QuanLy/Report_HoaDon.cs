@@ -60,5 +60,10 @@ namespace GUI_QuanLy
             // Tải báo cáo dựa trên khoảng thời gian đã chọn
             LoadReportData(startDate, endDate);
         }
+
+        private void bunifuButton2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

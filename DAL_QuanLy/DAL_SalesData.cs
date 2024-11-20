@@ -1,4 +1,5 @@
 ﻿using DTO_QuanLy;
+using Microsoft.ReportingServices.Diagnostics.Internal;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -9,17 +10,17 @@ using System.Threading.Tasks;
 
 namespace DAL_QuanLy
 {
-    public class DAL_SalesData
+    public class DAL_SalesData : DBConnect
     {
         public (decimal DoanhThu, int SoSanPham) GetSalesDataForPeriod(DateTime startDate, DateTime endDate)
         {
             decimal doanhThu = 0;
             int soSanPham = 0;
-            string connectionString = "Data Source=LAPTOP-L4E28I51\\SQLEXPRESS;Initial Catalog=BTL_TQ3;Integrated Security=True;TrustServerCertificate=True";
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            try
             {
-                connection.Open();
+                OpenConnection();
+
                 string query = @"
                     SELECT 
                         SUM(ct.SoLuong * ct.DonGiaBan * 0.01*(100 - ISNULL(ct.GiamGia, 0))) AS TotalSales,   -- Tính doanh thu có giảm giá
@@ -28,7 +29,7 @@ namespace DAL_QuanLy
                     JOIN ChiTietHoaDonBan ct ON hb.SoHDB = ct.SoHDB
                     WHERE hb.NgayBan BETWEEN @StartDate AND @EndDate";
 
-                using (SqlCommand cmd = new SqlCommand(query, connection))
+                using (SqlCommand cmd = new SqlCommand(query, _conn))
                 {
                     cmd.Parameters.AddWithValue("@StartDate", startDate);
                     cmd.Parameters.AddWithValue("@EndDate", endDate);
@@ -43,6 +44,11 @@ namespace DAL_QuanLy
                     }
                 }
             }
+            finally
+            {
+                CloseConnection();
+            }
+
             return (doanhThu, soSanPham);
         }
 
@@ -50,11 +56,10 @@ namespace DAL_QuanLy
         {
             List<DTO_Product> productList = new List<DTO_Product>();
 
-            string connectionString = "Data Source=LAPTOP-L4E28I51\\SQLEXPRESS;Initial Catalog=BTL_TQ3;Integrated Security=True;TrustServerCertificate=True";
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            try
             {
-                connection.Open();
+                OpenConnection();
+
                 string query = @"
                     SELECT 
                         ROW_NUMBER() OVER (ORDER BY SUM(ct.SoLuong) DESC) AS Rank,
@@ -68,7 +73,7 @@ namespace DAL_QuanLy
                     GROUP BY hh.TenHang
                     ORDER BY SUM(ct.SoLuong) DESC";
 
-                using (SqlCommand command = new SqlCommand(query, connection))
+                using (SqlCommand command = new SqlCommand(query, _conn))
                 {
                     command.Parameters.AddWithValue("@StartDate", startDate);
                     command.Parameters.AddWithValue("@EndDate", endDate);
@@ -89,6 +94,11 @@ namespace DAL_QuanLy
                     }
                 }
             }
+            finally
+            {
+                CloseConnection();
+            }
+
             return productList;
         }
 
@@ -96,24 +106,22 @@ namespace DAL_QuanLy
         {
             List<(string WeekLabel, decimal DoanhThu, int SoSanPham)> salesDataList = new List<(string WeekLabel, decimal DoanhThu, int SoSanPham)>();
 
-            string connectionString = "Data Source=LAPTOP-L4E28I51\\SQLEXPRESS;Initial Catalog=BTL_TQ3;Integrated Security=True;TrustServerCertificate=True";
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            try
             {
-                connection.Open();
+                OpenConnection();
 
                 string query = @"
-            SELECT 
-                DATENAME(WEEK, hb.NgayBan) + '-' + DATENAME(YEAR, hb.NgayBan) AS WeekLabel,
-                SUM(hb.TongTien) AS DoanhThu,
-                SUM(ct.SoLuong) AS SoSanPham
-            FROM HoaDonBan hb
-            JOIN ChiTietHoaDonBan ct ON hb.SoHDB = ct.SoHDB
-            WHERE hb.NgayBan BETWEEN @StartDate AND @EndDate
-            GROUP BY DATENAME(WEEK, hb.NgayBan), DATENAME(YEAR, hb.NgayBan)
-            ORDER BY DATENAME(YEAR, hb.NgayBan), DATENAME(WEEK, hb.NgayBan)";
+                SELECT 
+                    DATENAME(WEEK, hb.NgayBan) + '-' + DATENAME(YEAR, hb.NgayBan) AS WeekLabel,
+                    SUM(hb.TongTien) AS DoanhThu,
+                    SUM(ct.SoLuong) AS SoSanPham
+                FROM HoaDonBan hb
+                JOIN ChiTietHoaDonBan ct ON hb.SoHDB = ct.SoHDB
+                WHERE hb.NgayBan BETWEEN @StartDate AND @EndDate
+                GROUP BY DATENAME(WEEK, hb.NgayBan), DATENAME(YEAR, hb.NgayBan)
+                ORDER BY DATENAME(YEAR, hb.NgayBan), DATENAME(WEEK, hb.NgayBan)";
 
-                using (SqlCommand cmd = new SqlCommand(query, connection))
+                using (SqlCommand cmd = new SqlCommand(query, _conn))
                 {
                     cmd.Parameters.AddWithValue("@StartDate", startDate);
                     cmd.Parameters.AddWithValue("@EndDate", endDate);
@@ -131,6 +139,10 @@ namespace DAL_QuanLy
                     }
                 }
             }
+            finally
+            {
+                CloseConnection();
+            }
 
             return salesDataList;
         }
@@ -138,16 +150,17 @@ namespace DAL_QuanLy
         public int GetEmployeeCountForPeriod(DateTime startDate, DateTime endDate)
         {
             int employeeCount = 0;
-            string connectionString = "Data Source=LAPTOP-L4E28I51\\SQLEXPRESS;Initial Catalog=BTL_TQ3;Integrated Security=True;TrustServerCertificate=True";
-            using (SqlConnection connection = new SqlConnection(connectionString))
+
+            try
             {
-                connection.Open();
+                OpenConnection();
+
                 string query = @"
                     SELECT COUNT(DISTINCT MaNV) AS EmployeeCount
                     FROM NhanVien
                     WHERE NgayVaoLam <= @EndDate";
 
-                using (SqlCommand cmd = new SqlCommand(query, connection))
+                using (SqlCommand cmd = new SqlCommand(query, _conn))
                 {
                     cmd.Parameters.AddWithValue("@EndDate", endDate);
 
@@ -160,28 +173,35 @@ namespace DAL_QuanLy
                     }
                 }
             }
+            finally
+            {
+                CloseConnection();
+            }
+
             return employeeCount;
         }
+
 
         // Lấy số lượng đơn hàng trong khoảng thời gian
         public int GetOrderCountForPeriod(DateTime startDate, DateTime endDate)
         {
             int orderCount = 0;
-            string connectionString = "Data Source=LAPTOP-L4E28I51\\SQLEXPRESS;Initial Catalog=BTL_TQ3;Integrated Security=True;TrustServerCertificate=True";
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                connection.Open();
-                string query = @"
-            SELECT COUNT(DISTINCT SoHD) AS OrderCount
-            FROM (
-                SELECT SoHDB AS SoHD, NgayBan AS Ngay FROM HoaDonBan
-                WHERE NgayBan BETWEEN @StartDate AND @EndDate
-                UNION ALL
-                SELECT SoHDN AS SoHD, NgayNhap AS Ngay FROM HoaDonNhap
-                WHERE NgayNhap BETWEEN @StartDate AND @EndDate
-            ) AS CombinedOrders";
 
-                using (SqlCommand cmd = new SqlCommand(query, connection))
+            try
+            {
+                OpenConnection();
+
+                string query = @"
+                SELECT COUNT(DISTINCT SoHD) AS OrderCount
+                FROM (
+                    SELECT SoHDB AS SoHD, NgayBan AS Ngay FROM HoaDonBan
+                    WHERE NgayBan BETWEEN @StartDate AND @EndDate
+                    UNION ALL
+                    SELECT SoHDN AS SoHD, NgayNhap AS Ngay FROM HoaDonNhap
+                    WHERE NgayNhap BETWEEN @StartDate AND @EndDate
+                ) AS CombinedOrders";
+
+                using (SqlCommand cmd = new SqlCommand(query, _conn))
                 {
                     cmd.Parameters.AddWithValue("@StartDate", startDate);
                     cmd.Parameters.AddWithValue("@EndDate", endDate);
@@ -195,30 +215,37 @@ namespace DAL_QuanLy
                     }
                 }
             }
+            finally
+            {
+                CloseConnection();
+            }
+
             return orderCount;
         }
-        public (decimal DoanhThu, int SoSanPham, int SoDonHang, int SoNhanVien) GetTotalSalesData()
+
+        // Lấy dữ liệu tổng quan về doanh thu, số lượng sản phẩm tồn kho, đơn hàng, nhân viên
+        public (decimal DoanhThu, int SoSanPhamTonKho, int SoDonHang, int SoNhanVien) GetTotalSalesData()
         {
             decimal doanhThu = 0;
             int soSanPhamTonKho = 0;
             int soDonHang = 0;
             int soNhanVien = 0;
-            string connectionString = "Data Source=LAPTOP-L4E28I51\\SQLEXPRESS;Initial Catalog=BTL_TQ3;Integrated Security=True;TrustServerCertificate=True";
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            try
             {
-                connection.Open();
-                string query = @"
-            SELECT 
-                SUM(ct.SoLuong * ct.DonGiaBan * 0.01*(100 - ISNULL(ct.GiamGia, 0))) AS TotalSales,
-                (SELECT SUM(ctn.SoLuong) FROM ChiTietHoaDonNhap ctn) - 
-                (SELECT SUM(ct.SoLuong) FROM ChiTietHoaDonBan ct) AS TotalProductsInStock,
-                (SELECT COUNT(DISTINCT SoHDB) FROM HoaDonBan) + 
-                (SELECT COUNT(DISTINCT SoHDN) FROM HoaDonNhap) AS TotalOrders,
-                (SELECT COUNT(DISTINCT MaNV) FROM NhanVien) AS TotalEmployees
-            FROM ChiTietHoaDonBan ct";
+                OpenConnection();
 
-                using (SqlCommand cmd = new SqlCommand(query, connection))
+                string query = @"
+                SELECT 
+                    SUM(ct.SoLuong * ct.DonGiaBan * 0.01*(100 - ISNULL(ct.GiamGia, 0))) AS TotalSales,
+                    (SELECT SUM(ctn.SoLuong) FROM ChiTietHoaDonNhap ctn) - 
+                    (SELECT SUM(ct.SoLuong) FROM ChiTietHoaDonBan ct) AS TotalProductsInStock,
+                    (SELECT COUNT(DISTINCT SoHDB) FROM HoaDonBan) + 
+                    (SELECT COUNT(DISTINCT SoHDN) FROM HoaDonNhap) AS TotalOrders,
+                    (SELECT COUNT(DISTINCT MaNV) FROM NhanVien) AS TotalEmployees
+                FROM ChiTietHoaDonBan ct";
+
+                using (SqlCommand cmd = new SqlCommand(query, _conn))
                 {
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
@@ -232,8 +259,12 @@ namespace DAL_QuanLy
                     }
                 }
             }
-            return (doanhThu, soSanPhamTonKho, soDonHang, soNhanVien);
+            finally
+            {
+                CloseConnection();
+            }
 
+            return (doanhThu, soSanPhamTonKho, soDonHang, soNhanVien);
         }
     }
 }

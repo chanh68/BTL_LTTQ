@@ -33,21 +33,21 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvDSHDN = new System.Windows.Forms.DataGridView();
+            this.hoaDonNhapBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dB_LTTQDataSet = new GUI_QuanLy.DB_LTTQDataSet();
             this.panelTimKiem = new System.Windows.Forms.Panel();
+            this.txtNam = new System.Windows.Forms.TextBox();
+            this.txtThang = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.txtND = new System.Windows.Forms.TextBox();
             this.lblNhapND = new System.Windows.Forms.Label();
             this.lblTimKiem = new System.Windows.Forms.Label();
             this.panelSLHoaDon = new System.Windows.Forms.Panel();
+            this.txtSLHDN = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnXuatFileExcel = new System.Windows.Forms.Button();
             this.btnThemHoaDon = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtThang = new System.Windows.Forms.TextBox();
-            this.txtNam = new System.Windows.Forms.TextBox();
-            this.txtSLHDN = new System.Windows.Forms.TextBox();
-            this.dB_LTTQDataSet = new GUI_QuanLy.DB_LTTQDataSet();
-            this.hoaDonNhapBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.hoaDonNhapTableAdapter = new GUI_QuanLy.DB_LTTQDataSetTableAdapters.HoaDonNhapTableAdapter();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
@@ -60,10 +60,10 @@
             this.ChiTiet = new System.Windows.Forms.DataGridViewImageColumn();
             this.Xoa = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSHDN)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hoaDonNhapBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dB_LTTQDataSet)).BeginInit();
             this.panelTimKiem.SuspendLayout();
             this.panelSLHoaDon.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dB_LTTQDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hoaDonNhapBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvDSHDN
@@ -74,13 +74,13 @@
             this.dgvDSHDN.AllowUserToResizeRows = false;
             this.dgvDSHDN.AutoGenerateColumns = false;
             this.dgvDSHDN.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvDSHDN.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedHeaders;
+            this.dgvDSHDN.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCellsExceptHeaders;
             this.dgvDSHDN.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvDSHDN.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gray;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(2);
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -127,9 +127,19 @@
             this.dgvDSHDN.TabIndex = 7;
             this.dgvDSHDN.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSHDN_CellContentClick);
             // 
+            // hoaDonNhapBindingSource
+            // 
+            this.hoaDonNhapBindingSource.DataMember = "HoaDonNhap";
+            this.hoaDonNhapBindingSource.DataSource = this.dB_LTTQDataSet;
+            // 
+            // dB_LTTQDataSet
+            // 
+            this.dB_LTTQDataSet.DataSetName = "DB_LTTQDataSet";
+            this.dB_LTTQDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // panelTimKiem
             // 
-            this.panelTimKiem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(53)))), ((int)(((byte)(74)))));
+            this.panelTimKiem.BackColor = System.Drawing.Color.Gray;
             this.panelTimKiem.Controls.Add(this.txtNam);
             this.panelTimKiem.Controls.Add(this.txtThang);
             this.panelTimKiem.Controls.Add(this.label2);
@@ -142,6 +152,38 @@
             this.panelTimKiem.Name = "panelTimKiem";
             this.panelTimKiem.Size = new System.Drawing.Size(448, 201);
             this.panelTimKiem.TabIndex = 6;
+            // 
+            // txtNam
+            // 
+            this.txtNam.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNam.ForeColor = System.Drawing.Color.Black;
+            this.txtNam.Location = new System.Drawing.Point(312, 90);
+            this.txtNam.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNam.Name = "txtNam";
+            this.txtNam.Size = new System.Drawing.Size(102, 33);
+            this.txtNam.TabIndex = 7;
+            // 
+            // txtThang
+            // 
+            this.txtThang.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtThang.ForeColor = System.Drawing.Color.Black;
+            this.txtThang.Location = new System.Drawing.Point(98, 90);
+            this.txtThang.Margin = new System.Windows.Forms.Padding(2);
+            this.txtThang.Name = "txtThang";
+            this.txtThang.Size = new System.Drawing.Size(102, 33);
+            this.txtThang.TabIndex = 6;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(240, 93);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(54, 25);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Năm";
             // 
             // btnTimKiem
             // 
@@ -159,6 +201,7 @@
             // txtND
             // 
             this.txtND.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtND.ForeColor = System.Drawing.Color.Black;
             this.txtND.Location = new System.Drawing.Point(180, 21);
             this.txtND.Margin = new System.Windows.Forms.Padding(2);
             this.txtND.Name = "txtND";
@@ -169,7 +212,7 @@
             // 
             this.lblNhapND.AutoSize = true;
             this.lblNhapND.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNhapND.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblNhapND.ForeColor = System.Drawing.Color.Black;
             this.lblNhapND.Location = new System.Drawing.Point(24, 24);
             this.lblNhapND.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNhapND.Name = "lblNhapND";
@@ -181,7 +224,7 @@
             // 
             this.lblTimKiem.AutoSize = true;
             this.lblTimKiem.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTimKiem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblTimKiem.ForeColor = System.Drawing.Color.Black;
             this.lblTimKiem.Location = new System.Drawing.Point(24, 93);
             this.lblTimKiem.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTimKiem.Name = "lblTimKiem";
@@ -192,7 +235,7 @@
             // 
             // panelSLHoaDon
             // 
-            this.panelSLHoaDon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(53)))), ((int)(((byte)(74)))));
+            this.panelSLHoaDon.BackColor = System.Drawing.Color.Gray;
             this.panelSLHoaDon.Controls.Add(this.txtSLHDN);
             this.panelSLHoaDon.Controls.Add(this.label1);
             this.panelSLHoaDon.Location = new System.Drawing.Point(702, 25);
@@ -201,11 +244,24 @@
             this.panelSLHoaDon.Size = new System.Drawing.Size(348, 132);
             this.panelSLHoaDon.TabIndex = 10;
             // 
+            // txtSLHDN
+            // 
+            this.txtSLHDN.BackColor = System.Drawing.Color.Gray;
+            this.txtSLHDN.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSLHDN.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSLHDN.ForeColor = System.Drawing.Color.Black;
+            this.txtSLHDN.Location = new System.Drawing.Point(85, 54);
+            this.txtSLHDN.Margin = new System.Windows.Forms.Padding(2);
+            this.txtSLHDN.Name = "txtSLHDN";
+            this.txtSLHDN.Size = new System.Drawing.Size(164, 64);
+            this.txtSLHDN.TabIndex = 8;
+            this.txtSLHDN.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(16, 19);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
@@ -215,13 +271,13 @@
             // 
             // btnXuatFileExcel
             // 
-            this.btnXuatFileExcel.BackColor = System.Drawing.Color.White;
+            this.btnXuatFileExcel.BackColor = System.Drawing.Color.Black;
             this.btnXuatFileExcel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXuatFileExcel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(30)))), ((int)(((byte)(53)))));
+            this.btnXuatFileExcel.ForeColor = System.Drawing.Color.White;
             this.btnXuatFileExcel.Location = new System.Drawing.Point(887, 176);
             this.btnXuatFileExcel.Margin = new System.Windows.Forms.Padding(2);
             this.btnXuatFileExcel.Name = "btnXuatFileExcel";
-            this.btnXuatFileExcel.Size = new System.Drawing.Size(150, 47);
+            this.btnXuatFileExcel.Size = new System.Drawing.Size(150, 50);
             this.btnXuatFileExcel.TabIndex = 9;
             this.btnXuatFileExcel.Text = "Xuất DS Excel";
             this.btnXuatFileExcel.UseVisualStyleBackColor = false;
@@ -229,69 +285,17 @@
             // 
             // btnThemHoaDon
             // 
-            this.btnThemHoaDon.BackColor = System.Drawing.Color.White;
+            this.btnThemHoaDon.BackColor = System.Drawing.Color.Black;
             this.btnThemHoaDon.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThemHoaDon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(30)))), ((int)(((byte)(53)))));
+            this.btnThemHoaDon.ForeColor = System.Drawing.Color.White;
             this.btnThemHoaDon.Location = new System.Drawing.Point(713, 176);
             this.btnThemHoaDon.Margin = new System.Windows.Forms.Padding(2);
             this.btnThemHoaDon.Name = "btnThemHoaDon";
-            this.btnThemHoaDon.Size = new System.Drawing.Size(149, 47);
+            this.btnThemHoaDon.Size = new System.Drawing.Size(149, 50);
             this.btnThemHoaDon.TabIndex = 8;
             this.btnThemHoaDon.Text = "Thêm hóa đơn";
             this.btnThemHoaDon.UseVisualStyleBackColor = false;
             this.btnThemHoaDon.Click += new System.EventHandler(this.btnThemHoaDon_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Location = new System.Drawing.Point(240, 93);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 25);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Năm";
-            // 
-            // txtThang
-            // 
-            this.txtThang.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtThang.Location = new System.Drawing.Point(98, 90);
-            this.txtThang.Margin = new System.Windows.Forms.Padding(2);
-            this.txtThang.Name = "txtThang";
-            this.txtThang.Size = new System.Drawing.Size(102, 33);
-            this.txtThang.TabIndex = 6;
-            // 
-            // txtNam
-            // 
-            this.txtNam.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNam.Location = new System.Drawing.Point(312, 90);
-            this.txtNam.Margin = new System.Windows.Forms.Padding(2);
-            this.txtNam.Name = "txtNam";
-            this.txtNam.Size = new System.Drawing.Size(102, 33);
-            this.txtNam.TabIndex = 7;
-            // 
-            // txtSLHDN
-            // 
-            this.txtSLHDN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(53)))), ((int)(((byte)(74)))));
-            this.txtSLHDN.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtSLHDN.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSLHDN.Location = new System.Drawing.Point(85, 54);
-            this.txtSLHDN.Margin = new System.Windows.Forms.Padding(2);
-            this.txtSLHDN.Name = "txtSLHDN";
-            this.txtSLHDN.Size = new System.Drawing.Size(164, 64);
-            this.txtSLHDN.TabIndex = 8;
-            this.txtSLHDN.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // dB_LTTQDataSet
-            // 
-            this.dB_LTTQDataSet.DataSetName = "DB_LTTQDataSet";
-            this.dB_LTTQDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // hoaDonNhapBindingSource
-            // 
-            this.hoaDonNhapBindingSource.DataMember = "HoaDonNhap";
-            this.hoaDonNhapBindingSource.DataSource = this.dB_LTTQDataSet;
             // 
             // hoaDonNhapTableAdapter
             // 
@@ -385,7 +389,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(30)))), ((int)(((byte)(53)))));
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1175, 830);
             this.Controls.Add(this.dgvDSHDN);
             this.Controls.Add(this.panelTimKiem);
@@ -398,12 +402,12 @@
             this.Text = "GUI_HoaDonNhap";
             this.Load += new System.EventHandler(this.GUI_HoaDonNhap_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSHDN)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hoaDonNhapBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dB_LTTQDataSet)).EndInit();
             this.panelTimKiem.ResumeLayout(false);
             this.panelTimKiem.PerformLayout();
             this.panelSLHoaDon.ResumeLayout(false);
             this.panelSLHoaDon.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dB_LTTQDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hoaDonNhapBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

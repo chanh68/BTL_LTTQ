@@ -37,14 +37,14 @@
             this.reportViewer_DoanhThu.Location = new System.Drawing.Point(0, 0);
             this.reportViewer_DoanhThu.Name = "reportViewer_DoanhThu";
             this.reportViewer_DoanhThu.ServerReport.BearerToken = null;
-            this.reportViewer_DoanhThu.Size = new System.Drawing.Size(800, 450);
+            this.reportViewer_DoanhThu.Size = new System.Drawing.Size(1159, 791);
             this.reportViewer_DoanhThu.TabIndex = 0;
             // 
             // Report_DoanhThu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1159, 791);
             this.Controls.Add(this.reportViewer_DoanhThu);
             this.Name = "Report_DoanhThu";
             this.Text = "Report_DoanhThu";

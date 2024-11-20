@@ -70,18 +70,18 @@ namespace GUI_QuanLy
                     ReadOnly = true
                 };
                 dgvKhachHang.Columns.Insert(0, sttColumn); // Thêm vào vị trí đầu tiên
-                sttColumn.Width = 50;
+                sttColumn.Width = 30;
             }
 
             UpdateSoThuTu();
             dgvKhachHang.RowHeadersVisible = false; // Ẩn tiêu đề hàng
 
             dgvKhachHang.DataSource = busKhachHang.getKhachHang();
-            dgvKhachHang.Columns["MaKhach"].Width = 170;
-            dgvKhachHang.Columns["TenKhach"].Width = 170;
-            dgvKhachHang.Columns["DiaChi"].Width = 170;
-            dgvKhachHang.Columns["DienThoai"].Width = 170;
-            dgvKhachHang.RowTemplate.Height = 35;
+            dgvKhachHang.Columns["MaKhach"].Width = 150;
+            dgvKhachHang.Columns["TenKhach"].Width = 200;
+            dgvKhachHang.Columns["DiaChi"].Width = 300;
+            dgvKhachHang.Columns["DienThoai"].Width = 150;
+            dgvKhachHang.RowTemplate.Height = 135;
         }
 
         // Phương thức cập nhật số thứ tự cho DataGridView

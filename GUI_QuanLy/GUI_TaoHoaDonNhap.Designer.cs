@@ -33,7 +33,6 @@
             this.txtTenHang = new System.Windows.Forms.TextBox();
             this.txtSoLuong = new System.Windows.Forms.TextBox();
             this.cbMaHang = new System.Windows.Forms.ComboBox();
-            this.lblThanhTien = new System.Windows.Forms.Label();
             this.lblDonGia = new System.Windows.Forms.Label();
             this.lblTenHang = new System.Windows.Forms.Label();
             this.lblMaHang = new System.Windows.Forms.Label();
@@ -41,7 +40,6 @@
             this.txtTongTien = new System.Windows.Forms.TextBox();
             this.lblTongTien = new System.Windows.Forms.Label();
             this.cbMaNCC = new System.Windows.Forms.ComboBox();
-            this.txtThanhTien = new System.Windows.Forms.TextBox();
             this.btnThoat = new System.Windows.Forms.Button();
             this.btnIn = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
@@ -104,7 +102,6 @@
             this.dgvDSMatHang.RowTemplate.Height = 24;
             this.dgvDSMatHang.Size = new System.Drawing.Size(1019, 264);
             this.dgvDSMatHang.TabIndex = 3;
-            //this.dgvDSMatHang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSMatHang_CellClick);
             // 
             // txtTenHang
             // 
@@ -122,7 +119,6 @@
             this.txtSoLuong.Name = "txtSoLuong";
             this.txtSoLuong.Size = new System.Drawing.Size(191, 29);
             this.txtSoLuong.TabIndex = 8;
-            //this.txtSoLuong.TextChanged += new System.EventHandler(this.txtSoLuong_TextChanged);
             this.txtSoLuong.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSoLuong_KeyDown);
             // 
             // cbMaHang
@@ -134,17 +130,6 @@
             this.cbMaHang.Size = new System.Drawing.Size(191, 29);
             this.cbMaHang.TabIndex = 7;
             this.cbMaHang.SelectedIndexChanged += new System.EventHandler(this.cbMaHang_SelectedIndexChanged);
-            // 
-            // lblThanhTien
-            // 
-            this.lblThanhTien.AutoSize = true;
-            this.lblThanhTien.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(69)))), ((int)(((byte)(136)))));
-            this.lblThanhTien.Location = new System.Drawing.Point(698, 46);
-            this.lblThanhTien.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblThanhTien.Name = "lblThanhTien";
-            this.lblThanhTien.Size = new System.Drawing.Size(92, 21);
-            this.lblThanhTien.TabIndex = 6;
-            this.lblThanhTien.Text = "Thành tiền";
             // 
             // lblDonGia
             // 
@@ -219,15 +204,6 @@
             this.cbMaNCC.Size = new System.Drawing.Size(241, 29);
             this.cbMaNCC.TabIndex = 15;
             this.cbMaNCC.SelectedIndexChanged += new System.EventHandler(this.cbMaNCC_SelectedIndexChanged);
-            // 
-            // txtThanhTien
-            // 
-            this.txtThanhTien.Location = new System.Drawing.Point(796, 44);
-            this.txtThanhTien.Margin = new System.Windows.Forms.Padding(2);
-            this.txtThanhTien.Name = "txtThanhTien";
-            this.txtThanhTien.ReadOnly = true;
-            this.txtThanhTien.Size = new System.Drawing.Size(191, 29);
-            this.txtThanhTien.TabIndex = 12;
             // 
             // btnThoat
             // 
@@ -320,12 +296,10 @@
             // 
             // panelThongTinMatHang
             // 
-            this.panelThongTinMatHang.Controls.Add(this.txtThanhTien);
             this.panelThongTinMatHang.Controls.Add(this.txtDonGia);
             this.panelThongTinMatHang.Controls.Add(this.txtTenHang);
             this.panelThongTinMatHang.Controls.Add(this.txtSoLuong);
             this.panelThongTinMatHang.Controls.Add(this.cbMaHang);
-            this.panelThongTinMatHang.Controls.Add(this.lblThanhTien);
             this.panelThongTinMatHang.Controls.Add(this.lblDonGia);
             this.panelThongTinMatHang.Controls.Add(this.lblTenHang);
             this.panelThongTinMatHang.Controls.Add(this.lblSoLuong);
@@ -613,7 +587,6 @@
         private System.Windows.Forms.TextBox txtTenHang;
         private System.Windows.Forms.TextBox txtSoLuong;
         private System.Windows.Forms.ComboBox cbMaHang;
-        private System.Windows.Forms.Label lblThanhTien;
         private System.Windows.Forms.Label lblDonGia;
         private System.Windows.Forms.Label lblTenHang;
         private System.Windows.Forms.Label lblMaHang;
@@ -621,7 +594,6 @@
         private System.Windows.Forms.TextBox txtTongTien;
         private System.Windows.Forms.Label lblTongTien;
         private System.Windows.Forms.ComboBox cbMaNCC;
-        private System.Windows.Forms.TextBox txtThanhTien;
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Button btnIn;
         private System.Windows.Forms.Button btnXoa;

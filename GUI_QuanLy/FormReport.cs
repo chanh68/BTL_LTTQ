@@ -78,5 +78,15 @@ namespace GUI_QuanLy
         {
 
         }
+
+        private void btnQuayVe_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void bunifuButton2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

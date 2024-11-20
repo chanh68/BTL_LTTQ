@@ -102,16 +102,41 @@ namespace GUI_QuanLy
 
         private void cbMaKH_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string maKH = cbMaKH.SelectedValue.ToString();
-            var khachHang = busKH.LayThongTinKhachHang(maKH);
+            //string maKH = cbMaKH.SelectedValue.ToString();
+            //var khachHang = busKH.LayThongTinKhachHang(maKH);
+
+            //if (khachHang != null)
+            //{
+            //    txtTenKH.Text = khachHang.TenKhach;
+            //    txtDiaChi.Text = khachHang.DiaChi;
+            //    txtSDT.Text = khachHang.DienThoai;
+            //}
+        }
+
+        private void txtSDT_Leave(object sender, EventArgs e)
+        {
+            string soDienThoai = txtSDT.Text;
+
+            // Kiểm tra số điện thoại đã tồn tại chưa
+            var khachHang = busKH.TimKiemKhachHangTheoSDT(soDienThoai);
 
             if (khachHang != null)
             {
+                // Nếu có, hiển thị thông tin khách hàng vào các trường tương ứng
                 txtTenKH.Text = khachHang.TenKhach;
                 txtDiaChi.Text = khachHang.DiaChi;
-                txtSDT.Text = khachHang.DienThoai;
+                cbMaKH.Text = khachHang.MaKhach;
+            }
+            else
+            {
+                // Nếu chưa có, tự động sinh mã khách hàng và yêu cầu người dùng nhập thêm thông tin
+                txtTenKH.Text = string.Empty;
+                txtDiaChi.Text = string.Empty;
+                //cbMaKH.Text = SinhMaKhachHangMoi();
             }
         }
+
+
 
         private void dgvDSMatHang_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -177,10 +202,13 @@ namespace GUI_QuanLy
                     // Đổi tên các cột
                     dgvDSMatHang.Columns["MaHang"].HeaderText = "Mã Hàng";
                     dgvDSMatHang.Columns["TenHang"].HeaderText = "Tên Hàng";
+                    dgvDSMatHang.Columns["TenHang"].DisplayIndex = 2;
                     dgvDSMatHang.Columns["SoLuong"].HeaderText = "Số Lượng";
                     dgvDSMatHang.Columns["DonGiaBan"].HeaderText = "Đơn Giá";
                     dgvDSMatHang.Columns["GiamGia"].HeaderText = "Giảm Giá (%)";
                     dgvDSMatHang.Columns["ThanhTien"].HeaderText = "Thành Tiền";
+
+                    dgvDSMatHang.RowTemplate.Height = 135;
 
                     // Cập nhật tổng tiền
                     CapNhatTongTien();
@@ -245,10 +273,13 @@ namespace GUI_QuanLy
                     // Đổi tên các cột
                     dgvDSMatHang.Columns["MaHang"].HeaderText = "Mã Hàng";
                     dgvDSMatHang.Columns["TenHang"].HeaderText = "Tên Hàng";
+                    dgvDSMatHang.Columns["TenHang"].DisplayIndex = 2;
                     dgvDSMatHang.Columns["SoLuong"].HeaderText = "Số Lượng";
                     dgvDSMatHang.Columns["DonGiaBan"].HeaderText = "Đơn Giá";
                     dgvDSMatHang.Columns["GiamGia"].HeaderText = "Giảm Giá (%)";
                     dgvDSMatHang.Columns["ThanhTien"].HeaderText = "Thành Tiền";
+
+                    dgvDSMatHang.RowTemplate.Height = 135;
 
                     // Cập nhật tổng tiền
                     CapNhatTongTien();
@@ -272,6 +303,7 @@ namespace GUI_QuanLy
         }
         private void btnLuu_Click(object sender, EventArgs e)
         {
+            string soHDB = txtMaHD.Text;
             // Kiểm tra các trường thông tin không được để trống
             if (string.IsNullOrEmpty(txtMaHD.Text) ||
                 string.IsNullOrEmpty(cbMaKH.Text) ||
@@ -297,6 +329,12 @@ namespace GUI_QuanLy
                     return;
                 }
             }
+            decimal tongTienGiamGia = 0;
+
+            foreach (var chiTiet in chiTietHoaDonBanList)
+            {
+                tongTienGiamGia += chiTiet.SoLuong * chiTiet.DonGiaBan * chiTiet.GiamGia/100;
+            }
 
             DTO_HoaDonBan hoaDon = new DTO_HoaDonBan
             {
@@ -304,6 +342,8 @@ namespace GUI_QuanLy
                 NgayBan = dtpNgayBan.Value,
                 MaNV = cbMaMV.Text,
                 MaKhach = cbMaKH.Text,
+                // Tính và cập nhật tổng giảm giá
+                GiamGia = tongTienGiamGia,
                 TongTien = decimal.Parse(txtTongTien.Text)
             };
 
@@ -354,6 +394,11 @@ namespace GUI_QuanLy
         {
             string soHDB = txtMaHD.Text;
             busCT.InChiTietHoaDon(soHDB); // In chi tiết hóa đơn
+        }
+
+        private void dgvDSMatHang_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
