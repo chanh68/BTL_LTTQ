@@ -22,5 +22,18 @@ namespace BUS_QuanLy
             return dalHH.LayDanhSachHangHoa();
         }
 
+        public void CapNhatSoLuongTrongKho(string maHang, int slNhap)
+        {
+            dalHH.CapNhatSoLuongTonKho(maHang, slNhap);
+        }
+        public void CapNhatSoLuongConLai(string maHang, int slBan)
+        {
+            dalHH.CapNhatSoLuongTonKho(maHang, -slBan);
+        }
+        public int LaySoLuongSanPham(string maHang)
+        {
+            return dalHH.LaySoLuongSanPham(maHang);
+        }
+
     }
 }

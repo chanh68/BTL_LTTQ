@@ -161,9 +161,22 @@ namespace GUI_QuanLy
         {
             if (e.KeyCode == Keys.Enter)
             {
+                // Lấy số lượng tồn kho của mặt hàng từ cơ sở dữ liệu
+                string maHH = cbMaHang.SelectedValue.ToString();
+                int soLuongTonKho = busHH.LaySoLuongSanPham(maHH);
+
                 // Kiểm tra dữ liệu hợp lệ trước khi tính toán
                 if (int.TryParse(txtSoLuong.Text, out int soLuong) && decimal.TryParse(txtDonGia.Text, out decimal donGia))
                 {
+                    // Kiểm tra số lượng nhập không vượt quá tồn kho
+                    if (soLuong > soLuongTonKho)
+                    {
+                        MessageBox.Show($"Số lượng bán không được vượt quá số lượng tồn kho ({soLuongTonKho}).", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        txtSoLuong.Text = soLuongTonKho.ToString();
+                        txtSoLuong.Focus();
+                        return;
+                    }
+
                     decimal giamGia = string.IsNullOrEmpty(txtGiamGia.Text) ? 0 : decimal.Parse(txtGiamGia.Text);
                     decimal thanhTien = soLuong * donGia * (1 - giamGia / 100);
 
@@ -229,11 +242,24 @@ namespace GUI_QuanLy
         }
         private void txtGiamGia_KeyDown(object sender, KeyEventArgs e)
         {
+            // Lấy số lượng tồn kho của mặt hàng từ cơ sở dữ liệu
+            string maHH = cbMaHang.SelectedValue.ToString();
+            int soLuongTonKho = busHH.LaySoLuongSanPham(maHH);
+
             if (e.KeyCode == Keys.Enter)
             {
                 // Kiểm tra dữ liệu hợp lệ trước khi tính toán
                 if (int.TryParse(txtSoLuong.Text, out int soLuong) && decimal.TryParse(txtDonGia.Text, out decimal donGia))
                 {
+                    // Kiểm tra số lượng nhập không vượt quá tồn kho
+                    if (soLuong > soLuongTonKho)
+                    {
+                        MessageBox.Show($"Số lượng bán không được vượt quá số lượng tồn kho ({soLuongTonKho}).", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        txtSoLuong.Text = soLuongTonKho.ToString();
+                        txtSoLuong.Focus();
+                        return;
+                    }
+
                     // Kiểm tra giá trị giảm giá có hợp lệ hay không
                     decimal giamGia = string.IsNullOrEmpty(txtGiamGia.Text) ? 0 : decimal.Parse(txtGiamGia.Text);
                     decimal thanhTien = soLuong * donGia * (1 - giamGia / 100);
@@ -377,6 +403,9 @@ namespace GUI_QuanLy
             {
                 chiTiet.SoHDB = hoaDon.SoHDB;
                 busCT.ThemChiTietHoaDon(chiTiet);
+
+                // Cập nhật số lượng tồn kho sau khi bán
+                busHH.CapNhatSoLuongConLai(chiTiet.MaHang, chiTiet.SoLuong); // Trừ số lượng đã bán
             }
 
             MessageBox.Show("Hóa đơn đã được thêm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);

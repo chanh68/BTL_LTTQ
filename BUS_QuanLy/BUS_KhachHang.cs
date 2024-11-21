@@ -70,6 +70,5 @@ namespace BUS_QuanLy
         {
             return dalKhachHang.TimKiemKhachHang(searchTerm, searchField);
         }
-
     }
 }

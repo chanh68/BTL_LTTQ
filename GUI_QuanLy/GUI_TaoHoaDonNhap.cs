@@ -191,7 +191,9 @@ namespace GUI_QuanLy
             {
                 chiTiet.SoHDN = hoaDon.SoHDN;
                 busCT.ThemChiTietHoaDon(chiTiet);
-                MessageBox.Show("Loz");
+
+                // Cập nhật số lượng tồn kho sau khi nhập
+                busHH.CapNhatSoLuongTrongKho(chiTiet.MaHang, chiTiet.SoLuong); 
             }
 
             MessageBox.Show("Hóa đơn đã được thêm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);

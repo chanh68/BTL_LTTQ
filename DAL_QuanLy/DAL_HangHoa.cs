@@ -1,4 +1,5 @@
 ﻿using DTO_QuanLy;
+using Microsoft.ReportingServices.Diagnostics.Internal;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -514,5 +515,54 @@ namespace DAL_QuanLy
             CloseConnection();
             return danhSachHangHoa;
         }
+
+        public void CapNhatSoLuongTonKho(string maHang, int soLuong)
+        {
+            string query = "UPDATE HangHoa SET SoLuong = SoLuong + @SoLuong WHERE MaHang = @MaHang";
+            SqlCommand cmd = new SqlCommand(query, _conn);
+            cmd.Parameters.AddWithValue("@SoLuong", soLuong);
+            cmd.Parameters.AddWithValue("@MaHang", maHang);
+
+            OpenConnection();
+            cmd.ExecuteNonQuery();
+            CloseConnection();
+        }
+
+        public int LaySoLuongSanPham(string maHang)
+        {
+            string query = "SELECT SoLuong FROM HangHoa WHERE MaHang = @MaHang";
+            SqlCommand cmd = new SqlCommand(query, _conn);
+            cmd.Parameters.AddWithValue("@MaHang", maHang);
+
+            try
+            {
+                // Mở kết nối bằng phương thức OpenConnection
+                OpenConnection();
+
+                // Execute the query and get the result
+                object result = cmd.ExecuteScalar();
+
+                // Kiểm tra và chuyển đổi kết quả
+                if (result != null && int.TryParse(result.ToString(), out int soLuong))
+                {
+                    return soLuong;
+                }
+
+                return 0; // Trả về 0 nếu không tìm thấy mã hàng
+            }
+            catch (Exception ex)
+            {
+                // Xử lý ngoại lệ
+                throw new Exception("Error while retrieving product quantity: " + ex.Message);
+            }
+            finally
+            {
+                // Đóng kết nối bằng phương thức CloseConnection
+                CloseConnection();
+            }
+        }
+
+
+
     }
 }
