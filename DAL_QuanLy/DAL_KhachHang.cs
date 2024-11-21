@@ -114,7 +114,7 @@ namespace DAL_QuanLy
         //Tìm kiếm khách hàng theo số điện thoại
         public DTO_KhachHang TimKiemKhachHangTheoSDT(string sdt)
         {
-            DTO_KhachHang KhachHang = null;
+            DTO_KhachHang khachHang = null;
             string query = "SELECT * FROM KhachHang WHERE DienThoai = @DienThoai";
 
             SqlCommand cmd = new SqlCommand(query, _conn);
@@ -123,18 +123,17 @@ namespace DAL_QuanLy
             {
                 OpenConnection();
                 SqlDataReader reader = cmd.ExecuteReader();
-                if (!reader.Read())
+                if (reader.Read()) // Kiểm tra nếu có kết quả
                 {
-                    KhachHang = new DTO_KhachHang
+                    khachHang = new DTO_KhachHang
                     {
                         MaKhach = reader["MaKhach"].ToString(),
-                        TenKhach = reader["TenKH"].ToString(),
+                        TenKhach = reader["TenKhach"].ToString(), // Sửa từ TenKH -> TenKhach
                         DiaChi = reader["DiaChi"].ToString(),
                         DienThoai = reader["DienThoai"].ToString()
                     };
                 }
                 reader.Close();
-
             }
             catch (Exception ex)
             {
@@ -144,8 +143,31 @@ namespace DAL_QuanLy
             {
                 CloseConnection();
             }
-            return KhachHang;
+            return khachHang;
         }
+        public string SinhMaKhachHangTuDong()
+        {
+            string maKhachHang = "KH";
+            try
+            {
+                OpenConnection();
+                string query = "SELECT ISNULL(MAX(CAST(SUBSTRING(MaKhach, 3, LEN(MaKhach)-2) AS INT)), 0) + 1 AS NewID FROM KhachHang";
+                SqlCommand cmd = new SqlCommand(query, _conn);
+
+                int newID = (int)cmd.ExecuteScalar();
+                maKhachHang += newID.ToString("D4"); // Định dạng 4 chữ số, ví dụ: KH0001, KH0002
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Lỗi khi tạo mã khách hàng tự động: " + ex.Message);
+            }
+            finally
+            {
+                CloseConnection();
+            }
+            return maKhachHang;
+        }
+
 
         public int LaySoLuongKhachHang()
         {

@@ -32,6 +32,10 @@ namespace BUS_QuanLy
         {
             return dalKH.TimKiemKhachHangTheoSDT(sdt);
         }
+        public string SinhMaKhachHangTuDong()
+        {
+            return dalKH.SinhMaKhachHangTuDong();
+        }
         // Lấy danh sách khách hàng
         public DataTable getKhachHang()
         {

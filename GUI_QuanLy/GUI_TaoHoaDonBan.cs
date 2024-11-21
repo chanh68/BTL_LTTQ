@@ -41,8 +41,10 @@ namespace GUI_QuanLy
             txtMaHD.ReadOnly = true;
             txtTenNV.ReadOnly = true;
             txtTenKH.ReadOnly = true;
+            cbMaKH.Enabled = false;
             txtDiaChi.ReadOnly = true;
-            txtSDT.ReadOnly = true;
+            txtSDT.ReadOnly = false;
+            txtDiaChi.Enabled = true ;
             txtTenHang.ReadOnly = true;
             txtDonGia.ReadOnly = true;
             txtTongTien.ReadOnly = true;
@@ -102,38 +104,38 @@ namespace GUI_QuanLy
 
         private void cbMaKH_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //string maKH = cbMaKH.SelectedValue.ToString();
-            //var khachHang = busKH.LayThongTinKhachHang(maKH);
+            string maKH = cbMaKH.SelectedValue.ToString();
+            var khachHang = busKH.LayThongTinKhachHang(maKH);
 
-            //if (khachHang != null)
-            //{
-            //    txtTenKH.Text = khachHang.TenKhach;
-            //    txtDiaChi.Text = khachHang.DiaChi;
-            //    txtSDT.Text = khachHang.DienThoai;
-            //}
+            if (khachHang != null)
+            {
+                txtTenKH.Text = khachHang.TenKhach;
+                txtDiaChi.Text = khachHang.DiaChi;
+                txtSDT.Text = khachHang.DienThoai;
+            }
         }
 
         private void txtSDT_Leave(object sender, EventArgs e)
         {
-            string soDienThoai = txtSDT.Text;
+            //string soDienThoai = txtSDT.Text;
 
-            // Kiểm tra số điện thoại đã tồn tại chưa
-            var khachHang = busKH.TimKiemKhachHangTheoSDT(soDienThoai);
+            //// Kiểm tra số điện thoại đã tồn tại chưa
+            //var khachHang = busKH.TimKiemKhachHangTheoSDT(soDienThoai);
 
-            if (khachHang != null)
-            {
-                // Nếu có, hiển thị thông tin khách hàng vào các trường tương ứng
-                txtTenKH.Text = khachHang.TenKhach;
-                txtDiaChi.Text = khachHang.DiaChi;
-                cbMaKH.Text = khachHang.MaKhach;
-            }
-            else
-            {
-                // Nếu chưa có, tự động sinh mã khách hàng và yêu cầu người dùng nhập thêm thông tin
-                txtTenKH.Text = string.Empty;
-                txtDiaChi.Text = string.Empty;
-                //cbMaKH.Text = SinhMaKhachHangMoi();
-            }
+            //if (khachHang != null)
+            //{
+            //    // Nếu có, hiển thị thông tin khách hàng vào các trường tương ứng
+            //    txtTenKH.Text = khachHang.TenKhach;
+            //    txtDiaChi.Text = khachHang.DiaChi;
+            //    cbMaKH.Text = khachHang.MaKhach;
+            //}
+            //else
+            //{
+            //    // Nếu chưa có, tự động sinh mã khách hàng và yêu cầu người dùng nhập thêm thông tin
+            //    txtTenKH.Text = string.Empty;
+            //    txtDiaChi.Text = string.Empty;
+            //    //cbMaKH.Text = SinhMaKhachHangMoi();
+            //}
         }
 
 
@@ -329,6 +331,23 @@ namespace GUI_QuanLy
                     return;
                 }
             }
+
+            var sodt = txtSDT.Text.Trim();
+
+            // Nếu khách hàng chưa tồn tại
+            if (busKH.TimKiemKhachHangTheoSDT(sodt) == null)
+            {
+                var newCustomer = new DTO_KhachHang
+                {
+                    MaKhach = cbMaKH.Text.Trim(),
+                    TenKhach = txtTenKH.Text.Trim(),
+                    DiaChi = txtDiaChi.Text.Trim(),
+                    DienThoai = sodt
+                };
+
+                busKH.themKhachHang(newCustomer); // Lưu khách hàng mới
+            }
+
             decimal tongTienGiamGia = 0;
 
             foreach (var chiTiet in chiTietHoaDonBanList)
@@ -399,6 +418,47 @@ namespace GUI_QuanLy
         private void dgvDSMatHang_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void txtSDT_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                string sodt = txtSDT.Text.Trim();
+
+                // Tìm kiếm thông tin khách hàng theo số điện thoại
+                var customer = busKH.TimKiemKhachHangTheoSDT(sodt);
+
+                if (customer != null)
+                {
+                    // Nếu thông tin khách hàng đã tồn tại
+                    cbMaKH.Text = customer.MaKhach;
+                    txtTenKH.Text = customer.TenKhach;
+                    txtDiaChi.Text = customer.DiaChi;
+
+                    // Đặt trạng thái readonly
+                    cbMaKH.Enabled = true;
+                    txtTenKH.ReadOnly = true;
+                    txtDiaChi.ReadOnly = true;
+
+                    MessageBox.Show("Thông tin khách hàng đã tồn tại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    // Nếu khách hàng chưa tồn tại
+                    cbMaKH.Text = busKH.SinhMaKhachHangTuDong();
+                    txtTenKH.Text = string.Empty;
+                    txtDiaChi.Text = string.Empty;
+
+                    // Đặt trạng thái readonly
+                    cbMaKH.Enabled = true;
+                    txtTenKH.ReadOnly = false;
+                    txtDiaChi.ReadOnly = false;
+
+                    // Đưa con trỏ vào ô Tên khách hàng để nhập
+                    txtTenKH.Focus();
+                }
+            }
         }
     }
 }
