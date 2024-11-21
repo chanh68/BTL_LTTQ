@@ -24,6 +24,11 @@ namespace BUS_QuanLy
             return dalCT.LayChiTietHoaDon(soHDB);
         }
 
+        public List<DTO_ChiTietHoaDonBan> RP_LayChiTietHoaDonBan(string soHDB)
+        {
+            return dalCT.RP_LayChiTietHoaDon(soHDB);
+        }
+
         public void ThemChiTietHoaDon(DTO_ChiTietHoaDonBan ct)
         {
             dalCT.ThemChiTietHoaDon(ct);

@@ -26,6 +26,11 @@ namespace BUS_QuanLy
             return dalCT.LayChiTietHoaDon(soHDN);
         }
 
+        public List<DTO_ChiTietHoaDonNhap> RP_LayChiTietHoaDon(string soHDN)
+        {
+            return dalCT.RP_LayChiTietHoaDon(soHDN);
+        }
+
         //Phương thức thêm mới chi tiết hóa đơn bán
         public void ThemChiTietHoaDon(DTO_ChiTietHoaDonNhap chiTietHoaDon)
         {

@@ -213,6 +213,8 @@ namespace GUI_QuanLy
                     dgvDSMatHang.DataSource = bindingSource;
                     // Ẩn cột "SoHDB"
                     dgvDSMatHang.Columns["SoHDB"].Visible = false;
+                    dgvDSMatHang.Columns["NgayBan"].Visible = false;
+                    dgvDSMatHang.Columns["MaNV"].Visible = false ;
 
                     // Đổi tên các cột
                     dgvDSMatHang.Columns["MaHang"].HeaderText = "Mã Hàng";
@@ -222,6 +224,7 @@ namespace GUI_QuanLy
                     dgvDSMatHang.Columns["DonGiaBan"].HeaderText = "Đơn Giá";
                     dgvDSMatHang.Columns["GiamGia"].HeaderText = "Giảm Giá (%)";
                     dgvDSMatHang.Columns["ThanhTien"].HeaderText = "Thành Tiền";
+
 
                     dgvDSMatHang.RowTemplate.Height = 135;
 
@@ -297,6 +300,8 @@ namespace GUI_QuanLy
 
                     // Ẩn cột "SoHDB"
                     dgvDSMatHang.Columns["SoHDB"].Visible = false;
+                    dgvDSMatHang.Columns["NgayBan"].Visible = false;
+                    dgvDSMatHang.Columns["MaNV"].Visible = false;
 
                     // Đổi tên các cột
                     dgvDSMatHang.Columns["MaHang"].HeaderText = "Mã Hàng";
@@ -441,7 +446,12 @@ namespace GUI_QuanLy
         private void btnIn_Click(object sender, EventArgs e)
         {
             string soHDB = txtMaHD.Text;
-            busCT.InChiTietHoaDon(soHDB); // In chi tiết hóa đơn
+            //busCT.InChiTietHoaDon(soHDB); // In chi tiết hóa đơn
+            GUI_InHoaDonBan frmReport = new GUI_InHoaDonBan()
+            {
+                SoHDB = soHDB
+            };
+            frmReport.ShowDialog();
         }
 
         private void dgvDSMatHang_CellContentClick(object sender, DataGridViewCellEventArgs e)

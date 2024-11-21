@@ -275,6 +275,18 @@
     <Compile Include="GUI_HoaDonNhap.Designer.cs">
       <DependentUpon>GUI_HoaDonNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI_InHoaDonBan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_InHoaDonBan.Designer.cs">
+      <DependentUpon>GUI_InHoaDonBan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_InHoaDonNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_InHoaDonNhap.Designer.cs">
+      <DependentUpon>GUI_InHoaDonNhap.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI_TaoHoaDonBan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -298,6 +310,16 @@
     </Compile>
     <Compile Include="GUI_TrangChu.Designer.cs">
       <DependentUpon>GUI_TrangChu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HD.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HD.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HDN_RP.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HDN_RP.xsd</DependentUpon>
     </Compile>
     <Compile Include="HeaderControl.cs">
       <SubType>UserControl</SubType>
@@ -345,6 +367,11 @@
     </Compile>
     <Compile Include="LuongNV.Designer.cs">
       <DependentUpon>LuongNV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MetQuaRoi_HD.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MetQuaRoi_HD.xsd</DependentUpon>
     </Compile>
     <Compile Include="NhaCC.cs">
       <SubType>Form</SubType>
@@ -466,11 +493,23 @@
     <EmbeddedResource Include="FormReport.resx">
       <DependentUpon>FormReport.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI_ChiTietHDB.resx">
+      <DependentUpon>GUI_ChiTietHDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_ChiTietHDN.resx">
+      <DependentUpon>GUI_ChiTietHDN.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI_HoaDonBan.resx">
       <DependentUpon>GUI_HoaDonBan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI_HoaDonNhap.resx">
       <DependentUpon>GUI_HoaDonNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_InHoaDonBan.resx">
+      <DependentUpon>GUI_InHoaDonBan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_InHoaDonNhap.resx">
+      <DependentUpon>GUI_InHoaDonNhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI_TaoHoaDonBan.resx">
       <DependentUpon>GUI_TaoHoaDonBan.cs</DependentUpon>
@@ -496,6 +535,8 @@
     <EmbeddedResource Include="Information.resx">
       <DependentUpon>Information.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="InHDB.rdlc" />
+    <EmbeddedResource Include="InHDN.rdlc" />
     <EmbeddedResource Include="KhachHang.resx">
       <DependentUpon>KhachHang.cs</DependentUpon>
     </EmbeddedResource>
@@ -533,6 +574,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Report_HoaDon.resx">
       <DependentUpon>Report_HoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report_NhanVien.resx">
+      <DependentUpon>Report_NhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report_SanPham.resx">
       <DependentUpon>Report_SanPham.cs</DependentUpon>
@@ -627,6 +671,28 @@
     <None Include="dsHDBDataSet.xss">
       <DependentUpon>dsHDBDataSet.xsd</DependentUpon>
     </None>
+    <None Include="HD.xsc">
+      <DependentUpon>HD.xsd</DependentUpon>
+    </None>
+    <None Include="HD.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HD.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HD.xss">
+      <DependentUpon>HD.xsd</DependentUpon>
+    </None>
+    <None Include="HDN_RP.xsc">
+      <DependentUpon>HDN_RP.xsd</DependentUpon>
+    </None>
+    <None Include="HDN_RP.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HDN_RP.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HDN_RP.xss">
+      <DependentUpon>HDN_RP.xsd</DependentUpon>
+    </None>
     <None Include="HoaDon.xsc">
       <DependentUpon>HoaDon.xsd</DependentUpon>
     </None>
@@ -637,6 +703,17 @@
     </None>
     <None Include="HoaDon.xss">
       <DependentUpon>HoaDon.xsd</DependentUpon>
+    </None>
+    <None Include="MetQuaRoi_HD.xsc">
+      <DependentUpon>MetQuaRoi_HD.xsd</DependentUpon>
+    </None>
+    <None Include="MetQuaRoi_HD.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MetQuaRoi_HD.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MetQuaRoi_HD.xss">
+      <DependentUpon>MetQuaRoi_HD.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\app.manifest" />

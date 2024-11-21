@@ -14,6 +14,8 @@ namespace DTO_QuanLy
         private int _SoLuong;
         private decimal _DonGia;
         private decimal _ThanhTien;
+        private string _MaNV;
+        private DateTime _NgayNhap;
 
         public string SoHDN { get; set; }
         public string MaHang { get; set; }
@@ -21,10 +23,11 @@ namespace DTO_QuanLy
         public int SoLuong { get; set; }
         public decimal DonGia { get; set; }
         public decimal ThanhTien { get; set; }
-
+        public string MaNV { get; set; }
+        public DateTime NgayNhap { get; set; }
         public DTO_ChiTietHoaDonNhap() { }
 
-        public DTO_ChiTietHoaDonNhap(string maHDN, string maHang, string tenHang, int soLuong, decimal donGia, decimal thanhTien)
+        public DTO_ChiTietHoaDonNhap(string maHDN, string maHang, string tenHang, int soLuong, decimal donGia, decimal thanhTien, string maNV, DateTime ngayNhap)
         {
             this.SoHDN = maHDN;
             this.MaHang = maHang;
@@ -32,6 +35,8 @@ namespace DTO_QuanLy
             this.SoLuong = soLuong;
             this.DonGia = donGia;
             this.ThanhTien = thanhTien;
+            this.MaNV = maNV;
+            this.NgayNhap = ngayNhap;
         }
     }
 

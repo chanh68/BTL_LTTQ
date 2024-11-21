@@ -150,6 +150,8 @@ namespace GUI_QuanLy
                     bindingSource.DataSource = chiTietHoaDonNhapList;
                     dgvDSMatHang.DataSource = bindingSource;
                     dgvDSMatHang.Columns["SoHDN"].Visible = false;
+                    dgvDSMatHang.Columns["MaNV"].Visible = false;
+                    dgvDSMatHang.Columns["NgayNhap"].Visible = false;
 
                     dgvDSMatHang.Columns["MaHang"].HeaderText = "Mã Hàng";
                     dgvDSMatHang.Columns["TenHang"].HeaderText = "Tên Hàng";
@@ -237,8 +239,13 @@ namespace GUI_QuanLy
 
         private void btnIn_Click(object sender, EventArgs e)
         {
-            busCT.InChiTietHoaDon(txtMaHD.Text);
-            MessageBox.Show("In hóa đơn thành công!");
+            string soHDN = txtMaHD.Text;
+            //busCT.InChiTietHoaDon(soHDB); // In chi tiết hóa đơn
+            GUI_InHoaDonNhap frmReport = new GUI_InHoaDonNhap()
+            {
+                SoHDN = soHDN
+            };
+            frmReport.ShowDialog();
         }
     }
 }

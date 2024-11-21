@@ -198,38 +198,38 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BUS_QuanLy.dll" size="21504">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BUS_QuanLy.dll" size="24576">
       <assemblyIdentity name="BUS_QuanLy" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>70KskAZwRZ4dEym85JvSzOaCyYEEh7zm0m+55N8p7HQ=</dsig:DigestValue>
+        <dsig:DigestValue>s4DpcueB6CYDth430Vi1ipJzYjmeDSphmT1OxnTUD1s=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DAL_QuanLy.dll" size="113152">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DAL_QuanLy.dll" size="115200">
       <assemblyIdentity name="DAL_QuanLy" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>BJBOwJ5RTYKWQsAE9QwTX402jIPKqBgWlfm5mrVoAlM=</dsig:DigestValue>
+        <dsig:DigestValue>ndeeDbdxXCdMY0wdp3vw3gZi1oXrbpytZRkKyntjCmI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DTO_QuanLy.dll" size="74240">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DTO_QuanLy.dll" size="318464">
       <assemblyIdentity name="DTO_QuanLy" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>nRkoQnMJAzBjN7BHISARIkg5bbM1w4jcek6phVQECkM=</dsig:DigestValue>
+        <dsig:DigestValue>Z9tTLi5bDqSGGVsin7enldbz3IO72fkiCPhxRx/5IGE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -282,14 +282,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="GUI_QuanLy.exe" size="3273728">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="GUI_QuanLy.exe" size="5341184">
       <assemblyIdentity name="GUI_QuanLy" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>lyMqV+E1JyB18/ry7sbyjlgx1fjeop42jR6jj+2TXgA=</dsig:DigestValue>
+        <dsig:DigestValue>1rqoKCBLVlcL7KM+EVdM6j8JjaM/CZMxvAbJAoXZ7Mc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

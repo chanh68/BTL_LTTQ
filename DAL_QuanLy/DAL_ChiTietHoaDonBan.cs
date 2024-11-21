@@ -84,10 +84,11 @@ namespace DAL_QuanLy
         public List<DTO_ChiTietHoaDonBan> LayChiTietHoaDon(string soHDB)
         {
             List<DTO_ChiTietHoaDonBan> chiTietList = new List<DTO_ChiTietHoaDonBan>();
-            string query = "SELECT c.MaHang as 'Mã hàng', h.TenHang as 'Tên hàng', c.SoLuong as 'Số lượng', c.GiamGia as 'Giảm giá', c.DonGiaBan as 'Đơn giá', c.ThanhTien as 'Thành tiền' " +
-                           "FROM ChiTietHoaDonBan c " +
-                           "JOIN HangHoa h ON c.MaHang = h.MaHang " +
-                           "WHERE c.SoHDB = @SoHDB";
+            string query = @"
+        SELECT c.MaHang, h.TenHang, c.SoLuong, c.GiamGia, c.DonGiaBan, c.ThanhTien
+        FROM ChiTietHoaDonBan c
+        JOIN HangHoa h ON c.MaHang = h.MaHang
+        WHERE c.SoHDB = @SoHDB";
 
             using (SqlCommand cmd = new SqlCommand(query, _conn))
             {
@@ -95,19 +96,19 @@ namespace DAL_QuanLy
 
                 try
                 {
-                    OpenConnection(); // Mở kết nối
+                    OpenConnection();
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
                         while (reader.Read())
                         {
                             DTO_ChiTietHoaDonBan chiTiet = new DTO_ChiTietHoaDonBan
                             {
-                                MaHang = reader["Mã hàng"].ToString(),
-                                TenHang = reader["Tên hàng"].ToString(),
-                                SoLuong = int.Parse(reader["Số lượng"].ToString()),
-                                GiamGia = decimal.Parse(reader["Giảm giá"].ToString()),
-                                DonGiaBan = decimal.Parse(reader["Đơn giá"].ToString()),
-                                ThanhTien = decimal.Parse(reader["Thành tiền"].ToString())
+                                MaHang = reader["MaHang"].ToString(),
+                                TenHang = reader["TenHang"].ToString(),
+                                SoLuong = Convert.ToInt32(reader["SoLuong"]),
+                                GiamGia = Convert.ToDecimal(reader["GiamGia"]),
+                                DonGiaBan = Convert.ToDecimal(reader["DonGiaBan"]),
+                                ThanhTien = Convert.ToDecimal(reader["ThanhTien"])
                             };
                             chiTietList.Add(chiTiet);
                         }
@@ -119,11 +120,61 @@ namespace DAL_QuanLy
                 }
                 finally
                 {
-                    CloseConnection(); // Đảm bảo đóng kết nối
+                    CloseConnection();
                 }
             }
 
-            return chiTietList; // Trả về danh sách chi tiết hóa đơn
+            return chiTietList;
+        }
+
+        public List<DTO_ChiTietHoaDonBan> RP_LayChiTietHoaDon(string soHDB)
+        {
+            List<DTO_ChiTietHoaDonBan> chiTietList = new List<DTO_ChiTietHoaDonBan>();
+            string query = @"
+        SELECT c.SoHDB, c.MaHang, h.TenHang, c.SoLuong, c.GiamGia, c.DonGiaBan, c.ThanhTien, hdb.MaNV, hdb.NgayBan
+        FROM ChiTietHoaDonBan c
+        JOIN HangHoa h ON c.MaHang = h.MaHang
+        JOIN HoaDonBan hdb ON c.SoHDB = hdb.SoHDB
+        WHERE c.SoHDB = @SoHDB";
+
+            using (SqlCommand cmd = new SqlCommand(query, _conn))
+            {
+                cmd.Parameters.AddWithValue("@SoHDB", soHDB);
+
+                try
+                {
+                    OpenConnection();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            DTO_ChiTietHoaDonBan chiTiet = new DTO_ChiTietHoaDonBan
+                            {
+                                SoHDB = reader["SoHDB"].ToString(),
+                                MaHang = reader["MaHang"].ToString(),
+                                TenHang = reader["TenHang"].ToString(),
+                                SoLuong = Convert.ToInt32(reader["SoLuong"]),
+                                GiamGia = Convert.ToDecimal(reader["GiamGia"]),
+                                DonGiaBan = Convert.ToDecimal(reader["DonGiaBan"]),
+                                ThanhTien = Convert.ToDecimal(reader["ThanhTien"]),
+                                MaNV = reader["MaNV"].ToString(),
+                                NgayBan = Convert.ToDateTime(reader["NgayBan"])
+                            };
+                            chiTietList.Add(chiTiet);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Lỗi khi lấy chi tiết hóa đơn: " + ex.Message);
+                }
+                finally
+                {
+                    CloseConnection();
+                }
+            }
+
+            return chiTietList;
         }
 
         //Phương thức thêm mới chi tiết hóa đơn bán

@@ -1085,21 +1085,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Thuận </Value>
-                      <Style>
-                        <FontFamily>times New Roman</FontFamily>
-                        <FontSize>13pt</FontSize>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style>
-                    <TextAlign>Center</TextAlign>
-                  </Style>
-                </Paragraph>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>Nguyễn Phúc Thuận</Value>
+                      <Value />
                       <Style>
                         <FontFamily>times New Roman</FontFamily>
                         <FontSize>13pt</FontSize>

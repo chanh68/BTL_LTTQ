@@ -929,7 +929,7 @@
             <Top>0.81125in</Top>
             <Left>0.11458in</Left>
             <Height>0.5in</Height>
-            <Width>9.19792in</Width>
+            <Width>9.19791in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1555,21 +1555,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Thuận </Value>
-                      <Style>
-                        <FontFamily>times New Roman</FontFamily>
-                        <FontSize>13pt</FontSize>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style>
-                    <TextAlign>Center</TextAlign>
-                  </Style>
-                </Paragraph>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>Nguyễn Phúc Thuận</Value>
+                      <Value />
                       <Style>
                         <FontFamily>times New Roman</FontFamily>
                         <FontSize>13pt</FontSize>

@@ -559,3 +559,4 @@ C:\Users\dundun\Documents\BTL_LTTQ_D\BUS_QuanLy\obj\Debug\BUS_QuanLy.csproj.Core
 C:\Users\dundun\Documents\BTL_LTTQ_D\BUS_QuanLy\obj\Debug\BUS_QuanLy.csproj.Up2Date
 C:\Users\dundun\Documents\BTL_LTTQ_D\BUS_QuanLy\obj\Debug\BUS_QuanLy.dll
 C:\Users\dundun\Documents\BTL_LTTQ_D\BUS_QuanLy\obj\Debug\BUS_QuanLy.pdb
+C:\Users\dundun\Documents\BTL_LTTQ_D\BUS_QuanLy\bin\Debug\DTO_QuanLy.dll.config

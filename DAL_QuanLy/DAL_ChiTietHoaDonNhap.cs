@@ -82,6 +82,57 @@ namespace DAL_QuanLy
             return chiTietList; // Trả về danh sách chi tiết hóa đơn
         }
 
+        //Phương thức lấy thông tin chi tiết hóa đơn _ In
+        public List<DTO_ChiTietHoaDonNhap> RP_LayChiTietHoaDon(string soHDN)
+        {
+            List<DTO_ChiTietHoaDonNhap> chiTietList = new List<DTO_ChiTietHoaDonNhap>();
+            string query = @"
+        SELECT c.SoHDN, c.MaHang, h.TenHang, c.SoLuong, c.DonGia, c.ThanhTien, hdn.MaNV, hdn.NgayNhap
+        FROM ChiTietHoaDonNhap c
+        JOIN HangHoa h ON c.MaHang = h.MaHang
+        JOIN HoaDonNhap hdn ON c.SoHDN = hdn.SoHDN
+        WHERE c.SoHDN = @SoHDN";
+
+            using (SqlCommand cmd = new SqlCommand(query, _conn))
+            {
+                cmd.Parameters.AddWithValue("@SoHDN", soHDN);
+
+                try
+                {
+                    OpenConnection();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            DTO_ChiTietHoaDonNhap chiTiet = new DTO_ChiTietHoaDonNhap
+                            {
+                                SoHDN = reader["SoHDN"].ToString(),
+                                MaHang = reader["MaHang"].ToString(),
+                                TenHang = reader["TenHang"].ToString(),
+                                SoLuong = Convert.ToInt32(reader["SoLuong"]),
+                                DonGia = Convert.ToDecimal(reader["DonGia"]),
+                                ThanhTien = Convert.ToDecimal(reader["ThanhTien"]),
+                                MaNV = reader["MaNV"].ToString(),
+                                NgayNhap = Convert.ToDateTime(reader["NgayNhap"])
+                            };
+                            chiTietList.Add(chiTiet);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Lỗi khi lấy chi tiết hóa đơn: " + ex.Message);
+                }
+                finally
+                {
+                    CloseConnection();
+                }
+            }
+
+            return chiTietList;
+        }
+
+
         //Phương thức thêm mới chi tiết hóa đơn bán
         public void ThemChiTietHoaDon(DTO_ChiTietHoaDonNhap chiTietHoaDon)
         {

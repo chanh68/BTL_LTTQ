@@ -57,6 +57,8 @@ namespace GUI_QuanLy
             }
             // Ẩn cột SoHDB nếu cần thiết
             dgvDSMatHang.Columns["SoHDB"].Visible = false; // Nếu cột này vẫn còn
+            dgvDSMatHang.Columns["MaNV"].Visible = false;
+            dgvDSMatHang.Columns["NgayBan"].Visible = false;
 
             dgvDSMatHang.Columns["MaHang"].HeaderText = "Mã Hàng";
             dgvDSMatHang.Columns["TenHang"].HeaderText = "Tên Hàng";
@@ -80,6 +82,17 @@ namespace GUI_QuanLy
         private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnIn_Click(object sender, EventArgs e)
+        {
+            string soHDB = txtMaHD.Text;
+            //busCT.InChiTietHoaDon(soHDB); // In chi tiết hóa đơn
+            GUI_InHoaDonBan frmReport = new GUI_InHoaDonBan()
+            {
+                SoHDB = soHDB
+            };
+            frmReport.ShowDialog();
         }
     }
 }

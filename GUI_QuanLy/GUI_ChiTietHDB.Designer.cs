@@ -38,10 +38,13 @@
             this.grbThongTinCacMatHang = new System.Windows.Forms.GroupBox();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.grbThongTinChung = new System.Windows.Forms.GroupBox();
+            this.txtMaNV = new System.Windows.Forms.TextBox();
+            this.txtMaKH = new System.Windows.Forms.TextBox();
             this.txtSDT = new System.Windows.Forms.MaskedTextBox();
             this.txtDiaChi = new System.Windows.Forms.TextBox();
             this.txtTenKH = new System.Windows.Forms.TextBox();
             this.txtTenNV = new System.Windows.Forms.TextBox();
+            this.dtpNgayBan = new System.Windows.Forms.DateTimePicker();
             this.txtMaHD = new System.Windows.Forms.TextBox();
             this.lblSDT = new System.Windows.Forms.Label();
             this.lblDiaChi = new System.Windows.Forms.Label();
@@ -52,9 +55,7 @@
             this.lblNgayBan = new System.Windows.Forms.Label();
             this.lblMaHoaDon = new System.Windows.Forms.Label();
             this.lblHoaDonBanHang = new System.Windows.Forms.Label();
-            this.txtMaKH = new System.Windows.Forms.TextBox();
-            this.txtMaNV = new System.Windows.Forms.TextBox();
-            this.dtpNgayBan = new System.Windows.Forms.DateTimePicker();
+            this.btnIn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSMatHang)).BeginInit();
             this.panelTongTien.SuspendLayout();
             this.grbThongTinCacMatHang.SuspendLayout();
@@ -131,11 +132,11 @@
             this.btnQuayVe.Font = new System.Drawing.Font("Segoe UI", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQuayVe.ForeColor = System.Drawing.Color.White;
             this.btnQuayVe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQuayVe.Location = new System.Drawing.Point(314, 402);
+            this.btnQuayVe.Location = new System.Drawing.Point(499, 402);
             this.btnQuayVe.Margin = new System.Windows.Forms.Padding(2);
             this.btnQuayVe.Name = "btnQuayVe";
             this.btnQuayVe.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
-            this.btnQuayVe.Size = new System.Drawing.Size(124, 43);
+            this.btnQuayVe.Size = new System.Drawing.Size(143, 43);
             this.btnQuayVe.TabIndex = 3;
             this.btnQuayVe.Text = "  Quay về";
             this.btnQuayVe.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -182,6 +183,7 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.btnIn);
             this.splitContainer1.Panel2.Controls.Add(this.grbThongTinCacMatHang);
             this.splitContainer1.Panel2.Controls.Add(this.btnQuayVe);
             this.splitContainer1.Size = new System.Drawing.Size(791, 721);
@@ -219,6 +221,24 @@
             this.grbThongTinChung.TabStop = false;
             this.grbThongTinChung.Text = "   Thông tin chung   ";
             // 
+            // txtMaNV
+            // 
+            this.txtMaNV.Location = new System.Drawing.Point(145, 100);
+            this.txtMaNV.Margin = new System.Windows.Forms.Padding(2);
+            this.txtMaNV.Name = "txtMaNV";
+            this.txtMaNV.ReadOnly = true;
+            this.txtMaNV.Size = new System.Drawing.Size(180, 29);
+            this.txtMaNV.TabIndex = 16;
+            // 
+            // txtMaKH
+            // 
+            this.txtMaKH.Location = new System.Drawing.Point(499, 34);
+            this.txtMaKH.Margin = new System.Windows.Forms.Padding(2);
+            this.txtMaKH.Name = "txtMaKH";
+            this.txtMaKH.ReadOnly = true;
+            this.txtMaKH.Size = new System.Drawing.Size(241, 29);
+            this.txtMaKH.TabIndex = 15;
+            // 
             // txtSDT
             // 
             this.txtSDT.Location = new System.Drawing.Point(499, 139);
@@ -255,6 +275,15 @@
             this.txtTenNV.ReadOnly = true;
             this.txtTenNV.Size = new System.Drawing.Size(180, 29);
             this.txtTenNV.TabIndex = 11;
+            // 
+            // dtpNgayBan
+            // 
+            this.dtpNgayBan.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpNgayBan.Location = new System.Drawing.Point(145, 67);
+            this.dtpNgayBan.Margin = new System.Windows.Forms.Padding(2);
+            this.dtpNgayBan.Name = "dtpNgayBan";
+            this.dtpNgayBan.Size = new System.Drawing.Size(180, 29);
+            this.dtpNgayBan.TabIndex = 9;
             // 
             // txtMaHD
             // 
@@ -365,32 +394,24 @@
             this.lblHoaDonBanHang.TabIndex = 0;
             this.lblHoaDonBanHang.Text = "CHI TIẾT HÓA ĐƠN";
             // 
-            // txtMaKH
+            // btnIn
             // 
-            this.txtMaKH.Location = new System.Drawing.Point(499, 34);
-            this.txtMaKH.Margin = new System.Windows.Forms.Padding(2);
-            this.txtMaKH.Name = "txtMaKH";
-            this.txtMaKH.ReadOnly = true;
-            this.txtMaKH.Size = new System.Drawing.Size(241, 29);
-            this.txtMaKH.TabIndex = 15;
-            // 
-            // txtMaNV
-            // 
-            this.txtMaNV.Location = new System.Drawing.Point(145, 100);
-            this.txtMaNV.Margin = new System.Windows.Forms.Padding(2);
-            this.txtMaNV.Name = "txtMaNV";
-            this.txtMaNV.ReadOnly = true;
-            this.txtMaNV.Size = new System.Drawing.Size(180, 29);
-            this.txtMaNV.TabIndex = 16;
-            // 
-            // dtpNgayBan
-            // 
-            this.dtpNgayBan.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNgayBan.Location = new System.Drawing.Point(145, 67);
-            this.dtpNgayBan.Margin = new System.Windows.Forms.Padding(2);
-            this.dtpNgayBan.Name = "dtpNgayBan";
-            this.dtpNgayBan.Size = new System.Drawing.Size(180, 29);
-            this.dtpNgayBan.TabIndex = 9;
+            this.btnIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(41)))), ((int)(((byte)(102)))));
+            this.btnIn.FlatAppearance.BorderSize = 2;
+            this.btnIn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnIn.Font = new System.Drawing.Font("Segoe UI", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIn.ForeColor = System.Drawing.Color.White;
+            this.btnIn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnIn.Location = new System.Drawing.Point(155, 402);
+            this.btnIn.Margin = new System.Windows.Forms.Padding(2);
+            this.btnIn.Name = "btnIn";
+            this.btnIn.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
+            this.btnIn.Size = new System.Drawing.Size(143, 43);
+            this.btnIn.TabIndex = 4;
+            this.btnIn.Text = "  In hóa đơn";
+            this.btnIn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnIn.UseVisualStyleBackColor = false;
+            this.btnIn.Click += new System.EventHandler(this.btnIn_Click);
             // 
             // GUI_ChiTietHDB
             // 
@@ -401,7 +422,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "GUI_ChiTietHDB";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GUI_ChiTietHDB";
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSMatHang)).EndInit();
             this.panelTongTien.ResumeLayout(false);
@@ -445,5 +466,6 @@
         private System.Windows.Forms.TextBox txtMaKH;
         private System.Windows.Forms.TextBox txtMaNV;
         private System.Windows.Forms.DateTimePicker dtpNgayBan;
+        private System.Windows.Forms.Button btnIn;
     }
 }
