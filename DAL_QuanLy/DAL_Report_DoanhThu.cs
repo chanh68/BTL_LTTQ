@@ -19,16 +19,16 @@ namespace DAL_QuanLy
             OpenConnection();
             using (var command = new SqlCommand(@"
                 SELECT hb.SoHDB AS InvoiceNumber,
-                       SUM(ct.SoLuong * ct.DonGiaBan * 0.01*(100 - ISNULL(ct.GiamGia, 0))) AS Revenue,
+                       ct.SoLuong * ct.DonGiaBan * 0.01 * (100 - ISNULL(ct.GiamGia, 0)) AS Revenue,
                        hb.NgayBan AS SaleDate,
-                       SUM(ct.SoLuong) AS ProductCount,
+                       ct.SoLuong AS ProductCount,
                        hh.MaHang AS ProductCode,
                        hh.TenHang AS ProductName
                 FROM HoaDonBan hb
                 JOIN ChiTietHoaDonBan ct ON hb.SoHDB = ct.SoHDB
                 JOIN HangHoa hh ON ct.MaHang = hh.MaHang
-                WHERE hb.NgayBan BETWEEN @StartDate AND @EndDate
-                GROUP BY hb.SoHDB, hb.NgayBan, hh.MaHang, hh.TenHang", _conn))
+                WHERE hb.NgayBan BETWEEN '10-01-2024' AND '10-20-2024'
+                ORDER BY hb.NgayBan, hh.MaHang", _conn))
             {
                 command.Parameters.AddWithValue("@StartDate", startDate);
                 command.Parameters.AddWithValue("@EndDate", endDate);
