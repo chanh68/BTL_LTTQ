@@ -128,6 +128,10 @@ namespace GUI_QuanLy
             {
                 btnTaiKhoan.Enabled = false;
                 btnTaiKhoan.BackColor = Color.Aqua;
+                btnBaoCaoThongKe.Enabled = false;
+                btnBaoCaoThongKe.BackColor = Color.Aqua;
+                btnNhanSu.Enabled = false;
+                btnNhanSu.BackColor = Color.Aqua;
             }
         }
 
