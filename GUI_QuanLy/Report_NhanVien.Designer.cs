@@ -48,6 +48,7 @@
             this.ClientSize = new System.Drawing.Size(1424, 874);
             this.Controls.Add(this.reportViewer1);
             this.Name = "Report_NhanVien";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Report_NhanVien";
             this.Load += new System.EventHandler(this.Report_NhanVien_Load);
             this.ResumeLayout(false);

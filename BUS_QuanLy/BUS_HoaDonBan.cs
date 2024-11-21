@@ -67,10 +67,10 @@ namespace BUS_QuanLy
 
         // Phương thức in danh sách hóa đơn ra Excel
 
-        public void InDanhSachHoaDon()
+        public void InDanhSachHoaDon(DataTable dtHDB)
         {
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
-            DataTable dtHDB = LayDanhSachHoaDonBan(); // Lấy danh sách hóa đơn
+
             using (ExcelPackage excel = new ExcelPackage())
             {
                 var workSheet = excel.Workbook.Worksheets.Add("Danh Sách Hóa Đơn");
@@ -103,6 +103,7 @@ namespace BUS_QuanLy
                 Console.WriteLine("Đã in danh sách hóa đơn ra file Excel tại: " + filePath);
             }
         }
+
 
 
     }

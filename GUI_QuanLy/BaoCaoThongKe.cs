@@ -114,7 +114,9 @@ namespace GUI_QuanLy
 
         private void btnSanPham_Click(object sender, EventArgs e)
         {
-            ReportSanPham reportSanPham = new ReportSanPham();
+            DateTime? startDate = bunifuDatePicker1.Value.Date;
+            DateTime? endDate = bunifuDatePicker2.Value.Date;
+            ReportSanPham reportSanPham = new ReportSanPham(startDate, endDate);
             reportSanPham.ShowDialog();
         }
 

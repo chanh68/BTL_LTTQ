@@ -142,8 +142,8 @@ namespace GUI_QuanLy
 
         private void btnXuatFileExcel_Click(object sender, EventArgs e)
         {
-
-            busHDB.InDanhSachHoaDon();
+            DataTable dtHDBFiltered = (DataTable)dgvDSHDB.DataSource; // Get the current DataTable from DataGridView
+            busHDB.InDanhSachHoaDon(dtHDBFiltered);
         }
     }
 }

@@ -9,6 +9,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Media;
+using System.Drawing;
+
 
 namespace BUS_QuanLy
 {
@@ -36,68 +38,104 @@ namespace BUS_QuanLy
         public void InChiTietHoaDon(string soHDB)
         {
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+
+            // Lấy thông tin chi tiết hóa đơn và khách hàng
             BUS_ChiTietHoaDonBan busCT = new BUS_ChiTietHoaDonBan();
-            BUS_KhachHang busKH = new BUS_KhachHang(); // Lấy thông tin khách hàng
-
-            List<DTO_ChiTietHoaDonBan> chiTietList = busCT.LayChiTietHoaDon(soHDB); // Lấy chi tiết hóa đơn
-            DTO_KhachHang khachHang = busKH.ThongTinKhachHangTheoSoHoaDon(soHDB); // Lấy thông tin khách hàng
-
+            BUS_KhachHang busKH = new BUS_KhachHang();
+            List<DTO_ChiTietHoaDonBan> chiTietList = busCT.LayChiTietHoaDon(soHDB);
+            DTO_KhachHang khachHang = busKH.ThongTinKhachHangTheoSoHoaDon(soHDB);
 
             using (ExcelPackage excel = new ExcelPackage())
             {
+                // Tạo worksheet
                 var workSheet = excel.Workbook.Worksheets.Add("Chi Tiết Hóa Đơn");
 
-                // Thêm thông tin khách hàng và địa chỉ quán
-                workSheet.Cells[1, 1].Value = "Thông Tin Khách Hàng:";
-                workSheet.Cells[2, 1].Value = "Tên Khách Hàng: " + khachHang.TenKhach;
-                workSheet.Cells[3, 1].Value = "Địa Chỉ: " + khachHang.DiaChi;
-                workSheet.Cells[4, 1].Value = "Số Điện Thoại: " + khachHang.DienThoai;
+                // Thêm tiêu đề
+                workSheet.Cells[1, 1].Value = "Chi Tiết Hóa Đơn";
+                workSheet.Cells[1, 1].Style.Font.Bold = true;
+                workSheet.Cells[1, 1].Style.Font.Size = 16;
+                workSheet.Cells[1, 1].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
 
-                workSheet.Cells[5, 1].Value = "Thông Tin Cửa Hàng:";
-                workSheet.Cells[6, 1].Value = "Tên Cửa Hàng:  Đồ Gốm CNTT4";
-                workSheet.Cells[7, 1].Value = "Địa Chỉ: Số 3 đường Cầu Giấy, quận Đống Đa, thành phố Hà Nội. ";
-                workSheet.Cells[8, 1].Value = "Số Điện Thoại : 0987654321";
+                // Thêm thông tin khách hàng
+                workSheet.Cells[3, 1].Value = "Thông Tin Khách Hàng:";
+                workSheet.Cells[4, 1].Value = "Tên Khách Hàng:";
+                workSheet.Cells[4, 2].Value = khachHang.TenKhach;
+                workSheet.Cells[5, 1].Value = "Địa Chỉ:";
+                workSheet.Cells[5, 2].Value = khachHang.DiaChi;
+                workSheet.Cells[6, 1].Value = "Số Điện Thoại:";
+                workSheet.Cells[6, 2].Value = khachHang.DienThoai;
 
-                // Đặt tiêu đề cột cho chi tiết hóa đơn
-                workSheet.Cells[9, 1].Value = "Mã Hàng";
-                workSheet.Cells[9, 2].Value = "Tên Hàng";
-                workSheet.Cells[9, 3].Value = "Số Lượng";
-                workSheet.Cells[9, 4].Value = "Giảm Giá";
-                workSheet.Cells[9, 5].Value = "Đơn Giá";
-                workSheet.Cells[9, 6].Value = "Thành Tiền";
+                // Thêm thông tin cửa hàng
+                workSheet.Cells[8, 1].Value = "Thông Tin Cửa Hàng:";
+                workSheet.Cells[9, 1].Value = "Tên Cửa Hàng:";
+                workSheet.Cells[9, 2].Value = "Đồ Gốm CNTT4";
+                workSheet.Cells[10, 1].Value = "Địa Chỉ:";
+                workSheet.Cells[10, 2].Value = "Số 3 đường Cầu Giấy, quận Đống Đa, Hà Nội.";
+                workSheet.Cells[11, 1].Value = "Số Điện Thoại:";
+                workSheet.Cells[11, 2].Value = "0987654321";
 
-                // Định dạng tiêu đề cột
-                using (var range = workSheet.Cells[9, 1, 9, 6])
+                // Đặt tiêu đề bảng chi tiết hóa đơn
+                string[] headers = { "Mã Hàng", "Tên Hàng", "Số Lượng", "Giảm Giá", "Đơn Giá", "Thành Tiền" };
+                int startRow = 13;
+                for (int i = 0; i < headers.Length; i++)
+                {
+                    workSheet.Cells[startRow, i + 1].Value = headers[i];
+                }
+
+                // Định dạng tiêu đề bảng
+                using (var range = workSheet.Cells[startRow, 1, startRow, headers.Length])
                 {
                     range.Style.Font.Bold = true;
                     range.Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
                     range.Style.Fill.PatternType = ExcelFillStyle.Solid;
+                   // range.Style.Fill.BackgroundColor.SetColor(Color.LightGray);
                 }
 
-                // Ghi dữ liệu vào worksheet
+                // Ghi dữ liệu chi tiết hóa đơn vào bảng
                 for (int i = 0; i < chiTietList.Count; i++)
                 {
-                    workSheet.Cells[i + 10, 1].Value = chiTietList[i].MaHang;
-                    workSheet.Cells[i + 10, 2].Value = chiTietList[i].TenHang;
-                    workSheet.Cells[i + 10, 3].Value = chiTietList[i].SoLuong;
-                    workSheet.Cells[i + 10, 4].Value = chiTietList[i].GiamGia;
-                    workSheet.Cells[i + 10, 5].Value = chiTietList[i].DonGiaBan;
-                    workSheet.Cells[i + 10, 6].Value = chiTietList[i].ThanhTien;
+                    var item = chiTietList[i];
+                    workSheet.Cells[i + startRow + 1, 1].Value = item.MaHang;
+                    workSheet.Cells[i + startRow + 1, 2].Value = item.TenHang;
+                    workSheet.Cells[i + startRow + 1, 3].Value = item.SoLuong;
+                    workSheet.Cells[i + startRow + 1, 4].Value = item.GiamGia;
+                    workSheet.Cells[i + startRow + 1, 5].Value = item.DonGiaBan;
+                    workSheet.Cells[i + startRow + 1, 6].Value = item.ThanhTien;
                 }
 
-                // Tính toán tổng tiền
+                // Tính tổng tiền và hiển thị cuối bảng
                 decimal tongTien = chiTietList.Sum(item => item.ThanhTien);
-                workSheet.Cells[chiTietList.Count + 10, 5].Value = "Tổng Tiền:";
-                workSheet.Cells[chiTietList.Count + 10, 6].Value = tongTien;
+                int footerRow = chiTietList.Count + startRow + 1;
+                workSheet.Cells[footerRow, 5].Value = "Tổng Tiền:";
+                workSheet.Cells[footerRow, 6].Value = tongTien;
 
-                // Định dạng dòng tổng tiền (in đậm, căn giữa)
-                using (var range = workSheet.Cells[chiTietList.Count + 10, 5, chiTietList.Count + 10, 6])
+                using (var range = workSheet.Cells[footerRow, 5, footerRow, 6])
                 {
                     range.Style.Font.Bold = true;
-                    range.Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+                    range.Style.Font.Size = 12;
+                    range.Style.HorizontalAlignment = ExcelHorizontalAlignment.Right;
+                    range.Style.Fill.PatternType = ExcelFillStyle.Solid;
+                    //range.Style.Fill.BackgroundColor.SetColor(Color.LightGray);
                 }
 
-                // Lưu file Excel
+                // Định dạng tổng thể cho bảng
+                using (var range = workSheet.Cells[startRow + 1, 1, footerRow, 6])
+                {
+                    range.Style.Border.Top.Style = ExcelBorderStyle.Thin;
+                    range.Style.Border.Bottom.Style = ExcelBorderStyle.Thin;
+                    range.Style.Border.Left.Style = ExcelBorderStyle.Thin;
+                    range.Style.Border.Right.Style = ExcelBorderStyle.Thin;
+                }
+
+                // Điều chỉnh độ rộng cột
+                workSheet.Column(1).Width = 15;
+                workSheet.Column(2).Width = 30;
+                workSheet.Column(3).Width = 15;
+                workSheet.Column(4).Width = 15;
+                workSheet.Column(5).Width = 15;
+                workSheet.Column(6).Width = 15;
+
+                // Lưu file Excel ra Desktop
                 var filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), $"ChiTietHoaDon_{soHDB}.xlsx");
                 FileInfo excelFile = new FileInfo(filePath);
                 excel.SaveAs(excelFile);
@@ -106,5 +144,7 @@ namespace BUS_QuanLy
                 Console.WriteLine("Đã in chi tiết hóa đơn ra file Excel tại: " + filePath);
             }
         }
+
+
     }
 }

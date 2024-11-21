@@ -7,14 +7,14 @@
     <framework targetVersion="4.7.2" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="GUI_QuanLy.exe.manifest" size="59927">
+    <dependentAssembly dependencyType="install" codebase="GUI_QuanLy.exe.manifest" size="60621">
       <assemblyIdentity name="GUI_QuanLy.exe" version="1.0.0.0" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>y0qB5b/QQ3HXLyPwhBvjMSBm2LNG59n0mMgDaD/ACCA=</dsig:DigestValue>
+        <dsig:DigestValue>UQGmQDtV8Bl1aYaaUs6x6V5pkHuBLpZT8WJbQAhRLfw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

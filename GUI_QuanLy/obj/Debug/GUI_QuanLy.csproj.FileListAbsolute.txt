@@ -979,3 +979,6 @@ C:\Users\dundun\Documents\BTL_LTTQ_D\GUI_QuanLy\obj\Debug\GUI_QuanLy.ReportSanPh
 C:\Users\dundun\Documents\BTL_LTTQ_D\GUI_QuanLy\obj\Debug\GUI_QuanLy.GUI_TaoHoaDonBan.resources
 C:\Users\dundun\Documents\BTL_LTTQ_D\GUI_QuanLy\obj\Debug\GUI_QuanLy.GUI_TaoHoaDonNhap.resources
 C:\Users\dundun\Documents\BTL_LTTQ_D\GUI_QuanLy\obj\Debug\GUI_QuanLy.GUI_HoaDonNhap.resources
+C:\Users\dundun\Documents\BTL_LTTQ_D\GUI_QuanLy\bin\Debug\System.Drawing.Common.dll
+C:\Users\dundun\Documents\BTL_LTTQ_D\GUI_QuanLy\bin\Debug\System.Drawing.Common.pdb
+C:\Users\dundun\Documents\BTL_LTTQ_D\GUI_QuanLy\bin\Debug\System.Drawing.Common.xml
