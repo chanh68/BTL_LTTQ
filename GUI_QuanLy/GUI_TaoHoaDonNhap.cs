@@ -91,13 +91,28 @@ namespace GUI_QuanLy
             if (cbMaNCC.SelectedIndex >= 0)
             {
                 string maNCC = cbMaNCC.SelectedValue.ToString();
-                var khachHang = busNCC.LayThongTinNhaCungCap(maNCC);
-
-                if (khachHang != null)
+                // Lấy thông tin nhà cung cấp
+                var nhaCungCap = busNCC.LayThongTinNhaCungCap(maNCC);
+                if (nhaCungCap != null)
                 {
-                    txtTenNCC.Text = khachHang.TenNCC;
-                    txtDiaChi.Text = khachHang.DiaChi;
-                    txtSDT.Text = khachHang.DienThoai;
+                    txtTenNCC.Text = nhaCungCap.TenNCC;
+                    txtDiaChi.Text = nhaCungCap.DiaChi;
+                    txtSDT.Text = nhaCungCap.DienThoai;
+
+                    // Lấy danh sách hàng hóa theo mã nhà cung cấp
+                    var danhSachHangHoa = busHH.LayDanhSachHangHoaTheoNCC(maNCC);
+                    // Kiểm tra và cập nhật combobox MaHang
+                    if (danhSachHangHoa.Count == 0)
+                    {
+                        cbMaHang.DataSource = null;
+                        MessageBox.Show("Không có hàng hóa nào thuộc nhà cung cấp này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        cbMaHang.DataSource = danhSachHangHoa;
+                        cbMaHang.DisplayMember = "MaHang"; // Tên cột hiển thị
+                        cbMaHang.ValueMember = "MaHang";      // Tên cột giá trị
+                    }
                 }
             }
         }
@@ -142,6 +157,7 @@ namespace GUI_QuanLy
                     dgvDSMatHang.Columns["DonGia"].HeaderText = "Đơn Giá";
                     dgvDSMatHang.Columns["ThanhTien"].HeaderText = "Thành Tiền";
 
+                    dgvDSMatHang.RowTemplate.Height = 135;
                     CapNhatTongTien();
 
                     txtSoLuong.Clear();

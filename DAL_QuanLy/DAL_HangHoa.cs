@@ -170,12 +170,11 @@ namespace DAL_QuanLy
             }
         }
 
-
         // Thêm hàng hóa mới
-        public void AddHangHoa(string maHang, string tenHang, string maLoai, string maKT, string maMen, string maMau, int soLuong, decimal dgb, decimal dgn, byte[] anh, string ghiChu, string maCD, string maHK, string maNuoc)
+        public void AddHangHoa(string maHang, string tenHang, string maLoai, string maKT, string maMen, string maMau, int soLuong, decimal dgb, decimal dgn, byte[] anh, string ghiChu, string maCD, string maHK, string maNuoc, string maNCC)
         {
-            string query = "INSERT INTO HangHoa (MaHang, TenHang, MaLoai, MaKichThuoc, MaLoaiMen, MaMau, SoLuong, DonGiaBan, DonGiaNhap, Anh, GhiChu, MaCongDung, MaHinhKhoi, MaNuocSX) " +
-                           "VALUES (@MaHang, @TenHang, @MaLoai, @MaKT, @MaMen, @MaMau, @SoLuong, @DGB, @DGN, @Anh, @GhiChu, @MaCD, @MaHK, @MaNuoc)";
+            string query = "INSERT INTO HangHoa (MaHang, TenHang, MaLoai, MaKichThuoc, MaLoaiMen, MaMau, SoLuong, DonGiaBan, DonGiaNhap, Anh, GhiChu, MaCongDung, MaHinhKhoi, MaNuocSX, MaNCC) " +
+                           "VALUES (@MaHang, @TenHang, @MaLoai, @MaKT, @MaMen, @MaMau, @SoLuong, @DGB, @DGN, @Anh, @GhiChu, @MaCD, @MaHK, @MaNuoc, @MaNCC)";
 
             using (SqlCommand command = new SqlCommand(query, _conn))
             {
@@ -193,7 +192,7 @@ namespace DAL_QuanLy
                 command.Parameters.AddWithValue("@MaCD", maCD);
                 command.Parameters.AddWithValue("@MaHK", maHK);
                 command.Parameters.AddWithValue("@MaNuoc", maNuoc);
-
+                command.Parameters.AddWithValue("@MaNCC", maNCC);
                 try
                 {
                     _conn.Open();
@@ -314,7 +313,7 @@ namespace DAL_QuanLy
         // Phương thức lấy tất cả hàng hóa
         public string GetMaHangByTenHang(string tenHang)
         {
-            string query = "SELECT MaHang FROM HangHoa WHERE TenHang = @TenHang where TrangThai = 1";
+            string query = "SELECT MaHang FROM HangHoa WHERE TenHang = @TenHang and  TrangThai = 1";
             string maHang = null;
 
             using (SqlCommand command = new SqlCommand(query, _conn))
@@ -561,7 +560,53 @@ namespace DAL_QuanLy
                 CloseConnection();
             }
         }
+        public List<DTO_HangHoa> LayDanhSachHangHoaTheoNCC(string maNCC)
+        {
+            List<DTO_HangHoa> danhSachHangHoa = new List<DTO_HangHoa>();
+            string query = "SELECT * FROM HangHoa WHERE MaNCC = @MaNCC";
 
+            try
+            {
+                // Mở kết nối
+                OpenConnection();
+
+                using (SqlCommand cmd = new SqlCommand(query, _conn))
+                {
+                    // Thêm tham số
+                    cmd.Parameters.AddWithValue("@MaNCC", maNCC);
+
+                    // Thực thi truy vấn
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        // Duyệt qua từng dòng kết quả
+                        while (reader.Read())
+                        {
+                            danhSachHangHoa.Add(new DTO_HangHoa
+                            {
+                                MaHang = reader["MaHang"].ToString(),
+                                TenHangHoa = reader["TenHang"].ToString(),
+                                DonGiaBan = reader["DonGiaBan"] != DBNull.Value
+                                    ? Convert.ToDecimal(reader["DonGiaBan"])
+                                    : 0,
+                                MaNCC = reader["MaNCC"].ToString()
+                            });
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Xử lý ngoại lệ
+                throw new Exception("Error while retrieving product list: " + ex.Message);
+            }
+            finally
+            {
+                // Đóng kết nối
+                CloseConnection();
+            }
+
+            return danhSachHangHoa;
+        }
 
 
     }

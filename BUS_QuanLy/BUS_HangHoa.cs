@@ -34,6 +34,10 @@ namespace BUS_QuanLy
         {
             return dalHH.LaySoLuongSanPham(maHang);
         }
+        public List<DTO_HangHoa> LayDanhSachHangHoaTheoNCC(string maNCC)
+        {
+            return dalHH.LayDanhSachHangHoaTheoNCC(maNCC);
+        }
 
     }
 }

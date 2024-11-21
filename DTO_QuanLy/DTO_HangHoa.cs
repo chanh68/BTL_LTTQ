@@ -22,6 +22,7 @@ namespace DTO_QuanLy
         private decimal _DonGiaBan;
         private byte _Anh;
         private string _GhiChu;
+        private string _MaNCC;
 
         public string MaHang { get; set; }
         public string TenHangHoa { get; set; }
@@ -37,10 +38,11 @@ namespace DTO_QuanLy
         public decimal DonGiaBan { get; set; }
         public byte[] Anh { get; set; }
         public string GhiChu { get; set; }
+        public string MaNCC { get; set; }
 
         public DTO_HangHoa() { }
 
-        public DTO_HangHoa(string maHang, string tenHangHoa, string maLoai, string maKichThuoc, string maCongDung, string maLoaiMen, string maHinhKhoi, string maMau, string maNuocSX, int soLuong, decimal donGiaNhap, decimal donGiaBan, byte[] anh, string ghiChu)
+        public DTO_HangHoa(string maHang, string tenHangHoa, string maLoai, string maKichThuoc, string maCongDung, string maLoaiMen, string maHinhKhoi, string maMau, string maNuocSX, int soLuong, decimal donGiaNhap, decimal donGiaBan, byte[] anh, string ghiChu, string maNCC)
         {
             this.MaHang = maHang;
             this.TenHangHoa = tenHangHoa;
@@ -56,6 +58,7 @@ namespace DTO_QuanLy
             this.DonGiaBan = donGiaBan;
             this.Anh = anh;
             this.GhiChu = ghiChu;
+            this.MaNCC = maNCC;
         }
     }
 
