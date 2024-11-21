@@ -6,16 +6,16 @@ using DTO_QuanLy;
 
 namespace DAL_QuanLy
 {
-    public class DAL_ReportSanPham
+    public class DAL_ReportSanPham : DBConnect
     {
-        private readonly string connectionString = "Data Source=LAPTOP-L4E28I51\\SQLEXPRESS;Initial Catalog=BTL_TQ3;Integrated Security=True;TrustServerCertificate=True";
+       // private readonly string connectionString = "Data Source=LAPTOP-L4E28I51\\SQLEXPRESS;Initial Catalog=BTL_TQ3;Integrated Security=True;TrustServerCertificate=True";
 
         // Lấy dữ liệu của tất cả sản phẩm
         public List<DTO_ReportSanPham> GetAllReportSanPhamData()
         {
             var sanPhamList = new List<DTO_ReportSanPham>();
-
-            using (var connection = new SqlConnection(connectionString))
+            OpenConnection();
+            //using (var connection = new SqlConnection(connectionString))
             using (var command = new SqlCommand(@"
                 SELECT 
                     hh.MaHang AS IDSanPham,
@@ -33,9 +33,9 @@ namespace DAL_QuanLy
                      FROM ChiTietHoaDonNhap
                      GROUP BY MaHang) AS Purchased ON hh.MaHang = Purchased.MaHang
                 ORDER BY 
-                    hh.MaHang;", connection))
+                    hh.MaHang;", _conn))
             {
-                connection.Open();
+                //connection.Open();
 
                 using (var reader = command.ExecuteReader())
                 {
@@ -52,6 +52,7 @@ namespace DAL_QuanLy
                     }
                 }
             }
+            CloseConnection();
 
             return sanPhamList;
         }
@@ -61,7 +62,8 @@ namespace DAL_QuanLy
         {
             var sanPhamList = new List<DTO_ReportSanPham>();
 
-            using (var connection = new SqlConnection(connectionString))
+            //using (var connection = new SqlConnection(connectionString))
+            OpenConnection();
             using (var command = new SqlCommand(@"
                 SELECT 
                     hh.MaHang AS IDSanPham,
@@ -81,11 +83,11 @@ namespace DAL_QuanLy
                 WHERE 
                     hh.MaHang = @ProductID
                 ORDER BY 
-                    hh.MaHang;", connection))
+                    hh.MaHang;", _conn))
             {
                 command.Parameters.AddWithValue("@ProductID", productID);
 
-                connection.Open();
+                //connection.Open();
 
                 using (var reader = command.ExecuteReader())
                 {
@@ -102,7 +104,7 @@ namespace DAL_QuanLy
                     }
                 }
             }
-
+            CloseConnection();
             return sanPhamList;
         }
 

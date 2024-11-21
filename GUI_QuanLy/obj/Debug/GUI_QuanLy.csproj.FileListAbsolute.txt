@@ -976,7 +976,6 @@ C:\Users\dundun\Documents\BTL_LTTQ_D\GUI_QuanLy\obj\Debug\GUI_QuanLy.FormReport.
 C:\Users\dundun\Documents\BTL_LTTQ_D\GUI_QuanLy\obj\Debug\GUI_QuanLy.Report_DoanhThu.resources
 C:\Users\dundun\Documents\BTL_LTTQ_D\GUI_QuanLy\obj\Debug\GUI_QuanLy.Report_HoaDon.resources
 C:\Users\dundun\Documents\BTL_LTTQ_D\GUI_QuanLy\obj\Debug\GUI_QuanLy.ReportSanPham.resources
-C:\Users\dundun\Documents\BTL_LTTQ_D\GUI_QuanLy\obj\Debug\GUI_QuanLy.urSanPham.resources
 C:\Users\dundun\Documents\BTL_LTTQ_D\GUI_QuanLy\obj\Debug\GUI_QuanLy.GUI_TaoHoaDonBan.resources
 C:\Users\dundun\Documents\BTL_LTTQ_D\GUI_QuanLy\obj\Debug\GUI_QuanLy.GUI_TaoHoaDonNhap.resources
 C:\Users\dundun\Documents\BTL_LTTQ_D\GUI_QuanLy\obj\Debug\GUI_QuanLy.GUI_HoaDonNhap.resources

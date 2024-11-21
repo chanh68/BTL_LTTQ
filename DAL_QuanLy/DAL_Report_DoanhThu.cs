@@ -7,15 +7,16 @@ using System.Runtime.InteropServices.ComTypes;
 
 namespace DAL_QuanLy
 {
-    public class DAL_Report_DoanhThu
+    public class DAL_Report_DoanhThu : DBConnect
     {
-        private readonly string connectionString = "Data Source=LAPTOP-L4E28I51\\SQLEXPRESS;Initial Catalog=BTL_TQ3;Integrated Security=True;TrustServerCertificate=True";
+        //private readonly string connectionString = "Data Source=LAPTOP-L4E28I51\\SQLEXPRESS;Initial Catalog=BTL_TQ3;Integrated Security=True;TrustServerCertificate=True";
 
         public List<DTO_ReportDoanhThu> GetReportData(DateTime startDate, DateTime endDate)
         {
             var reportList = new List<DTO_ReportDoanhThu>();
 
-            using (var connection = new SqlConnection(connectionString))
+            //using (var connection = new SqlConnection(connectionString))
+            OpenConnection();
             using (var command = new SqlCommand(@"
                 SELECT hb.SoHDB AS InvoiceNumber,
                        SUM(ct.SoLuong * ct.DonGiaBan * 0.01*(100 - ISNULL(ct.GiamGia, 0))) AS Revenue,
@@ -27,12 +28,12 @@ namespace DAL_QuanLy
                 JOIN ChiTietHoaDonBan ct ON hb.SoHDB = ct.SoHDB
                 JOIN HangHoa hh ON ct.MaHang = hh.MaHang
                 WHERE hb.NgayBan BETWEEN @StartDate AND @EndDate
-                GROUP BY hb.SoHDB, hb.NgayBan, hh.MaHang, hh.TenHang", connection))
+                GROUP BY hb.SoHDB, hb.NgayBan, hh.MaHang, hh.TenHang", _conn))
             {
                 command.Parameters.AddWithValue("@StartDate", startDate);
                 command.Parameters.AddWithValue("@EndDate", endDate);
 
-                connection.Open();
+                //connection.Open();
 
                 using (var reader = command.ExecuteReader())
                 {
@@ -52,6 +53,7 @@ namespace DAL_QuanLy
                 }
             }
 
+            CloseConnection();
             return reportList;
         }
 

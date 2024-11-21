@@ -1,4 +1,5 @@
 ﻿using DTO_QuanLy;
+using Microsoft.ReportingServices.Diagnostics.Internal;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -6,48 +7,49 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+  // Add this line to access MessageBox
 
 namespace DAL_QuanLy
 {
-    public class DAL_ReportHoaDon
+    public class DAL_ReportHoaDon:DBConnect
     {
-        private string connectionString = "Data Source=LAPTOP-L4E28I51\\SQLEXPRESS;Initial Catalog=BTL_TQ3;Integrated Security=True;TrustServerCertificate=True";
+        //private string connectionString = "Data Source=LAPTOP-L4E28I51\\SQLEXPRESS;Initial Catalog=BTL_TQ3;Integrated Security=True;TrustServerCertificate=True";
 
         // Phương thức lấy dữ liệu gộp Hóa đơn bán và Hóa đơn nhập, bao gồm Tên đối tác
         public List<DTO_ReportHoaDon> GetHoaDonGopData(DateTime startDate, DateTime endDate)
         {
             List<DTO_ReportHoaDon> hoaDonGopList = new List<DTO_ReportHoaDon>();
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            // Mở kết nối kế thừa từ DBConnect
+            OpenConnection();
+
+            string query = @"
+                SELECT 'Bán' AS LoaiHoaDon, hb.SoHDB AS SoHD, hb.NgayBan AS Ngay, hb.MaKhach AS MaDoiTac, 
+                       kh.TenKhach AS TenDoiTac, hh.TenHang, 
+                       SUM(ct.SoLuong * ct.DonGiaBan * 0.01 * (100 - ISNULL(ct.GiamGia, 0))) AS TongTien, 
+                       ct.MaHang, ct.SoLuong, ct.DonGiaBan AS DonGia, ct.GiamGia
+                FROM HoaDonBan hb
+                JOIN ChiTietHoaDonBan ct ON hb.SoHDB = ct.SoHDB
+                JOIN KhachHang kh ON hb.MaKhach = kh.MaKhach
+                JOIN HangHoa hh ON ct.MaHang = hh.MaHang
+                WHERE hb.NgayBan BETWEEN @StartDate AND @EndDate
+                GROUP BY hb.SoHDB, hb.NgayBan, hb.MaKhach, kh.TenKhach, hh.TenHang, ct.MaHang, ct.SoLuong, ct.DonGiaBan, ct.GiamGia
+                UNION ALL
+                SELECT N'Nhập' AS LoaiHoaDon, hn.SoHDN AS SoHD, hn.NgayNhap AS Ngay, hn.MaNCC AS MaDoiTac, 
+                       ncc.TenNCC AS TenDoiTac, hh.TenHang, 
+                       SUM(ct.SoLuong * ct.DonGia) AS TongTien, 
+                       ct.MaHang, ct.SoLuong, ct.DonGia AS DonGia, NULL AS GiamGia
+                FROM HoaDonNhap hn
+                JOIN ChiTietHoaDonNhap ct ON hn.SoHDN = ct.SoHDN
+                JOIN NhaCungCap ncc ON hn.MaNCC = ncc.MaNCC
+                JOIN HangHoa hh ON ct.MaHang = hh.MaHang
+                WHERE hn.NgayNhap BETWEEN @StartDate AND @EndDate
+                GROUP BY hn.SoHDN, hn.NgayNhap, hn.MaNCC, ncc.TenNCC, hh.TenHang, ct.MaHang, ct.SoLuong, ct.DonGia"
+            ;
+
+            try
             {
-                connection.Open();
-                string query = @"
-                    SELECT 'Bán' AS LoaiHoaDon, hb.SoHDB AS SoHD, hb.NgayBan AS Ngay, hb.MaKhach AS MaDoiTac, 
-                           kh.TenKhach AS TenDoiTac, hh.TenHang, 
-                           SUM(ct.SoLuong * ct.DonGiaBan * 0.01* (100 - ISNULL(ct.GiamGia, 0))) AS TongTien, 
-                           ct.MaHang, ct.SoLuong, ct.DonGiaBan AS DonGia, ct.GiamGia
-                    FROM HoaDonBan hb
-                    JOIN ChiTietHoaDonBan ct ON hb.SoHDB = ct.SoHDB
-                    JOIN KhachHang kh ON hb.MaKhach = kh.MaKhach
-                    JOIN HangHoa hh ON ct.MaHang = hh.MaHang
-                    WHERE hb.NgayBan BETWEEN @StartDate AND @EndDate
-                    GROUP BY hb.SoHDB, hb.NgayBan, hb.MaKhach, kh.TenKhach, hh.TenHang, ct.MaHang, ct.SoLuong, ct.DonGiaBan, ct.GiamGia
-                    
-                    UNION ALL
-                    
-                    SELECT N'Nhập' AS LoaiHoaDon, hn.SoHDN AS SoHD, hn.NgayNhap AS Ngay, hn.MaNCC AS MaDoiTac, 
-                           ncc.TenNCC AS TenDoiTac, hh.TenHang, 
-                           SUM(ct.SoLuong * ct.DonGia) AS TongTien, 
-                           ct.MaHang, ct.SoLuong, ct.DonGia AS DonGia, NULL AS GiamGia
-                    FROM HoaDonNhap hn
-                    JOIN ChiTietHoaDonNhap ct ON hn.SoHDN = ct.SoHDN
-                    JOIN NhaCungCap ncc ON hn.MaNCC = ncc.MaNCC
-                    JOIN HangHoa hh ON ct.MaHang = hh.MaHang
-                    WHERE hn.NgayNhap BETWEEN @StartDate AND @EndDate
-                    GROUP BY hn.SoHDN, hn.NgayNhap, hn.MaNCC, ncc.TenNCC, hh.TenHang, ct.MaHang, ct.SoLuong, ct.DonGia";
-
-
-                using (SqlCommand cmd = new SqlCommand(query, connection))
+                using (SqlCommand cmd = new SqlCommand(query, _conn))
                 {
                     cmd.Parameters.AddWithValue("@StartDate", startDate);
                     cmd.Parameters.AddWithValue("@EndDate", endDate);
@@ -75,6 +77,15 @@ namespace DAL_QuanLy
                         }
                     }
                 }
+            }
+            catch (Exception ex)
+            {
+                // Log hoặc thông báo lỗi nếu có
+                Console.WriteLine("Lỗi khi lấy thông tin hóa đơn: " + ex.Message);
+            }
+            finally
+            {
+                CloseConnection(); // Đảm bảo luôn đóng kết nối
             }
 
             return hoaDonGopList;

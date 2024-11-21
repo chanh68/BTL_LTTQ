@@ -558,9 +558,6 @@
     <EmbeddedResource Include="TKNhanVien.resx">
       <DependentUpon>TKNhanVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="urSanPham.resx">
-      <DependentUpon>urSanPham.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="BTL_6DataSet.xsc">
       <DependentUpon>BTL_6DataSet.xsd</DependentUpon>
     </None>

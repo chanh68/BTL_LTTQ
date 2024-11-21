@@ -1,4 +1,5 @@
 ﻿using DTO_QuanLy;
+using Microsoft.ReportingServices.Diagnostics.Internal;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -9,22 +10,25 @@ using System.Threading.Tasks;
 
 namespace DAL_QuanLy
 {
-    public class DAL_ReportNhanVien
+    public class DAL_ReportNhanVien : DBConnect
     {
-        private string connectionString = "Data Source=LAPTOP-L4E28I51\\SQLEXPRESS;Initial Catalog=BTL_TQ3;Integrated Security=True;TrustServerCertificate=True";
+        //private string connectionString = "Data Source=LAPTOP-L4E28I51\\SQLEXPRESS;Initial Catalog=BTL_TQ3;Integrated Security=True;TrustServerCertificate=True";
 
         public List<DTO_NhanVien> GetNhanVienData()
         {
             List<DTO_NhanVien> nhanVienList = new List<DTO_NhanVien>();
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            try
             {
-                connection.Open();
+                // Mở kết nối kế thừa từ DBConnect
+                OpenConnection();
+
                 string query = @"
                     SELECT MaNV, TenNV, MaCV, GioiTinh, NgaySinh, DienThoai, NgayTuyen
-                    FROM NhanVien";
+                    FROM NhanVien"
+                ;
 
-                using (SqlCommand cmd = new SqlCommand(query, connection))
+                using (SqlCommand cmd = new SqlCommand(query, _conn))
                 {
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
@@ -36,15 +40,25 @@ namespace DAL_QuanLy
                                 TenNV = reader["TenNV"].ToString(),
                                 MaCV = reader["MaCV"].ToString(),
                                 GioiTinh = reader["GioiTinh"].ToString(),
-                                NgaySinh = Convert.ToDateTime(reader["NgaySinh"]),
+                                NgaySinh = reader["NgaySinh"] != DBNull.Value ? Convert.ToDateTime(reader["NgaySinh"]) : DateTime.MinValue,
                                 DienThoai = reader["DienThoai"].ToString(),
-                                NgayTuyen = Convert.ToDateTime(reader["NgayTuyen"])
+                                NgayTuyen = reader["NgayTuyen"] != DBNull.Value ? Convert.ToDateTime(reader["NgayTuyen"]) : DateTime.MinValue
                             };
 
                             nhanVienList.Add(nhanVien);
                         }
                     }
                 }
+            }
+            catch (Exception ex)
+            {
+                // Log lỗi hoặc thông báo nếu có
+                Console.WriteLine("Lỗi khi lấy thông tin: " + ex.Message);
+            }
+            finally
+            {
+                // Đảm bảo luôn đóng kết nối
+                CloseConnection();
             }
 
             return nhanVienList;
