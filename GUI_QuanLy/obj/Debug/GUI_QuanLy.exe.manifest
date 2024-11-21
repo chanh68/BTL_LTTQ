@@ -282,14 +282,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="GUI_QuanLy.exe" size="3270656">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="GUI_QuanLy.exe" size="3271168">
       <assemblyIdentity name="GUI_QuanLy" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ajv5JdTDPVdqMrXWwUt3iJtLt2fN7eEIjWJcSWJQTtk=</dsig:DigestValue>
+        <dsig:DigestValue>7faElbBXJVb+AzD2v0AjxeJe4MnTe27/73JckxoXPsA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
