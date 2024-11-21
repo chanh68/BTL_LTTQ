@@ -9,9 +9,9 @@ namespace DAL_QuanLy
 {
     public class DBConnect
     {
-		protected SqlConnection _conn = new SqlConnection("Data Source=Chanh\\SQLEXPRESS;Initial Catalog=BTL_TQ5;Integrated Security=True");
+		//protected SqlConnection _conn = new SqlConnection("Data Source=Chanh\\SQLEXPRESS;Initial Catalog=BTL_TQ5;Integrated Security=True");
 		//protected SqlConnection _conn = new SqlConnection("Data Source=DESKTOP-S8N7JNH\\SQLEXPRESS;Initial Catalog=DB_LTTQ;Integrated Security=True;TrustServerCertificate=True");
-       // protected SqlConnection _conn = new SqlConnection("Data Source=DESKTOP-S8N7JNH\\SQLEXPRESS;Initial Catalog=BTL_TQ3;Integrated Security=True;TrustServerCertificate=True");
+        protected SqlConnection _conn = new SqlConnection("Data Source=DESKTOP-S8N7JNH\\SQLEXPRESS;Initial Catalog=BTL_TQ3;Integrated Security=True;TrustServerCertificate=True");
         //protected SqlConnection _conn = new SqlConnection("Data Source=LAPTOP-L4E28I51\\SQLEXPRESS;Initial Catalog=BTL_TQ3;Integrated Security=True;TrustServerCertificate=True");
 
         //	protected SqlConnection _conn = new SqlConnection("Data Source=DUA;Initial Catalog=a;Integrated Security=True;TrustServerCertificate=True");

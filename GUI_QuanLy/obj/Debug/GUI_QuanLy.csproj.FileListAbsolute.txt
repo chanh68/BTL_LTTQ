@@ -979,3 +979,12 @@ C:\Users\dundun\Documents\BTL_LTTQ_D\GUI_QuanLy\obj\Debug\GUI_QuanLy.ReportSanPh
 C:\Users\dundun\Documents\BTL_LTTQ_D\GUI_QuanLy\obj\Debug\GUI_QuanLy.GUI_TaoHoaDonBan.resources
 C:\Users\dundun\Documents\BTL_LTTQ_D\GUI_QuanLy\obj\Debug\GUI_QuanLy.GUI_TaoHoaDonNhap.resources
 C:\Users\dundun\Documents\BTL_LTTQ_D\GUI_QuanLy\obj\Debug\GUI_QuanLy.GUI_HoaDonNhap.resources
+F:\WebProgram\BTL_LTTQ\BTL_LTTQ\GUI_QuanLy\obj\Debug\GUI_QuanLy.FormReport.resources
+F:\WebProgram\BTL_LTTQ\BTL_LTTQ\GUI_QuanLy\obj\Debug\GUI_QuanLy.GUI_HoaDonBan.resources
+F:\WebProgram\BTL_LTTQ\BTL_LTTQ\GUI_QuanLy\obj\Debug\GUI_QuanLy.GUI_HoaDonNhap.resources
+F:\WebProgram\BTL_LTTQ\BTL_LTTQ\GUI_QuanLy\obj\Debug\GUI_QuanLy.GUI_TaoHoaDonBan.resources
+F:\WebProgram\BTL_LTTQ\BTL_LTTQ\GUI_QuanLy\obj\Debug\GUI_QuanLy.GUI_TaoHoaDonNhap.resources
+F:\WebProgram\BTL_LTTQ\BTL_LTTQ\GUI_QuanLy\obj\Debug\GUI_QuanLy.KhachHang.resources
+F:\WebProgram\BTL_LTTQ\BTL_LTTQ\GUI_QuanLy\obj\Debug\GUI_QuanLy.Report_DoanhThu.resources
+F:\WebProgram\BTL_LTTQ\BTL_LTTQ\GUI_QuanLy\obj\Debug\GUI_QuanLy.Report_HoaDon.resources
+F:\WebProgram\BTL_LTTQ\BTL_LTTQ\GUI_QuanLy\obj\Debug\GUI_QuanLy.ReportSanPham.resources

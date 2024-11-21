@@ -171,10 +171,10 @@ namespace DAL_QuanLy
 
 
         // Thêm hàng hóa mới
-        public void AddHangHoa(string maHang, string tenHang, string maLoai, string maKT, string maMen, string maMau, int soLuong, decimal dgb, decimal dgn, byte[] anh, string ghiChu, string maCD, string maHK, string maNuoc)
+        public void AddHangHoa(string maHang, string tenHang, string maLoai, string maKT, string maMen, string maMau, int soLuong, decimal dgb, decimal dgn, byte[] anh, string ghiChu, string maCD, string maHK, string maNuoc, string maNCC)
         {
-            string query = "INSERT INTO HangHoa (MaHang, TenHang, MaLoai, MaKichThuoc, MaLoaiMen, MaMau, SoLuong, DonGiaBan, DonGiaNhap, Anh, GhiChu, MaCongDung, MaHinhKhoi, MaNuocSX) " +
-                           "VALUES (@MaHang, @TenHang, @MaLoai, @MaKT, @MaMen, @MaMau, @SoLuong, @DGB, @DGN, @Anh, @GhiChu, @MaCD, @MaHK, @MaNuoc)";
+            string query = "INSERT INTO HangHoa (MaHang, TenHang, MaLoai, MaKichThuoc, MaLoaiMen, MaMau, SoLuong, DonGiaBan, DonGiaNhap, Anh, GhiChu, MaCongDung, MaHinhKhoi, MaNuocSX, MaNCC) " +
+                           "VALUES (@MaHang, @TenHang, @MaLoai, @MaKT, @MaMen, @MaMau, @SoLuong, @DGB, @DGN, @Anh, @GhiChu, @MaCD, @MaHK, @MaNuoc, @MaNCC)";
 
             using (SqlCommand command = new SqlCommand(query, _conn))
             {
@@ -192,7 +192,7 @@ namespace DAL_QuanLy
                 command.Parameters.AddWithValue("@MaCD", maCD);
                 command.Parameters.AddWithValue("@MaHK", maHK);
                 command.Parameters.AddWithValue("@MaNuoc", maNuoc);
-
+                command.Parameters.AddWithValue("@MaNCC", maNCC);
                 try
                 {
                     _conn.Open();
@@ -313,7 +313,7 @@ namespace DAL_QuanLy
         // Phương thức lấy tất cả hàng hóa
         public string GetMaHangByTenHang(string tenHang)
         {
-            string query = "SELECT MaHang FROM HangHoa WHERE TenHang = @TenHang where TrangThai = 1";
+            string query = "SELECT MaHang FROM HangHoa WHERE TenHang = @TenHang and TrangThai = 1";
             string maHang = null;
 
             using (SqlCommand command = new SqlCommand(query, _conn))

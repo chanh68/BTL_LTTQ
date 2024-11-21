@@ -35,6 +35,31 @@ namespace DAL_QuanLy
 
             return dataTable;
         }
+        public DataTable GetTypeData()
+        {
+            string query = "SELECT MaNuocSX AS iD FROM NuocSanXuat";
+            DataTable dataTable = new DataTable();
+
+            using (SqlCommand command = new SqlCommand(query, _conn))
+            {
+                try
+                {
+                    _conn.Open();
+                    SqlDataAdapter adapter = new SqlDataAdapter(command);
+                    adapter.Fill(dataTable);
+                }
+                catch (SqlException ex)
+                {
+                    throw new Exception("Có lỗi xảy ra khi lấy dữ liệu từ bảng Customer: " + ex.Message);
+                }
+                finally
+                {
+                    _conn.Close();
+                }
+            }
+
+            return dataTable;
+        }
         public void AddNuocSanXuat(string maNuocSanXuat, string tenNuocSanXuat)
         {
             string query = "INSERT INTO NuocSanXuat (MaNuocSX, TenNuocSX) VALUES (@MaNuocSanXuat, @TenNuocSanXuat)";
