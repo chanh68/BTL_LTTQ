@@ -1,6 +1,7 @@
 ﻿using DAL_QuanLy;
 using DTO_QuanLy;
 using System;
+using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
@@ -10,7 +11,22 @@ namespace GUI_QuanLy
     public partial class Edit : Form
     {
         private readonly DAL_HangHoa dalHangHoa;
+        private readonly DAL_Loai dAL_Loai = new DAL_Loai();
+        private readonly DAL_KichThuoc dAL_KichThuoc = new DAL_KichThuoc();
+        private readonly DAL_CongDung dAL_CongDung = new DAL_CongDung();
+        private readonly DAL_HinhKhoi dAL_HinhKhoi = new DAL_HinhKhoi();
+        private readonly DAL_MauSac dAL_MauSac = new DAL_MauSac();
+        private readonly DAL_LoaiMen dAL_LoaiMen = new DAL_LoaiMen();
+        private readonly DAL_NuocSanXuat dAL_NuocSanXuat = new DAL_NuocSanXuat();
         public DTO_HangHoa HangHoa { get; set; }
+        public int typID = 0;
+        public int sizeID = 0;
+        public int useID = 0;
+        public int HKID = 0;
+        public int ColorID = 0;
+        public int MenID = 0;
+        public int countryID = 0;
+
         private readonly InfoProduct infoProductForm;
 
         // Tham số để xác định chế độ (thêm, sửa, hay thông tin)
@@ -186,13 +202,13 @@ namespace GUI_QuanLy
                 }
 
                 // Cập nhật thêm các thuộc tính còn lại
-                txtMaLoai.Text = HangHoa.MaLoai;
-                txtMaKT.Text = HangHoa.MaKichThuoc;
-                txtMaMen.Text = HangHoa.MaLoaiMen;
-                txtMaMau.Text = HangHoa.MaMau;
-                txtMaCD.Text = HangHoa.MaCongDung;
-                txtMaHK.Text = HangHoa.MaHinhKhoi;
-                txtMaNuocSX.Text = HangHoa.MaNuocSX;
+                cbbLoaiID.Text = HangHoa.MaLoai;
+                cbbKT.Text = HangHoa.MaKichThuoc;
+                cbbMen.Text = HangHoa.MaLoaiMen;
+                cbbMau.Text = HangHoa.MaMau;
+                cbbCD.Text = HangHoa.MaCongDung;
+                cbbHK.Text = HangHoa.MaHinhKhoi;
+                cbbNSX.Text = HangHoa.MaNuocSX;
             }
 
             // Nếu chế độ là "Thông tin sản phẩm", khóa các trường nhập
@@ -203,14 +219,14 @@ namespace GUI_QuanLy
                 txtSoLuong.Enabled = false;
                 txtDGB.Enabled = false;
                 txtGhiChu.Enabled = false;
-                txtMaLoai.Enabled = false;
-                txtMaKT.Enabled = false;
-                txtMaMen.Enabled = false;
-                txtMaMau.Enabled = false;
-                txtMaCD.Enabled = false;
-                txtMaHK.Enabled = false;
+                cbbLoaiID.Enabled = false;
+                cbbKT.Enabled = false;
+                cbbMen.Enabled = false;
+                cbbMau.Enabled = false;
+                cbbCD.Enabled = false;
+                cbbHK.Enabled = false;
                 txtDGN.Enabled = false;
-                txtMaNuocSX.Enabled = false;
+                cbbNSX.Enabled = false;
                 btnChonAnh.Enabled = false;
             }
         }
@@ -254,17 +270,17 @@ namespace GUI_QuanLy
             }
 
             string tenHang = txtTenHang.Text;
-            string maLoai = txtMaLoai.Text;
-            string maKT = txtMaKT.Text;
-            string maMen = txtMaMen.Text;
-            string maMau = txtMaMau.Text;
+            string maLoai = cbbLoaiID.Text;
+            string maKT = cbbKT.Text;
+            string maMen = cbbMen.Text;
+            string maMau = cbbMau.Text;
             int soLuong = int.Parse(txtSoLuong.Text);
             decimal dgb = decimal.Parse(txtDGB.Text);
             decimal dgn = decimal.Parse(txtDGN.Text);
             string ghiChu = txtGhiChu.Text;
-            string maCD = txtMaCD.Text;
-            string maHK = txtMaHK.Text;
-            string maNuoc = txtMaNuocSX.Text;
+            string maCD = cbbCD.Text;
+            string maHK = cbbHK.Text;
+            string maNuoc = cbbNSX.Text;
 
             dalHangHoa.AddHangHoa(maHang, tenHang, maLoai, maKT, maMen, maMau, soLuong, dgb, dgn, anh, ghiChu, maCD, maHK, maNuoc);
             MessageBox.Show("Thêm sản phẩm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -281,13 +297,13 @@ namespace GUI_QuanLy
                 string.IsNullOrWhiteSpace(txtSoLuong.Text) ||
                 string.IsNullOrWhiteSpace(txtDGB.Text) ||
                 string.IsNullOrWhiteSpace(txtDGN.Text) ||
-                string.IsNullOrWhiteSpace(txtMaLoai.Text) ||
-                string.IsNullOrWhiteSpace(txtMaKT.Text) ||
-                string.IsNullOrWhiteSpace(txtMaMen.Text) ||
-                string.IsNullOrWhiteSpace(txtMaMau.Text) ||
-                string.IsNullOrWhiteSpace(txtMaCD.Text) ||
-                string.IsNullOrWhiteSpace(txtMaHK.Text) ||
-                string.IsNullOrWhiteSpace(txtMaNuocSX.Text))
+                string.IsNullOrWhiteSpace(cbbLoaiID.Text) ||
+                string.IsNullOrWhiteSpace(cbbKT.Text) ||
+                string.IsNullOrWhiteSpace(cbbMen.Text) ||
+                string.IsNullOrWhiteSpace(cbbMau.Text) ||
+                string.IsNullOrWhiteSpace(cbbCD.Text) ||
+                string.IsNullOrWhiteSpace(cbbHK.Text) ||
+                string.IsNullOrWhiteSpace(cbbNSX.Text))
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin cho tất cả các trường bắt buộc.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
@@ -323,13 +339,13 @@ namespace GUI_QuanLy
             HangHoa.DonGiaBan = decimal.Parse(txtDGB.Text);
             HangHoa.DonGiaNhap = decimal.Parse(txtDGN.Text); // Cập nhật Đơn giá nhập nếu có
             HangHoa.GhiChu = txtGhiChu.Text;
-            HangHoa.MaLoai = txtMaLoai.Text; // Cập nhật các thuộc tính khác
-            HangHoa.MaKichThuoc = txtMaKT.Text;
-            HangHoa.MaLoaiMen = txtMaMen.Text;
-            HangHoa.MaMau = txtMaMau.Text;
-            HangHoa.MaCongDung = txtMaCD.Text;
-            HangHoa.MaHinhKhoi = txtMaHK.Text;
-            HangHoa.MaNuocSX = txtMaNuocSX.Text;
+            HangHoa.MaLoai = cbbLoaiID.Text; // Cập nhật các thuộc tính khác
+            HangHoa.MaKichThuoc = cbbKT.Text;
+            HangHoa.MaLoaiMen = cbbMen.Text;
+            HangHoa.MaMau = cbbMau.Text;
+            HangHoa.MaCongDung = cbbCD.Text;
+            HangHoa.MaHinhKhoi = cbbHK.Text;
+            HangHoa.MaNuocSX = cbbNSX.Text;
 
             // Chuyển đổi đường dẫn ảnh thành byte[]
             byte[] anh = GetImageBytes(txtAnh.Text);
@@ -385,18 +401,18 @@ namespace GUI_QuanLy
         {
             txtMaHang.Clear();
             txtTenHang.Clear();
-            txtMaLoai.Clear();
-            txtMaKT.Clear();
-            txtMaMen.Clear();
-            txtMaMau.Clear();
+            cbbLoaiID.Text = " ";
+            cbbKT.Text = " ";
+            cbbMen.Text = " ";
+            cbbMau.Text = " ";
             txtSoLuong.Clear();
             txtDGB.Clear();
             txtDGN.Clear();
             txtAnh.Clear();
             txtGhiChu.Clear();
-            txtMaCD.Clear();
-            txtMaHK.Clear();
-            txtMaNuocSX.Clear();
+            cbbCD.Text = " ";
+            cbbHK.Text = " ";
+            cbbNSX.Text = " ";
             picpoc.Image = null;
         }
 
@@ -405,5 +421,41 @@ private void btnTitle_Click(object sender, EventArgs e)
     this.DialogResult = DialogResult.Cancel; // Gán kết quả là Cancel
     this.Close(); // Đóng form hiện tại
 }
+
+        private void txtTenHang_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Edit_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                // Gán dữ liệu cho các ComboBox
+                BindComboBox(cbbLoaiID, dAL_Loai.GetTypeData(), "id", "name", typID);
+                BindComboBox(cbbKT, dAL_KichThuoc.GetTypeData(), "id", "name", sizeID);
+                BindComboBox(cbbMen, dAL_LoaiMen.GetTypeData(), "id", "name", MenID);
+                BindComboBox(cbbCD, dAL_CongDung.GetTypeData(), "id", "name", useID);
+                BindComboBox(cbbHK, dAL_HinhKhoi.GetTypeData(), "id", "name", HKID);
+                BindComboBox(cbbMau, dAL_MauSac.GetTypeData(), "id", "name", ColorID);
+                BindComboBox(cbbNSX, dAL_NuocSanXuat.GetTypeData(), "id", "name", countryID);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Có lỗi xảy ra khi tải dữ liệu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        // Phương thức chung để gán dữ liệu cho ComboBox
+        private void BindComboBox(ComboBox comboBox, DataTable data, string valueMember, string displayMember, int selectedValue)
+        {
+            comboBox.DataSource = data;
+            comboBox.ValueMember = valueMember;
+            comboBox.DisplayMember = displayMember;
+            if (selectedValue > 0)
+            {
+                comboBox.SelectedValue = selectedValue;
+            }
+        }
     }
 }

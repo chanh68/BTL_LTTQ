@@ -14,7 +14,6 @@ namespace DAL_QuanLy
         {
             string query = "SELECT * FROM Loai";
             DataTable dataTable = new DataTable();
-
             using (SqlCommand command = new SqlCommand(query, _conn))
             {
                 try
@@ -104,6 +103,31 @@ namespace DAL_QuanLy
                     _conn.Close(); // Đảm bảo rằng kết nối được đóng
                 }
             }
+        }
+        public DataTable GetTypeData()
+        {
+            string query = "SELECT MaLoai AS iD FROM Loai";
+            DataTable dataTable = new DataTable();
+
+            using (SqlCommand command = new SqlCommand(query, _conn))
+            {
+                try
+                {
+                    _conn.Open();
+                    SqlDataAdapter adapter = new SqlDataAdapter(command);
+                    adapter.Fill(dataTable);
+                }
+                catch (SqlException ex)
+                {
+                    throw new Exception("Có lỗi xảy ra khi lấy dữ liệu từ bảng Customer: " + ex.Message);
+                }
+                finally
+                {
+                    _conn.Close();
+                }
+            }
+
+            return dataTable;
         }
     }
 }
