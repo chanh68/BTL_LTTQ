@@ -205,7 +205,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>s4DpcueB6CYDth430Vi1ipJzYjmeDSphmT1OxnTUD1s=</dsig:DigestValue>
+        <dsig:DigestValue>KrYv9zCUWgwMwyJm+RuRF8ksGZRVlZ8oB0J1F1UFJO8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -217,7 +217,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ndeeDbdxXCdMY0wdp3vw3gZi1oXrbpytZRkKyntjCmI=</dsig:DigestValue>
+        <dsig:DigestValue>EHvVsvPMk0EYI3rwhtigZ6D296ICzwpaS3GVddsEL+w=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -229,19 +229,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Z9tTLi5bDqSGGVsin7enldbz3IO72fkiCPhxRx/5IGE=</dsig:DigestValue>
+        <dsig:DigestValue>36hsWnIGyLEZnseFoe0QWUDCz4WVIeoAS04BrHh2Cj0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EnvDTE.dll" size="256040">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EnvDTE.dll" size="255928">
       <assemblyIdentity name="EnvDTE" version="8.0.0.0" publicKeyToken="B03F5F7F11D50A3A" language="neutral" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>7qdNwiKU3ZoMZr3UU2ddTiqmLVpQj3lQNUqUO2d6/cQ=</dsig:DigestValue>
+        <dsig:DigestValue>ap4yvWobTGnSjKFbsk597qpUqfd9loBFqCphEWRRtbQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -282,14 +282,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="GUI_QuanLy.exe" size="5341184">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="GUI_QuanLy.exe" size="5341696">
       <assemblyIdentity name="GUI_QuanLy" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>1rqoKCBLVlcL7KM+EVdM6j8JjaM/CZMxvAbJAoXZ7Mc=</dsig:DigestValue>
+        <dsig:DigestValue>NlIm/vdcmDL7K2h22sSIooWQ0ZgFlWAfsHHoRRKOiuM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

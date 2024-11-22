@@ -233,6 +233,12 @@ namespace GUI_QuanLy
                 cbbNCC.Enabled = false;
                 btnChonAnh.Enabled = false;
             }
+            if (mode == "Sửa")
+            {
+                txtMaHang.Enabled = false;
+                cbbNCC.Enabled = false;
+
+            }
         }
 
 
@@ -273,21 +279,29 @@ namespace GUI_QuanLy
                 return;
             }
 
-            string tenHang = txtTenHang.Text;
-            string maLoai = cbbLoaiID.Text;
-            string maKT = cbbKT.Text;
-            string maMen = cbbMen.Text;
-            string maMau = cbbMau.Text;
-            int soLuong = int.Parse(txtSoLuong.Text);
-            decimal dgb = decimal.Parse(txtDGB.Text);
-            decimal dgn = decimal.Parse(txtDGN.Text);
-            string ghiChu = txtGhiChu.Text;
-            string maCD = cbbCD.Text;
-            string maHK = cbbHK.Text;
-            string maNuoc = cbbNSX.Text;
-            string maNCC = cbbNCC.Text;
+            // Tạo đối tượng DTO_HangHoa
+            var hangHoa = new DTO_HangHoa
+            {
+                MaHang = maHang,
+                TenHangHoa = txtTenHang.Text,
+                MaLoai = cbbLoaiID.Text,
+                MaKichThuoc = cbbKT.Text,
+                MaLoaiMen = cbbMen.Text,
+                MaMau = cbbMau.Text,
+                SoLuong = int.Parse(txtSoLuong.Text),
+                DonGiaBan = decimal.Parse(txtDGB.Text),
+                DonGiaNhap = decimal.Parse(txtDGN.Text),
+                Anh = anh,
+                GhiChu = txtGhiChu.Text,
+                MaCongDung = cbbCD.Text,
+                MaHinhKhoi = cbbHK.Text,
+                MaNuocSX = cbbNSX.Text,
+                MaNCC = cbbNCC.Text
+            };
 
-            dalHangHoa.AddHangHoa(maHang, tenHang, maLoai, maKT, maMen, maMau, soLuong, dgb, dgn, anh, ghiChu, maCD, maHK, maNuoc, maNCC);
+            // Thêm hàng hóa
+            dalHangHoa.AddHangHoa(hangHoa);
+
             MessageBox.Show("Thêm sản phẩm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             clearData();
             this.Close(); // Đóng form Edit
@@ -309,7 +323,8 @@ namespace GUI_QuanLy
                 string.IsNullOrWhiteSpace(cbbCD.Text) ||
                 string.IsNullOrWhiteSpace(cbbHK.Text) ||
                 string.IsNullOrWhiteSpace(cbbNSX.Text) ||
-                string.IsNullOrWhiteSpace(cbbNCC.Text))
+                string.IsNullOrWhiteSpace(cbbNCC.Text) ||
+                string.IsNullOrWhiteSpace(txtGhiChu.Text))
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin cho tất cả các trường bắt buộc.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
@@ -339,6 +354,7 @@ namespace GUI_QuanLy
 
         private void UpdateHangHoa()
         {
+
             // Cập nhật các thuộc tính của HangHoa từ các điều khiển
             HangHoa.TenHangHoa = txtTenHang.Text;
             HangHoa.SoLuong = int.Parse(txtSoLuong.Text);
@@ -352,7 +368,7 @@ namespace GUI_QuanLy
             HangHoa.MaCongDung = cbbCD.Text;
             HangHoa.MaHinhKhoi = cbbHK.Text;
             HangHoa.MaNuocSX = cbbNSX.Text;
-            HangHoa.MaNCC = cbbNCC.Text;
+
 
             // Chuyển đổi đường dẫn ảnh thành byte[]
             byte[] anh = GetImageBytes(txtAnh.Text);
@@ -429,9 +445,12 @@ namespace GUI_QuanLy
             this.DialogResult = DialogResult.Cancel; // Gán kết quả là Cancel
             this.Close(); // Đóng form hiện tại
         }
+
         private void txtTenHang_Load(object sender, EventArgs e)
         {
+
         }
+
         private void Edit_Load(object sender, EventArgs e)
         {
             try
@@ -451,6 +470,7 @@ namespace GUI_QuanLy
                 MessageBox.Show("Có lỗi xảy ra khi tải dữ liệu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
         // Phương thức chung để gán dữ liệu cho ComboBox
         private void BindComboBox(ComboBox comboBox, DataTable data, string valueMember, string displayMember, int selectedValue)
         {
@@ -460,7 +480,6 @@ namespace GUI_QuanLy
             if (selectedValue > 0)
             {
                 comboBox.SelectedValue = selectedValue;
-
             }
         }
     }

@@ -45,6 +45,12 @@ namespace GUI_QuanLy
             ReportDataSource rds = new ReportDataSource("DataSet_HoaDon", dataTable);
             reportViewer1.LocalReport.DataSources.Clear();
             reportViewer1.LocalReport.DataSources.Add(rds);
+            var reportParameters = new List<ReportParameter>
+            {
+                new ReportParameter("LoggedInUser", Global.TenNV)
+            };
+
+            reportViewer1.LocalReport.SetParameters(reportParameters);
 
             // Làm mới báo cáo
             reportViewer1.RefreshReport();

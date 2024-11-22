@@ -58,6 +58,13 @@ namespace GUI_QuanLy
             reportViewer1.LocalReport.DataSources.Clear();
             reportViewer1.LocalReport.DataSources.Add(rds);
 
+            var reportParameters = new List<ReportParameter>
+            {
+                new ReportParameter("LoggedInUser", Global.TenNV)
+            };
+
+            reportViewer1.LocalReport.SetParameters(reportParameters);
+
             reportViewer1.RefreshReport();
         }
 

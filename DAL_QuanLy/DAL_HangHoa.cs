@@ -171,28 +171,29 @@ namespace DAL_QuanLy
         }
 
         // Thêm hàng hóa mới
-        public void AddHangHoa(string maHang, string tenHang, string maLoai, string maKT, string maMen, string maMau, int soLuong, decimal dgb, decimal dgn, byte[] anh, string ghiChu, string maCD, string maHK, string maNuoc, string maNCC)
+        public void AddHangHoa(DTO_HangHoa hangHoa)
         {
             string query = "INSERT INTO HangHoa (MaHang, TenHang, MaLoai, MaKichThuoc, MaLoaiMen, MaMau, SoLuong, DonGiaBan, DonGiaNhap, Anh, GhiChu, MaCongDung, MaHinhKhoi, MaNuocSX, MaNCC) " +
                            "VALUES (@MaHang, @TenHang, @MaLoai, @MaKT, @MaMen, @MaMau, @SoLuong, @DGB, @DGN, @Anh, @GhiChu, @MaCD, @MaHK, @MaNuoc, @MaNCC)";
 
             using (SqlCommand command = new SqlCommand(query, _conn))
             {
-                command.Parameters.AddWithValue("@MaHang", maHang);
-                command.Parameters.AddWithValue("@TenHang", tenHang);
-                command.Parameters.AddWithValue("@MaLoai", maLoai);
-                command.Parameters.AddWithValue("@MaKT", maKT);
-                command.Parameters.AddWithValue("@MaMen", maMen);
-                command.Parameters.AddWithValue("@MaMau", maMau);
-                command.Parameters.AddWithValue("@SoLuong", soLuong);
-                command.Parameters.AddWithValue("@DGB", dgb);
-                command.Parameters.AddWithValue("@DGN", dgn);
-                command.Parameters.AddWithValue("@Anh", anh ?? (object)DBNull.Value);
-                command.Parameters.AddWithValue("@GhiChu", ghiChu);
-                command.Parameters.AddWithValue("@MaCD", maCD);
-                command.Parameters.AddWithValue("@MaHK", maHK);
-                command.Parameters.AddWithValue("@MaNuoc", maNuoc);
-                command.Parameters.AddWithValue("@MaNCC", maNCC);
+                command.Parameters.AddWithValue("@MaHang", hangHoa.MaHang);
+                command.Parameters.AddWithValue("@TenHang", hangHoa.TenHangHoa);
+                command.Parameters.AddWithValue("@MaLoai", hangHoa.MaLoai);
+                command.Parameters.AddWithValue("@MaKT", hangHoa.MaKichThuoc);
+                command.Parameters.AddWithValue("@MaMen", hangHoa.MaLoaiMen);
+                command.Parameters.AddWithValue("@MaMau", hangHoa.MaMau);
+                command.Parameters.AddWithValue("@SoLuong", hangHoa.SoLuong);
+                command.Parameters.AddWithValue("@DGB", hangHoa.DonGiaBan);
+                command.Parameters.AddWithValue("@DGN", hangHoa.DonGiaNhap);
+                command.Parameters.AddWithValue("@Anh", hangHoa.Anh ?? (object)DBNull.Value); // Nếu null thì gán DBNull
+                command.Parameters.AddWithValue("@GhiChu", hangHoa.GhiChu ?? (object)DBNull.Value);
+                command.Parameters.AddWithValue("@MaCD", hangHoa.MaCongDung);
+                command.Parameters.AddWithValue("@MaHK", hangHoa.MaHinhKhoi);
+                command.Parameters.AddWithValue("@MaNuoc", hangHoa.MaNuocSX);
+                command.Parameters.AddWithValue("@MaNCC", hangHoa.MaNCC);
+
                 try
                 {
                     _conn.Open();

@@ -15,25 +15,24 @@ namespace DAL_QuanLy
         {
             var reportList = new List<DTO_ReportDoanhThu>();
 
-            //using (var connection = new SqlConnection(connectionString))
             OpenConnection();
             using (var command = new SqlCommand(@"
-                SELECT hb.SoHDB AS InvoiceNumber,
-                       ct.SoLuong * ct.DonGiaBan * 0.01 * (100 - ISNULL(ct.GiamGia, 0)) AS Revenue,
-                       hb.NgayBan AS SaleDate,
-                       ct.SoLuong AS ProductCount,
-                       hh.MaHang AS ProductCode,
-                       hh.TenHang AS ProductName
-                FROM HoaDonBan hb
-                JOIN ChiTietHoaDonBan ct ON hb.SoHDB = ct.SoHDB
-                JOIN HangHoa hh ON ct.MaHang = hh.MaHang
-                WHERE hb.NgayBan BETWEEN '10-01-2024' AND '10-20-2024'
-                ORDER BY hb.NgayBan, hh.MaHang", _conn))
+        SELECT hb.SoHDB AS InvoiceNumber,
+               SUM(ct.SoLuong * ct.DonGiaBan * 0.01 * (100 - ISNULL(ct.GiamGia, 0))) AS Revenue,
+               CONVERT(DATE, hb.NgayBan) AS SaleDate,
+               SUM(ct.SoLuong) AS ProductCount,
+               hh.MaHang AS ProductCode,
+               hh.TenHang AS ProductName
+        FROM HoaDonBan hb
+        JOIN ChiTietHoaDonBan ct ON hb.SoHDB = ct.SoHDB
+        JOIN HangHoa hh ON ct.MaHang = hh.MaHang
+        WHERE CONVERT(DATE, hb.NgayBan) BETWEEN @StartDate AND @EndDate
+        GROUP BY hb.SoHDB, hb.NgayBan, hh.MaHang, hh.TenHang
+        ORDER BY hb.NgayBan, hh.MaHang", _conn))
             {
-                command.Parameters.AddWithValue("@StartDate", startDate);
-                command.Parameters.AddWithValue("@EndDate", endDate);
-
-                //connection.Open();
+                // Truyền tham số với định dạng chính xác
+                command.Parameters.AddWithValue("@StartDate", startDate.Date);
+                command.Parameters.AddWithValue("@EndDate", endDate.Date);
 
                 using (var reader = command.ExecuteReader())
                 {
@@ -56,6 +55,7 @@ namespace DAL_QuanLy
             CloseConnection();
             return reportList;
         }
+
 
         public DataTable ConvertToDataTable(List<DTO_ReportDoanhThu> list)
         {
