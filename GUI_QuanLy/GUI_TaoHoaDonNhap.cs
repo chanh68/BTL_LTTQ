@@ -52,13 +52,26 @@ namespace GUI_QuanLy
 
         private void LoadDataComboBox()
         {
+            
             cbMaNCC.DataSource = busNCC.LayDanhSachNhaCungCap();
             cbMaNCC.DisplayMember = "MaNCC";
             cbMaNCC.ValueMember = "MaNCC";
+            cbMaNCC.SelectedIndexChanged += (s, e) =>
+            {
+                string maNCC = cbMaNCC.SelectedValue.ToString();
+                cbMaHang.DataSource = busHH.LayDanhSachHangHoaNCC(maNCC);
+                cbMaHang.DisplayMember = "MaHang";
+                cbMaHang.ValueMember = "MaHang";
+            };
 
-            cbMaHang.DataSource = busHH.LayDanhSachHangHoa();
-            cbMaHang.DisplayMember = "MaHang";
-            cbMaHang.ValueMember = "MaHang";
+           
+            if (cbMaNCC.SelectedValue != null)
+            {
+                string maNCC = cbMaNCC.SelectedValue.ToString();
+                cbMaHang.DataSource = busHH.LayDanhSachHangHoaNCC(maNCC);
+                cbMaHang.DisplayMember = "MaHang";
+                cbMaHang.ValueMember = "MaHang";
+            }
         }
 
         private void CapNhatTongTien()

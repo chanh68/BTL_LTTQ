@@ -21,6 +21,9 @@ namespace BUS_QuanLy
         {
             return dalHH.LayDanhSachHangHoa();
         }
-
+        public List<DTO_HangHoa> LayDanhSachHangHoaNCC(string maNCC)
+        {
+            return dalHH.LayDanhSachHangHoaTheoNCC(maNCC);
+        }
     }
 }
